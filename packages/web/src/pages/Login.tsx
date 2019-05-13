@@ -1,4 +1,4 @@
-import React, { memo, useState, FC } from "react"
+import React, { memo, FC } from "react"
 import { RouteComponentProps, Link } from "@reach/router"
 import { GraphQLError } from "graphql"
 import { useLogin } from "../lib/graphql/user/hooks"
@@ -8,23 +8,24 @@ import styled from "../application/theme"
 import Button from "../components/Button"
 import Input from "../components/Input"
 import AuthForm from "../components/AuthForm"
+import useForm from "../lib/hooks/useForm"
 
 const Login: FC<RouteComponentProps> = () => {
-  const [email, setEmail] = useState<string>("")
-  const [password, setPassword] = useState<string>("")
-  const [error, setError] = useState<string>("")
-  const [loading, setLoading] = useState<boolean>(false)
+  const [form, dispatch] = useForm({ email: "", password: "" })
+  const { email, password } = form.values
 
   const login = useLogin()
 
   const handleSubmit = (e: any) => {
     e.preventDefault()
-    setLoading(true)
+    dispatch({ type: "loading" })
     login({
       variables: { data: { email, password } },
-    }).catch((loginError: GraphQLError) => {
-      setLoading(false)
-      setError(loginError.message.split(":")[1])
+    }).catch((error: GraphQLError) => {
+      dispatch({
+        type: "error",
+        error: error.message.split(":")[1],
+      })
     })
   }
 
@@ -33,7 +34,9 @@ const Login: FC<RouteComponentProps> = () => {
       <Input
         label="Email"
         value={email}
-        onChange={e => setEmail(e.target.value)}
+        onChange={e =>
+          dispatch({ type: "update", field: { email: e.target.value } })
+        }
         type="email"
         required={true}
         placeholder="jim@gmail.com"
@@ -42,16 +45,18 @@ const Login: FC<RouteComponentProps> = () => {
       <Input
         label="Password"
         value={password}
-        onChange={e => setPassword(e.target.value)}
+        onChange={e =>
+          dispatch({ type: "update", field: { password: e.target.value } })
+        }
         type="password"
         required={true}
         placeholder="********"
       />
       <br />
-      <Button loading={loading} full={true}>
+      <Button loading={form.loading} full={true}>
         Login
       </Button>
-      {error && <StyledError>{error}</StyledError>}
+      {form.error && <StyledError>{form.error}</StyledError>}
       <StyledLinks>
         <Link to="/register">
           <StyledLink>Register</StyledLink>

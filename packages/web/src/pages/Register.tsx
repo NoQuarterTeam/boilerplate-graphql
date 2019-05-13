@@ -1,4 +1,4 @@
-import React, { memo, useState, FC } from "react"
+import React, { memo, FC } from "react"
 import { RouteComponentProps, Link } from "@reach/router"
 import { GraphQLError } from "graphql"
 import { useRegister } from "../lib/graphql/user/hooks"
@@ -8,26 +8,29 @@ import styled from "../application/theme"
 import Button from "../components/Button"
 import Input from "../components/Input"
 import AuthForm from "../components/AuthForm"
+import useForm from "../lib/hooks/useForm"
 
 const Register: FC<RouteComponentProps> = () => {
-  const [email, setEmail] = useState<string>("")
-  const [password, setPassword] = useState<string>("")
-  const [firstName, setFirstName] = useState<string>("")
-  const [lastName, setLastName] = useState<string>("")
+  const [form, dispatch] = useForm({
+    email: "",
+    password: "",
+    firstName: "",
+    lastName: "",
+  })
+  const { email, password, firstName, lastName } = form.values
 
-  const [error, setError] = useState<string>("")
-  const [loading, setLoading] = useState<boolean>(false)
-
-  const login = useRegister()
+  const register = useRegister()
 
   const handleSubmit = (e: any) => {
     e.preventDefault()
-    setLoading(true)
-    login({
-      variables: { data: { email, password, firstName, lastName } },
-    }).catch((loginError: GraphQLError) => {
-      setLoading(false)
-      setError(loginError.message.split(":")[1])
+    dispatch({ type: "loading" })
+    register({
+      variables: { data: { ...form.values } },
+    }).catch((error: GraphQLError) => {
+      dispatch({
+        type: "error",
+        error: error.message.split(":")[1],
+      })
     })
   }
 
@@ -36,7 +39,9 @@ const Register: FC<RouteComponentProps> = () => {
       <Input
         label="Email"
         value={email}
-        onChange={e => setEmail(e.target.value)}
+        onChange={e =>
+          dispatch({ type: "update", field: { email: e.target.value } })
+        }
         type="email"
         required={true}
         placeholder="jim@gmail.com"
@@ -45,7 +50,9 @@ const Register: FC<RouteComponentProps> = () => {
       <Input
         label="Password"
         value={password}
-        onChange={e => setPassword(e.target.value)}
+        onChange={e =>
+          dispatch({ type: "update", field: { password: e.target.value } })
+        }
         type="password"
         required={true}
         placeholder="********"
@@ -54,7 +61,9 @@ const Register: FC<RouteComponentProps> = () => {
       <Input
         label="First name"
         value={firstName}
-        onChange={e => setFirstName(e.target.value)}
+        onChange={e =>
+          dispatch({ type: "update", field: { firstName: e.target.value } })
+        }
         type="text"
         required={true}
         placeholder="Jim"
@@ -63,17 +72,19 @@ const Register: FC<RouteComponentProps> = () => {
       <Input
         label="Last name"
         value={lastName}
-        onChange={e => setLastName(e.target.value)}
+        onChange={e =>
+          dispatch({ type: "update", field: { lastName: e.target.value } })
+        }
         type="text"
         required={true}
         placeholder="Sebe"
       />
       <br />
 
-      <Button loading={loading} full={true}>
+      <Button loading={form.loading} full={true}>
         Login
       </Button>
-      {error && <StyledError>{error}</StyledError>}
+      {form.error && <StyledError>{form.error}</StyledError>}
       <StyledLinks>
         <Link to="/login">
           <StyledLink>Login</StyledLink>

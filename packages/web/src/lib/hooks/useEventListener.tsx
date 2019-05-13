@@ -9,7 +9,7 @@ function useEventListener(
   useEffect(() => {
     window.addEventListener(key, cb, options)
     return () => window.removeEventListener(key, cb, options)
-  }, deps || [])
+  }, [cb, key, options])
 }
 
 export default useEventListener
