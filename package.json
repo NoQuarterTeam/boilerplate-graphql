@@ -1,0 +1,34 @@
+{
+  "name": "root",
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "build:api": "cd packages/api && yarn build",
+    "build:web": "cd packages/web && yarn build",
+    "test": "lerna run test",
+    "typecheck": "lerna run typecheck",
+    "lint": "lerna run lint",
+    "pre-commit": "lerna run pre-commit",
+    "ci": "yarn lint && yarn test",
+    "heroku-postbuild": "yarn build:api"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lerna run --concurrency 1 --stream pre-commit"
+    }
+  },
+  "resolutions": {
+    "graphql": "14.1.1"
+  },
+  "devDependencies": {
+    "husky": "1.3.1",
+    "lerna": "3.13.4",
+    "lint-staged": "8.1.5"
+  }
+}

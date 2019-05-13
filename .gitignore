@@ -1,0 +1,10 @@
+node_modules
+build
+.cache
+.eslintcache
+dist
+.env
+.vscode
+tmp
+temp
+coverage

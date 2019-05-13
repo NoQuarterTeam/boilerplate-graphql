@@ -1,0 +1,23 @@
+[
+  {
+    "name": "development",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "database": "fullstack-boilerplate",
+    "synchronize": true,
+    "logging": false,
+    "entities": ["src/modules/**/*.entity.ts"],
+    "migrations": ["src/db/migrations/*.ts"],
+    "cli": { "migrationsDir": "src/db/migrations" }
+  },
+  {
+    "name": "production",
+    "type": "postgres",
+    "synchronize": false,
+    "entities": ["packages/api/dist/modules/**/*.entity.js"],
+    "migrations": ["packages/api/dist/db/migrations/*.js"],
+    "cli": { "migrationsDir": "src/db/migrations" },
+    "logging": true
+  }
+]
