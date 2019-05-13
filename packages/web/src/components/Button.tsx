@@ -2,8 +2,8 @@ import React, { memo, ButtonHTMLAttributes } from "react"
 import styled, { css, ThemeInterface, lighten } from "../application/theme"
 import { capitalize } from "../lib/helpers"
 
-export type Variant = "primary" | "secondary" | "tertiary"
-export type Color = "blue" | "pink" | "header"
+export type Variant = "block" | "outline" | "text"
+export type Color = "primary" | "secondary" | "tertiary"
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant
@@ -11,11 +11,12 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean
   disabled?: boolean
   full?: boolean
+  style?: any
 }
 
 function Button({
-  variant = "primary",
-  color = "blue",
+  variant = "block",
+  color = "primary",
   loading = false,
   disabled = false,
   ...props
@@ -35,52 +36,51 @@ function Button({
 
 export default memo(Button)
 
-const primaryStyles = (color: string) => css`
-  padding: ${p => `${p.theme.paddingM} ${p.theme.paddingXL}`};
+const blockStyles = (color: string) => css`
   background-color: ${p => p.theme["color" + capitalize(color)]};
+  border: 2px solid ${p => p.theme["color" + capitalize(color)]};
 `
 
-const secondaryStyles = (color: string) => css`
+const outlineStyled = (color: string) => css`
   background-color: transparent;
-  padding: ${p => `${p.theme.paddingM} ${p.theme.paddingXL}`};
-  border: 2px solid ${p => lighten(0.25, p.theme["color" + capitalize(color)])};
+  border: 2px solid ${p => lighten(0.1, p.theme["color" + capitalize(color)])};
   color: ${p => p.theme["color" + capitalize(color)]};
 `
 
-const tertiaryStyles = (color: string) => css`
+const textStyles = (color: string) => css`
   background-color: transparent;
+  border: transparent;
   color: ${p => p.theme["color" + capitalize(color)]};
 `
 
 const getVariantStyles = ({
-  color = "blue",
-  variant = "primary",
+  color = "primary",
+  variant = "block",
 }: ThemeInterface & ButtonProps) => {
   switch (variant) {
-    case "primary":
-      return primaryStyles(color)
-    case "secondary":
-      return secondaryStyles(color)
-    case "tertiary":
-      return tertiaryStyles(color)
+    case "block":
+      return blockStyles(color)
+    case "outline":
+      return outlineStyled(color)
+    case "text":
+      return textStyles(color)
     default:
-      return primaryStyles(color)
+      return blockStyles(color)
   }
 }
 
 const StyledButton = styled.button<ButtonProps>`
-  outline: 0;
-  letter-spacing: 1px;
-  color: white;
   text-align: center;
-  border-radius: 100px;
   font-size: ${p => p.theme.textM};
   margin: ${p => (p.full ? 0 : p.theme.paddingS)};
-  cursor: ${p => (p.disabled ? "not-allowed" : "pointer")};
+  cursor: ${p => (p.disabled ? "default" : "pointer")};
   width: ${p => (!p.full ? "auto" : "100%")};
+  color: white;
+  letter-spacing: 1px;
   opacity: ${p => (p.disabled ? 0.5 : 1)};
+  border-radius: ${p => p.theme.borderRadius};
+  padding: ${p => `${p.theme.paddingM} ${p.theme.paddingXL}`};
 
-  &:focus,
   &:hover {
     opacity: ${p => (p.disabled ? 0.5 : 0.7)};
   }

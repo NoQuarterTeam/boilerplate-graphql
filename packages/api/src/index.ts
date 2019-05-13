@@ -1,33 +1,25 @@
 import "reflect-metadata"
 import "dotenv/config"
 import { ApolloServer } from "apollo-server-express"
-import express, { Response } from "express"
-import jwt from "express-jwt"
+import express, { Response, Request } from "express"
 import morgan from "morgan"
 import { buildSchema } from "type-graphql"
 import { Container } from "typedi"
 
 import { createDbConnection } from "./db"
 import { authChecker } from "./lib/authChecker"
+import { session } from "./lib/session"
 
-import { cors, PORT, resolverPaths, APP_SECRET } from "./lib/config"
-import { AppRequest } from "./lib/types"
+import { cors, PORT, resolverPaths } from "./lib/config"
 
 async function main() {
   try {
     await createDbConnection()
 
     const app = express()
+      .enable("trust proxy")
       .use(morgan("dev"))
-      .use(
-        jwt({
-          secret: APP_SECRET,
-          credentialsRequired: false,
-        }),
-      )
-      .use((err: any, _: any, __: any, next: any) => {
-        if (err.name === "UnauthorizedError") next()
-      })
+      .use(session)
 
     const schema = await buildSchema({
       authChecker,
@@ -37,10 +29,9 @@ async function main() {
     })
 
     const apolloServer = new ApolloServer({
-      context: ({ req, res }: { req: AppRequest; res: Response }) => ({
+      context: ({ req, res }: { req: Request; res: Response }) => ({
         req,
         res,
-        userId: req.user && req.user.id,
       }),
       introspection: true,
       playground: true,
@@ -48,8 +39,8 @@ async function main() {
     })
 
     apolloServer.applyMiddleware({
-      app,
       cors,
+      app,
     })
 
     app.listen(PORT, () =>

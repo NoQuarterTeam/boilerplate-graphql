@@ -1,13 +1,14 @@
 import React, { FC, Fragment } from "react"
 import { Redirect, Router, RouteComponentProps } from "@reach/router"
-import useAppContext from "../lib/hooks/useAppContext"
+import { useAppState } from "../lib/hooks/useAppContext"
 
 import Home from "../pages/Home"
 import Login from "../pages/Login"
+import ForgotPassword from "../pages/ForgotPassword"
 import Register from "../pages/Register"
 
 const CheckAuth: FC = ({ children }) => {
-  const { user } = useAppContext()
+  const { user } = useAppState()
   return user ? (
     <Fragment>{children}</Fragment>
   ) : (
@@ -15,6 +16,7 @@ const CheckAuth: FC = ({ children }) => {
       <Home path="/" />
       <Login path="/login" />
       <Register path="/register" />
+      <ForgotPassword path="/forgot-password" />
       <NotFound default={true} />
     </Router>
   )

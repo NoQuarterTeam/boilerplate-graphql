@@ -1,22 +1,21 @@
-import React, { Fragment, FC } from "react"
+import React, { memo, Fragment, ReactNode } from "react"
 import styled from "../application/theme"
-import useDebounce from "../lib/hooks/useDebounce"
 
 interface LoadingProps {
   loading: boolean
+  children: ReactNode
 }
 
-const Loading: FC<LoadingProps> = ({ loading, children }) => {
-  const isLoading = useDebounce(loading, 200)
+const Loading = ({ loading, children }: LoadingProps) => {
   return (
     <Fragment>
-      <StyledContainer loading={isLoading} />
-      {!isLoading && children}
+      <StyledContainer loading={loading} />
+      {!loading && children}
     </Fragment>
   )
 }
 
-export default Loading
+export default memo(Loading)
 
 const StyledContainer = styled.div<{ loading: boolean }>`
   position: fixed;
@@ -25,11 +24,10 @@ const StyledContainer = styled.div<{ loading: boolean }>`
   left: 0;
   height: 100vh;
   width: 100vw;
-  transition: opacity 1s, visibility -0.3s linear 1s;
-
-  background-color: ${p => p.theme.colorPage};
-  visibility: ${p => (p.loading ? "visible" : "hidden")};
-  opacity: ${p => (p.loading ? 1 : 0)};
+  transition: opacity 0.4s, visibility -0.3s linear 0.5s;
+  background-color: white;
 
   ${p => p.theme.flexCenter};
+  visibility: ${p => (p.loading ? "visible" : "hidden")};
+  opacity: ${p => (p.loading ? 1 : 0)};
 `

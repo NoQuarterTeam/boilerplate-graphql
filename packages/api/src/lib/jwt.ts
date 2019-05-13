@@ -1,10 +1,15 @@
 import jwt from "jsonwebtoken"
 import { APP_SECRET } from "./config"
 
-export const createToken = (userId: string): Promise<string> => {
+type Payload =
+  | string
+  | {
+      [key: string]: any
+    }
+export const createToken = (payload: Payload): Promise<string> => {
   return new Promise(resolve => {
     try {
-      const token = jwt.sign({ id: userId }, APP_SECRET, {
+      const token = jwt.sign(payload, APP_SECRET, {
         issuer: "@fullstack-boilerplate/api",
         audience: ["@fullstack-boilerplate/app", "@fullstack-boilerplate/web"],
         expiresIn: "4w",
@@ -16,12 +21,12 @@ export const createToken = (userId: string): Promise<string> => {
   })
 }
 
-export function decryptToken(token: string): Promise<any> {
+export function decryptToken<T>(token: string): Promise<T> {
   return new Promise(resolve => {
     try {
       jwt.verify(token, APP_SECRET)
       const payload = jwt.decode(token)
-      resolve(payload)
+      resolve(payload as T)
     } catch (error) {
       // Oops
     }

@@ -33,7 +33,7 @@ const StyledSwitch = styled.button<{ on: boolean }>`
   outline: 0;
   padding: 0 2px;
   transition: 200ms all;
-  background-color: ${p => (p.on ? p.theme.colorPink : p.theme.colorLabel)};
+  background-color: ${p => (p.on ? p.theme.colorPrimary : p.theme.colorLabel)};
 
   &:hover,
   &:focus {

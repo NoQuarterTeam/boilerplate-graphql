@@ -6,6 +6,8 @@ import {
   useRegisterMutation,
   useLogoutMutation,
   MeDocument,
+  useForgotPasswordMutation,
+  useResetPasswordMutation,
 } from "../types"
 
 export function useMe() {
@@ -18,10 +20,9 @@ export function useLogin() {
   return useLoginMutation({
     update: (cache, res) => {
       if (res.data) {
-        localStorage.setItem("token", res.data.login.token)
         cache.writeQuery({
           query: MeDocument,
-          data: { me: res.data.login.user },
+          data: { me: res.data.login },
         })
       }
     },
@@ -29,26 +30,16 @@ export function useLogin() {
 }
 
 export function useUpdateUser() {
-  return useUpdateUserMutation({
-    update: (cache, res) => {
-      if (res.data && res.data.updateUser) {
-        cache.writeQuery({
-          query: MeDocument,
-          data: { me: res.data.updateUser },
-        })
-      }
-    },
-  })
+  return useUpdateUserMutation()
 }
 
 export function useRegister() {
   return useRegisterMutation({
     update: (cache, res) => {
       if (res.data) {
-        localStorage.setItem("token", res.data.register.token)
         cache.writeQuery({
           query: MeDocument,
-          data: { me: res.data.register.user },
+          data: { me: res.data.register },
         })
       }
     },
@@ -60,7 +51,6 @@ export function useLogout() {
   const logout = useLogoutMutation()
 
   const handleLogout = async () => {
-    localStorage.removeItem("token")
     await logout({
       update: cache =>
         cache.writeQuery({ query: MeDocument, data: { me: null } }),
@@ -69,4 +59,12 @@ export function useLogout() {
   }
 
   return handleLogout
+}
+
+export function useForgotPassword() {
+  return useForgotPasswordMutation()
+}
+
+export function useResetPassword() {
+  return useResetPasswordMutation()
 }

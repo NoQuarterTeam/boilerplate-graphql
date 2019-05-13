@@ -5,14 +5,7 @@ import { apiUrl } from "../../lib/config"
 
 const client = new ApolloClient({
   uri: apiUrl,
-  request: async operation => {
-    const token = await localStorage.getItem("token")
-    operation.setContext({
-      headers: {
-        authorization: token ? `Bearer ${token}` : "",
-      },
-    })
-  },
+  credentials: "include",
 })
 
 const ApolloProvider: FC = ({ children }) => {

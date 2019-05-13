@@ -6,11 +6,12 @@ import CheckAuth from "../components/CheckAuth"
 
 import Dashboard from "../pages/Dashboard"
 import NotFound from "../pages/NotFound"
+import Page from "../components/Page"
 
 function Application() {
   return (
     <AppProvider>
-      <Suspense fallback={null}>
+      <Suspense fallback={<Page />}>
         <CheckAuth>
           <Router>
             <Dashboard path="/" />

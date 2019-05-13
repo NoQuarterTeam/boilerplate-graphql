@@ -1,12 +1,13 @@
-import React, { useState, FC } from "react"
-import { RouteComponentProps, Link, navigate } from "@reach/router"
+import React, { memo, useState, FC } from "react"
+import { RouteComponentProps, Link } from "@reach/router"
 import { GraphQLError } from "graphql"
-import styled from "../../application/theme"
+import { useLogin } from "../lib/graphql/user/hooks"
 
-import { useLogin } from "../../lib/graphql/user/hooks"
-import Button from "../../components/Button"
-import Input from "../../components/Input"
-import AuthForm from "../../components/AuthForm"
+import styled from "../application/theme"
+
+import Button from "../components/Button"
+import Input from "../components/Input"
+import AuthForm from "../components/AuthForm"
 
 const Login: FC<RouteComponentProps> = () => {
   const [email, setEmail] = useState<string>("")
@@ -21,12 +22,10 @@ const Login: FC<RouteComponentProps> = () => {
     setLoading(true)
     login({
       variables: { data: { email, password } },
+    }).catch((loginError: GraphQLError) => {
+      setLoading(false)
+      setError(loginError.message.split(":")[1])
     })
-      .then(() => navigate("/"))
-      .catch((loginError: GraphQLError) => {
-        setLoading(false)
-        setError(loginError.message.split(":")[1])
-      })
   }
 
   return (
@@ -55,14 +54,17 @@ const Login: FC<RouteComponentProps> = () => {
       {error && <StyledError>{error}</StyledError>}
       <StyledLinks>
         <Link to="/register">
-          <StyledLink>Sign up</StyledLink>
+          <StyledLink>Register</StyledLink>
+        </Link>
+        <Link to="/forgot-password">
+          <StyledLink>Forgot password?</StyledLink>
         </Link>
       </StyledLinks>
     </AuthForm>
   )
 }
 
-export default Login
+export default memo(Login)
 
 const StyledLinks = styled.div`
   width: 100%;

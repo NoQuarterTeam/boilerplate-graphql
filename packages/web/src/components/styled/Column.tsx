@@ -2,7 +2,7 @@ import React, { FC } from "react"
 import styled from "../../application/theme"
 
 interface ColumnProps {
-  flex: number
+  flex?: number
 }
 
 const Column: FC<ColumnProps> = ({ children, flex = 1 }) => {

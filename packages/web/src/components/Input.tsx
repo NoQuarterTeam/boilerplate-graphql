@@ -13,10 +13,15 @@ function Input(
 ) {
   return (
     <StyledContainer>
-      {label && <StyledLabel>{label}</StyledLabel>}
+      {label && <StyledLabel htmlFor={inputProps.id}>{label}</StyledLabel>}
       <div>
         <StyledPrefix>{prefix}</StyledPrefix>
-        <StyledInput {...inputProps} ref={ref} hasPrefix={!!prefix} />
+        <StyledInput
+          {...inputProps}
+          id={inputProps.id}
+          ref={ref}
+          hasPrefix={!!prefix}
+        />
       </div>
     </StyledContainer>
   )
@@ -47,7 +52,7 @@ const StyledInput = styled.input<{ hasPrefix?: boolean }>`
   padding: ${p => p.theme.paddingM} 0;
   ${p => p.hasPrefix && "padding-left: 16px"};
   ${p => p.type === "date" && "padding-bottom: 7px"};
-  border-bottom: 2px solid ${p => lighten(0.25, p.theme.colorPink)};
+  border-bottom: 2px solid ${p => lighten(0.2, p.theme.colorPrimary)};
   border-top-left-radius: ${p => p.theme.borderRadius};
   border-top-right-radius: ${p => p.theme.borderRadius};
 
@@ -56,7 +61,7 @@ const StyledInput = styled.input<{ hasPrefix?: boolean }>`
   }
 
   &:focus {
-    border-bottom: 2px solid ${p => p.theme.colorPink};
+    border-bottom: 2px solid ${p => p.theme.colorPrimary};
   }
 `
 

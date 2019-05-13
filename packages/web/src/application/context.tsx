@@ -11,11 +11,15 @@ export const StateContext = React.createContext<StateContext>({
 
 export const StateProvider = StateContext.Provider
 
+// Theme
 export interface ThemeContext {
-  toggleTheme?: () => void
-  isDark?: boolean
+  toggleTheme: () => void
+  isDark: boolean
 }
 
-export const ThemeContext = React.createContext<ThemeContext>({})
+export const ThemeContext = React.createContext<ThemeContext>({
+  toggleTheme: () => {},
+  isDark: false,
+})
 
 export const ThemeProvider = ThemeContext.Provider

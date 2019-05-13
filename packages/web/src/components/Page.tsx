@@ -2,7 +2,7 @@ import React, { memo, ReactNode } from "react"
 import styled from "../application/theme"
 
 interface PageProps {
-  children: ReactNode
+  children?: ReactNode
 }
 
 function Page({ children }: PageProps) {
@@ -12,7 +12,7 @@ function Page({ children }: PageProps) {
 const StyledPage = styled.div`
   height: 100vh;
   width: 100vw;
-  background-color: ${p => p.theme.colorPage};
+  background-color: ${p => p.theme.colorBackground};
 
   ${p => p.theme.flexCenter};
 `

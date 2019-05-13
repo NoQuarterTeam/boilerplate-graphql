@@ -1,7 +1,8 @@
 import gql from "graphql-tag"
+import * as ReactApollo from "react-apollo"
 import * as ReactApolloHooks from "react-apollo-hooks"
 
-type Maybe<T> = T | null
+export type Maybe<T> = T | null
 /** All built-in and custom scalars, mapped to their actual values */
 export interface Scalars {
   ID: string
@@ -17,10 +18,12 @@ export interface LoginInput {
 }
 
 export interface Mutation {
-  register: UserAuthResponse
-  login: UserAuthResponse
+  register: User
+  login: User
   updateUser?: Maybe<User>
   logout: Scalars["Boolean"]
+  forgotPassword: Scalars["Boolean"]
+  resetPassword: Scalars["Boolean"]
 }
 
 export interface MutationRegisterArgs {
@@ -35,6 +38,14 @@ export interface MutationUpdateUserArgs {
   data: UpdateInput
 }
 
+export interface MutationForgotPasswordArgs {
+  email: Scalars["String"]
+}
+
+export interface MutationResetPasswordArgs {
+  data: ResetPasswordInput
+}
+
 export interface Query {
   me?: Maybe<User>
 }
@@ -44,6 +55,11 @@ export interface RegisterInput {
   lastName: Scalars["String"]
   email: Scalars["String"]
   password: Scalars["String"]
+}
+
+export interface ResetPasswordInput {
+  password: Scalars["String"]
+  token: Scalars["String"]
 }
 
 export interface UpdateInput {
@@ -58,11 +74,6 @@ export interface User {
   email: Scalars["String"]
   firstName: Scalars["String"]
   lastName: Scalars["String"]
-}
-
-export interface UserAuthResponse {
-  user: User
-  token: Scalars["String"]
 }
 export type UserFragment = { __typename?: "User" } & Pick<
   User,
@@ -80,10 +91,7 @@ export interface LoginMutationVariables {
 }
 
 export type LoginMutation = { __typename?: "Mutation" } & {
-  login: { __typename?: "UserAuthResponse" } & Pick<
-    UserAuthResponse,
-    "token"
-  > & { user: { __typename?: "User" } & UserFragment }
+  login: { __typename?: "User" } & UserFragment
 }
 
 export interface RegisterMutationVariables {
@@ -91,10 +99,7 @@ export interface RegisterMutationVariables {
 }
 
 export type RegisterMutation = { __typename?: "Mutation" } & {
-  register: { __typename?: "UserAuthResponse" } & Pick<
-    UserAuthResponse,
-    "token"
-  > & { user: { __typename?: "User" } & UserFragment }
+  register: { __typename?: "User" } & UserFragment
 }
 
 export interface UpdateUserMutationVariables {
@@ -111,6 +116,25 @@ export type LogoutMutation = { __typename?: "Mutation" } & Pick<
   Mutation,
   "logout"
 >
+
+export interface ForgotPasswordMutationVariables {
+  email: Scalars["String"]
+}
+
+export type ForgotPasswordMutation = { __typename?: "Mutation" } & Pick<
+  Mutation,
+  "forgotPassword"
+>
+
+export interface ResetPasswordMutationVariables {
+  data: ResetPasswordInput
+}
+
+export type ResetPasswordMutation = { __typename?: "Mutation" } & Pick<
+  Mutation,
+  "resetPassword"
+>
+export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
 export const UserFragmentDoc = gql`
   fragment User on User {
     id
@@ -139,14 +163,15 @@ export function useMeQuery(
 export const LoginDocument = gql`
   mutation Login($data: LoginInput!) {
     login(data: $data) {
-      user {
-        ...User
-      }
-      token
+      ...User
     }
   }
   ${UserFragmentDoc}
 `
+export type LoginMutationFn = ReactApollo.MutationFn<
+  LoginMutation,
+  LoginMutationVariables
+>
 
 export function useLoginMutation(
   baseOptions?: ReactApolloHooks.MutationHookOptions<
@@ -162,14 +187,15 @@ export function useLoginMutation(
 export const RegisterDocument = gql`
   mutation Register($data: RegisterInput!) {
     register(data: $data) {
-      user {
-        ...User
-      }
-      token
+      ...User
     }
   }
   ${UserFragmentDoc}
 `
+export type RegisterMutationFn = ReactApollo.MutationFn<
+  RegisterMutation,
+  RegisterMutationVariables
+>
 
 export function useRegisterMutation(
   baseOptions?: ReactApolloHooks.MutationHookOptions<
@@ -190,6 +216,10 @@ export const UpdateUserDocument = gql`
   }
   ${UserFragmentDoc}
 `
+export type UpdateUserMutationFn = ReactApollo.MutationFn<
+  UpdateUserMutation,
+  UpdateUserMutationVariables
+>
 
 export function useUpdateUserMutation(
   baseOptions?: ReactApolloHooks.MutationHookOptions<
@@ -207,6 +237,10 @@ export const LogoutDocument = gql`
     logout
   }
 `
+export type LogoutMutationFn = ReactApollo.MutationFn<
+  LogoutMutation,
+  LogoutMutationVariables
+>
 
 export function useLogoutMutation(
   baseOptions?: ReactApolloHooks.MutationHookOptions<
@@ -218,4 +252,46 @@ export function useLogoutMutation(
     LogoutDocument,
     baseOptions,
   )
+}
+export const ForgotPasswordDocument = gql`
+  mutation ForgotPassword($email: String!) {
+    forgotPassword(email: $email)
+  }
+`
+export type ForgotPasswordMutationFn = ReactApollo.MutationFn<
+  ForgotPasswordMutation,
+  ForgotPasswordMutationVariables
+>
+
+export function useForgotPasswordMutation(
+  baseOptions?: ReactApolloHooks.MutationHookOptions<
+    ForgotPasswordMutation,
+    ForgotPasswordMutationVariables
+  >,
+) {
+  return ReactApolloHooks.useMutation<
+    ForgotPasswordMutation,
+    ForgotPasswordMutationVariables
+  >(ForgotPasswordDocument, baseOptions)
+}
+export const ResetPasswordDocument = gql`
+  mutation ResetPassword($data: ResetPasswordInput!) {
+    resetPassword(data: $data)
+  }
+`
+export type ResetPasswordMutationFn = ReactApollo.MutationFn<
+  ResetPasswordMutation,
+  ResetPasswordMutationVariables
+>
+
+export function useResetPasswordMutation(
+  baseOptions?: ReactApolloHooks.MutationHookOptions<
+    ResetPasswordMutation,
+    ResetPasswordMutationVariables
+  >,
+) {
+  return ReactApolloHooks.useMutation<
+    ResetPasswordMutation,
+    ResetPasswordMutationVariables
+  >(ResetPasswordDocument, baseOptions)
 }
