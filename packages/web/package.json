@@ -46,7 +46,7 @@
     "@types/reach__router": "1.2.4",
     "@types/react": "16.8.17",
     "@types/react-dom": "16.8.4",
-    "@types/styled-components": "4.1.14",
+    "@types/styled-components": "4.1.15",
     "@typescript-eslint/eslint-plugin": "1.9.0",
     "@typescript-eslint/parser": "1.9.0",
     "babel-eslint": "10.0.1",
