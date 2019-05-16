@@ -2964,10 +2964,10 @@ auto-bind@2.0.0:
   resolved "https://registry.yarnpkg.com/auto-bind/-/auto-bind-2.0.0.tgz#9a55a461b521f58daf955169203bed1a07a970a9"
   integrity sha512-rvRBv0/O7iriUMqSzTDhAfyAD1vVnElAEruo5rMSFeYLA0iKDEzLPSJiwMnL86+IPpTlhfOIAzjoKZ9TaySYdA==
 
-aws-sdk@2.453.0:
-  version "2.453.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.453.0.tgz#7f1ada4efc78d255dfd43adc3decd5f01a21ac2c"
-  integrity sha512-UsofQeX8XVElr4+bqw47jOZUGNiwUdFVTNyOdOHcK14RHH2ySsve6JWyvQT8L2rS//XQP1OBIQo20PAl1Zf7ig==
+aws-sdk@2.457.0:
+  version "2.457.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.457.0.tgz#d5330a09e17561aba21ffbe22e7f1614c640b4a5"
+  integrity sha512-ih7R1km37c5rVRmMOx0OrpmICnguIl62gDGBd/SRmT+L+MVv82PvEyHf9d3rX5NRmnZY+r5GuqOl2VtoqVyMtQ==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
