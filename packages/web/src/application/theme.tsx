@@ -18,12 +18,12 @@ const theme: (small: boolean, isDark: boolean) => ThemeInterface = (
   borderRadius: "10px",
   colorBackground: isDark ? "#373c3f" : "#f8f9fd",
   colorLabel: isDark ? "#81878a" : "#b1bbc4",
-  colorPlaceholder: isDark ? "#6f7172" : "#d3d3d3",
   colorPrimary: "#F35680",
   colorSecondary: "#0085ff",
   colorShadow: isDark ? "rgba(0, 0, 0, 0.1)" : "rgba(200, 200, 200, 0.1)",
   colorTertiary: "#afb2cb",
   colorText: isDark ? "#ebecec" : "#1b2d41",
+  colorTile: isDark ? "#2f3135" : "#fff",
   fontBold: 700,
   fontExtraBold: 900,
   fontNormal: 400,
@@ -59,12 +59,12 @@ export interface ThemeInterface {
   borderRadius: string
   colorBackground: string
   colorLabel: string
-  colorPlaceholder: string
   colorPrimary: string
   colorSecondary: string
   colorShadow: string
   colorTertiary: string
   colorText: string
+  colorTile: string
   fontBold: number
   fontExtraBold: number
   fontNormal: number

@@ -82,7 +82,7 @@ const Register: FC<RouteComponentProps> = () => {
       <br />
 
       <Button loading={form.loading} full={true}>
-        Login
+        Register
       </Button>
       {form.error && <StyledError>{form.error}</StyledError>}
       <StyledLinks>

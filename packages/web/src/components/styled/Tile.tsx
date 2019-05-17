@@ -2,7 +2,7 @@ import styled from "../../application/theme"
 
 const Tile = styled.div`
   width: 100%;
-  background-color: white;
+  background-color: ${p => p.theme.colorTile};
   box-shadow: ${p => p.theme.boxShadow};
   border-radius: ${p => p.theme.borderRadius};
 `

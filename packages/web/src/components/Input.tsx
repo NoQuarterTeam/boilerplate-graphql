@@ -1,5 +1,5 @@
 import React, { InputHTMLAttributes, forwardRef, Ref, memo } from "react"
-import styled, { lighten } from "../application/theme"
+import styled, { darken } from "../application/theme"
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string
@@ -15,7 +15,7 @@ function Input(
     <StyledContainer>
       {label && <StyledLabel htmlFor={inputProps.id}>{label}</StyledLabel>}
       <div>
-        <StyledPrefix>{prefix}</StyledPrefix>
+        {prefix && <StyledPrefix>{prefix}</StyledPrefix>}
         <StyledInput
           {...inputProps}
           id={inputProps.id}
@@ -31,7 +31,7 @@ export default memo(forwardRef(Input))
 
 const StyledContainer = styled.div`
   width: 100%;
-  padding: ${p => p.theme.paddingS} 0;
+  margin: ${p => p.theme.paddingS};
 `
 
 const StyledLabel = styled.label`
@@ -46,22 +46,21 @@ const StyledInput = styled.input<{ hasPrefix?: boolean }>`
   background-color: transparent;
   transition: all 200ms;
   appearance: none;
-  border-radius: 0;
+  border-radius: ${p => p.theme.borderRadius};
   color: ${p => p.theme.colorText};
   font-size: ${p => p.theme.textM};
-  padding: ${p => p.theme.paddingM} 0;
+  padding: ${p => p.theme.paddingM};
   ${p => p.hasPrefix && "padding-left: 16px"};
   ${p => p.type === "date" && "padding-bottom: 7px"};
-  border-bottom: 2px solid ${p => lighten(0.2, p.theme.colorPrimary)};
-  border-top-left-radius: ${p => p.theme.borderRadius};
-  border-top-right-radius: ${p => p.theme.borderRadius};
+  border: 1px solid ${p => p.theme.colorBackground};
+  background-color: ${p => p.theme.colorBackground};
 
   &::placeholder {
-    color: ${p => p.theme.colorPlaceholder};
+    color: ${p => p.theme.colorTertiary};
   }
 
   &:focus {
-    border-bottom: 2px solid ${p => p.theme.colorPrimary};
+    border: 1px solid ${p => darken(0.1, p.theme.colorBackground)};
   }
 `
 
