@@ -58,7 +58,7 @@
     "eslint-plugin-jsx-a11y": "6.2.1",
     "eslint-plugin-react": "7.13.0",
     "eslint-plugin-react-hooks": "1.6.0",
-    "jest": "24.7.1",
+    "jest": "24.8.0",
     "jest-dom": "3.2.2",
     "parcel-bundler": "1.12.3",
     "react-testing-library": "7.0.0",
