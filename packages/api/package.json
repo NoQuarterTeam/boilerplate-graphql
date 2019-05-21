@@ -40,7 +40,7 @@
     "dotenv": "8.0.0",
     "express": "4.17.0",
     "express-session": "1.16.1",
-    "ioredis": "4.9.3",
+    "ioredis": "4.9.5",
     "jsonwebtoken": "8.5.1",
     "morgan": "1.9.1",
     "nodemailer": "6.1.1",
