@@ -4,10 +4,11 @@
 
 ## Typescript + React + Graphql
 
-Comes with User sign up and login by default
+Comes with user authentication by default
 
 - [React](https://github.com/facebook/react)
 - [TypeGraphQL](https://github.com/19majkel94/type-graphql)
+- [TypeORM](https://github.com/typeorm/typeorm)
 - Postgres
 - Typescript
 - Eslint
