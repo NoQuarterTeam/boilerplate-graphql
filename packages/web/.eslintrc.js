@@ -1,5 +1,6 @@
 module.exports = {
   extends: ["react-app", "plugin:react/recommended", "../../.eslintrc.js"],
+  plugins: ["react-hooks"],
   rules: {
     "jsx-a11y/anchor-is-valid": "off",
     "no-extend-native": "off",
