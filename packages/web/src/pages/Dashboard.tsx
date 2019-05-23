@@ -1,12 +1,12 @@
 import React, { FC } from "react"
 import { RouteComponentProps } from "@reach/router"
+import Button from "@noquarter/button"
 
 import { useAppState } from "../lib/hooks/useAppContext"
 import { useLogout } from "../lib/graphql/user/hooks"
 
 import styled from "../application/theme"
 import Page from "../components/Page"
-import Button from "../components/Button"
 import ThemeSwitcher from "../components/ThemeSwitcher"
 
 const Dashboard: FC<RouteComponentProps> = () => {
