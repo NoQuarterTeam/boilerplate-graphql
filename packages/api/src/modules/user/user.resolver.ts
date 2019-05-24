@@ -23,7 +23,8 @@ export class UserResolver {
   // ME
   @Authorized()
   @Query(() => User, { nullable: true })
-  async me(@Ctx() { req }: ResolverContext): Promise<User> {
+  async me(@Ctx() { req }: ResolverContext): Promise<User | null> {
+    if (!req.session || !req.session.user) return null
     return await this.userRepository.findById(req.session.user.id)
   }
 
@@ -46,7 +47,7 @@ export class UserResolver {
     @Ctx() { req }: ResolverContext,
   ): Promise<User> {
     const user = await this.userService.login(data)
-    req.session!.user = user // eslint-disable-line
+    if (req.session) req.session.user = user
     return user
   }
 
@@ -57,7 +58,8 @@ export class UserResolver {
     @Arg("data") data: UpdateInput,
     @Ctx()
     { req }: ResolverContext,
-  ): Promise<User> {
+  ): Promise<User | null> {
+    if (!req.session || !req.session.user) return null
     return this.userService.update(req.session.user.id, data)
   }
 

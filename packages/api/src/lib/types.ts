@@ -1,16 +1,6 @@
-import { Response } from "express"
-import { User } from "../modules/user/user.entity"
+import { Response, Request } from "express"
 
 export interface ResolverContext {
-  req: AppRequest
+  req: Request
   res: Response
-}
-
-interface Session {
-  user: User
-  destroy(callback: (err: any) => void): void
-}
-
-export interface AppRequest {
-  session: Session
 }
