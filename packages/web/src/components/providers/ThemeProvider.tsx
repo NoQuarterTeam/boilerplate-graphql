@@ -12,9 +12,7 @@ import { useLocalStorage } from "../../lib/hooks/useLocalStorage"
 const ThemeProvider: FC = ({ children }) => {
   const isSmall = useMedia({ maxWidth: 450 })
   const [isDark, setDarkTheme] = useLocalStorage("darkTheme", false)
-  const toggleTheme = () => {
-    setDarkTheme(!isDark)
-  }
+  const toggleTheme = () => setDarkTheme(!isDark)
   return (
     <ThemeContextProvider value={{ toggleTheme, isDark }}>
       <SCThemeProvider theme={theme(isSmall, isDark)}>

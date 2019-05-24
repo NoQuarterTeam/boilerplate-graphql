@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "../application/theme"
-import { useTheme } from "../lib/hooks/useAppContext"
+import { useTheme } from "../application/context"
+
 import Switch from "./Switch"
 
 function ThemeSwitcher() {

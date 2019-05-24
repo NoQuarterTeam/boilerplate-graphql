@@ -1,8 +1,8 @@
 import React, { FC } from "react"
 import { RouteComponentProps } from "@reach/router"
 import Button from "@noquarter/button"
+import { useAppState } from "../application/context"
 
-import { useAppState } from "../lib/hooks/useAppContext"
 import { useLogout } from "../lib/graphql/user/hooks"
 
 import styled from "../application/theme"

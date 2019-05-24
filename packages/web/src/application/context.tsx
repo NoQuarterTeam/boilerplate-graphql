@@ -1,25 +1,36 @@
-import React from "react"
+import React, { useContext } from "react"
 import { MeQuery } from "../lib/graphql/types"
 
-export interface StateContext {
+interface StateContext {
   user: MeQuery["me"]
 }
 
-export const StateContext = React.createContext<StateContext>({
-  user: null,
-})
+const StateContext = React.createContext<StateContext | undefined>(undefined)
+
+export function useAppState() {
+  const stateContext = useContext(StateContext)
+  if (!stateContext)
+    throw new Error("hook must be called under <StateProvider>")
+  return {
+    user: stateContext.user!, // eslint-disable-line
+  }
+}
 
 export const StateProvider = StateContext.Provider
 
 // Theme
-export interface ThemeContext {
+interface ThemeContext {
   toggleTheme: () => void
   isDark: boolean
 }
 
-export const ThemeContext = React.createContext<ThemeContext>({
-  toggleTheme: () => {},
-  isDark: false,
-})
+const ThemeContext = React.createContext<ThemeContext | undefined>(undefined)
 
 export const ThemeProvider = ThemeContext.Provider
+
+export function useTheme() {
+  const themeContext = useContext(ThemeContext)
+  if (!themeContext)
+    throw new Error("hook must be called under <ThemeProvider>")
+  return themeContext
+}

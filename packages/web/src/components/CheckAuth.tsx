@@ -1,6 +1,7 @@
 import React, { FC, Fragment } from "react"
 import { Redirect, Router, RouteComponentProps } from "@reach/router"
-import { useAppState } from "../lib/hooks/useAppContext"
+
+import { useAppState } from "../application/context"
 
 import Home from "../pages/Home"
 import Login from "../pages/Login"
