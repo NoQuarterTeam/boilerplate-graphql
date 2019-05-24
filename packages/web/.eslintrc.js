@@ -6,6 +6,7 @@ module.exports = {
     "no-extend-native": "off",
     "react/prop-types": "off",
     "react/no-unescaped-entities": "off",
+    "@typescript-eslint/prefer-interface": "off",
   },
   settings: {
     react: {
