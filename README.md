@@ -4,7 +4,7 @@
 
 ## Typescript + React + Graphql
 
-Comes with user authentication by default
+Comes with user authentication included
 
 - [React](https://github.com/facebook/react)
 - [TypeGraphQL](https://github.com/19majkel94/type-graphql)
@@ -15,6 +15,8 @@ Comes with user authentication by default
 - Graphql Code Generator
 - React apollo
 - Apollo Server
+- Express
+- Redis
 - Parcel Bundler
 - Styled Components + Theme
 - Dark mode
@@ -24,10 +26,10 @@ Comes with user authentication by default
 
 ## Get Started
 
-1. ```git clone https://github.com/NoQuarterCo/fullstack-boilerplate.git```
-2. ```yarn install```
-3. ```createdb fullstack-boilerplate``` (must have postgres setup locally)
-4. ```cd packages/api && yarn watch```
-5. ```cd packages/web && yarn start```
+**Must have node, yarn/npm, postgres and redis installed and setup locally**
 
-
+1. `git clone https://github.com/NoQuarterCo/fullstack-boilerplate.git`
+2. `yarn install`
+3. `createdb fullstack-boilerplate` (must have postgres setup locally)
+4. `cd packages/api && yarn watch`
+5. `cd packages/web && yarn start`
