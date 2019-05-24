@@ -20,6 +20,7 @@ export default AuthForm
 
 const StyledAuthContainer = styled(Center)`
   height: 100vh;
+  padding: ${p => p.theme.paddingL};
   background-color: ${p => p.theme.colorBackground};
 `
 const StyledForm = styled.form`
