@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { RouteComponentProps, navigate } from "@reach/router"
-import Button from "@noquarter/button"
+import { Button } from "@noquarter/ui"
 
 import styled from "../application/theme"
 import Page from "../components/Page"

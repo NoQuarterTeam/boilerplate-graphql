@@ -24,15 +24,15 @@
     ]
   },
   "dependencies": {
-    "@noquarter/button": "^1.0.7",
+    "@noquarter/ui": "^1.0.3",
     "@reach/router": "^1.2.1",
     "apollo-boost": "^0.4.0",
     "graphql": "^14.1.1",
     "polished": "^3.0.2",
-    "react": "^16.8.4",
+    "react": "^16.8.6",
     "react-apollo": "^2.5.5",
     "react-apollo-hooks": "^0.4.3",
-    "react-dom": "^16.8.4",
+    "react-dom": "^16.8.6",
     "styled-components": "^4.2.0",
     "styled-media-query": "^2.1.1",
     "use-media": "^1.3.0"

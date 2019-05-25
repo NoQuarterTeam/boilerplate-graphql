@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { RouteComponentProps } from "@reach/router"
-import Button from "@noquarter/button"
+import { Button } from "@noquarter/ui"
 import { useAppState } from "../application/context"
 
 import { useLogout } from "../lib/graphql/user/hooks"
