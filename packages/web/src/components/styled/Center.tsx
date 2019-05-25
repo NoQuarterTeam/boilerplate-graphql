@@ -1,4 +1,4 @@
-import styled from "../../application/theme"
+import { styled } from "@noquarter/ui"
 
 const Center = styled.div`
   ${p => p.theme.flexCenter};

@@ -1,15 +1,14 @@
 import React from "react"
-import styled from "../application/theme"
-import { useTheme } from "../application/context"
+import { Switch, styled } from "@noquarter/ui"
 
-import Switch from "./Switch"
+import { useTheme } from "../application/context"
 
 function ThemeSwitcher() {
   const { toggleTheme, isDark } = useTheme()
   return (
     <StyledSwitcher>
       <StyledLabel>Dark mode</StyledLabel>
-      <Switch on={isDark} handleClick={toggleTheme} />
+      <Switch on={isDark} onChange={toggleTheme} />
     </StyledSwitcher>
   )
 }

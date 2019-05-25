@@ -1,4 +1,4 @@
-import { css } from "../../application/theme"
+import { css } from "@noquarter/ui"
 
 const body = css`
   body,

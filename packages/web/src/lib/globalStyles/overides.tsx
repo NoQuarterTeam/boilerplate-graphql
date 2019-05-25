@@ -1,4 +1,4 @@
-import { css } from "../../application/theme"
+import { css } from "@noquarter/ui"
 
 const overides = css`
   input[type="number"]::-webkit-inner-spin-button,

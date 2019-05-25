@@ -1,8 +1,7 @@
 import React, { FC } from "react"
 import { RouteComponentProps, navigate } from "@reach/router"
-import { Button } from "@noquarter/ui"
+import { Button, styled } from "@noquarter/ui"
 
-import styled from "../application/theme"
 import Page from "../components/Page"
 
 const Home: FC<RouteComponentProps> = () => {

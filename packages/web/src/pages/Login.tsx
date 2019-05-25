@@ -1,10 +1,8 @@
 import React, { memo, FC } from "react"
 import { RouteComponentProps, Link } from "@reach/router"
-import { Button, Input } from "@noquarter/ui"
+import { Button, Input, styled } from "@noquarter/ui"
 import { GraphQLError } from "graphql"
 import { useLogin } from "../lib/graphql/user/hooks"
-
-import styled from "../application/theme"
 
 import AuthForm from "../components/AuthForm"
 import useForm from "../lib/hooks/useForm"

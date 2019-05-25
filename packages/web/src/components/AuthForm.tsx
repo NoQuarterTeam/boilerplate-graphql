@@ -1,6 +1,7 @@
 import React, { FC } from "react"
+import { styled } from "@noquarter/ui"
+
 import Center from "./styled/Center"
-import styled from "../application/theme"
 import Tile from "./styled/Tile"
 
 interface AuthFormProps {

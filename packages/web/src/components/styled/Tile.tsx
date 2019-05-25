@@ -1,4 +1,4 @@
-import styled from "../../application/theme"
+import { styled } from "@noquarter/ui"
 
 const Tile = styled.div`
   width: 100%;

@@ -1,4 +1,4 @@
-import styled from "../../application/theme"
+import { styled } from "@noquarter/ui"
 
 const FlexGrid = styled.div`
   display: flex;

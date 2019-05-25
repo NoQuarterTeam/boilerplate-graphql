@@ -1,11 +1,10 @@
 import React, { FC } from "react"
 import { RouteComponentProps } from "@reach/router"
-import { Button } from "@noquarter/ui"
+import { Button, styled } from "@noquarter/ui"
 import { useAppState } from "../application/context"
 
 import { useLogout } from "../lib/graphql/user/hooks"
 
-import styled from "../application/theme"
 import Page from "../components/Page"
 import ThemeSwitcher from "../components/ThemeSwitcher"
 

@@ -1,16 +1,6 @@
-import * as styledComponents from "styled-components"
-import { ThemedStyledComponentsModule } from "styled-components"
-import { generateMedia } from "styled-media-query"
-import { darken, lighten } from "polished"
+import { ThemeInterface } from "@noquarter/ui"
 
-const media = generateMedia({
-  xl: "1440px",
-  lg: "1170px",
-  md: "768px",
-  sm: "450px",
-})
-
-const theme: (small: boolean, isDark: boolean) => ThemeInterface = (
+export const theme: (small: boolean, isDark: boolean) => ThemeInterface = (
   small,
   isDark,
 ) => ({
@@ -53,53 +43,3 @@ const theme: (small: boolean, isDark: boolean) => ThemeInterface = (
     justify-content: space-around;
   `,
 })
-
-export interface ThemeInterface {
-  boxShadow: string
-  borderRadius: string
-  colorBackground: string
-  colorLabel: string
-  colorPrimary: string
-  colorSecondary: string
-  colorShadow: string
-  colorTertiary: string
-  colorText: string
-  colorTile: string
-  fontBold: number
-  fontExtraBold: number
-  fontNormal: number
-  paddingL: string
-  paddingM: string
-  paddingS: string
-  paddingXL: string
-  paddingXS: string
-  textL: string
-  textM: string
-  textS: string
-  textXL: string
-  textXS: string
-  flexCenter: string
-  flexBetween: string
-  flexAround: string
-  [key: string]: any
-}
-
-const {
-  default: styled,
-  css,
-  createGlobalStyle,
-  keyframes,
-  ThemeProvider,
-} = styledComponents as ThemedStyledComponentsModule<ThemeInterface>
-
-export {
-  theme,
-  css,
-  createGlobalStyle,
-  keyframes,
-  ThemeProvider,
-  media,
-  darken,
-  lighten,
-}
-export default styled
