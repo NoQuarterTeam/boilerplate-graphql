@@ -24,7 +24,7 @@
     ]
   },
   "dependencies": {
-    "@noquarter/ui": "^1.0.3",
+    "@noquarter/ui": "^1.0.7",
     "@reach/router": "^1.2.1",
     "apollo-boost": "^0.4.0",
     "graphql": "^14.1.1",
