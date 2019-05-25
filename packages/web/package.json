@@ -45,7 +45,7 @@
     "@types/reach__router": "1.2.4",
     "@types/react": "16.8.18",
     "@types/react-dom": "16.8.4",
-    "@types/styled-components": "^4.1.15",
+    "@types/styled-components": "4.1.15",
     "eslint-config-react-app": "4.0.1",
     "eslint-plugin-react": "7.13.0",
     "eslint-plugin-react-hooks": "1.6.0",
