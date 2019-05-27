@@ -38,7 +38,7 @@
     "dataloader": "1.4.0",
     "dayjs": "1.8.14",
     "dotenv": "8.0.0",
-    "express": "4.17.0",
+    "express": "4.17.1",
     "express-session": "1.16.1",
     "ioredis": "4.9.5",
     "jsonwebtoken": "8.5.1",
