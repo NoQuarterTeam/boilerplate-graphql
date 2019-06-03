@@ -1692,10 +1692,15 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@noquarter/ui@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@noquarter/ui/-/ui-1.1.0.tgz#3cdb2f94fae0cdfaac483776e2fa617aecd919ff"
-  integrity sha512-0OCWG9cXR3QeE6hMYfd7X3qE/OsL/j/r/pky3iTaBvmiYjCfv50u4ZsiFgPpWlBSIWr0sUKGPMZ8H8H1Q/Kugg==
+"@noquarter/hooks@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@noquarter/hooks/-/hooks-1.0.1.tgz#7d98727d06b431487bdeae8f7f3c970562604a35"
+  integrity sha512-A9Yp+htJ2SFMvPziC3kGclVYp6pwXLmRgy7SiedtD1dpytBZIu8Z3xhrygVCN9wgYBIQlW8nlwJdTlxrxoX0mQ==
+
+"@noquarter/ui@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@noquarter/ui/-/ui-1.1.1.tgz#2e3e713f38df5c630b7824665dcec83ef28d7b1c"
+  integrity sha512-d3Hm5tEjCNco1I/mxodIwARQ5PPVPx7BSMd+5NMGPwepOahcGyammsSjDZFfA4JwwMgCjDt7R3VuCtdymaTjAg==
   dependencies:
     polished "^3.3.2"
     styled-components "^4.2.0"

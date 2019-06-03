@@ -1,11 +1,12 @@
 import React, { memo, FC } from "react"
 import { RouteComponentProps, Link } from "@reach/router"
-import { Button, Input, styled } from "@noquarter/ui"
 import { GraphQLError } from "graphql"
+
+import { Button, Input, styled } from "@noquarter/ui"
+import { useForm } from "@noquarter/hooks"
 import { useRegister } from "../lib/graphql/user/hooks"
 
 import AuthForm from "../components/AuthForm"
-import useForm from "../lib/hooks/useForm"
 
 const Register: FC<RouteComponentProps> = () => {
   const [form, dispatch] = useForm({

@@ -1,11 +1,10 @@
 import React, { FC } from "react"
 import useMedia from "use-media"
+import { useLocalStorage } from "@noquarter/hooks"
 import { ThemeProvider as SCThemeProvider } from "@noquarter/ui"
 
 import { theme } from "../../application/theme"
 import { ThemeProvider as ThemeContextProvider } from "../../application/context"
-
-import { useLocalStorage } from "../../lib/hooks/useLocalStorage"
 
 const ThemeProvider: FC = ({ children }) => {
   const isSmall = useMedia({ maxWidth: 450 })
