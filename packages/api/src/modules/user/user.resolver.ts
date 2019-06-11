@@ -16,7 +16,6 @@ export class UserResolver {
   constructor(
     private readonly userService: UserService,
     private readonly userRepository: UserRepository,
-
     private readonly userMailer: UserMailer,
   ) {}
 
