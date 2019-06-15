@@ -10,6 +10,7 @@ import { RegisterInput, LoginInput, UpdateInput } from "./user.input"
 import { ResetPasswordInput } from "./inputs/resetPassword.input"
 import { cookieName } from "../../lib/config"
 import { UserRepository } from "./user.repository"
+import { CurrentUser } from "../shared/middleware/currentUser"
 
 @Resolver(() => User)
 export class UserResolver {
@@ -22,9 +23,8 @@ export class UserResolver {
   // ME
   @Authorized()
   @Query(() => User, { nullable: true })
-  async me(@Ctx() { req }: ResolverContext): Promise<User | null> {
-    if (!req.session || !req.session.user) return null
-    return await this.userRepository.findById(req.session.user.id)
+  async me(@CurrentUser() currentUser: User): Promise<User> {
+    return currentUser
   }
 
   // REGISTER
@@ -55,19 +55,19 @@ export class UserResolver {
   @Mutation(() => User, { nullable: true })
   async updateUser(
     @Arg("data") data: UpdateInput,
-    @Ctx()
-    { req }: ResolverContext,
+    @CurrentUser() currentUser: User,
+    @Ctx() { req: { session } }: ResolverContext,
   ): Promise<User | null> {
-    if (!req.session || !req.session.user) return null
-    return this.userService.update(req.session.user.id, data)
+    const user = await this.userService.update(currentUser.id, data)
+    if (session) session.user = user
+    return user
   }
 
   // LOGOUT
-  @Mutation(() => Boolean)
+  @Authorized()
+  @Mutation(() => Boolean, { nullable: true })
   async logout(@Ctx() { req, res }: ResolverContext): Promise<boolean> {
-    await new Promise(res => {
-      if (req.session) req.session.destroy(() => res())
-    })
+    await new Promise(ok => req.session && req.session.destroy(() => ok()))
     res.clearCookie(cookieName)
     return true
   }
@@ -84,13 +84,12 @@ export class UserResolver {
 
   // RESET PASSWORD
   @Mutation(() => Boolean)
-  async resetPassword(@Arg("data")
-  {
-    token,
-    password,
-  }: ResetPasswordInput): Promise<boolean> {
-    const payload = await decryptToken<{ id: string }>(token)
-    await this.userService.update(payload.id, { password })
+  async resetPassword(
+    @Arg("data")
+    data: ResetPasswordInput,
+  ): Promise<boolean> {
+    const payload = await decryptToken<{ id: string }>(data.token)
+    await this.userService.update(payload.id, { password: data.password })
     return true
   }
 }

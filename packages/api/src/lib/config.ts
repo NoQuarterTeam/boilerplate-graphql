@@ -15,7 +15,7 @@ export const isProduction = NODE_ENV === "production"
 // WEB URL
 export const webUrl = isProduction
   ? "https://production.com"
-  : "http://localhost:3000"
+  : ["http://localhost:3000", "http://localhost:3001"]
 
 // CORS
 export const cors = {
