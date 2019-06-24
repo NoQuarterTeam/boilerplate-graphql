@@ -1965,12 +1965,7 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@noquarter/hooks@1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@noquarter/hooks/-/hooks-1.0.5.tgz#ea93c0200762e7ab74fe47651ec99cd1b19bf823"
-  integrity sha512-L6H052w10GjfCSBzOCP09f9Hm3EDs5J3P0+k7KmSzuhQvMgmHJox+bjZN/KMEwMzHrbHfIpnuKDbBIm4XKjnfA==
-
-"@noquarter/hooks@^1.0.6":
+"@noquarter/hooks@1.0.6", "@noquarter/hooks@^1.0.6":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@noquarter/hooks/-/hooks-1.0.6.tgz#dcceb5fbe986b86f89a307e5adb61279b63846fb"
   integrity sha512-9ynSl5iAy2pxgAjadLoY2ZHqoPDWln9k9uXQnjRUwKnlKifMbsIOSV8posJysWtBljdwquaypVrotNtggHehQw==
