@@ -1975,7 +1975,7 @@
   resolved "https://registry.yarnpkg.com/@noquarter/hooks/-/hooks-1.0.6.tgz#dcceb5fbe986b86f89a307e5adb61279b63846fb"
   integrity sha512-9ynSl5iAy2pxgAjadLoY2ZHqoPDWln9k9uXQnjRUwKnlKifMbsIOSV8posJysWtBljdwquaypVrotNtggHehQw==
 
-"@noquarter/ui@^1.1.16":
+"@noquarter/ui@1.1.16", "@noquarter/ui@^1.1.16":
   version "1.1.16"
   resolved "https://registry.yarnpkg.com/@noquarter/ui/-/ui-1.1.16.tgz#ab46a9f9a61653c4dd460ed61dd3d2373708095b"
   integrity sha512-sguU5FrZC2bMsiLRlaxDbeGcUVBkZa2MxyzEXJdFPYoiiBq9Zp97ZpCcm03HJQIiT8kgVsBF9FKJl/G9wy7uog==
