@@ -64,11 +64,9 @@
     "@types/nodemailer": "6.2.0",
     "faker": "4.1.0",
     "jest": "24.8.0",
-    "prettier": "1.17.1",
     "ts-jest": "24.0.2",
     "ts-node": "8.2.0",
-    "ts-node-dev": "1.0.0-pre.39",
-    "typescript": "3.5.1"
+    "ts-node-dev": "1.0.0-pre.39"
   },
   "workspaces": {
     "nohoist": [
