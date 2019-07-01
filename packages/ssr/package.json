@@ -12,7 +12,7 @@
     "pre-commit": "lint-staged"
   },
   "dependencies": {
-    "@noquarter/hooks": "1.0.6",
+    "@noquarter/hooks": "1.0.7",
     "@noquarter/ui": "1.1.16",
     "@noquarter/utils": "1.0.5",
     "@zeit/next-typescript": "1.1.1",
