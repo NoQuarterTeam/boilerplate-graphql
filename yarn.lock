@@ -3631,10 +3631,10 @@ autodll-webpack-plugin@0.4.2:
     webpack-merge "^4.1.0"
     webpack-sources "^1.0.1"
 
-aws-sdk@2.468.0:
-  version "2.468.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.468.0.tgz#ce6ce1143eaa1630037afc862abcae62d16be02f"
-  integrity sha512-Bo4j1DLDBWSLgNsfpLNU2RKU2+24JzdFqgyyOKOyJ1p6RgrnDxcwoR2CPWK5olPU2cgXmIicetfOGDsC3LjLtg==
+aws-sdk@2.486.0:
+  version "2.486.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.486.0.tgz#883c07265905437047bae8c425301d5171c16ef8"
+  integrity sha512-Gd5IB3HPG+fBE7sh16ATwEuHLv7DcpRLmG381i+0UwrWmka+0t6Dc7/yHKkLOXQKVBDI5FvRdlsWAsP/LFpOxw==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
