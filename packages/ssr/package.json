@@ -33,10 +33,10 @@
     "@types/cookie": "0.3.3",
     "@types/graphql": "14.2.2",
     "@types/js-cookie": "2.2.2",
-    "@types/next": "8.0.5",
+    "@types/next": "8.0.6",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
-    "@types/styled-components": "4.1.16",
+    "@types/styled-components": "4.1.18",
     "babel-plugin-styled-components": "1.10.6"
   },
   "lint-staged": {
