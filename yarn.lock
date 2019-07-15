@@ -2366,10 +2366,10 @@
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.7.2.tgz#0e670ea254d559241b6eeb3894f8754991e73220"
   integrity sha512-ui3WwXmjTaY73fOQ3/m3nnajU/Orhi6cEu5rzX+BrAAJxa3eITXZ5ch9suPqtM03OWhAHhPSyBGCN4UKoxO20Q==
 
-"@types/ioredis@4.0.12":
-  version "4.0.12"
-  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.0.12.tgz#f0d1a723a7ec2ba3d22aabe5a808e6e4548281ed"
-  integrity sha512-3Nd9RQlU7GfkiaByJQWJ4Q8brQXTpDRgwm7/oFXwDX24hw8awliKwf3cbuIHMyQPvYNEFw1LrmllZ3qTKglDGg==
+"@types/ioredis@4.0.13":
+  version "4.0.13"
+  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.0.13.tgz#2286577c310c13bb9865e182f62b1dbffd6a6564"
+  integrity sha512-3GKQUu5DPIlERomUfhxeLZHbwY3KOANSuCu7iEcFEuCh7pzO5gnLjU4BoBJvy+uQ3TkduU8DLzJIB2iS4d4IAw==
   dependencies:
     "@types/node" "*"
 
@@ -2461,10 +2461,20 @@
     "@types/react" "*"
     "@types/react-loadable" "*"
 
-"@types/next@*", "@types/next@8.0.5":
+"@types/next@*":
   version "8.0.5"
   resolved "https://registry.yarnpkg.com/@types/next/-/next-8.0.5.tgz#667551f587f7905388bd89a6962d93e930f6c314"
   integrity sha512-JZVgbTPuptXEwu2pi928bG0WJARCInJEu9CW6wh0veKGkE2zWNvr9SSb4+7NN2ffNlTPRv9MMS3AE4cTI69HmA==
+  dependencies:
+    "@types/next-server" "*"
+    "@types/node" "*"
+    "@types/node-fetch" "*"
+    "@types/react" "*"
+
+"@types/next@8.0.6":
+  version "8.0.6"
+  resolved "https://registry.yarnpkg.com/@types/next/-/next-8.0.6.tgz#e4ceb01069b82bfe20d98bb3ba2cb65eb5c77bdd"
+  integrity sha512-NEPE5PpZ0atyX08I5B06A94OaygoZkLyv4zsZ9OkxbaCe9tIbIYzNWIievY36zXtOFL44JS/MArUuVdAUK9kCQ==
   dependencies:
     "@types/next-server" "*"
     "@types/node" "*"
@@ -2622,10 +2632,10 @@
   resolved "https://registry.yarnpkg.com/@types/strip-json-comments/-/strip-json-comments-0.0.30.tgz#9aa30c04db212a9a0649d6ae6fd50accc40748a1"
   integrity sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==
 
-"@types/styled-components@4.1.16":
-  version "4.1.16"
-  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-4.1.16.tgz#63fb33d02bc41d70a3af88711849b6df5d2a58e0"
-  integrity sha512-h4VtEopz0AS2oAbZlVSG1gnEhvx0LXcmYn9jD/y8Z/OHimsQygYFeDPbUDH/rJOaQu3T+PgAgRtOTG2IZyUTVg==
+"@types/styled-components@4.1.18":
+  version "4.1.18"
+  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-4.1.18.tgz#348804fe5a399ae0a46550afaf030085815ad931"
+  integrity sha512-VrHkgvjbxQXOw0xWSUckusUUZ4y/jqN1u7kF29ngh0oE6uOrlZHleTgqeUqylQqHQIeQ8MxFb50BRHy8ju5DHg==
   dependencies:
     "@types/react" "*"
     "@types/react-native" "*"
