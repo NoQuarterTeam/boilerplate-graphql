@@ -43,7 +43,7 @@
     "ioredis": "4.11.2",
     "jsonwebtoken": "8.5.1",
     "morgan": "1.9.1",
-    "nodemailer": "6.2.1",
+    "nodemailer": "6.3.0",
     "pg": "7.11.0",
     "reflect-metadata": "0.1.13",
     "type-graphql": "0.17.4",
