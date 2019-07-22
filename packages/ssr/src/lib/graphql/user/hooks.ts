@@ -48,7 +48,7 @@ export function useRegister() {
 
 export function useLogout() {
   const client = useApolloClient()
-  const logout = useLogoutMutation()
+  const [logout] = useLogoutMutation()
 
   const handleLogout = async () => {
     await logout({

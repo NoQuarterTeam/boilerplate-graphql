@@ -17,7 +17,7 @@ const Register: FC<RouteComponentProps> = () => {
   })
   const { email, password, firstName, lastName } = form.values
 
-  const register = useRegister()
+  const [register] = useRegister()
 
   const handleSubmit = (e: any) => {
     e.preventDefault()

@@ -13,7 +13,7 @@ function ForgotPassword() {
   const [loading, setLoading] = useState<boolean>(false)
   const [success, setSuccess] = useState<boolean>(false)
 
-  const forgotPassword = useForgotPassword()
+  const [forgotPassword] = useForgotPassword()
 
   const handleSubmit = (e: any) => {
     e.preventDefault()

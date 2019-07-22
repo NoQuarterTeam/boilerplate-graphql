@@ -11,7 +11,7 @@ const Login: FC<RouteComponentProps> = () => {
   const [form, dispatch] = useForm({ email: "", password: "" })
   const { email, password } = form.values
 
-  const login = useLogin()
+  const [login] = useLogin()
 
   const handleSubmit = (e: any) => {
     e.preventDefault()
