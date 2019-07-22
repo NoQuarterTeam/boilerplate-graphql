@@ -1975,10 +1975,10 @@
   resolved "https://registry.yarnpkg.com/@noquarter/hooks/-/hooks-1.0.6.tgz#dcceb5fbe986b86f89a307e5adb61279b63846fb"
   integrity sha512-9ynSl5iAy2pxgAjadLoY2ZHqoPDWln9k9uXQnjRUwKnlKifMbsIOSV8posJysWtBljdwquaypVrotNtggHehQw==
 
-"@noquarter/ui@1.1.17":
-  version "1.1.17"
-  resolved "https://registry.yarnpkg.com/@noquarter/ui/-/ui-1.1.17.tgz#24df6f18be47f76e42c87ef3924f163ce924176d"
-  integrity sha512-TaPMmGcOsG+GW90Ohq6ZQu5mk+jvKaA6fq4Vws+6t0P7G1rKAAGnmpoGU7F1feLQ8UOv4W8yz4rAUBx3m+/wWA==
+"@noquarter/ui@1.1.20":
+  version "1.1.20"
+  resolved "https://registry.yarnpkg.com/@noquarter/ui/-/ui-1.1.20.tgz#c13b62ab66318466cdffc2522908121682b4f768"
+  integrity sha512-YmLYdQQBOhDkxJLMKoqzNRIY9PpUkkwmtrw49x8Ppb5gyyXHSLw7nbxxD9vJ7RAp4rc5MSX9dJw7anC4w6dVgQ==
   dependencies:
     polished "^3.3.2"
     styled-components "^5.0.0-beta.2"
