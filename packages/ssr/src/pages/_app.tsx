@@ -1,7 +1,6 @@
 import React from "react"
 import NextApp, { Container } from "next/app"
 import { ApolloProvider } from "react-apollo-hooks"
-import { ApolloProvider as RApolloProvider } from "react-apollo"
 
 import withApollo from "../lib/withApollo"
 import GlobalStyles from "../lib/globalStyles"
@@ -15,13 +14,11 @@ class App extends NextApp<any> {
       <Container>
         <GlobalStyles />
         <ThemeProvider>
-          <RApolloProvider client={apollo}>
-            <ApolloProvider client={apollo}>
-              <StateProvider>
-                <Component {...pageProps} />
-              </StateProvider>
-            </ApolloProvider>
-          </RApolloProvider>
+          <ApolloProvider client={apollo}>
+            <StateProvider>
+              <Component {...pageProps} />
+            </StateProvider>
+          </ApolloProvider>
         </ThemeProvider>
       </Container>
     )
