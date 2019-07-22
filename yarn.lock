@@ -2444,10 +2444,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/morgan@1.7.35":
-  version "1.7.35"
-  resolved "https://registry.yarnpkg.com/@types/morgan/-/morgan-1.7.35.tgz#6358f502931cc2583d7a94248c41518baa688494"
-  integrity sha512-E9qFi0seOkdlQnCTPv54brNfGWeFdRaEhI5tSue4pdx/V+xfxvMETsxXhOEcj1cYL+0n/jcTEmj/jD2gjzCwMg==
+"@types/morgan@1.7.36":
+  version "1.7.36"
+  resolved "https://registry.yarnpkg.com/@types/morgan/-/morgan-1.7.36.tgz#75b2bbf85cb33233a812ceff997efa08b2af13a1"
+  integrity sha512-Hc2UfTpnqS3gfGZFPk6aaQf/nwxFHboC/o1O25W29UsENPLv8qd/GJUBqzrBuczgaIS3/vZxZRHTfFF28uFNeQ==
   dependencies:
     "@types/express" "*"
 
