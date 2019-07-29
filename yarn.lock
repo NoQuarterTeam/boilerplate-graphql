@@ -2358,10 +2358,10 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
-"@types/graphql@14.2.2":
-  version "14.2.2"
-  resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-14.2.2.tgz#10f197e6f8559c11b16d630c5e9c10c3c8e61c5e"
-  integrity sha512-okXbUmdZFMO3AYBEJCcpJFPFDkKmIiZZBqWD5TmPtAv+GHfjD2qLZEI0PvZ8IWMU4ozoK2HV2lDxWjw4LbVlnw==
+"@types/graphql@14.2.3":
+  version "14.2.3"
+  resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-14.2.3.tgz#cfc6420a67eb20420786f90112357921974593b9"
+  integrity sha512-UoCovaxbJIxagCvVfalfK7YaNhmxj3BQFRQ2RHQKLiu+9wNXhJnlbspsLHt/YQM99IaLUUFJNzCwzc6W0ypMeQ==
 
 "@types/history@*":
   version "4.7.2"
@@ -2510,10 +2510,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-11.13.11.tgz#65766752cbbe198ff353ea861a23b6484cf33df4"
   integrity sha512-blLeR+KIy26km1OU8yTLUlSyVCOvT6+wPq/77tIA+uSHHa4yYQosn+bbaJqPtWId0wjVClUtD7aXzDbZeKWqig==
 
-"@types/nodemailer@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@types/nodemailer/-/nodemailer-6.2.0.tgz#369d3c6ff51201670f3e5469b00c1d204ec8f894"
-  integrity sha512-WGGEk/BGRLuYF3gyoTwbtKg5tCexZzb5lkTsis2k7GkAzlg4x2299/SC6Ssdj3X/5TzT1BHVc8zcFg/7KSzBLw==
+"@types/nodemailer@6.2.1":
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/@types/nodemailer/-/nodemailer-6.2.1.tgz#8f089bf0ef826f04b9d8dd8750233b04978cb675"
+  integrity sha512-6f46rxxaFwyOW39psPoQiM7jHjL7apDRNT5WPHIuv+TZFv+7sBGSI9J7blIC3/NWff4O9/VSzgoQtO6aPLUdvQ==
   dependencies:
     "@types/node" "*"
 
@@ -2550,10 +2550,10 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react-dom@16.8.4":
-  version "16.8.4"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.8.4.tgz#7fb7ba368857c7aa0f4e4511c4710ca2c5a12a88"
-  integrity sha512-eIRpEW73DCzPIMaNBDP5pPIpK1KXyZwNgfxiVagb5iGiz6da+9A5hslSX6GAQKdO7SayVCS/Fr2kjqprgAvkfA==
+"@types/react-dom@16.8.5":
+  version "16.8.5"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.8.5.tgz#3e3f4d99199391a7fb40aa3a155c8dd99b899cbd"
+  integrity sha512-idCEjROZ2cqh29+trmTmZhsBAUNQuYrF92JHKzZ5+aiFM1mlSk3bb23CK7HhYuOY75Apgap5y2jTyHzaM2AJGA==
   dependencies:
     "@types/react" "*"
 
