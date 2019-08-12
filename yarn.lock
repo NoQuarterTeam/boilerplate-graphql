@@ -1967,10 +1967,10 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@noquarter/hooks@1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@noquarter/hooks/-/hooks-1.1.3.tgz#74efcd5edf633225104506defed8533ec55f220f"
-  integrity sha512-d1mfFWL9Wax3cSJAPfalfmqYqRtG1Wkh+iqdvv9ryt0wO94NzsKcbe9s+v57ERXg3bnwc3TSBgh6moYf3iteQg==
+"@noquarter/hooks@1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@noquarter/hooks/-/hooks-1.1.5.tgz#a0c5df55181370d37b1a88ba4b34669486f25f02"
+  integrity sha512-ElxGgAM1s9LYEAxlL9RrMKPDSqCvmgFFBRN0WiqgoerBydviUCdkDts7vxTcFEhi9Swz1FeyS44GYi+3r2VPjQ==
 
 "@noquarter/hooks@^1.0.6":
   version "1.0.6"
