@@ -13292,10 +13292,10 @@ ts-log@2.1.4:
   resolved "https://registry.yarnpkg.com/ts-log/-/ts-log-2.1.4.tgz#063c5ad1cbab5d49d258d18015963489fb6fb59a"
   integrity sha512-P1EJSoyV+N3bR/IWFeAqXzKPZwHpnLY6j7j58mAvewHRipo+BQM2Y1f9Y9BjEQznKwgqqZm7H8iuixmssU7tYQ==
 
-ts-node-dev@1.0.0-pre.41:
-  version "1.0.0-pre.41"
-  resolved "https://registry.yarnpkg.com/ts-node-dev/-/ts-node-dev-1.0.0-pre.41.tgz#3ae75cea8d2e00bd3c19cf7c75aea9c59a859e30"
-  integrity sha512-fo6dvzpXHgBpMYrgGhhQHsHlgQubcDaemUHkWKy9TRkBT8hz3ooag5DAeIeMdmj1igl4rZ4vyX1WhIjbg+ZFEQ==
+ts-node-dev@1.0.0-pre.42:
+  version "1.0.0-pre.42"
+  resolved "https://registry.yarnpkg.com/ts-node-dev/-/ts-node-dev-1.0.0-pre.42.tgz#1370603eaac171d6ed1d38d3f9879429122088ff"
+  integrity sha512-1jrTjDu6SpBCkRYuBsBIND6hPO3FBP8+XdovchYp7Fi95pIpG0AmpVY+Xk4cmYTogd1sB4g0dQU98U1l0lHPtg==
   dependencies:
     dateformat "~1.0.4-1.2.3"
     dynamic-dedupe "^0.3.0"
