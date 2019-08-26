@@ -46,7 +46,7 @@
     "nodemailer": "6.3.0",
     "pg": "7.12.1",
     "reflect-metadata": "0.1.13",
-    "type-graphql": "0.17.4",
+    "type-graphql": "0.17.5",
     "typedi": "0.8.0",
     "typeorm": "0.2.18"
   },
