@@ -2041,10 +2041,10 @@
     "@nodelib/fs.scandir" "2.1.2"
     fastq "^1.6.0"
 
-"@noquarter/hooks@1.1.7":
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/@noquarter/hooks/-/hooks-1.1.7.tgz#be06e3027277aba69c8739f297ae5f09815ca109"
-  integrity sha512-dXbsYav2NWSLlvJjT6HeadVfFkT2u1lB34Rn60r8HTcGpYjAsNemcm/d7l3KLi+tncUSuz6hZrLVffu5CvA06g==
+"@noquarter/hooks@1.1.9":
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/@noquarter/hooks/-/hooks-1.1.9.tgz#eb2db93d2eb30c5ed7d49b8c80da15a7716580d7"
+  integrity sha512-9eTriQeooeUXOP06zZVGGEJj0wgqvgMXHhWNWgsobniZgtgaFgVhjlVwlSr+Mos0GeosoH6+6r4Pi+HwG/aCHw==
 
 "@noquarter/hooks@^1.0.6":
   version "1.0.6"
