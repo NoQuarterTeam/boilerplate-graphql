@@ -1,6 +1,6 @@
-import React, { FC, Fragment } from "react"
+import React, { FC } from "react"
 import ApolloClient from "apollo-boost"
-import { ApolloProvider as ReactApolloProvider } from "react-apollo-hooks"
+import { ApolloProvider } from "@apollo/react-hooks"
 import { apiUrl } from "../../lib/config"
 
 const client = new ApolloClient({
@@ -8,12 +8,8 @@ const client = new ApolloClient({
   credentials: "include",
 })
 
-const ApolloProvider: FC = ({ children }) => {
-  return (
-    <ReactApolloProvider client={client}>
-      <Fragment>{children}</Fragment>
-    </ReactApolloProvider>
-  )
+const AppApolloProvider: FC = ({ children }) => {
+  return <ApolloProvider client={client}>{children}</ApolloProvider>
 }
 
-export default ApolloProvider
+export default AppApolloProvider

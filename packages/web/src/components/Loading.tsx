@@ -9,7 +9,7 @@ interface LoadingProps {
 const Loading = ({ loading, children }: LoadingProps) => {
   return (
     <Fragment>
-      <StyledContainer loading={loading} />
+      <StyledContainer isLoading={loading} />
       {!loading && children}
     </Fragment>
   )
@@ -17,7 +17,7 @@ const Loading = ({ loading, children }: LoadingProps) => {
 
 export default memo(Loading)
 
-const StyledContainer = styled.div<{ loading: boolean }>`
+const StyledContainer = styled.div<{ isLoading: boolean }>`
   position: fixed;
   z-index: 1000;
   top: 0;
@@ -27,7 +27,7 @@ const StyledContainer = styled.div<{ loading: boolean }>`
   transition: opacity 0.4s, visibility -0.3s linear 0.5s;
   background-color: white;
 
-  ${p => p.theme.flexCenter};
-  visibility: ${p => (p.loading ? "visible" : "hidden")};
-  opacity: ${p => (p.loading ? 1 : 0)};
+  ${p => p.theme.helpers.flex.center};
+  visibility: ${p => (p.isLoading ? "visible" : "hidden")};
+  opacity: ${p => (p.isLoading ? 1 : 0)};
 `

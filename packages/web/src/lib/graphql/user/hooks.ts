@@ -1,4 +1,4 @@
-import { useApolloClient } from "react-apollo-hooks"
+import { useApolloClient } from "@apollo/react-hooks"
 import {
   useLoginMutation,
   useMeQuery,
@@ -11,7 +11,7 @@ import {
 } from "../types"
 
 export function useMe() {
-  const { data, loading } = useMeQuery({ suspend: false })
+  const { data, loading } = useMeQuery()
   const user = (data && data.me) || null
   return { user, userLoading: loading }
 }

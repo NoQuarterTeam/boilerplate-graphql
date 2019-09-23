@@ -12,9 +12,9 @@ function Page({ children }: PageProps) {
 const StyledPage = styled.div`
   height: 100vh;
   width: 100vw;
-  background-color: ${p => p.theme.colorBackground};
+  background-color: ${p => p.theme.colors.background};
 
-  ${p => p.theme.flexCenter};
+  ${p => p.theme.helpers.flex.center};
 `
 
 export default memo(Page)

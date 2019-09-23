@@ -50,7 +50,7 @@ const ForgotPassword: FC<RouteComponentProps> = () => {
           <Input
             label="Email"
             value={email}
-            onChange={e => setEmail(e.target.value)}
+            onChange={setEmail}
             type="email"
             required={true}
             placeholder="jim@gmail.com"
@@ -74,13 +74,13 @@ const ForgotPassword: FC<RouteComponentProps> = () => {
 export default ForgotPassword
 
 const StyledText = styled.p`
-  color: ${p => p.theme.colorText};
+  color: ${p => p.theme.colors.text};
 `
 
 const StyledLinks = styled.div`
   width: 100%;
-  padding: ${p => p.theme.paddingL} 0;
-  ${p => p.theme.flexBetween};
+  padding: ${p => p.theme.space.lg} 0;
+  ${p => p.theme.helpers.flex.between};
 `
 
 const StyledLink = styled.div`
@@ -89,9 +89,9 @@ const StyledLink = styled.div`
   text-decoration: none;
   outline: none;
   cursor: pointer;
-  color: ${p => p.theme.colorText};
-  padding: ${p => p.theme.paddingS};
-  font-size: ${p => p.theme.textM};
+  color: ${p => p.theme.colors.text};
+  padding: ${p => p.theme.space.sm};
+  font-size: ${p => p.theme.font.size.md};
 
   &:hover {
     opacity: 0.8;
@@ -104,7 +104,7 @@ const StyledError = styled.div`
   opacity: 0.4;
   width: 100%;
   text-align: right;
-  color: ${p => p.theme.colorText};
-  padding: ${p => p.theme.paddingM};
-  font-size: ${p => p.theme.textS};
+  color: ${p => p.theme.colors.text};
+  padding: ${p => p.theme.space.md};
+  font-size: ${p => p.theme.font.size.sm};
 `

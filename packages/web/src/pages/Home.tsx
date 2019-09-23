@@ -18,7 +18,7 @@ const Home: FC<RouteComponentProps> = () => {
 export default Home
 
 const StyledHeader = styled.h2`
-  font-size: ${p => p.theme.textL};
-  margin-bottom: ${p => p.theme.paddingL};
-  color: ${p => p.theme.colorText};
+  font-size: ${p => p.theme.font.size.xl};
+  margin-bottom: ${p => p.theme.space.lg};
+  color: ${p => p.theme.colors.text};
 `

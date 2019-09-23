@@ -29,12 +29,12 @@ const Dashboard: FC<RouteComponentProps> = () => {
 export default Dashboard
 
 const StyledHeader = styled.h2`
-  margin: ${p => p.theme.paddingXL} auto;
-  color: ${p => p.theme.colorText};
+  margin: ${p => p.theme.space.xl} auto;
+  color: ${p => p.theme.colors.text};
 `
 
 const StyledSwitchContainer = styled.div`
   position: absolute;
-  bottom: ${p => p.theme.paddingXL};
-  left: ${p => p.theme.paddingXL};
+  bottom: ${p => p.theme.space.xl};
+  left: ${p => p.theme.space.xl};
 `
