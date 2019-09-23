@@ -14,7 +14,7 @@
   "dependencies": {
     "@noquarter/hooks": "1.1.9",
     "@noquarter/ui": "2.0.13",
-    "@noquarter/utils": "1.0.5",
+    "@noquarter/utils": "1.0.6",
     "@zeit/next-typescript": "1.1.1",
     "apollo-boost": "0.4.4",
     "cookie": "0.4.0",

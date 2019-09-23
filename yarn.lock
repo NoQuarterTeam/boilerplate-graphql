@@ -2065,10 +2065,10 @@
     polished "^3.3.2"
     styled-components "^5.0.0-beta.2"
 
-"@noquarter/utils@1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@noquarter/utils/-/utils-1.0.5.tgz#6f91f77e857467809a911edd001603195d57e54f"
-  integrity sha512-Gl5SDM2jpHn6ZeKkWDZZfJOXvt6AUqfkfqEZg8rj+LYzrfDodqZxeANiXQEAx8Z2mnqxUsuFVdlLDZVwoNouSg==
+"@noquarter/utils@1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@noquarter/utils/-/utils-1.0.6.tgz#551ec1faf9e37eb442c63f5a79f66bdd825dddd3"
+  integrity sha512-YF2jI0q1pTwyATdmeh24Nt5kGuas+rYNv+IEUEJgyAexf9ePxIRaH9ak8Wm9X+ZBxFkWMjfPbhRB80F4258E1Q==
 
 "@octokit/endpoint@^5.1.0":
   version "5.1.3"
