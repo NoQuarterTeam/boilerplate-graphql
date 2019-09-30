@@ -30,7 +30,7 @@
     "apollo-boost": "^0.4.0",
     "graphql": "^14.1.1",
     "react": "^16.8.6",
-    "react-apollo": "^2.5.5",
+    "react-apollo": "^3.0.0",
     "react-apollo-hooks": "^0.5.0",
     "react-dom": "^16.8.6",
     "styled-media-query": "^2.1.1",
