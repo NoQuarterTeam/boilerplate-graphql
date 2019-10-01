@@ -32,7 +32,7 @@
   "dependencies": {
     "@sendgrid/mail": "6.4.0",
     "apollo-server-express": "2.9.4",
-    "aws-sdk": "2.521.0",
+    "aws-sdk": "2.539.0",
     "bcryptjs": "2.4.3",
     "connect-redis": "4.0.2",
     "dataloader": "1.4.0",
