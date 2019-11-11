@@ -36,7 +36,7 @@
     "bcryptjs": "2.4.3",
     "connect-redis": "4.0.3",
     "dataloader": "1.4.0",
-    "dayjs": "1.8.16",
+    "dayjs": "1.8.17",
     "dotenv": "8.2.0",
     "express": "4.17.1",
     "express-session": "1.17.0",
