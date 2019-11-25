@@ -54,6 +54,6 @@
     "jest-dom": "3.5.0",
     "parcel-bundler": "1.12.4",
     "react-testing-library": "7.0.1",
-    "ts-jest": "24.1.0"
+    "ts-jest": "24.2.0"
   }
 }
