@@ -34,7 +34,7 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "husky": "3.1.0",
     "lerna": "3.19.0",
-    "lint-staged": "9.4.2",
+    "lint-staged": "9.4.3",
     "prettier": "1.19.1",
     "typescript": "3.7.2"
   }
