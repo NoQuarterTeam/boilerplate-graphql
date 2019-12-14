@@ -2193,9 +2193,9 @@
     styled-components "^5.0.0-beta.2"
 
 "@noquarter/utils@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@noquarter/utils/-/utils-1.0.6.tgz#551ec1faf9e37eb442c63f5a79f66bdd825dddd3"
-  integrity sha512-YF2jI0q1pTwyATdmeh24Nt5kGuas+rYNv+IEUEJgyAexf9ePxIRaH9ak8Wm9X+ZBxFkWMjfPbhRB80F4258E1Q==
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@noquarter/utils/-/utils-1.0.8.tgz#78eacfd7c5830028b8af00d48aa29b156e45a8e6"
+  integrity sha512-gzuV+T71+6U6ozI1pP6JJzuFM0TZVSTd9NTQkSeGGzUMD5Jx5J+KOm4FGG4WPmFrNjTpste3shHQC/TFqPqYHw==
 
 "@octokit/endpoint@^5.1.0":
   version "5.1.3"
