@@ -2185,9 +2185,9 @@
   integrity sha512-cYyYVbRYEJXKJuY5AuX0NkYFGuTnh5zdZaqpnM/OAJy2TnuvBkdg8jcBNhUebdA56u40JwQzbP/HsuJJLowwTA==
 
 "@noquarter/ui@^3.0.0-alpha.1":
-  version "3.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@noquarter/ui/-/ui-3.0.0-alpha.1.tgz#f3b0d48266ffafdf545d16da41b331d7163f8584"
-  integrity sha512-GL340R9UDRJcROgVH+3W4Sz0nxJNre9Od9sRLMw/uBq5mxSrvvhYtCNGyBnD3L9XkT9ULW0dzkQwlqaJgEWaZA==
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@noquarter/ui/-/ui-3.0.1.tgz#e82c9d07c055082ed51a0677f5fe9f6bf21bbd90"
+  integrity sha512-aYM7/xEnKnf/BeNDvYnhl2t5Xi52PIvW3WV3STSgqsIn8oaL5YTFWgXqk95WFkJP/kbbVrbRVH9JWD9DpPhj1w==
   dependencies:
     polished "^3.3.2"
     styled-components "^5.0.0-beta.2"
