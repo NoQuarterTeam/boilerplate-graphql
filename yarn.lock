@@ -2180,9 +2180,9 @@
     fastq "^1.6.0"
 
 "@noquarter/hooks@^1.1.11":
-  version "1.1.11"
-  resolved "https://registry.yarnpkg.com/@noquarter/hooks/-/hooks-1.1.11.tgz#a9e489b4a076b90f9ab9f1c47ab88a373e79dfad"
-  integrity sha512-cYyYVbRYEJXKJuY5AuX0NkYFGuTnh5zdZaqpnM/OAJy2TnuvBkdg8jcBNhUebdA56u40JwQzbP/HsuJJLowwTA==
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/@noquarter/hooks/-/hooks-1.1.13.tgz#bc7d2d92ac8b46bbd22aa468e1a111a25cc6c27f"
+  integrity sha512-F3L8GjXftezzcLpn3dQ+79ZlbYez9SFvnWGhlo/vHPye7iv3fk3SUeMSPTcyDb0S5IU2hOJvrJyWSnD/YnbZsg==
 
 "@noquarter/ui@^3.0.0-alpha.1":
   version "3.0.1"
@@ -8903,12 +8903,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@4.17.15, lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
-
-lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15:
+lodash@4.17.15, lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
