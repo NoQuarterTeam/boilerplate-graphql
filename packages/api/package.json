@@ -60,7 +60,7 @@
     "@types/jest": "24.0.23",
     "@types/jsonwebtoken": "8.3.5",
     "@types/morgan": "1.7.37",
-    "@types/node": "11.13.0",
+    "@types/node": "11.15.3",
     "@types/nodemailer": "6.2.2",
     "faker": "4.1.0",
     "jest": "24.9.0",
