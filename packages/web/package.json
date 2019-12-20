@@ -44,7 +44,7 @@
     "@types/graphql": "14.2.3",
     "@types/node": "11.15.3",
     "@types/reach__router": "1.2.6",
-    "@types/react": "16.9.16",
+    "@types/react": "16.9.17",
     "@types/react-dom": "16.9.4",
     "@types/styled-components": "4.4.1",
     "eslint-config-react-app": "5.1.0",
