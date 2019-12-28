@@ -44,7 +44,7 @@
     "jsonwebtoken": "8.5.1",
     "morgan": "1.9.1",
     "nodemailer": "6.4.2",
-    "pg": "7.16.0",
+    "pg": "7.16.1",
     "reflect-metadata": "0.1.13",
     "type-graphql": "0.17.6",
     "typedi": "0.8.0",
