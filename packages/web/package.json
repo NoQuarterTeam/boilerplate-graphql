@@ -42,7 +42,7 @@
     "@graphql-codegen/typescript-operations": "1.10.0",
     "@graphql-codegen/typescript-react-apollo": "1.10.0",
     "@types/graphql": "14.2.3",
-    "@types/node": "11.15.3",
+    "@types/node": "11.15.4",
     "@types/reach__router": "1.2.6",
     "@types/react": "16.9.17",
     "@types/react-dom": "16.9.4",
