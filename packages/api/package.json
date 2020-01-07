@@ -64,7 +64,7 @@
     "@types/nodemailer": "6.4.0",
     "faker": "4.1.0",
     "jest": "24.9.0",
-    "ts-jest": "24.2.0",
+    "ts-jest": "24.3.0",
     "ts-node": "8.5.4",
     "ts-node-dev": "1.0.0-pre.44"
   },
