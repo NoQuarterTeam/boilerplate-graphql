@@ -37,7 +37,7 @@
     "styled-media-query": "^2.1.1"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "1.11.0",
+    "@graphql-codegen/cli": "1.10.1-alpha-fefaec56.12",
     "@graphql-codegen/typescript": "1.11.0",
     "@graphql-codegen/typescript-operations": "1.11.0",
     "@graphql-codegen/typescript-react-apollo": "1.11.0",
