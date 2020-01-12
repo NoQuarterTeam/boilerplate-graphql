@@ -1,18 +1,38 @@
-import React, { FC } from "react"
+import React from "react"
+import {
+  CSSReset,
+  ThemeProvider as CThemeProvider,
+  theme,
+  DefaultTheme,
+  ColorModeProvider,
+  Box,
+  useColorMode,
+} from "@chakra-ui/core"
+import emotionStyled, { CreateStyled } from "@emotion/styled"
 import { useLocalStorage } from "@noquarter/hooks"
-import { ThemeProvider as SCThemeProvider } from "@noquarter/ui"
 
-import { theme } from "../../lib/theme"
-import { ThemeProvider as ThemeContextProvider } from "../../application/context"
-
-const ThemeProvider: FC = ({ children }) => {
-  const [isDark, setDarkTheme] = useLocalStorage("darkTheme", false)
-  const toggleTheme = () => setDarkTheme(!isDark)
+export const ThemeProvider: React.FC = ({ children }) => {
+  const [colorMode] = useLocalStorage<"dark" | "light">(
+    "fullstack:darkmode",
+    "dark",
+  )
   return (
-    <ThemeContextProvider value={{ toggleTheme, isDark }}>
-      <SCThemeProvider theme={theme(isDark)}>{children}</SCThemeProvider>
-    </ThemeContextProvider>
+    <CThemeProvider theme={theme}>
+      <ColorModeProvider value={colorMode}>
+        <StyledBackground>
+          <CSSReset />
+          {children}
+        </StyledBackground>
+      </ColorModeProvider>
+    </CThemeProvider>
   )
 }
 
-export default ThemeProvider
+const StyledBackground: React.FC = props => {
+  const { colorMode } = useColorMode()
+  return (
+    <Box bg={colorMode === "dark" ? "gray.900" : "white"}>{props.children}</Box>
+  )
+}
+
+export const styled = emotionStyled as CreateStyled<DefaultTheme>

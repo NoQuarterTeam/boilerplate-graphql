@@ -1,26 +1,20 @@
-import React, { Suspense } from "react"
+import React from "react"
 import { Router } from "@reach/router"
 
-import AppProvider from "../components/providers/AppProvider"
-import CheckAuth from "../components/CheckAuth"
+import { AppProvider } from "../components/providers/AppProvider"
+import { CheckAuth } from "../components/CheckAuth"
+import { Dashboard } from "../pages/Dashboard"
 
-import Dashboard from "../pages/Dashboard"
-import NotFound from "../pages/NotFound"
-import Page from "../components/Page"
-
-function Application() {
+export function Application() {
   return (
     <AppProvider>
-      <Suspense fallback={<Page />}>
+      <React.Suspense fallback={null}>
         <CheckAuth>
           <Router>
             <Dashboard path="/" />
-            <NotFound default={true} />
           </Router>
         </CheckAuth>
-      </Suspense>
+      </React.Suspense>
     </AppProvider>
   )
 }
-
-export default Application

@@ -1,40 +1,42 @@
 import React, { FC } from "react"
 import { RouteComponentProps } from "@reach/router"
-import { Button, styled } from "@noquarter/ui"
-import { useAppState } from "../application/context"
+import { Heading, Button, useColorMode, Box } from "@chakra-ui/core"
+import { useLocalStorage } from "@noquarter/hooks"
 
-import { useLogout } from "../lib/graphql/user/hooks"
+import { Page } from "../components/Page"
+import { useMe } from "../components/providers/MeProvider"
+import { useLogout } from "../lib/hooks/useLogout"
 
-import Page from "../components/Page"
-import ThemeSwitcher from "../components/ThemeSwitcher"
-
-const Dashboard: FC<RouteComponentProps> = () => {
-  const { user } = useAppState()
+export const Dashboard: FC<RouteComponentProps> = () => {
+  const me = useMe()
+  const [, setColorMode] = useLocalStorage<"dark" | "light">(
+    "fullstack:darkmode",
+    "dark",
+  )
+  const { colorMode, toggleColorMode } = useColorMode()
+  const toggleColor = () => {
+    setColorMode(colorMode === "light" ? "dark" : "light")
+    toggleColorMode()
+  }
   const logout = useLogout()
   return (
     <Page>
-      <div>
-        <StyledHeader>
-          Hello there, {user.firstName} {user.lastName}
-        </StyledHeader>
+      <Box>
+        <Heading mb={4}>
+          Hello there, {me.firstName} {me.lastName}
+        </Heading>
         <Button onClick={logout}>Logout</Button>
-      </div>
-      <StyledSwitchContainer>
-        <ThemeSwitcher />
-      </StyledSwitchContainer>
+      </Box>
+
+      <Button
+        variant="outline"
+        onClick={toggleColor}
+        pos="absolute"
+        bottom={4}
+        left={4}
+      >
+        Toggle Color Mode
+      </Button>
     </Page>
   )
 }
-
-export default Dashboard
-
-const StyledHeader = styled.h2`
-  margin: ${p => p.theme.space.xl} auto;
-  color: ${p => p.theme.colors.text};
-`
-
-const StyledSwitchContainer = styled.div`
-  position: absolute;
-  bottom: ${p => p.theme.space.xl};
-  left: ${p => p.theme.space.xl};
-`

@@ -1,16 +1,14 @@
-import React, { FC } from "react"
-import ThemeProvider from "./ThemeProvider"
-import ApolloProvider from "./ApolloProvider"
-import StateProvider from "./StateProvider"
+import React from "react"
+import { ThemeProvider } from "./ThemeProvider"
+import { ApolloProvider } from "./ApolloProvider"
+import { MeProvider } from "./MeProvider"
 
-const AppProvider: FC = ({ children }) => {
+export const AppProvider: React.FC = ({ children }) => {
   return (
     <ApolloProvider>
       <ThemeProvider>
-        <StateProvider>{children}</StateProvider>
+        <MeProvider>{children}</MeProvider>
       </ThemeProvider>
     </ApolloProvider>
   )
 }
-
-export default AppProvider

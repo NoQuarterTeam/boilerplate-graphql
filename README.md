@@ -13,13 +13,15 @@ Comes with user authentication included
 - Typescript
 - Eslint
 - Graphql Code Generator
-- React apollo
+- Apollo Client
 - Apollo Server
 - Express
 - Redis
-- Parcel Bundler
-- Styled Components + Theme
+- Customizable Theme
 - Dark mode
+- React hooks
+- Chakra UI
+- React hook form
 - Lerna Monorepo
 
 & many more tasty treats

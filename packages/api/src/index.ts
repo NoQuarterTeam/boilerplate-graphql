@@ -1,37 +1,62 @@
 import "reflect-metadata"
 import "dotenv/config"
 import { ApolloServer } from "apollo-server-express"
-import express, { Response, Request } from "express"
-import morgan from "morgan"
 import { buildSchema } from "type-graphql"
 import { Container } from "typedi"
+import jwt from "express-jwt"
+import { useExpressServer, useContainer } from "routing-controllers"
 
-import { createDbConnection } from "./db"
+import {
+  CORS_OPTIONS,
+  RESOLVER_PATHS,
+  jwtAuth,
+  CONTROLLER_PATHS,
+} from "./lib/config"
+import { ErrorInterceptor } from "./lib/globalMiddleware"
+import { attachLoaders } from "./lib/attachLoaders"
+import { ExpressContext } from "./lib/types"
 import { authChecker } from "./lib/authChecker"
-import { session } from "./lib/session"
+import { Server } from "./lib/server"
+import { createDbConnection } from "./db"
 
-import { cors, PORT, resolverPaths } from "./lib/config"
+class FullstackBoilerplate extends Server {
+  constructor() {
+    super()
+    this.init()
+  }
 
-async function main() {
-  try {
+  async init() {
+    await this.setupDb()
+    await this.setUpAuth()
+    await this.setupApollo()
+    await this.setupControllers()
+  }
+
+  async setupDb() {
     await createDbConnection()
+  }
 
-    const app = express()
-      .enable("trust proxy")
-      .use(morgan("dev"))
-      .use(session)
+  async setUpAuth() {
+    this.app.use(jwt(jwtAuth))
+    this.app.use((err: any, _: any, __: any, next: any) => {
+      if (err.name === "UnauthorizedError") next()
+    })
+  }
 
+  async setupApollo() {
     const schema = await buildSchema({
       authChecker,
       authMode: "null",
       container: Container,
-      resolvers: [__dirname + resolverPaths],
+      resolvers: [__dirname + RESOLVER_PATHS],
+      globalMiddlewares: [ErrorInterceptor],
     })
 
     const apolloServer = new ApolloServer({
-      context: ({ req, res }: { req: Request; res: Response }) => ({
+      context: ({ req, res }: ExpressContext) => ({
         req,
         res,
+        loaders: attachLoaders(),
       }),
       introspection: true,
       playground: true,
@@ -39,16 +64,17 @@ async function main() {
     })
 
     apolloServer.applyMiddleware({
-      cors,
-      app,
+      cors: CORS_OPTIONS,
+      app: this.app,
     })
+  }
 
-    app.listen(PORT, () =>
-      console.log(`Server started at http://localhost:${PORT} 🚀`),
-    )
-  } catch (error) {
-    console.log(error)
+  async setupControllers() {
+    useContainer(Container)
+    useExpressServer(this.app, {
+      controllers: [__dirname + CONTROLLER_PATHS],
+    })
   }
 }
 
-main()
+new FullstackBoilerplate().start()

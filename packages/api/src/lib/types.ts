@@ -1,6 +1,10 @@
-import { Response, Request } from "express"
+import { Request, Response } from "express"
 
-export interface ResolverContext {
-  req: Request
+export interface ExpressRequest extends Request {
+  user?: { id: string; role: string }
+}
+
+export interface ExpressContext {
+  req: ExpressRequest
   res: Response
 }

@@ -1,30 +1,24 @@
-import React, { FC, Fragment } from "react"
-import { Redirect, Router, RouteComponentProps } from "@reach/router"
+import React from "react"
+import { Router, Redirect, RouteComponentProps } from "@reach/router"
 
-import { useAppState } from "../application/context"
+import { useUser } from "./providers/MeProvider"
+import { Login } from "../pages/Login"
+import { Register } from "../pages/Register"
 
-import Home from "../pages/Home"
-import Login from "../pages/Login"
-import ForgotPassword from "../pages/ForgotPassword"
-import Register from "../pages/Register"
+export const CheckAuth: React.FC = ({ children }) => {
+  const user = useUser()
 
-const CheckAuth: FC = ({ children }) => {
-  const { user } = useAppState()
   return user ? (
-    <Fragment>{children}</Fragment>
+    <>{children}</>
   ) : (
     <Router>
-      <Home path="/" />
-      <Login path="/login" />
+      <Login path="/" />
       <Register path="/register" />
-      <ForgotPassword path="/forgot-password" />
-      <NotFound default={true} />
+      <RedirectToLogin default={true} />
     </Router>
   )
 }
 
-export default CheckAuth
-
-const NotFound: FC<RouteComponentProps> = () => {
-  return <Redirect to="/" noThrow={true} />
+const RedirectToLogin: React.FC<RouteComponentProps> = () => {
+  return <Redirect noThrow to="/" />
 }

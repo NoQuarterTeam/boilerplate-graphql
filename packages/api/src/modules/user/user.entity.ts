@@ -1,42 +1,24 @@
-import {
-  Entity,
-  BaseEntity,
-  PrimaryGeneratedColumn,
-  Column,
-  CreateDateColumn,
-  UpdateDateColumn,
-  BeforeInsert,
-} from "typeorm"
-import { ObjectType, Field, ID } from "type-graphql"
+import { Entity, BeforeInsert } from "typeorm"
+import { ObjectType } from "type-graphql"
 import bcrypt from "bcryptjs"
+
+import { BaseEntity } from "../shared/base.entity"
+import { StringField } from "../shared/fields"
 
 @ObjectType()
 @Entity()
-export class User extends BaseEntity {
-  @Field(() => ID)
-  @PrimaryGeneratedColumn("uuid")
-  id: string
-
-  @Field()
-  @Column({ unique: true })
+export class User extends BaseEntity<User> {
+  @StringField({ unique: true })
   email: string
 
-  @Column()
+  @StringField({ graphql: false })
   password: string
 
-  @Field()
-  @Column()
+  @StringField()
   firstName: string
 
-  @Field()
-  @Column()
+  @StringField()
   lastName: string
-
-  @CreateDateColumn()
-  createdAt: string
-
-  @UpdateDateColumn()
-  updatedAt: string
 
   @BeforeInsert()
   async hashPassword() {

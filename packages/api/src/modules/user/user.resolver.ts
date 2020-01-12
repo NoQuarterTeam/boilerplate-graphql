@@ -1,24 +1,32 @@
-import { Resolver, Query, Ctx, Mutation, Arg, Authorized } from "type-graphql"
+import { Resolver, Query, Mutation, Arg, Authorized } from "type-graphql"
+import { Inject } from "typedi"
 
-import { ResolverContext } from "../../lib/types"
-import { createToken, decryptToken } from "../../lib/jwt"
+import {
+  // createToken,
+  decryptToken,
+  createToken,
+} from "../../lib/jwt"
 
 import { User } from "./user.entity"
 import { UserService } from "./user.service"
 import { UserMailer } from "./user.mailer"
-import { RegisterInput, LoginInput, UpdateInput } from "./user.input"
+
+import { UpdateUserInput } from "./inputs/updateUser.input"
 import { ResetPasswordInput } from "./inputs/resetPassword.input"
-import { cookieName } from "../../lib/config"
 import { UserRepository } from "./user.repository"
-import { CurrentUser } from "../shared/middleware/currentUser"
+import { CurrentUser } from "../shared/context/currentUser"
+import { RegisterInput } from "./inputs/register.input"
+import { AuthResponse } from "./responses/auth.response"
+import { LoginInput } from "./inputs/login.input"
 
 @Resolver(() => User)
 export class UserResolver {
-  constructor(
-    private readonly userService: UserService,
-    private readonly userRepository: UserRepository,
-    private readonly userMailer: UserMailer,
-  ) {}
+  @Inject(() => UserService)
+  userService: UserService
+  @Inject(() => UserMailer)
+  userMailer: UserMailer
+  @Inject(() => UserRepository)
+  userRepository: UserRepository
 
   // ME
   @Authorized()
@@ -27,48 +35,37 @@ export class UserResolver {
     return currentUser
   }
 
-  // REGISTER
-  @Mutation(() => User)
-  async register(
-    @Arg("data") data: RegisterInput,
-    @Ctx() { req }: ResolverContext,
+  // UPDATE ME
+  @Authorized()
+  @Mutation(() => User, { nullable: true })
+  async updateMe(
+    @CurrentUser() currentUser: User,
+    @Arg("data") data: UpdateUserInput,
   ): Promise<User> {
-    const user = await this.userService.create(data)
-    if (req.session) req.session.user = user
-    this.userMailer.sendWelcomeEmail(user)
-    return user
+    return this.userService.update(currentUser.id, data)
   }
 
   // LOGIN
-  @Mutation(() => User)
-  async login(
-    @Arg("data") data: LoginInput,
-    @Ctx() { req }: ResolverContext,
-  ): Promise<User> {
+  @Mutation(() => AuthResponse)
+  async login(@Arg("data") data: LoginInput): Promise<AuthResponse> {
     const user = await this.userService.login(data)
-    if (req.session) req.session.user = user
-    return user
+    const token = this.userService.createAuthToken(user)
+    return { user, token }
   }
 
-  // UPDATE USER
-  @Authorized()
-  @Mutation(() => User, { nullable: true })
-  async updateUser(
-    @Arg("data") data: UpdateInput,
-    @CurrentUser() currentUser: User,
-    @Ctx() { req: { session } }: ResolverContext,
-  ): Promise<User | null> {
-    const user = await this.userService.update(currentUser.id, data)
-    if (session) session.user = user
-    return user
+  // REGISTER
+  @Mutation(() => AuthResponse)
+  async register(@Arg("data") data: RegisterInput): Promise<AuthResponse> {
+    const user = await this.userService.create(data)
+    const token = this.userService.createAuthToken(user)
+    this.userMailer.sendWelcomeEmail(user)
+    return { user, token }
   }
 
   // LOGOUT
   @Authorized()
   @Mutation(() => Boolean, { nullable: true })
-  async logout(@Ctx() { req, res }: ResolverContext): Promise<boolean> {
-    await new Promise(ok => req.session && req.session.destroy(() => ok()))
-    res.clearCookie(cookieName)
+  logout(): boolean {
     return true
   }
 
@@ -76,19 +73,17 @@ export class UserResolver {
   @Mutation(() => Boolean)
   async forgotPassword(@Arg("email") email: string): Promise<boolean> {
     const user = await this.userRepository.findByEmail(email)
-    if (!user) throw new Error("user not found")
-    const token = await createToken({ id: user.id })
-    this.userMailer.sendResetPasswordLink(user, token)
+    if (user) {
+      const token = createToken({ id: user.id })
+      this.userMailer.sendResetPasswordLink(user, token)
+    }
     return true
   }
 
   // RESET PASSWORD
   @Mutation(() => Boolean)
-  async resetPassword(
-    @Arg("data")
-    data: ResetPasswordInput,
-  ): Promise<boolean> {
-    const payload = await decryptToken<{ id: string }>(data.token)
+  async resetPassword(@Arg("data") data: ResetPasswordInput): Promise<boolean> {
+    const payload = decryptToken<{ id: string }>(data.token)
     await this.userService.update(payload.id, { password: data.password })
     return true
   }

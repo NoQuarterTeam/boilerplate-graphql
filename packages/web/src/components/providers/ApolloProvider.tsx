@@ -1,15 +1,40 @@
-import React, { FC } from "react"
-import ApolloClient from "apollo-boost"
-import { ApolloProvider } from "@apollo/react-hooks"
+import React from "react"
+import {
+  ApolloClient,
+  HttpLink,
+  InMemoryCache,
+  ApolloProvider as ReactApolloProvider,
+  concat,
+  ApolloLink,
+} from "@apollo/client"
+
 import { apiUrl } from "../../lib/config"
 
-const client = new ApolloClient({
+const httpLink = new HttpLink({
   uri: apiUrl,
-  credentials: "include",
 })
 
-const AppApolloProvider: FC = ({ children }) => {
-  return <ApolloProvider client={client}>{children}</ApolloProvider>
-}
+const authMiddleware = new ApolloLink((operation, forward) => {
+  const token = localStorage.getItem("token")
+  operation.setContext({
+    headers: {
+      authorization: (token && `Bearer ${token}`) || null,
+    },
+  })
 
-export default AppApolloProvider
+  return forward(operation)
+})
+
+const client = new ApolloClient({
+  link: concat(authMiddleware, httpLink),
+  cache: new InMemoryCache(),
+  defaultOptions: {
+    mutate: {
+      errorPolicy: "all",
+    },
+  },
+})
+
+export const ApolloProvider: React.FC = ({ children }) => {
+  return <ReactApolloProvider client={client}>{children}</ReactApolloProvider>
+}

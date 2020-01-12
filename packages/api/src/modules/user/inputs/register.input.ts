@@ -14,7 +14,4 @@ export class RegisterInput implements Partial<User> {
 
   @Field()
   password: string
-
-  @Field({ nullable: true })
-  inviteId?: string
 }

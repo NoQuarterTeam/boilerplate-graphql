@@ -1,20 +1,10 @@
-import React, { memo, ReactNode } from "react"
-import { styled } from "@noquarter/ui"
+import React from "react"
+import { Flex } from "@chakra-ui/core"
 
-interface PageProps {
-  children?: ReactNode
+export const Page: React.FC = ({ children }) => {
+  return (
+    <Flex h="100vh" w="100vw" align="center" justify="center">
+      {children}
+    </Flex>
+  )
 }
-
-function Page({ children }: PageProps) {
-  return <StyledPage>{children}</StyledPage>
-}
-
-const StyledPage = styled.div`
-  height: 100vh;
-  width: 100vw;
-  background-color: ${p => p.theme.colors.background};
-
-  ${p => p.theme.helpers.flex.center};
-`
-
-export default memo(Page)

@@ -4,56 +4,75 @@
   "main": "src/index.ts",
   "license": "MIT",
   "scripts": {
-    "start": "parcel src/index.html --port 3000",
-    "build": "rm -rf dist && NODE_ENV=production parcel build src/index.html",
-    "test": "jest --passWithNoTests",
-    "typecheck": "tsc --noEmit",
+    "start": "BROWSER=none TSC_COMPILE_ON_ERROR=true react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "generate": "graphql-codegen",
+    "typecheck": "tsc --noEmit",
     "lint": "eslint --fix --cache --ext .ts,.tsx src",
     "prettify": "prettier --write './src/**/*.{ts,tsx}'",
     "pre-commit": "lint-staged"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn pre-commit"
+    }
+  },
   "lint-staged": {
-    "*.{js,jsx,json,ts,tsx,html}": [
+    "*.{json,ts,tsx}": [
       "prettier --write",
       "git add"
     ],
-    "*.{ts,tsx}": [
-      "eslint --fix --cache --ext .ts,.tsx src",
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix --cache --ext .jsx,.js,.ts,.tsx src",
       "git add"
     ]
   },
   "dependencies": {
-    "@apollo/react-hooks": "^3.1.1",
-    "@noquarter/hooks": "^1.1.11",
-    "@noquarter/ui": "^3.0.0-alpha.1",
-    "@noquarter/utils": "^1.0.6",
-    "@reach/router": "^1.2.1",
-    "apollo-boost": "^0.4.4",
-    "graphql": "^14.1.1",
-    "react": "^16.9.0",
-    "react-apollo": "^2.5.5",
-    "react-dom": "^16.9.0",
-    "styled-media-query": "^2.1.1"
+    "@apollo/client": "3.0.0-beta.21",
+    "@apollo/react-hooks": "3.1.3",
+    "@chakra-ui/core": "0.5.2",
+    "@emotion/core": "10.0.27",
+    "@emotion/styled": "10.0.27",
+    "@noquarter/hooks": "1.1.13",
+    "@noquarter/utils": "1.0.8",
+    "@reach/router": "1.2.1",
+    "dayjs": "1.8.19",
+    "emotion-theming": "10.0.27",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "react-hook-form": "4.4.8",
+    "react-scripts": "3.3.0",
+    "yup": "0.28.0"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "1.11.2",
+    "@graphql-codegen/cli": "1.11.1",
     "@graphql-codegen/typescript": "1.11.2",
-    "@graphql-codegen/typescript-operations": "1.11.2",
+    "@graphql-codegen/typescript-operations": "1.11.1",
     "@graphql-codegen/typescript-react-apollo": "1.11.2",
     "@types/graphql": "14.2.3",
-    "@types/node": "11.15.4",
+    "@types/jest": "24.0.25",
+    "@types/node": "12.12.24",
     "@types/reach__router": "1.2.6",
     "@types/react": "16.9.17",
     "@types/react-dom": "16.9.4",
-    "@types/styled-components": "4.4.2",
+    "@types/yup": "0.26.27",
     "eslint-config-react-app": "5.1.0",
     "eslint-plugin-react": "7.17.0",
     "eslint-plugin-react-hooks": "2.3.0",
-    "jest": "24.9.0",
-    "jest-dom": "3.5.0",
-    "parcel-bundler": "1.12.4",
-    "react-testing-library": "7.0.1",
-    "ts-jest": "24.3.0"
+    "graphql-tag.macro": "2.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

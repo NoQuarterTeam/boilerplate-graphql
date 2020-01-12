@@ -1,10 +1,10 @@
 import { AuthChecker } from "type-graphql"
-import { ResolverContext } from "../lib/types"
+import { ResolverContext } from "../modules/shared/context/resolver"
 
 export const authChecker: AuthChecker<ResolverContext> = async ({
   context: { req },
 }) => {
-  if (req.session && req.session.user) {
+  if (req?.user?.id) {
     return true
   } else {
     return false

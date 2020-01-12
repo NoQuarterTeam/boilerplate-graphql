@@ -1,31 +1,52 @@
+import { UserInputError } from "apollo-server-express"
+import { Service, Inject } from "typedi"
 import bcrypt from "bcryptjs"
+
 import { User } from "./user.entity"
-import { Service } from "typedi"
+
 import { UserRepository } from "./user.repository"
+import { createAuthToken } from "../../lib/jwt"
 
 @Service()
 export class UserService {
-  constructor(private readonly userRepository: UserRepository) {}
+  @Inject(() => UserRepository)
+  userRepository: UserRepository
 
   async login(data: { email: string; password: string }): Promise<User> {
     const user = await this.userRepository.findByEmail(data.email)
-    if (!user) throw new Error("incorrect email or password")
     const isValidPassword = await bcrypt.compare(data.password, user.password)
-    if (!isValidPassword) throw new Error("incorrect email or password")
+    if (!isValidPassword)
+      throw new UserInputError("Incorrect email or password")
     return user
   }
 
-  async create(data: Partial<User> & { email: string }): Promise<User> {
-    const userExists = await this.userRepository.findByEmail(data.email)
-    if (userExists) throw new Error("user already exists")
+  async create(data: Partial<User>) {
+    await this.checkUserExists({ email: data.email })
     const user = await User.create(data).save()
     return user
   }
 
   async update(userId: string, data: Partial<User>): Promise<User> {
     const user = await this.userRepository.findById(userId)
-    Object.assign(user, data)
-    await user.save()
-    return user
+    if (data.email && user.email !== data.email.toLowerCase().trim()) {
+      await this.checkUserExists({ email: data.email })
+    }
+    return user.update(data)
+  }
+
+  async destroy(userId: string): Promise<boolean> {
+    const user = await this.userRepository.findById(userId)
+    return user.destroy()
+  }
+
+  createAuthToken(user: User): string {
+    return createAuthToken({ id: user.id })
+  }
+
+  async checkUserExists(field: Partial<User>) {
+    const user = await User.find({ where: field })
+    if (user.length > 0) {
+      throw new UserInputError("User with these details already exists")
+    }
   }
 }

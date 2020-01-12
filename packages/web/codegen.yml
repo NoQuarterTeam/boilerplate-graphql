@@ -1,12 +1,17 @@
-schema: http://localhost:5000/graphql
-documents: ./src/lib/graphql/**/*.ts
+schema: http://localhost:5555/graphql
+documents: ./src/**/*.tsx
 overwrite: true
 generates:
-  ./src/lib/graphql/types.tsx:
+  ./src/lib/graphql.tsx:
     config:
       withHooks: true
       withComponent: false
       withHOC: false
+      withMutationFn: false
+      gqlImport: "graphql-tag.macro"
+      reactApolloVersion: 3
+      apolloReactCommonImportFrom: "@apollo/client"
+      apolloReactHooksImportFrom: "@apollo/client"
     plugins:
       - typescript
       - typescript-operations
