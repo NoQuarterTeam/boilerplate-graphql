@@ -72,12 +72,15 @@ export class UserResolver {
   // FORGOT PASSWORD
   @Mutation(() => Boolean)
   async forgotPassword(@Arg("email") email: string): Promise<boolean> {
-    const user = await this.userRepository.findByEmail(email)
-    if (user) {
-      const token = createToken({ id: user.id })
-      this.userMailer.sendResetPasswordLink(user, token)
+    try {
+      const user = await this.userRepository.findByEmail(email)
+      if (user) {
+        const token = createToken({ id: user.id })
+        this.userMailer.sendResetPasswordLink(user, token)
+      }
+    } finally {
+      return true
     }
-    return true
   }
 
   // RESET PASSWORD

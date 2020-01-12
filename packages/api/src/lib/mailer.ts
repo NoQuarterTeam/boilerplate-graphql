@@ -9,8 +9,21 @@ import {
   IS_STAGING,
 } from "./config"
 
+// In production, SendGrid is used, replace with your own templateIds and
+// variables
+//
+// In development nodemailer is used as the email server, you'll need to setup
+// a smtp server on your machine, e.g. mailcatcher / mailhog
+// config in /src/lib/config
+//
+// A request is made to Sendgrid to get the HTML for the provided template,
+// and the variables are injected in and the final html is sent using nodemailer
+// this allows rapid development whilst only having to keep one email template
+// up to date
+
 sendgrid.setApiKey(SENDGRID_API_KEY)
 sendgridClient.setApiKey(SENDGRID_API_KEY)
+const devMail: Transporter = nodemailer.createTransport(DEV_EMAIL_OPTIONS)
 
 interface MailArgs {
   templateId: string
@@ -19,14 +32,9 @@ interface MailArgs {
 }
 
 export class Mailer {
-  private readonly from: string = "Boiler Platf <noreply@boilerplate.co>"
-  private devMail: Transporter
-
-  constructor() {
-    this.devMail = nodemailer.createTransport(DEV_EMAIL_OPTIONS)
-  }
-
+  private readonly from: string = "Boiler Plate <noreply@boilerplate.co>"
   send(args: MailArgs) {
+    if (!SENDGRID_API_KEY) return
     const data = {
       from: this.from,
       to: args.to,
@@ -58,7 +66,7 @@ export class Mailer {
       args.variables,
       version.plain_content,
     )
-    this.devMail.sendMail({
+    devMail.sendMail({
       to: args.to,
       from: this.from,
       subject,

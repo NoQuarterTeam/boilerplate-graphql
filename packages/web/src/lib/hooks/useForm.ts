@@ -9,7 +9,7 @@ import { ExecutionResult } from "@apollo/client"
 import { useToast } from "./useToast"
 import { MutationHandler, mutationHandler } from "../mutationHandler"
 
-export function useForm<T extends {}>(props: UseFormOptions<T>) {
+export function useForm<T extends {}>(props?: UseFormOptions<T>) {
   const toast = useToast()
   const [appError, setAppError] = React.useState<string | null | undefined>()
   const form = useHookForm<T>({

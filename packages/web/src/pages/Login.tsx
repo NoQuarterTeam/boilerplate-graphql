@@ -41,8 +41,7 @@ const LoginSchema = Yup.object().shape<LoginInput>({
 export const Login: React.FC<RouteComponentProps> = () => {
   const client = useApolloClient()
   const [login] = useLoginMutation()
-  const form = useForm({ validationSchema: LoginSchema })
-
+  const form = useForm<LoginInput>({ validationSchema: LoginSchema })
   const onSubmit = async (values: LoginInput) => {
     const res = await login({
       variables: { data: values },

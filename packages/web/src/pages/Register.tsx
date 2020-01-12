@@ -43,7 +43,7 @@ const RegisterSchema = Yup.object().shape<RegisterInput>({
 export const Register: React.FC<RouteComponentProps> = () => {
   const client = useApolloClient()
   const [register] = useRegisterMutation()
-  const form = useForm({ validationSchema: RegisterSchema })
+  const form = useForm<RegisterInput>({ validationSchema: RegisterSchema })
 
   const onSubmit = async (values: RegisterInput) => {
     const res = await register({
