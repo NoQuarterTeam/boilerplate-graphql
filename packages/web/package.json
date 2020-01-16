@@ -59,7 +59,7 @@
     "@types/react-dom": "16.9.4",
     "@types/yup": "0.26.27",
     "eslint-config-react-app": "5.1.0",
-    "eslint-plugin-react": "7.17.0",
+    "eslint-plugin-react": "7.18.0",
     "eslint-plugin-react-hooks": "2.3.0",
     "graphql-tag.macro": "2.0.1"
   },
