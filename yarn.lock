@@ -13848,10 +13848,10 @@ react-focus-lock@^2.2.1:
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
 
-react-hook-form@4.5.3:
-  version "4.5.3"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-4.5.3.tgz#3f9abac7bd78eedf0624d02aa9e1f8487d729e18"
-  integrity sha512-oQB6s3zzXbFwM8xaWEkZJZR+5KD2LwUUYTexQbpdUuFzrfs41Qg0UE3kzfzxG8shvVlzADdkYKLMXqOLWQSS/Q==
+react-hook-form@4.5.4:
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-4.5.4.tgz#04ee19fbdc7c9f76dfe74b26abdaabb680feadaf"
+  integrity sha512-FY5ZuIVebaWRm0Wk1EEgQIQG0L1MW7lXgiSKPmNg9paTNHFufNh4NzOVxHbgomKdp0YQ7USwSgb4JXdm5JwKpg==
 
 react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4:
   version "16.8.6"
