@@ -56,7 +56,7 @@
     "@types/node": "12.12.25",
     "@types/reach__router": "1.2.6",
     "@types/react": "16.9.17",
-    "@types/react-dom": "16.9.4",
+    "@types/react-dom": "16.9.5",
     "@types/yup": "0.26.27",
     "eslint-config-react-app": "5.1.0",
     "eslint-plugin-react": "7.18.0",
