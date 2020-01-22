@@ -48,7 +48,6 @@ export class Mailer {
         this.sendDev(args)
       }
     } catch (err) {
-      // TODO: SENDGRID
       console.log("Error sending mail:", err)
     }
   }
