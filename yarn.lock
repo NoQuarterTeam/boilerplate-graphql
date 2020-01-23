@@ -2,16 +2,16 @@
 # yarn lockfile v1
 
 
-"@apollo/client@3.0.0-beta.24":
-  version "3.0.0-beta.24"
-  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.0.0-beta.24.tgz#6d52caa0309f5376e7bc493a63d3e9c0da5604dc"
-  integrity sha512-jbw+C2WM/qov5m2vLhorB9GeJaEwYfIKQvr1yRRO9TCo3JwrMAt6Dfp2fa57upHyJ5zyNVF2Wt8h0Jlka2refw==
+"@apollo/client@3.0.0-beta.25":
+  version "3.0.0-beta.25"
+  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.0.0-beta.25.tgz#96feeac8f8d8e35f4509af3896f603e80b4215c7"
+  integrity sha512-76ATaEHEH6y4ZzE1sXRfE0yvRQgu1kiexXeYFeNbx5dwk7H5aWlNExIZ32MCGBZ+nz2EtlAajtgDMrfEs+/12w==
   dependencies:
     "@types/zen-observable" "^0.8.0"
     "@wry/equality" "^0.1.9"
     fast-json-stable-stringify "^2.0.0"
     graphql-tag "^2.10.1"
-    optimism "^0.11.3"
+    optimism "^0.11.5"
     symbol-observable "^1.2.0"
     ts-invariant "^0.4.4"
     tslib "^1.10.0"
@@ -12152,10 +12152,10 @@ opn@^5.5.0:
   dependencies:
     is-wsl "^1.1.0"
 
-optimism@^0.11.3:
-  version "0.11.4"
-  resolved "https://registry.yarnpkg.com/optimism/-/optimism-0.11.4.tgz#cc8a9378b5e4f2ce2a2b5e4b109327755e65dc76"
-  integrity sha512-a9dQJt/dvrxhkEGK/l1U+T4zJ9OyIOWGnRrbjxy8+mWHVR3C3phmKlRuh2YKkSVjTf8G1kVFVEqL9+s4E77wsg==
+optimism@^0.11.5:
+  version "0.11.5"
+  resolved "https://registry.yarnpkg.com/optimism/-/optimism-0.11.5.tgz#4c5d45fa0fa1cc9dcf092729b5d6d661b53ff5c9"
+  integrity sha512-twCHmBb64DYzEZ8A3O+TLCuF/RmZPBhXPQYv4agoiALRLlW9SidMzd7lwUP9mL0jOZhzhnBmb8ajqA00ECo/7g==
   dependencies:
     "@wry/context" "^0.5.0"
 
