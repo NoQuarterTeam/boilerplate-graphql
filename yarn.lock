@@ -2975,7 +2975,15 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@sendgrid/client@6.5.0", "@sendgrid/client@^6.5.0":
+"@sendgrid/client@6.5.1":
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/@sendgrid/client/-/client-6.5.1.tgz#2f777519a5355f70538bf29917bfc4306ef043a2"
+  integrity sha512-OooZXSy8wWcUI5ppz7ugddfNdZC66baTHYF1Yz57O64cTjpfhw60+mNmPB0ISKxBchqnHcMiVNZ1SL70eAItlg==
+  dependencies:
+    "@sendgrid/helpers" "^6.5.1"
+    request "^2.88.0"
+
+"@sendgrid/client@^6.5.0":
   version "6.5.0"
   resolved "https://registry.yarnpkg.com/@sendgrid/client/-/client-6.5.0.tgz#d3c254738623fe43be8627e262ba698c5f3b9be7"
   integrity sha512-gbA5GkZI5FWBJXgrtVPLHE2YV16WkjO0P2/jHt+m0CBQnfNV9FjGSXY/0r6ob+Ka9sw6Xj/N7gKtGLtrINCiBg==
@@ -2987,6 +2995,14 @@
   version "6.5.0"
   resolved "https://registry.yarnpkg.com/@sendgrid/helpers/-/helpers-6.5.0.tgz#2143558011f31750fef075967a43052133d2d4ea"
   integrity sha512-W5rgGDA6pz+XA5TTThNy/l0iV35zTFup+Y/u5hCGoFNZZy9oZLsSg0Ooumw/Kdc/wEVHuUyQesEnRyNrX+qyoQ==
+  dependencies:
+    chalk "^2.0.1"
+    deepmerge "^2.1.1"
+
+"@sendgrid/helpers@^6.5.1":
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/@sendgrid/helpers/-/helpers-6.5.1.tgz#adb763570f383061da4627ff86217d3b819a4261"
+  integrity sha512-Bd05zxnKRAKtYCXMjDSlXKmlX/RceWMIHYVwU+auMFUk+C8Mx755hGhBl8IHLz0kYL03dF8cSQA0iXlnoMGIpQ==
   dependencies:
     chalk "^2.0.1"
     deepmerge "^2.1.1"
