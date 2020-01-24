@@ -2975,29 +2975,13 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@sendgrid/client@6.5.1":
+"@sendgrid/client@6.5.1", "@sendgrid/client@^6.5.1":
   version "6.5.1"
   resolved "https://registry.yarnpkg.com/@sendgrid/client/-/client-6.5.1.tgz#2f777519a5355f70538bf29917bfc4306ef043a2"
   integrity sha512-OooZXSy8wWcUI5ppz7ugddfNdZC66baTHYF1Yz57O64cTjpfhw60+mNmPB0ISKxBchqnHcMiVNZ1SL70eAItlg==
   dependencies:
     "@sendgrid/helpers" "^6.5.1"
     request "^2.88.0"
-
-"@sendgrid/client@^6.5.0":
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/@sendgrid/client/-/client-6.5.0.tgz#d3c254738623fe43be8627e262ba698c5f3b9be7"
-  integrity sha512-gbA5GkZI5FWBJXgrtVPLHE2YV16WkjO0P2/jHt+m0CBQnfNV9FjGSXY/0r6ob+Ka9sw6Xj/N7gKtGLtrINCiBg==
-  dependencies:
-    "@sendgrid/helpers" "^6.5.0"
-    request "^2.88.0"
-
-"@sendgrid/helpers@^6.5.0":
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/@sendgrid/helpers/-/helpers-6.5.0.tgz#2143558011f31750fef075967a43052133d2d4ea"
-  integrity sha512-W5rgGDA6pz+XA5TTThNy/l0iV35zTFup+Y/u5hCGoFNZZy9oZLsSg0Ooumw/Kdc/wEVHuUyQesEnRyNrX+qyoQ==
-  dependencies:
-    chalk "^2.0.1"
-    deepmerge "^2.1.1"
 
 "@sendgrid/helpers@^6.5.1":
   version "6.5.1"
@@ -3007,13 +2991,13 @@
     chalk "^2.0.1"
     deepmerge "^2.1.1"
 
-"@sendgrid/mail@6.5.0":
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/@sendgrid/mail/-/mail-6.5.0.tgz#6630b9ed775725dec3b598d9719b4ddd6428c56d"
-  integrity sha512-KH8fh08gAWrEdY0XwOfRpjgf0vCj1vpzEfA2p0QRgMKbPyni6uZQm4oxuJasPdZVNmy2W16F33uG1mDRWLCJKw==
+"@sendgrid/mail@6.5.1":
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/@sendgrid/mail/-/mail-6.5.1.tgz#42e01829769407adc3b3290094bc0ce8c74683de"
+  integrity sha512-OVHOrMykAy6Zt1xeOT//RhH6ThdPr6nhvkdzwXrKzSu3Ctr7OihIeWrWOGIh7CjGBOTiBWoMgFgVC6Twgr/jHw==
   dependencies:
-    "@sendgrid/client" "^6.5.0"
-    "@sendgrid/helpers" "^6.5.0"
+    "@sendgrid/client" "^6.5.1"
+    "@sendgrid/helpers" "^6.5.1"
 
 "@styled-system/background@^5.0.5", "@styled-system/background@^5.1.2":
   version "5.1.2"
