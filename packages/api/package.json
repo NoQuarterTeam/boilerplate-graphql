@@ -60,7 +60,7 @@
     "@types/express": "4.17.2",
     "@types/express-jwt": "0.0.42",
     "@types/faker": "4.1.9",
-    "@types/ioredis": "4.14.5",
+    "@types/ioredis": "4.14.6",
     "@types/jsonwebtoken": "8.3.7",
     "@types/morgan": "1.7.37",
     "@types/node": "11.15.5",
