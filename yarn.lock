@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@apollo/client@3.0.0-beta.31":
-  version "3.0.0-beta.31"
-  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.0.0-beta.31.tgz#385f4a42281709111dbd6c5f557559757bca4ee6"
-  integrity sha512-P0NRmqrANlwn8coFo2fT9AH3IRuIg6H8vy0RU1jZ57HnpzIVkfcYSZ7eXXmKgIoHpe9cx9ftJrF9o0E3kU9+1A==
+"@apollo/client@3.0.0-beta.32":
+  version "3.0.0-beta.32"
+  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.0.0-beta.32.tgz#de6c7b49f855ee36511471bd511bb9319a9da88b"
+  integrity sha512-LmxjFP/QQqqyvCHJEU04d74LbDe3Fmq3CpNzQGBLjCYZ6iCIJsjLHYX03GRngvFnx7Q9KdsfwNZ1QQmw52QiTQ==
   dependencies:
     "@types/zen-observable" "^0.8.0"
     "@wry/equality" "^0.1.9"
