@@ -33,7 +33,7 @@
     "@noquarter/utils": "1.0.8",
     "@sendgrid/client": "6.5.2",
     "@sendgrid/mail": "6.5.2",
-    "apollo-server-express": "2.9.16",
+    "apollo-server-express": "2.10.0",
     "aws-sdk": "2.610.0",
     "bcryptjs": "2.4.3",
     "class-transformer": "0.2.3",
