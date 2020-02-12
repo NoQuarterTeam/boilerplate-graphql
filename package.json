@@ -32,7 +32,7 @@
     "eslint-plugin-flowtype": "4.6.0",
     "eslint-plugin-import": "2.20.1",
     "eslint-plugin-jsx-a11y": "6.2.3",
-    "husky": "4.2.2",
+    "husky": "4.2.3",
     "lerna": "3.20.2",
     "lint-staged": "10.0.7",
     "prettier": "1.19.1",
