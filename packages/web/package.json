@@ -60,7 +60,7 @@
     "@types/yup": "0.26.31",
     "eslint-config-react-app": "5.2.0",
     "eslint-plugin-react": "7.18.3",
-    "eslint-plugin-react-hooks": "2.3.0",
+    "eslint-plugin-react-hooks": "2.4.0",
     "graphql-tag.macro": "2.0.1"
   },
   "browserslist": {
