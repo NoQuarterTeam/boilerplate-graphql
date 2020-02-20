@@ -3612,7 +3612,7 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@sendgrid/client@6.5.3":
+"@sendgrid/client@6.5.3", "@sendgrid/client@^6.5.3":
   version "6.5.3"
   resolved "https://registry.yarnpkg.com/@sendgrid/client/-/client-6.5.3.tgz#9abbfe2038dd54f8a9a4bffa7da5c1579e299118"
   integrity sha512-+K4yTMSNChfwKuuMGpnK1Xz7SnBoh3VDT8sILVwSMJRH3s18mOf5Bv/xbAxawqX4Wz50rlSrpbA5A3FwiSDzJA==
@@ -3620,23 +3620,6 @@
     "@sendgrid/helpers" "^6.5.3"
     "@types/request" "^2.48.4"
     request "^2.88.0"
-
-"@sendgrid/client@^6.5.2":
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/@sendgrid/client/-/client-6.5.2.tgz#38db6182e030fcd2984683157069108065cc5db7"
-  integrity sha512-P3NLYffFoJXaOzKcc2Ag0KGFxyuJliLKx8W3JQbv94ATu2gfmcePWGz8qPR+qbA7zyl2AIocU4y+Kbdl8sUs3g==
-  dependencies:
-    "@sendgrid/helpers" "^6.5.1"
-    "@types/request" "^2.48.4"
-    request "^2.88.0"
-
-"@sendgrid/helpers@^6.5.1":
-  version "6.5.1"
-  resolved "https://registry.yarnpkg.com/@sendgrid/helpers/-/helpers-6.5.1.tgz#adb763570f383061da4627ff86217d3b819a4261"
-  integrity sha512-Bd05zxnKRAKtYCXMjDSlXKmlX/RceWMIHYVwU+auMFUk+C8Mx755hGhBl8IHLz0kYL03dF8cSQA0iXlnoMGIpQ==
-  dependencies:
-    chalk "^2.0.1"
-    deepmerge "^2.1.1"
 
 "@sendgrid/helpers@^6.5.3":
   version "6.5.3"
@@ -3646,13 +3629,13 @@
     chalk "^2.0.1"
     deepmerge "^4.2.2"
 
-"@sendgrid/mail@6.5.2":
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/@sendgrid/mail/-/mail-6.5.2.tgz#7c7d115c4ca761fc61744554c27a4cc6fec5f21c"
-  integrity sha512-JLg1Qo+ghzsk7MWNZabqjA6RxdfSkRTaBNoiI2A4Fryd6IphSdO+zLF+kplXADWnmtZZFNVtyvxUzy0kad8Ytg==
+"@sendgrid/mail@6.5.3":
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/@sendgrid/mail/-/mail-6.5.3.tgz#e8dd9084758f555dfa4de409dd4fccadb8e1b5dc"
+  integrity sha512-ePveau4VFFu8I9ETqgILKZajf577yapepnm3hG2Wj41fokHY6Uqpm3kkYTSWyw4VF+uapJPd9eVDcXWFbafvJw==
   dependencies:
-    "@sendgrid/client" "^6.5.2"
-    "@sendgrid/helpers" "^6.5.1"
+    "@sendgrid/client" "^6.5.3"
+    "@sendgrid/helpers" "^6.5.3"
 
 "@styled-system/background@^5.0.5", "@styled-system/background@^5.1.2":
   version "5.1.2"
@@ -7440,11 +7423,6 @@ deepmerge@4.2.2, deepmerge@^4.2.2:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
   integrity sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
-
-deepmerge@^2.1.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-2.2.1.tgz#5d3ff22a01c00f645405a2fbc17d0778a1801170"
-  integrity sha512-R9hc1Xa/NOBi9WRVUWg19rl1UB7Tt4kuPd+thNJgFZoxXsTz7ncaPaeIm+40oSGuP33DfMb4sZt1QIGiJzC4EA==
 
 default-gateway@^4.2.0:
   version "4.2.0"
