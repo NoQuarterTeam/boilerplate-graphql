@@ -3590,10 +3590,10 @@
   resolved "https://registry.yarnpkg.com/@reach/component-component/-/component-component-0.1.3.tgz#5d156319572dc38995b246f81878bc2577c517e5"
   integrity sha512-a1USH7L3bEfDdPN4iNZGvMEFuBfkdG+QNybeyDv8RloVFgZYRoM+KGXyy2KOfEnTUM8QWDRSROwaL3+ts5Angg==
 
-"@reach/router@1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@reach/router/-/router-1.3.2.tgz#1d9401f2eab6bb814cbfc9a081efc893499b2479"
-  integrity sha512-DBlIGaUMk1XzpGSNzPJhRIWdjo9abLcpfJuru4HsFRjc5xHZzimDeXynv9kwGL1wlyrFP4CRyKWX6ytOsxR/Zg==
+"@reach/router@1.3.3":
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@reach/router/-/router-1.3.3.tgz#58162860dce6c9449d49be86b0561b5ef46d80db"
+  integrity sha512-gOIAiFhWdiVGSVjukKeNKkCRBLmnORoTPyBihI/jLunICPgxdP30DroAvPQuf1eVfQbfGJQDJkwhJXsNPMnVWw==
   dependencies:
     create-react-context "0.3.0"
     invariant "^2.2.3"
