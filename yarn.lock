@@ -16884,10 +16884,10 @@ typedi@0.8.0:
   resolved "https://registry.yarnpkg.com/typedi/-/typedi-0.8.0.tgz#d8e203bd1d41a96e2b0a5c6295147d74b2b2d03e"
   integrity sha512-/c7Bxnm6eh5kXx2I+mTuO+2OvoWni5+rXA3PhXwVWCtJRYmz3hMok5s1AKLzoDvNAZqj/Q/acGstN0ri5aQoOA==
 
-typeorm@0.2.22:
-  version "0.2.22"
-  resolved "https://registry.yarnpkg.com/typeorm/-/typeorm-0.2.22.tgz#e85166e29ee4e4248ed73b2b8c977f364ffba606"
-  integrity sha512-mDEnMtzRwX4zMYbyzM9xDn7jvGs8hfQ2ymOBq36Zxq1RVM642numwlRbr4W8dU7ZYx8CQUE9rmk+sU0baHD9Rw==
+typeorm@0.2.23:
+  version "0.2.23"
+  resolved "https://registry.yarnpkg.com/typeorm/-/typeorm-0.2.23.tgz#a8cd6c5a6bf00b86aa310a7ae2de90eb20030f56"
+  integrity sha512-eZrNskqHAKiTLMgJYniVISlVRzTY93Cxiw7mxbJWHXjf9DCL43ZwydFzC2x8Nx8l150faZzMfJKOobffnccj1w==
   dependencies:
     app-root-path "^3.0.0"
     buffer "^5.1.0"
@@ -16899,6 +16899,7 @@ typeorm@0.2.22:
     js-yaml "^3.13.1"
     mkdirp "^0.5.1"
     reflect-metadata "^0.1.13"
+    sha.js "^2.4.11"
     tslib "^1.9.0"
     xml2js "^0.4.17"
     yargonaut "^1.1.2"
