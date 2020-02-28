@@ -53,7 +53,7 @@
     "type-graphql": "0.18.0-beta.11",
     "typed-rest-client": "1.7.2",
     "typedi": "0.8.0",
-    "typeorm": "0.2.23"
+    "typeorm": "0.2.24"
   },
   "devDependencies": {
     "@types/bcryptjs": "2.4.2",
