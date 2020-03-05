@@ -44,7 +44,7 @@
     "react-dom": "16.13.0",
     "react-hook-form": "4.10.1",
     "react-scripts": "3.4.0",
-    "yup": "0.28.1"
+    "yup": "0.28.2"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "1.12.2",
