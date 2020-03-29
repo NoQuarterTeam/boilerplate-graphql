@@ -4314,10 +4314,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.14.7.tgz#1854f0a9aa8d2cd6818d607b3d091346c6730362"
   integrity sha512-on4MmIDgHXiuJDELPk1NFaKVUxxCFr37tm8E9yN6rAiF5Pzp/9bBfBHkoexqRiY+hk/Z04EJU9kKEb59YqJ82A==
 
-"@types/node@^13.9.1":
-  version "13.9.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.9.2.tgz#ace1880c03594cc3e80206d96847157d8e7fa349"
-  integrity sha512-bnoqK579sAYrQbp73wwglccjJ4sfRdKU7WNEZ5FW4K2U6Kc0/eZ5kvXG0JKsEKFB50zrFmfFt52/cvBbZa7eXg==
+"@types/node@^13.9.5":
+  version "13.9.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.9.5.tgz#59738bf30b31aea1faa2df7f4a5f55613750cf00"
+  integrity sha512-hkzMMD3xu6BrJpGVLeQ3htQQNAcOrJjX7WFmtK8zWQpz2UJf13LCFF2ALA7c9OVdvc2vQJeDdjfR35M0sBCxvw==
 
 "@types/nodemailer@6.4.0":
   version "6.4.0"
@@ -6529,14 +6529,6 @@ class-validator@0.11.1:
     "@types/validator" "10.11.3"
     google-libphonenumber "^3.1.6"
     validator "12.0.0"
-
-class-validator@>=0.9.1:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/class-validator/-/class-validator-0.9.1.tgz#d60e58c5d14abca0a41bce38cf792ad4c46d1531"
-  integrity sha512-3wApflrd3ywVZyx4jaasGoFt8pmo4aGLPPAEKCKCsTRWVGPilahD88q3jQjRQwja50rl9a7rsP5LAxJYwGK8/Q==
-  dependencies:
-    google-libphonenumber "^3.1.6"
-    validator "10.4.0"
 
 classnames@^2.2.5:
   version "2.2.6"
@@ -17196,15 +17188,14 @@ type-fest@^0.8.1:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
 
-type-graphql@0.18.0-beta.14:
-  version "0.18.0-beta.14"
-  resolved "https://registry.yarnpkg.com/type-graphql/-/type-graphql-0.18.0-beta.14.tgz#8774c6606511521b95ebf3fc64eb7f8b2dd6fc25"
-  integrity sha512-nH/6QgTm9LmIHu7LBicgBxQ58L0lWazN9eyOsKugFL5GbkwHMq5FFPxeDIFVDJyYSuyXiIAYqNmKFjsIn95uxw==
+type-graphql@0.18.0-beta.15:
+  version "0.18.0-beta.15"
+  resolved "https://registry.yarnpkg.com/type-graphql/-/type-graphql-0.18.0-beta.15.tgz#bfb52b64522ca8f76a5c0bb2867e43647c4060c5"
+  integrity sha512-ld0xjoct3+Y75huX3M85cj4e4bgIYcCV+WUsZsRWfYM1bz5fkI9twchpPDKSU2r5AQyVQttkkh71QtirtHoLFA==
   dependencies:
     "@types/glob" "^7.1.1"
-    "@types/node" "^13.9.1"
+    "@types/node" "^13.9.5"
     "@types/semver" "^7.1.0"
-    class-validator ">=0.9.1"
     glob "^7.1.6"
     graphql-query-complexity "^0.4.1"
     graphql-subscriptions "^1.1.0"
@@ -17584,11 +17575,6 @@ validate-npm-package-name@^3.0.0:
   integrity sha1-X6kS2B630MdK/BQN5zF/DKffQ34=
   dependencies:
     builtins "^1.0.3"
-
-validator@10.4.0:
-  version "10.4.0"
-  resolved "https://registry.yarnpkg.com/validator/-/validator-10.4.0.tgz#ee99a44afb3bb5ed350a159f056ca72a204cfc3c"
-  integrity sha512-Q/wBy3LB1uOyssgNlXSRmaf22NxjvDNZM2MtIQ4jaEOAB61xsh1TQxsq1CgzUMBV1lDrVMogIh8GjG1DYW0zLg==
 
 validator@12.0.0:
   version "12.0.0"
