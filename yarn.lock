@@ -17042,10 +17042,10 @@ type-fest@^0.8.1:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
 
-type-graphql@0.18.0-beta.15:
-  version "0.18.0-beta.15"
-  resolved "https://registry.yarnpkg.com/type-graphql/-/type-graphql-0.18.0-beta.15.tgz#bfb52b64522ca8f76a5c0bb2867e43647c4060c5"
-  integrity sha512-ld0xjoct3+Y75huX3M85cj4e4bgIYcCV+WUsZsRWfYM1bz5fkI9twchpPDKSU2r5AQyVQttkkh71QtirtHoLFA==
+type-graphql@0.18.0-beta.16:
+  version "0.18.0-beta.16"
+  resolved "https://registry.yarnpkg.com/type-graphql/-/type-graphql-0.18.0-beta.16.tgz#acc12294aca8db4bf6004696f2bdec9e5dfee8f7"
+  integrity sha512-tieNkmY2r74cKpFjzwgsx5FpjklxhCq37BqCB5qc2ky75od4I/JkRpdElyWxfcSerBfNjcwcovTFBrRoYrP65Q==
   dependencies:
     "@types/glob" "^7.1.1"
     "@types/node" "^13.9.5"
