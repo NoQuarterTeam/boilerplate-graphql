@@ -8538,10 +8538,10 @@ expect@^24.9.0:
     jest-message-util "^24.9.0"
     jest-regex-util "^24.9.0"
 
-express-jwt@5.3.2:
-  version "5.3.2"
-  resolved "https://registry.yarnpkg.com/express-jwt/-/express-jwt-5.3.2.tgz#e0b18f52cbc0c21e17d299e750cce07fcca5e0df"
-  integrity sha512-U5fIvTB4bDzwTQ1QTgRiPix40A1Ks0VTFZW3Cqf1htE7TTRsFWI52mM98avHdHpm3ElO+mHglltxD2WfKLXDeg==
+express-jwt@5.3.3:
+  version "5.3.3"
+  resolved "https://registry.yarnpkg.com/express-jwt/-/express-jwt-5.3.3.tgz#e557b4a63dd34c5ddd6ad81452738386314cc243"
+  integrity sha512-UdB8p5O8vGYTKm3SfREnLgVGIGEHcL3lrVyi3ebEX2qhMuagN623ju7ywWis+qYL+CXE7G1qPc2bCPBAg2MxZQ==
   dependencies:
     async "^1.5.0"
     express-unless "^0.3.0"
