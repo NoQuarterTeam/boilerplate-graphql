@@ -6410,10 +6410,10 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-class-validator@0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/class-validator/-/class-validator-0.12.0.tgz#7b5bf09b5fd0f2c9382c0063a7ea24bf405175dc"
-  integrity sha512-qwUXcvy9/yZo2fKAf9VFByv8Nso1la/Rte9YE3oWBJD3VHy+LwjjvgCtZJHXorcnY58MR486vBHDldfqGjy4ow==
+class-validator@0.12.1:
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/class-validator/-/class-validator-0.12.1.tgz#9e89a9b7e8288ac07e0b9f5586cc089369d22790"
+  integrity sha512-vdhhOk3Juyu1EAyvka0K0rZjwGJf0JJqAeoBkLG0oSHp73HYcELwumHRHGhxydJIhg+qO81HkqrZiC39aajetw==
   dependencies:
     "@types/validator" "13.0.0"
     google-libphonenumber "^3.2.8"
