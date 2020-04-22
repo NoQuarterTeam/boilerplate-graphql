@@ -49,7 +49,7 @@
     "nodemailer": "6.4.6",
     "pg": "7.18.2",
     "reflect-metadata": "0.1.13",
-    "routing-controllers": "0.8.0",
+    "routing-controllers": "0.8.1",
     "type-graphql": "0.18.0-beta.17",
     "typed-rest-client": "1.7.3",
     "typedi": "0.8.0",

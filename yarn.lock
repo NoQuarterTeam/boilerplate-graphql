@@ -15504,10 +15504,10 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-routing-controllers@0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/routing-controllers/-/routing-controllers-0.8.0.tgz#91574e1537ab5e9f293615401f62c49dc4dfb315"
-  integrity sha512-okhm3CVF5mYe7ZnzG8aMXRh8tUQXzHHHYFABwRwJbij+Xno2sfhL8Tnwkf3+xEhcPtw1OLGx5gH5QHYFZ212ew==
+routing-controllers@0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/routing-controllers/-/routing-controllers-0.8.1.tgz#d53c35e05d0f0863ee25bd77c3fe41fc09fa39f5"
+  integrity sha512-dOgt0kiriKMH1swenPX73tU3Mxvlb+1N/sFLSgEpwbK314POrQF+dJGOZVoKv2ya5do1k4aUzSV5xi0K3ykdyw==
   dependencies:
     cookie "^0.4.0"
     glob "^7.1.4"
