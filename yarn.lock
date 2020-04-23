@@ -6412,13 +6412,14 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-class-validator@0.12.1:
-  version "0.12.1"
-  resolved "https://registry.yarnpkg.com/class-validator/-/class-validator-0.12.1.tgz#9e89a9b7e8288ac07e0b9f5586cc089369d22790"
-  integrity sha512-vdhhOk3Juyu1EAyvka0K0rZjwGJf0JJqAeoBkLG0oSHp73HYcELwumHRHGhxydJIhg+qO81HkqrZiC39aajetw==
+class-validator@0.12.2:
+  version "0.12.2"
+  resolved "https://registry.yarnpkg.com/class-validator/-/class-validator-0.12.2.tgz#2ceb72f88873e9c714cf5f9c278cbc71f6f6c8ef"
+  integrity sha512-TDzPzp8BmpsbPhQpccB3jMUE/3pK0TyqamrK0kcx+ZeFytMA+O6q87JZZGObHHnoo9GM8vl/JppIyKWeEA/EVw==
   dependencies:
     "@types/validator" "13.0.0"
     google-libphonenumber "^3.2.8"
+    tslib ">=1.9.0"
     validator "13.0.0"
 
 classnames@^2.2.5:
@@ -17005,7 +17006,7 @@ tsconfig@^7.0.0:
     strip-bom "^3.0.0"
     strip-json-comments "^2.0.0"
 
-tslib@1.11.1, tslib@^1.11.1, tslib@~1.11.1:
+tslib@1.11.1, tslib@>=1.9.0, tslib@^1.11.1, tslib@~1.11.1:
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.1.tgz#eb15d128827fbee2841549e171f45ed338ac7e35"
   integrity sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
