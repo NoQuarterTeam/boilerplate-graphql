@@ -34,7 +34,7 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "husky": "4.2.5",
     "lerna": "3.20.2",
-    "lint-staged": "10.1.7",
+    "lint-staged": "10.2.0",
     "prettier": "1.19.1",
     "rimraf": "3.0.2",
     "typescript": "3.8.3"
