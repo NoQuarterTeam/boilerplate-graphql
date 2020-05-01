@@ -43,6 +43,20 @@ export class UserService {
     return createAuthToken({ id: user.id })
   }
 
+  async resetPassword(
+    userId: string,
+    preResetPasswordHash: string,
+    newPassword: string,
+  ): Promise<boolean> {
+    const user = await this.userRepository.findById(userId)
+    // the preResetPasswordHash should match, so that the reset link stops working once password changed
+    if (preResetPasswordHash && user.password !== preResetPasswordHash) {
+      return false
+    }
+    await this.update(userId, { password: newPassword })
+    return true
+  }
+
   async checkUserExists(field: Partial<User>) {
     const user = await User.find({ where: field })
     if (user.length > 0) {

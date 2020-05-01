@@ -5,6 +5,7 @@ import { useUser } from "./providers/MeProvider"
 import { Login } from "../pages/Login"
 import { Register } from "../pages/Register"
 import { ForgotPassword } from "../pages/ForgotPassword"
+import { ResetPassword } from "../pages/ResetPassword"
 
 export const CheckAuth: React.FC = ({ children }) => {
   const user = useUser()
@@ -16,6 +17,7 @@ export const CheckAuth: React.FC = ({ children }) => {
       <Login path="/" />
       <Register path="/register" />
       <ForgotPassword path="/forgot-password" />
+      <ResetPassword path="/reset-password" />
       <RedirectToLogin default={true} />
     </Router>
   )

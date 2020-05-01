@@ -37,7 +37,9 @@ const RegisterSchema = Yup.object().shape<RegisterInput>({
     .required("Required"),
   firstName: Yup.string().required("Required"),
   lastName: Yup.string().required("Required"),
-  password: Yup.string().min(8, "Must be at least 8 characters"),
+  password: Yup.string()
+    .min(8, "Must be at least 8 characters")
+    .max(128, "Must be less than 128 characters"),
 })
 
 export const Register: React.FC<RouteComponentProps> = () => {

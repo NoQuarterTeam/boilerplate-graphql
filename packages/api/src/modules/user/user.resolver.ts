@@ -71,7 +71,13 @@ export class UserResolver {
     try {
       const user = await this.userRepository.findByEmail(email)
       if (user) {
-        const token = createToken({ id: user.id })
+        // create token that expires in 1d
+        // use current password as hash so that when the password is changed,
+        // this token no longer works, and invalidates the link
+        const token = createToken(
+          { id: user.id, preResetPasswordHash: user.password },
+          { expiresIn: "1d" },
+        )
         this.userMailer.sendResetPasswordLink(user, token)
       }
     } finally {
@@ -82,8 +88,14 @@ export class UserResolver {
   // RESET PASSWORD
   @Mutation(() => Boolean)
   async resetPassword(@Arg("data") data: ResetPasswordInput): Promise<boolean> {
-    const payload = decryptToken<{ id: string }>(data.token)
-    await this.userService.update(payload.id, { password: data.password })
+    const payload = decryptToken<{ id: string; preResetPasswordHash: string }>(
+      data.token,
+    )
+    await this.userService.resetPassword(
+      payload.id,
+      payload.preResetPasswordHash,
+      data.password,
+    )
     return true
   }
 }
