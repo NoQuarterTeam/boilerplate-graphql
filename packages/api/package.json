@@ -46,7 +46,7 @@
     "ioredis": "4.17.1",
     "jsonwebtoken": "8.5.1",
     "morgan": "1.10.0",
-    "nodemailer": "6.4.6",
+    "nodemailer": "6.4.7",
     "pg": "7.18.2",
     "reflect-metadata": "0.1.13",
     "routing-controllers": "0.8.1",
