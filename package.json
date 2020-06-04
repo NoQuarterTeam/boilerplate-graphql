@@ -37,7 +37,7 @@
     "lint-staged": "10.2.9",
     "prettier": "1.19.1",
     "rimraf": "3.0.2",
-    "typescript": "3.9.3"
+    "typescript": "3.9.5"
   },
   "resolutions": {
     "**/react": "16.13.1",
