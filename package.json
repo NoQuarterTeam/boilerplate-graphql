@@ -33,7 +33,7 @@
     "eslint-plugin-import": "2.21.1",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "husky": "4.2.5",
-    "lerna": "3.22.0",
+    "lerna": "3.22.1",
     "lint-staged": "10.2.9",
     "prettier": "1.19.1",
     "rimraf": "3.0.2",
