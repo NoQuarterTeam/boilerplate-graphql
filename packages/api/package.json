@@ -67,7 +67,7 @@
     "@types/nodemailer": "6.4.0",
     "faker": "4.1.0",
     "ts-node": "8.10.2",
-    "ts-node-dev": "1.0.0-pre.45"
+    "ts-node-dev": "1.0.0-pre.46"
   },
   "workspaces": {
     "nohoist": [
