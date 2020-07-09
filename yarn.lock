@@ -2,16 +2,18 @@
 # yarn lockfile v1
 
 
-"@apollo/client@3.0.0-rc.10":
-  version "3.0.0-rc.10"
-  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.0.0-rc.10.tgz#5af7efd98166657f0446e4a3185af69ef12709c9"
-  integrity sha512-iE7w3HS3iVLVfENaZBGqlQrUEWQa7ZwhNfXzaYuxMVgnbzT9MCkklq/xWHy8xsuaK3rgHOlTN3AyTF+InV5xpQ==
+"@apollo/client@3.0.0-rc.11":
+  version "3.0.0-rc.11"
+  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.0.0-rc.11.tgz#9ff6d6730c6b9bbb72f906a74a3fda5253a6c6c4"
+  integrity sha512-f6xFS6R3BACAGUlX5MFqWUBvsgMe0bOGMuX6ELwN7PLD35RgH3zqxv6iCLUc8xVATceqw0Nei2RIYb5YUU6Zaw==
   dependencies:
     "@types/zen-observable" "^0.8.0"
     "@wry/equality" "^0.1.9"
     fast-json-stable-stringify "^2.0.0"
-    graphql-tag "^2.10.2"
+    graphql-tag "^2.10.4"
+    hoist-non-react-statics "^3.3.2"
     optimism "^0.12.1"
+    prop-types "^15.7.2"
     symbol-observable "^1.2.0"
     ts-invariant "^0.4.4"
     tslib "^1.10.0"
@@ -9902,7 +9904,7 @@ graphql-tag.macro@2.0.1:
     graphql "^14.0.2"
     graphql-tag "^2.10.0"
 
-graphql-tag@2.10.3, graphql-tag@^2.10.2:
+graphql-tag@2.10.3:
   version "2.10.3"
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.10.3.tgz#ea1baba5eb8fc6339e4c4cf049dabe522b0edf03"
   integrity sha512-4FOv3ZKfA4WdOKJeHdz6B3F/vxBLSgmBcGeAFPf4n1F64ltJUvOOerNj0rsJxONQGdhUMynQIvd6LzB+1J5oKA==
@@ -9911,6 +9913,11 @@ graphql-tag@^2.10.0, graphql-tag@^2.9.2:
   version "2.10.1"
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.10.1.tgz#10aa41f1cd8fae5373eaf11f1f67260a3cad5e02"
   integrity sha512-jApXqWBzNXQ8jYa/HLkZJaVw9jgwNqZkywa2zfFn16Iv1Zb7ELNHkJaXHR7Quvd5SIGsy6Ny7SUKATgnu05uEg==
+
+graphql-tag@^2.10.4:
+  version "2.10.4"
+  resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.10.4.tgz#2f301a98219be8b178a6453bb7e33b79b66d8f83"
+  integrity sha512-O7vG5BT3w6Sotc26ybcvLKNTdfr4GfsIVMD+LdYqXCeJIYPRyp8BIsDOUtxw7S1PYvRw5vH3278J2EDezR6mfA==
 
 graphql-tools@5.0.0:
   version "5.0.0"
@@ -10120,6 +10127,13 @@ hoist-non-react-statics@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.0.tgz#b09178f0122184fb95acf525daaecb4d8f45958b"
   integrity sha512-0XsbTXxgiaCDYDIWFcwkmerZPSwywfUqYmwT4jzewKTQSWoE6FCMoUVOeBJWK3E/CrWbxRG3m5GzY4lnIwGRBA==
+  dependencies:
+    react-is "^16.7.0"
+
+hoist-non-react-statics@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
+  integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
   dependencies:
     react-is "^16.7.0"
 
