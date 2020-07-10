@@ -4253,10 +4253,10 @@
   resolved "https://registry.yarnpkg.com/@types/http-assert/-/http-assert-1.5.0.tgz#56c95c69b51e7168b0d6727005d1fb2a00aaef94"
   integrity sha512-8CBLG8RmxSvoY07FE6M/QpvJ7J5KzeKqF8eWN7Dq6Ks+lBTQae8Roc2G81lUu2Kw5Ju1gymOuvgyUsussbjAaA==
 
-"@types/ioredis@4.17.0":
-  version "4.17.0"
-  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.17.0.tgz#25fea62388f546958d53e31bbb6284b60c793e60"
-  integrity sha512-2wmT+lB9JAHSYlBrmJGeYDQ4cGlIgxmaC3Bv85LJws/G/OkoFoxPezhMqtTp0JMCgsMadIoI9c43QvRz8WKLSw==
+"@types/ioredis@4.17.1":
+  version "4.17.1"
+  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.17.1.tgz#b361bd27f5a37bbbc5c6d328e4f00d7fe27a0468"
+  integrity sha512-4EhReajjJbIIZxbSoVT7sdRtqlZlt/x1HWmEiBmAI59yG/ACRu1hQqQmkYvDCepsOJwYCUeSHPMiNpHrP1jg2Q==
   dependencies:
     "@types/node" "*"
 
