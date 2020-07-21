@@ -2366,13 +2366,13 @@
     unique-filename "^1.1.1"
     which "^1.3.1"
 
-"@graphql-codegen/cli@1.17.1":
-  version "1.17.1"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-1.17.1.tgz#9dc955e1a49b6002820c548b60e53af78f961e10"
-  integrity sha512-lspDwk96jUBdxbIQP4yaj3/YDMXE++KdxnFUo9QbcQCXqTlW/JOQdIHjrUEQYtiA97Xvl0GUCxM7qf6XK+8DfA==
+"@graphql-codegen/cli@1.17.2":
+  version "1.17.2"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-1.17.2.tgz#4aa8d3d8ce11bdbca85afa577373aa22eb4e071e"
+  integrity sha512-mzy7mUXl/1EXnR10sGPtRmfyj9U5biSaFShEbkQ2H5bs0esXoG2y1PSvoLsZdJ4svOr2s+f9uHEzv1cuL/8S7Q==
   dependencies:
-    "@graphql-codegen/core" "1.17.1"
-    "@graphql-codegen/plugin-helpers" "1.17.1"
+    "@graphql-codegen/core" "1.17.2"
+    "@graphql-codegen/plugin-helpers" "1.17.2"
     "@graphql-tools/apollo-engine-loader" "^6.0.0"
     "@graphql-tools/code-file-loader" "^6.0.0"
     "@graphql-tools/git-loader" "^6.0.0"
@@ -2415,20 +2415,20 @@
     wrap-ansi "7.0.0"
     yargs "15.4.1"
 
-"@graphql-codegen/core@1.17.1":
-  version "1.17.1"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/core/-/core-1.17.1.tgz#5f2e38a9e0830b1fdf12f7699d8c3b8c57e96033"
-  integrity sha512-qkkowBFLIbPDjqPV/Qo2LcqSydAfpQP2n7Jy/5Xhu65ymmML0xamdw8/Smo8uc2cUD4Uo+vNV1Y2ZO69pm2WlA==
+"@graphql-codegen/core@1.17.2":
+  version "1.17.2"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/core/-/core-1.17.2.tgz#8e592928b53998cbb2195424edcf0b1dad28d87f"
+  integrity sha512-dyHkZf8wDlhkFP+Y6fvi2fsgqPXVz+21aFn+AQx9I7dEOHMjKaqOgYMKFeuq+M6o+6OX8J3h84yeL/QLp43kEg==
   dependencies:
-    "@graphql-codegen/plugin-helpers" "1.17.1"
+    "@graphql-codegen/plugin-helpers" "1.17.2"
     "@graphql-tools/merge" "^6.0.0"
     "@graphql-tools/utils" "^6.0.0"
     tslib "~2.0.0"
 
-"@graphql-codegen/plugin-helpers@1.17.0":
-  version "1.17.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/plugin-helpers/-/plugin-helpers-1.17.0.tgz#8c244fdcb2d14d5a50b5d962566845e262ac9c4b"
-  integrity sha512-vEZSXklrJYxPrXaFCdFP1bnv999kKdi+StnDjLGOpfXW1/JxsmN1q64DZJCZBXqV0I54dCrgcYWXPH0Ysdwb0w==
+"@graphql-codegen/plugin-helpers@1.17.1":
+  version "1.17.1"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/plugin-helpers/-/plugin-helpers-1.17.1.tgz#cc3ed07b8bd8c364305e523f13685db0e60e6714"
+  integrity sha512-lJxaSK6byPl/ykmcaHTbGxHKUm2bddKsT8eN4nzX9+o2sIuWY5SL63hCad+rcakc0f2YsgkobYaJl9nRG1YDiA==
   dependencies:
     "@graphql-tools/utils" "^6.0.0"
     camel-case "4.1.1"
@@ -2441,10 +2441,10 @@
     tslib "~2.0.0"
     upper-case "2.0.1"
 
-"@graphql-codegen/plugin-helpers@1.17.1":
-  version "1.17.1"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/plugin-helpers/-/plugin-helpers-1.17.1.tgz#cc3ed07b8bd8c364305e523f13685db0e60e6714"
-  integrity sha512-lJxaSK6byPl/ykmcaHTbGxHKUm2bddKsT8eN4nzX9+o2sIuWY5SL63hCad+rcakc0f2YsgkobYaJl9nRG1YDiA==
+"@graphql-codegen/plugin-helpers@1.17.2":
+  version "1.17.2"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/plugin-helpers/-/plugin-helpers-1.17.2.tgz#04a4969e553fb6c4a35c6673701aea6253123058"
+  integrity sha512-n7UZCiYA92Ep0kNVFpy/Wl7b58ub1DWY1EURHeS6lW0Klebg8q7E9nCBoPjYp8TWb20vfw4NpnK27CQ+/o7brA==
   dependencies:
     "@graphql-tools/utils" "^6.0.0"
     camel-case "4.1.1"
@@ -2480,16 +2480,6 @@
     pascal-case "3.1.1"
     tslib "~2.0.0"
 
-"@graphql-codegen/typescript@1.17.0":
-  version "1.17.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript/-/typescript-1.17.0.tgz#cbc04744d667e25e679e9e0a2084c03136503de4"
-  integrity sha512-G9sbGHSw6cJaZdjjkLzHYR5Vocs1I9mGkkqygS/RLBh+3snuGvt2QClhO47BdBTT1iKY17DrfuyczmYuGGok6A==
-  dependencies:
-    "@graphql-codegen/plugin-helpers" "1.17.0"
-    "@graphql-codegen/visitor-plugin-common" "1.17.0"
-    auto-bind "~4.0.0"
-    tslib "~2.0.0"
-
 "@graphql-codegen/typescript@1.17.1":
   version "1.17.1"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript/-/typescript-1.17.1.tgz#7a9b61907bf52cc1311f76b2077e12fcea664e83"
@@ -2498,21 +2488,6 @@
     "@graphql-codegen/plugin-helpers" "1.17.1"
     "@graphql-codegen/visitor-plugin-common" "1.17.1"
     auto-bind "~4.0.0"
-    tslib "~2.0.0"
-
-"@graphql-codegen/visitor-plugin-common@1.17.0":
-  version "1.17.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-1.17.0.tgz#a6237c47d45318c8a7a79ed43556b0e282e95f96"
-  integrity sha512-uX2Smv89aaD3P5BpVbuuwfPJMKRfgZam7kV9iDhHAb4XsrzEsG70a+cbPWPzd8Q11fvZAKn98L1XatkX8BRSxg==
-  dependencies:
-    "@graphql-codegen/plugin-helpers" "1.17.0"
-    "@graphql-tools/relay-operation-optimizer" "6.0.12"
-    array.prototype.flatmap "1.2.3"
-    auto-bind "~4.0.0"
-    dependency-graph "0.9.0"
-    graphql-tag "2.10.4"
-    parse-filepath "1.0.2"
-    pascal-case "3.1.1"
     tslib "~2.0.0"
 
 "@graphql-codegen/visitor-plugin-common@1.17.1":
@@ -2715,14 +2690,6 @@
     prisma-yml "1.34.10"
     tslib "~2.0.0"
 
-"@graphql-tools/relay-operation-optimizer@6.0.12":
-  version "6.0.12"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/relay-operation-optimizer/-/relay-operation-optimizer-6.0.12.tgz#d77ebae94162b25f0ffa8a4f5b2c0ba5c83cbcf0"
-  integrity sha512-wL/anOi4OQxW727I86fqx3iOaK97WXPrC8f1ogruDCmhCiU8pP6OKPpopp6BiJP1VvJI0CZt7LTZlFnJOFKhGQ==
-  dependencies:
-    "@graphql-tools/utils" "6.0.12"
-    relay-compiler "9.1.0"
-
 "@graphql-tools/relay-operation-optimizer@6.0.14":
   version "6.0.14"
   resolved "https://registry.yarnpkg.com/@graphql-tools/relay-operation-optimizer/-/relay-operation-optimizer-6.0.14.tgz#3cb4e9e646e70b1c6e80b51be50fbfac898a631f"
@@ -2752,14 +2719,6 @@
     tslib "~2.0.0"
     valid-url "1.0.9"
     websocket "1.0.31"
-
-"@graphql-tools/utils@6.0.12":
-  version "6.0.12"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-6.0.12.tgz#3c58729f1bdb7881e675544016b56e0508c2541b"
-  integrity sha512-MuFSkxXCe2QoD5QJPJ/1WIm0YnBzzXpkq9d/XznVAWptHFRwtwIbZ1xcREjYquFvoZ7ddsjZfyvUN/5ulmHhhg==
-  dependencies:
-    "@ardatan/aggregate-error" "0.0.1"
-    camel-case "4.1.1"
 
 "@graphql-tools/utils@6.0.14":
   version "6.0.14"
@@ -9153,7 +9112,7 @@ fast-deep-equal@^3.1.1:
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.1.tgz#545145077c501491e33b15ec408c294376e94ae4"
   integrity sha512-8UEa58QDLauDNfpbrX55Q9jrGHThw2ZMdOky5Gl1CDtVeJDPVrG4Jxx1N8jw2gkWaff5UUuX1KJd+9zGe2B+ZA==
 
-fast-glob@^2.0.2, fast-glob@^2.2.2, fast-glob@^2.2.6:
+fast-glob@^2.0.2, fast-glob@^2.2.6:
   version "2.2.7"
   resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-2.2.7.tgz#6953857c3afa475fff92ee6015d52da70a4cd39d"
   integrity sha512-g1KuQwHOZAmOZMuBtHdxDtju+T2RT8jgCC9aANsbpdiDDTSnjgfuVsIBNKbUeJI3oKMRExcfNDtJl4OhbffMsw==
@@ -15816,40 +15775,10 @@ relay-compiler@10.0.0:
     signedsource "^1.0.0"
     yargs "^15.3.1"
 
-relay-compiler@9.1.0:
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/relay-compiler/-/relay-compiler-9.1.0.tgz#e2975de85192e2470daad78e30052bf9614d22ed"
-  integrity sha512-jsJx0Ux5RoxM+JFm3M3xl7UfZAJ0kUTY/r6jqOpcYgVI3GLJthvNI4IoziFRlWbhizEzGFbpkdshZcu9IObJYA==
-  dependencies:
-    "@babel/core" "^7.0.0"
-    "@babel/generator" "^7.5.0"
-    "@babel/parser" "^7.0.0"
-    "@babel/runtime" "^7.0.0"
-    "@babel/traverse" "^7.0.0"
-    "@babel/types" "^7.0.0"
-    babel-preset-fbjs "^3.3.0"
-    chalk "^2.4.1"
-    fast-glob "^2.2.2"
-    fb-watchman "^2.0.0"
-    fbjs "^1.0.0"
-    immutable "~3.7.6"
-    nullthrows "^1.1.1"
-    relay-runtime "9.1.0"
-    signedsource "^1.0.0"
-    yargs "^14.2.0"
-
 relay-runtime@10.0.0:
   version "10.0.0"
   resolved "https://registry.yarnpkg.com/relay-runtime/-/relay-runtime-10.0.0.tgz#cfceb0f8453b39a385d63093f2dbf1702ddc02b3"
   integrity sha512-QEpFwEjvGgWgQ0MPJyrZKggaCoGMKwxPQx7NwYl4FcMmxZcicc8wk6vI1iTxl0tsPKgW/YG8FgueQR+X7ZtZqw==
-  dependencies:
-    "@babel/runtime" "^7.0.0"
-    fbjs "^1.0.0"
-
-relay-runtime@9.1.0:
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/relay-runtime/-/relay-runtime-9.1.0.tgz#d0534007d5c43e7b9653c6f5cc112ffac09c5020"
-  integrity sha512-6FE5YlZpR/b3R/HzGly85V+c4MdtLJhFY/outQARgxXonomrwqEik0Cr34LnPK4DmGS36cMLUliqhCs/DZyPVw==
   dependencies:
     "@babel/runtime" "^7.0.0"
     fbjs "^1.0.0"
@@ -19017,7 +18946,7 @@ yargs@^13.3.0:
     y18n "^4.0.0"
     yargs-parser "^13.1.1"
 
-yargs@^14.2.0, yargs@^14.2.2:
+yargs@^14.2.2:
   version "14.2.2"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-14.2.2.tgz#2769564379009ff8597cdd38fba09da9b493c4b5"
   integrity sha512-/4ld+4VV5RnrynMhPZJ/ZpOCGSCeghMykZ3BhdFBDa9Wy/RH6uEGNWDJog+aUlq+9OM1CFTgtYRW5Is1Po9NOA==
