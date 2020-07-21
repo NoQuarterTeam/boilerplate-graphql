@@ -47,9 +47,9 @@
     "yup": "0.29.1"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "1.17.0",
+    "@graphql-codegen/cli": "1.17.1",
     "@graphql-codegen/typescript": "1.17.0",
-    "@graphql-codegen/typescript-operations": "1.17.0",
+    "@graphql-codegen/typescript-operations": "1.17.1",
     "@graphql-codegen/typescript-react-apollo": "1.17.0",
     "@types/graphql": "14.2.3",
     "@types/jest": "26.0.5",
