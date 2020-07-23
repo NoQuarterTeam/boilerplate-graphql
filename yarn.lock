@@ -17594,10 +17594,10 @@ ts-log@2.1.4:
   resolved "https://registry.yarnpkg.com/ts-log/-/ts-log-2.1.4.tgz#063c5ad1cbab5d49d258d18015963489fb6fb59a"
   integrity sha512-P1EJSoyV+N3bR/IWFeAqXzKPZwHpnLY6j7j58mAvewHRipo+BQM2Y1f9Y9BjEQznKwgqqZm7H8iuixmssU7tYQ==
 
-ts-node-dev@1.0.0-pre.53:
-  version "1.0.0-pre.53"
-  resolved "https://registry.yarnpkg.com/ts-node-dev/-/ts-node-dev-1.0.0-pre.53.tgz#c80711ae082688e0211254c1242e400a025b1999"
-  integrity sha512-+sEwgGBzxXq4Vmyl0dQF9P49NcwGw4vRABVK0Z19CX2hGal+WBtc5+nnNbGM2NaS23Zj0TEpYzgwtCyb6+n3hA==
+ts-node-dev@1.0.0-pre.54:
+  version "1.0.0-pre.54"
+  resolved "https://registry.yarnpkg.com/ts-node-dev/-/ts-node-dev-1.0.0-pre.54.tgz#fab784539cdce0919c08203ab56e387a88f4723a"
+  integrity sha512-vFfaP0ThTP5hOS7PLY5FJHdovrkOc352+J9CPNv7skk0kEtng65Wqg1Jw7xa5JdZDeQePd/mhubJjfPx5qGxIg==
   dependencies:
     chokidar "^3.4.0"
     dateformat "~1.0.4-1.2.3"
