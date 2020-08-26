@@ -65,7 +65,7 @@
     "@types/morgan": "1.9.1",
     "@types/node": "11.15.20",
     "@types/nodemailer": "6.4.0",
-    "faker": "4.1.0",
+    "faker": "5.1.0",
     "ts-node": "8.10.2",
     "ts-node-dev": "1.0.0-pre.61"
   },
