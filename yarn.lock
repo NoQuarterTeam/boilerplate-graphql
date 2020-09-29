@@ -2404,10 +2404,10 @@
     unique-filename "^1.1.1"
     which "^1.3.1"
 
-"@graphql-codegen/cli@1.17.9":
-  version "1.17.9"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-1.17.9.tgz#620f2fe3a90f3a5f5a8de7a7868c5e05625c0521"
-  integrity sha512-sjDEcsmbGLreqOYIRk+rispHHPIv3bZefpD64mlC7Kqa1vma8cVw7L6amr//RMwM/LBZAevDf2nuE7ijuXlixw==
+"@graphql-codegen/cli@1.17.10":
+  version "1.17.10"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-1.17.10.tgz#efebf9b887fdb94dd26dbf3eb1950e832efcda0e"
+  integrity sha512-nQYbabB3aS3XArETJc/NrpUtlj/Dzh2KeDgvVRsc3zxopcudZTKj1dcTCOA/QZPSpbzALbZZ/1loBVVrMIe+Iw==
   dependencies:
     "@graphql-codegen/core" "1.17.8"
     "@graphql-codegen/plugin-helpers" "^1.17.9"
