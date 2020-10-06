@@ -63,7 +63,7 @@
     "@types/ioredis": "4.17.4",
     "@types/jsonwebtoken": "8.5.0",
     "@types/morgan": "1.9.1",
-    "@types/node": "11.15.27",
+    "@types/node": "11.15.28",
     "@types/nodemailer": "6.4.0",
     "faker": "4.1.0",
     "ts-node": "8.10.2",
