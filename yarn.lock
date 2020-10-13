@@ -8012,10 +8012,10 @@ dateformat@~1.0.4-1.2.3:
     get-stdin "^4.0.1"
     meow "^3.3.0"
 
-dayjs@1.9.2:
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.9.2.tgz#544197b9e84e5193bcc55752cd38a88d7ccbfa79"
-  integrity sha512-5l+y3PCqAe6LXEC/Tcx7O3t/qqESZO9siraIXZSrPRNqwFzJopYcaKSh271XbAUsdQ3dUBcJ5N//nEjTjF1ebw==
+dayjs@1.9.3:
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.9.3.tgz#b7f94b22ad2a136a4ca02a01ab68ae893fe1a268"
+  integrity sha512-V+1SyIvkS+HmNbN1G7A9+ERbFTV9KTXu6Oor98v2xHmzzpp52OIJhQuJSTywWuBY5pyAEmlwbCi1Me87n/SLOw==
 
 de-indent@^1.0.2:
   version "1.0.2"
