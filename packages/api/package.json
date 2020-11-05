@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@noquarter/utils": "1.0.8",
-    "@sendgrid/client": "6.5.5",
+    "@sendgrid/client": "7.4.0",
     "@sendgrid/mail": "6.5.5",
     "apollo-server-express": "2.19.0",
     "aws-sdk": "2.783.0",
