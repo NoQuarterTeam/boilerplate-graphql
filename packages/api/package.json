@@ -50,7 +50,7 @@
     "pg": "8.5.1",
     "reflect-metadata": "0.1.13",
     "routing-controllers": "0.8.1",
-    "type-graphql": "0.18.0-beta.17",
+    "type-graphql": "1.1.1",
     "typed-rest-client": "1.8.0",
     "typedi": "0.8.0",
     "typeorm": "0.2.29"
