@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@apollo/client": "3.2.7",
-    "@apollo/react-hooks": "3.1.5",
+    "@apollo/react-hooks": "4.0.0",
     "@chakra-ui/core": "0.8.0",
     "@emotion/core": "10.1.1",
     "@emotion/styled": "10.0.27",
