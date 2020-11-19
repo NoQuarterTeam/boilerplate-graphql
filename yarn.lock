@@ -4724,15 +4724,15 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.2.tgz#3452a24edf9fea138b48fad4a0a028a683da1e40"
   integrity sha512-5tabW/i+9mhrfEOUcLDu2xBPsHJ+X5Orqy9FKpale3SjDA17j5AEpYq5vfy3oAeAHGcvANRCO3NV3d2D6q3NiA==
 
-"@types/node@11.15.36":
-  version "11.15.36"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.15.36.tgz#e4a9da7c042cea6a836d1915f2f085ac6ddeb7f8"
-  integrity sha512-mI+sDwwudPsftB5Dn3pYDI0J/133enPJe0XIv7akV4KG8ZRt+9M/PpyKH/37mdL2tTYmdWfKc/XpLpnLteP2qQ==
+"@types/node@11.15.37":
+  version "11.15.37"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.15.37.tgz#e4d35f161b40032e3301cea4e449df8f3f7ddf9e"
+  integrity sha512-fbDLJYjDrnjJMkweV1tqBKYJuu8GGaEp9Kib8ZaIKD52mM1LbFonX/Tu2UHC7qXzz1DLW6FSE2JnAh5RlK8F/w==
 
-"@types/node@12.19.5":
-  version "12.19.5"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.19.5.tgz#9be3946136e818597c71c62d04240d0602c645d4"
-  integrity sha512-Wgdl27uw/jUYUFyajUGKSjDNGxmJrZi9sjeG6UJImgUtKbJoO9aldx+1XODN1EpNDX9DirvbvHHmTsNlb8GwMA==
+"@types/node@12.19.6":
+  version "12.19.6"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.19.6.tgz#fbf249fa46487dd8c7386d785231368b92a33a53"
+  integrity sha512-U2VopDdmBoYBmtm8Rz340mvvSz34VgX/K9+XCuckvcLGMkt3rbMX8soqFOikIPlPBc5lmw8By9NUK7bEFSBFlQ==
 
 "@types/node@^10.1.0":
   version "10.14.7"
