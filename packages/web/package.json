@@ -42,7 +42,7 @@
     "emotion-theming": "10.0.27",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "react-hook-form": "5.7.2",
+    "react-hook-form": "6.11.5",
     "react-scripts": "3.4.4",
     "yup": "0.30.0"
   },
