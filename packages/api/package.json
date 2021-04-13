@@ -8,12 +8,10 @@
     "schema": "src/db/schema.prisma"
   },
   "scripts": {
-    "start": "ts-node src/index.ts",
     "watch": "tsnd --respawn --transpile-only --no-notify --ignore-watch node_modules src/index.ts",
-    "work": "tsnd --respawn --transpile-only --no-notify --ignore-watch node_modules src/workers.ts",
+    "start": "ts-node src/index.ts",
     "generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
-    "seed": "ts-node src/seed.ts",
     "build": "rimraf dist && tsc --build",
     "typecheck": "tsc --noEmit",
     "lint": "eslint --fix --cache --ext .ts,.tsx src",
