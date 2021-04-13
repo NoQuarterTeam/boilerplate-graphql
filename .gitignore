@@ -1,0 +1,9 @@
+node_modules
+build
+.cache
+.eslintcache
+dist
+.env
+tmp
+temp
+coverage

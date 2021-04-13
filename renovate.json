@@ -1,0 +1,21 @@
+{
+  "extends": ["config:base"],
+  "baseBranches": ["main"],
+  "automerge": true,
+  "major": { "automerge": false },
+  "requiredStatusChecks": null,
+  "packageRules": [
+    {
+      "packagePatterns": ["eslint"],
+      "groupName": "eslint"
+    },
+    {
+      "packagePatterns": ["@types/"],
+      "groupName": "@types"
+    },
+    {
+      "packageNames": ["aws-sdk"],
+      "extends": ["schedule:monthly"]
+    }
+  ]
+}

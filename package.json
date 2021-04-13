@@ -1,0 +1,49 @@
+{
+  "name": "root",
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "build:api": "cd packages/api && yarn build",
+    "heroku-prebuild": "rm -rf packages/web",
+    "build": "yarn build:api",
+    "typecheck": "lerna run typecheck",
+    "lint": "lerna run lint",
+    "ci": "yarn typecheck && yarn lint"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lerna run  --concurrency 1 --stream  pre-commit",
+      "pre-push": "node ./hooks/pre-push.js"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "11.0.0",
+    "@commitlint/config-conventional": "11.0.0",
+    "@typescript-eslint/eslint-plugin": "4.15.2",
+    "@typescript-eslint/parser": "4.15.2",
+    "babel-eslint": "10.1.0",
+    "eslint": "7.20.0",
+    "eslint-config-prettier": "7.2.0",
+    "eslint-plugin-flowtype": "5.3.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "husky": "4.3.8",
+    "lerna": "3.22.1",
+    "lint-staged": "10.5.4",
+    "prettier": "2.2.1",
+    "readline-sync": "1.4.10",
+    "rimraf": "3.0.2",
+    "shelljs": "0.8.4",
+    "typescript": "^4.2.4"
+  },
+  "resolutions": {
+    "prettier": "2.2.1"
+  }
+}
