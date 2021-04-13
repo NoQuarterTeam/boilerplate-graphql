@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/NoQuarterTeam/fullstack-boilerplate.svg?branch=master)](https://travis-ci.org/NoQuarterTeam/fullstack-boilerplate)
-
 # Fullstack Boilerplate
 
 ## Typescript + React + Graphql
