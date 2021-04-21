@@ -10121,10 +10121,10 @@ react-focus-lock@2.5.0:
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
 
-react-hook-form@7.2.1:
-  version "7.2.1"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.2.1.tgz#99b3540dd2314499df12e9a53c70587ad63a806c"
-  integrity sha512-QopAubhVofqQrwlWLr9aK0DF8tNU8fnU8sJIlw1Tb3tGkEvP9yeaA+cx1hlxYni8xBswtHruL1WcDEa6CYQDow==
+react-hook-form@7.2.2:
+  version "7.2.2"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.2.2.tgz#4687f0529a2d616fefcba1032b0f66234f0e87fa"
+  integrity sha512-Y/fhj8MygilDCP5prX/GfyXTk71AD8ptx5GwnncUI0/7/GAxC6SwiUW4Z9zZPUqUTSTxNtrqKi9/Rnak2RLk4Q==
 
 react-icons@4.2.0:
   version "4.2.0"
@@ -11848,10 +11848,10 @@ typedi@^0.8.0:
   resolved "https://registry.yarnpkg.com/typedi/-/typedi-0.8.0.tgz#d8e203bd1d41a96e2b0a5c6295147d74b2b2d03e"
   integrity sha512-/c7Bxnm6eh5kXx2I+mTuO+2OvoWni5+rXA3PhXwVWCtJRYmz3hMok5s1AKLzoDvNAZqj/Q/acGstN0ri5aQoOA==
 
-typegraphql-prisma@0.13.0:
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/typegraphql-prisma/-/typegraphql-prisma-0.13.0.tgz#2ab206ac71243fd5f94ed9e533d39d6d33583a8a"
-  integrity sha512-2VEYjPLqPbSaGHG0VcjAzjQSYjPQMJsS/teUAaZ69bnH/c60hE5UH+DeSD+gLHB0IfNyXBnZel6axxYhIzQYxA==
+typegraphql-prisma@0.13.1:
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/typegraphql-prisma/-/typegraphql-prisma-0.13.1.tgz#9e9e7c780138c53fbed5ca33d8e39541fb7aeb50"
+  integrity sha512-2m9FQQoSaz0BVY3tbdTovPH7X8Ee5XDQ0gZjhtb0oiEaC4MXjT9lCxXeMAwaPJWN+s3IbstVmt94WxLWze1Wvw==
   dependencies:
     "@prisma/generator-helper" "~2.20.1"
     "@prisma/sdk" "~2.20.1"
