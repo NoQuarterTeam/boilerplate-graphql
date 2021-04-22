@@ -3241,10 +3241,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/ioredis@4.22.3":
-  version "4.22.3"
-  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.22.3.tgz#72762efa0374c4a2e879ef697c6c3e4a47f9d641"
-  integrity sha512-V23g0XZUmkm0Hp/GsQYV5Wz12ynm6h6lyi5v/o63iyqFV7+8t3k5YxCnFWVWFEjO6mvRI7V6f7YxNVxIjPsSUw==
+"@types/ioredis@4.26.0":
+  version "4.26.0"
+  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.26.0.tgz#7d171d013f52de9475d5bdbe9d8005dd0898be3e"
+  integrity sha512-lxF+O7a5lu08g8rmPTAlD105SorTbu1A3jZdH8CIra0eh3lmpqkRkJ3FAYFPTAXSlnE549xqbQIo1BLzx5smNg==
   dependencies:
     "@types/node" "*"
 
@@ -10121,10 +10121,10 @@ react-focus-lock@2.5.0:
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
 
-react-hook-form@7.2.2:
-  version "7.2.2"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.2.2.tgz#4687f0529a2d616fefcba1032b0f66234f0e87fa"
-  integrity sha512-Y/fhj8MygilDCP5prX/GfyXTk71AD8ptx5GwnncUI0/7/GAxC6SwiUW4Z9zZPUqUTSTxNtrqKi9/Rnak2RLk4Q==
+react-hook-form@7.2.3:
+  version "7.2.3"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.2.3.tgz#a4be9214cab3a6e6358f95d342da2e7ded37e3f0"
+  integrity sha512-ki83pkQH/NK6HbSWb4zHLD78s8nh6OW2j4GC5kAjhB2C3yiiVGvNAvybgAfnsXBbx+xb9mPgSpRRVOQUbss+JQ==
 
 react-icons@4.2.0:
   version "4.2.0"
