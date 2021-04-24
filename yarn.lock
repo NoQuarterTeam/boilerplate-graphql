@@ -6876,12 +6876,12 @@ graphql-request@^3.3.0:
     extract-files "^9.0.0"
     form-data "^3.0.0"
 
-graphql-scalars@1.9.0:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/graphql-scalars/-/graphql-scalars-1.9.0.tgz#fd3171cafc6f51b71d58f6a8ff89ea97477c16d3"
-  integrity sha512-31bBDnHdBapb2wknLCjNzTSjKfVEtm+0HxI7DKM7jQ4Uipk1o1aMUCYCkYunmRDdgQaI03u1MD5KutLf7yHnvw==
+graphql-scalars@1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/graphql-scalars/-/graphql-scalars-1.9.1.tgz#905a7e1c129194e248e0d4b3dbbbe466850806f2"
+  integrity sha512-UHOrd8WUhfgP4/MFfj+W0cpl9yJw8W5Zph5s2DskfnmCeefg4lmlm84kb6sDHttwAprXpGGdo2dQXubE6vx0Cw==
   dependencies:
-    tslib "~2.1.0"
+    tslib "~2.2.0"
 
 graphql-subscriptions@^1.0.0, graphql-subscriptions@^1.1.0:
   version "1.2.1"
@@ -10112,10 +10112,10 @@ react-focus-lock@2.5.0:
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
 
-react-hook-form@7.2.3:
-  version "7.2.3"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.2.3.tgz#a4be9214cab3a6e6358f95d342da2e7ded37e3f0"
-  integrity sha512-ki83pkQH/NK6HbSWb4zHLD78s8nh6OW2j4GC5kAjhB2C3yiiVGvNAvybgAfnsXBbx+xb9mPgSpRRVOQUbss+JQ==
+react-hook-form@7.3.0:
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.3.0.tgz#b98ff66bc54783d0e2c00ca0c1fbbf1dc22d139f"
+  integrity sha512-hV2/p55XXvV9M4FU7c3hNKnD0gI+UU+qtekyOcYvU7Wea6gsLTjy1vwdUv0itd5w0T/DE4le5fimiV8O+poknw==
 
 react-icons@4.2.0:
   version "4.2.0"
