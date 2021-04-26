@@ -12,6 +12,7 @@ import { Server } from "./lib/server"
 import { formatResponse } from "./lib/formatResponse"
 import { getResolvers } from "./lib/resolvers"
 import { prisma } from "./lib/prisma"
+import { loadPrismaHooks } from "./lib/hooks"
 
 class FullstackBoilerplate extends Server {
   constructor() {
@@ -22,9 +23,13 @@ class FullstackBoilerplate extends Server {
   }
 
   async init() {
+    await this.setUpDb()
     await this.setUpAuth()
     await this.setupApollo()
     this.start()
+  }
+  async setUpDb() {
+    loadPrismaHooks()
   }
   async setUpAuth() {
     this.app.use(jwt(JWT_AUTH))

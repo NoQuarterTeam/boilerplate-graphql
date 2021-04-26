@@ -35,6 +35,9 @@ export const GRAPHQL_PATH = "/graphql"
 // RESOLVER PATHS
 export const RESOLVER_PATHS = IS_PRODUCTION ? "/modules/**/*resolver.js" : "/modules/**/*resolver.ts"
 
+// HOOK PATHS
+export const HOOK_PATHS = IS_PRODUCTION ? "/modules/**/*hooks.js" : "/modules/**/*hooks.ts"
+
 // LOADER PATHS
 export const LOADER_PATHS = IS_PRODUCTION ? "/modules/**/*.loader.js" : "/modules/**/*.loader.ts"
 

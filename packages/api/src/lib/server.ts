@@ -8,12 +8,14 @@ import * as Sentry from "@sentry/node"
 
 import { IS_PRODUCTION, PORT, SENTRY_DSN } from "./config"
 
-Sentry.init({
-  dsn: SENTRY_DSN,
-  integrations: [new Integrations.Express()],
-  enabled: IS_PRODUCTION,
-  tracesSampleRate: 1.0,
-})
+if (IS_PRODUCTION) {
+  Sentry.init({
+    dsn: SENTRY_DSN,
+    integrations: [new Integrations.Express()],
+    enabled: IS_PRODUCTION,
+    tracesSampleRate: 1.0,
+  })
+}
 
 export class Server {
   private readonly _app: express.Application

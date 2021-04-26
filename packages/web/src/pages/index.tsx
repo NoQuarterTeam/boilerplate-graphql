@@ -4,12 +4,12 @@ import { Box, Center, Text, Button, Heading, HStack, IconButton, useColorMode, S
 import Head from "next/head"
 import { BiMoon, BiSun } from "react-icons/bi"
 
-import { useMe } from "components/providers/MeProvider"
 import { useLogout } from "lib/hooks/useLogout"
 import { ButtonGroup } from "components/ButtonGroup"
+import { useMe } from "lib/hooks/useMe"
 
 export default function Home() {
-  const me = useMe()
+  const { me } = useMe()
   const logout = useLogout()
   const { colorMode, toggleColorMode } = useColorMode()
   const isDark = colorMode === "dark"
