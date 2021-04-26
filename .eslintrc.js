@@ -5,7 +5,7 @@ module.exports = {
 
   plugins: ["@typescript-eslint"],
 
-  extends: ["plugin:@typescript-eslint/recommended", "prettier", "prettier/@typescript-eslint"],
+  extends: ["plugin:@typescript-eslint/recommended", "prettier"],
 
   rules: {
     "@typescript-eslint/explicit-member-accessibility": "off",
