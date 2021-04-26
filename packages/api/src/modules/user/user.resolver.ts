@@ -1,5 +1,5 @@
 import { Arg, Args, Ctx, FieldResolver, Mutation, Query, Resolver, Root } from "type-graphql"
-import { Inject } from "typedi"
+import { Inject, Service } from "typedi"
 import { User, FindManyUserArgs, UpdateUserResolver, FindUniqueUserResolver } from "@generated"
 
 import { Resolvers } from "../../lib/resolvers"
@@ -14,6 +14,7 @@ import { createToken, decryptToken } from "../../lib/jwt"
 import { ResetPasswordInput } from "./inputs/resetPassword.input"
 import { UserMailer } from "./user.mailer"
 
+@Service()
 @Resolver(() => User)
 export default class UserResolver {
   @Inject(() => UserMailer)

@@ -6,8 +6,8 @@ type Payload = Record<string, any>
 export const createToken = (payload: Payload, options?: jwt.SignOptions): string => {
   try {
     const token = jwt.sign(payload, APP_SECRET, {
-      issuer: "@prisma/api",
-      audience: ["@prisma/app", "@prisma/web"],
+      issuer: "@fullstack-boilerplate/api",
+      audience: ["@fullstack-boilerplate/app", "@fullstack-boilerplate/web"],
       expiresIn: "4w",
       ...options,
     })
@@ -21,8 +21,8 @@ export const createToken = (payload: Payload, options?: jwt.SignOptions): string
 export const createAuthToken = (payload: Payload): string => {
   try {
     const token = jwt.sign(payload, APP_AUTH_SECRET, {
-      issuer: "@prisma/api",
-      audience: ["@prisma/app", "@prisma/web"],
+      issuer: "@fullstack-boilerplate/api",
+      audience: ["@fullstack-boilerplate/app", "@prisma/web"],
       expiresIn: "4w",
     })
     return token

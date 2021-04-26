@@ -17,5 +17,6 @@
       "packageNames": ["aws-sdk"],
       "extends": ["schedule:monthly"]
     }
-  ]
+  ],
+  "ignoreDeps": ["prisma", "@prisma/client"]
 }
