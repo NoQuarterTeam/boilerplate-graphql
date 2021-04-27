@@ -66,7 +66,7 @@
     "@types/ioredis": "4.26.0",
     "@types/jsonwebtoken": "8.5.1",
     "@types/morgan": "1.9.2",
-    "@types/node": "11.15.52",
+    "@types/node": "11.15.53",
     "@types/nodemailer": "6.4.1",
     "prisma": "2.20.1",
     "ts-node": "9.1.1",
