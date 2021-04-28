@@ -10,7 +10,7 @@ prisma.$use(async (params, next) => {
     }
     // Lower email
     if (params.args.data.email) {
-      params.args.data.password = params.args.data.password.trim().toLowerCase()
+      params.args.data.email = params.args.data.email.trim().toLowerCase()
     }
   }
   return next(params)
