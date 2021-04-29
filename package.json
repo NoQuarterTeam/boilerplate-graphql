@@ -11,7 +11,7 @@
   "scripts": {
     "build:api": "cd packages/api && yarn build",
     "heroku-prebuild": "rm -rf packages/web",
-    "heroku-cleanup": "prisma generate",
+    "heroku-cleanup": "npx prisma generate",
     "build": "yarn build:api",
     "typecheck": "lerna run typecheck",
     "lint": "lerna run lint",
