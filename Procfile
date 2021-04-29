@@ -1,2 +1,2 @@
-web: pm2 start
+web: node packages/api/dist
 release: npx prisma migrate deploy
