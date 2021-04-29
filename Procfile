@@ -1,1 +1,2 @@
-web: pm2 start packages/api/dist --deep-monitoring --attach
+web: pm2 start packages/api/dist
+release: prisma migrate deploy
