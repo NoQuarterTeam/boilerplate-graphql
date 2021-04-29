@@ -12,7 +12,7 @@
     "start": "ts-node src/index.ts",
     "generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
-    "build": "prisma generate && rimraf dist && tsc --build",
+    "build": "rimraf dist && tsc --build",
     "typecheck": "tsc --noEmit",
     "lint": "eslint --fix --cache --ext .ts,.tsx src",
     "lint:test": "eslint --cache --ext .ts,.tsx src",
