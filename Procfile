@@ -1,1 +1,1 @@
-web: node packages/api/dist
+web: pm2 start packages/api/dist --deep-monitoring --attach

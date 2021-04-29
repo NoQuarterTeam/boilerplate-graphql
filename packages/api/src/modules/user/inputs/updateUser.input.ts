@@ -1,6 +1,6 @@
 import { InputType, Field } from "type-graphql"
 import { IsNotEmpty, MinLength } from "class-validator"
-import { User } from "../user.entity"
+import { User } from "@prisma/client"
 
 @InputType()
 export class UpdateUserInput implements Partial<User> {
