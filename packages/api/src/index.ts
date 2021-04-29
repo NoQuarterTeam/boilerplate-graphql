@@ -19,6 +19,7 @@ class FullstackBoilerplate extends Server {
     super()
     this.init().catch((error) => {
       this.logger.error(error)
+      process.exit(1)
     })
   }
 
