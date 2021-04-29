@@ -53,10 +53,12 @@
     "morgan": "1.10.0",
     "nodemailer": "6.6.0",
     "pg": "8.6.0",
+    "prisma": "2.21.2",
     "reflect-metadata": "0.1.13",
     "type-graphql-dataloader": "0.3.7",
     "type-graphql": "1.1.1",
-    "typedi": "0.10.0"
+    "typedi": "0.10.0",
+    "typegraphql-prisma": "0.14.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "2.4.2",
@@ -68,9 +70,7 @@
     "@types/morgan": "1.9.2",
     "@types/node": "11.15.53",
     "@types/nodemailer": "6.4.1",
-    "prisma": "2.21.2",
     "ts-node": "9.1.1",
-    "ts-node-dev": "1.1.6",
-    "typegraphql-prisma": "0.14.0"
+    "ts-node-dev": "1.1.6"
   }
 }

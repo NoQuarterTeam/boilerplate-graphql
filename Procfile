@@ -1,2 +1,2 @@
 web: node packages/api/dist
-release: npx prisma migrate deploy
+release: cd packages/api && prisma migrate deploy

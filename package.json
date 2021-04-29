@@ -11,7 +11,7 @@
   "scripts": {
     "build:api": "cd packages/api && yarn build",
     "heroku-prebuild": "rm -rf packages/web",
-    "heroku-cleanup": "npx prisma generate",
+    "heroku-cleanup": "cd packages/api && yarn generate",
     "build": "yarn build:api",
     "typecheck": "lerna run typecheck",
     "lint": "lerna run lint",
@@ -23,9 +23,6 @@
       "pre-commit": "lerna run  --concurrency 1 --stream  pre-commit",
       "pre-push": "node ./hooks/pre-push.js"
     }
-  },
-  "prisma": {
-    "schema": "packages/api/src/db/schema.prisma"
   },
   "devDependencies": {
     "@commitlint/cli": "12.1.1",
