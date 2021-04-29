@@ -69,7 +69,7 @@ export default function Register() {
             <Input name="password" label="Password" type="password" placeholder="********" />
             <Input name="firstName" label="First name" placeholder="Jim" />
             <Input name="lastName" label="Last name" placeholder="Bob" />
-            <Button colorScheme="orange" type="submit" isFullWidth isLoading={loading} isDisabled={loading}>
+            <Button colorScheme="purple" type="submit" isFullWidth isLoading={loading} isDisabled={loading}>
               Register
             </Button>
             <FormError />

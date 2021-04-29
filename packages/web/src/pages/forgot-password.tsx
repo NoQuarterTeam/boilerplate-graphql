@@ -53,7 +53,7 @@ export default function ForgotPassword() {
             <Text>Enter your email below to receive your password reset instructions.</Text>
 
             <Input autoFocus name="email" placeholder="Email" />
-            <Button isFullWidth colorScheme="orange" type="submit" isDisabled={loading} isLoading={loading}>
+            <Button isFullWidth colorScheme="purple" type="submit" isDisabled={loading} isLoading={loading}>
               Send instructions
             </Button>
             <Link href="/login">Login</Link>

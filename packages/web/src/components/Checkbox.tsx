@@ -32,7 +32,7 @@ export const Checkbox = ({ label, subLabel, ...props }: Props) => {
           isChecked={value}
           onChange={() => setValue(props.name, !value)}
           mb={0}
-          colorScheme="orange"
+          colorScheme="purple"
           size="lg"
           {...props}
         />
@@ -66,7 +66,7 @@ export const InlineCheckbox = ({ label, subLabel, ...props }: Props) => {
             isChecked={value}
             onChange={() => setValue(props.name, !value)}
             mb={0}
-            colorScheme="orange"
+            colorScheme="purple"
             size="lg"
             {...props}
           />

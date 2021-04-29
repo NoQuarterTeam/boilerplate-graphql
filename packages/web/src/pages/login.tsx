@@ -65,7 +65,7 @@ export default function Login() {
             <Heading as="h1">Login</Heading>
             <Input name="email" label="Email" placeholder="jim@gmail.com" />
             <Input name="password" label="Password" type="password" placeholder="********" />
-            <Button colorScheme="orange" type="submit" isFullWidth isLoading={loading} isDisabled={loading}>
+            <Button colorScheme="purple" type="submit" isFullWidth isLoading={loading} isDisabled={loading}>
               Login
             </Button>
             <FormError />
