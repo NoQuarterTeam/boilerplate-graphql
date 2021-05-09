@@ -38,13 +38,13 @@
     "husky": "4.3.8",
     "lerna": "4.0.0",
     "lint-staged": "10.5.4",
-    "prettier": "2.2.1",
+    "prettier": "2.3.0",
     "readline-sync": "1.4.10",
     "rimraf": "3.0.2",
     "shelljs": "0.8.4",
     "typescript": "4.2.4"
   },
   "resolutions": {
-    "prettier": "2.2.1"
+    "prettier": "2.3.0"
   }
 }
