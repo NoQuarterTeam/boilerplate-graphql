@@ -43,3 +43,12 @@ Comes with user authentication included
 ### For error tracing
 
 - Create a Sentry account + project for each package and add the DSN to the web config and the api env variables
+
+### Deployment
+
+An example is deployed [here](https://boilerplate.noquarter.co)
+
+We are using Heroku for the API package and Vercel for the WEB package
+
+(Our heroku app is on the free tier so there is a warm up time before it becomes responsive)
+
