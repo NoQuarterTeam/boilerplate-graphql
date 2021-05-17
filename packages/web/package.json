@@ -36,7 +36,7 @@
     "@sentry/react": "6.4.0",
     "@sentry/tracing": "6.4.0",
     "components": "link:./src/components",
-    "framer-motion": "4.1.16",
+    "framer-motion": "4.1.17",
     "lib": "link:./src/lib",
     "next": "10.2.0",
     "react": "17.0.2",
