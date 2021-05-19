@@ -5,12 +5,11 @@ import { buildSchema } from "type-graphql"
 import { Container } from "typedi"
 import jwt from "express-jwt"
 
-import { CORS_OPTIONS, JWT_AUTH } from "./lib/config"
+import { CORS_OPTIONS, IS_PRODUCTION, JWT_AUTH, RESOLVER_PATHS } from "./lib/config"
 import { ErrorInterceptor } from "./lib/globalMiddleware"
 import { ExpressContext } from "./lib/express"
 import { Server } from "./lib/server"
 import { formatResponse } from "./lib/formatResponse"
-import { getResolvers } from "./lib/resolvers"
 import { prisma } from "./lib/prisma"
 import { loadPrismaHooks } from "./lib/hooks"
 
@@ -43,14 +42,14 @@ class FullstackBoilerplate extends Server {
   async setupApollo() {
     const schema = await buildSchema({
       container: Container,
-      resolvers: getResolvers(),
+      resolvers: [__dirname + RESOLVER_PATHS],
       globalMiddlewares: [ErrorInterceptor],
     })
     const apolloServer = new ApolloServer({
       context: ({ req, res }: ExpressContext) => ({ req, res, prisma }),
       formatResponse,
-      introspection: true,
-      playground: true,
+      introspection: !IS_PRODUCTION,
+      playground: !IS_PRODUCTION,
       schema,
     })
 

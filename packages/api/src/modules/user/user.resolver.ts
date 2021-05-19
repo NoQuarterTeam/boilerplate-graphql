@@ -1,8 +1,7 @@
 import { Arg, Args, Ctx, FieldResolver, Mutation, Query, Resolver, Root } from "type-graphql"
 import { Inject, Service } from "typedi"
-import { User, FindManyUserArgs, UpdateUserResolver, FindUniqueUserResolver } from "@generated"
+import { User, FindManyUserArgs } from "@generated"
 
-import { Resolvers } from "../../lib/resolvers"
 import { UserService } from "./user.service"
 import { AuthResponse } from "./responses/auth.response"
 import { LoginInput } from "./inputs/login.input"
@@ -81,5 +80,3 @@ export default class UserResolver {
     return (user.firstName + " " + user.lastName).trim()
   }
 }
-
-export const resolvers: Resolvers = [UpdateUserResolver, FindUniqueUserResolver]

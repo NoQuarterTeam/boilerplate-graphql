@@ -33,13 +33,13 @@ export const JWT_AUTH = {
 export const GRAPHQL_PATH = "/graphql"
 
 // RESOLVER PATHS
-export const RESOLVER_PATHS = IS_PRODUCTION ? "/modules/**/*resolver.js" : "/modules/**/*resolver.ts"
+export const RESOLVER_PATHS = "/modules/**/*resolver.*"
 
 // HOOK PATHS
-export const HOOK_PATHS = IS_PRODUCTION ? "/modules/**/*hooks.js" : "/modules/**/*hooks.ts"
+export const HOOK_PATHS = "/modules/**/*hooks.*"
 
 // LOADER PATHS
-export const LOADER_PATHS = IS_PRODUCTION ? "/modules/**/*.loader.js" : "/modules/**/*.loader.ts"
+export const LOADER_PATHS = "/modules/**/*.loader.*"
 
 // WEB URL
 export const FULL_WEB_URL = `${IS_PRODUCTION ? "https://" : "http://"}${WEB_URL}`

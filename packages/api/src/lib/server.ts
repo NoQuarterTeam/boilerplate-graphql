@@ -53,6 +53,8 @@ export class Server {
   }
 
   start(): void {
-    this._app.listen(PORT, () => this.logger.info(`Server started at http://localhost:${PORT} 🚀` + "\n"))
+    this._app.listen(PORT, () =>
+      this.logger.info(`Server started at http://localhost:${PORT}/graphql 🚀` + "\n"),
+    )
   }
 }
