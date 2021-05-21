@@ -12,6 +12,7 @@ import { ContextUser } from "../shared/contextUser"
 import { createToken, decryptToken } from "../../lib/jwt"
 import { ResetPasswordInput } from "./inputs/resetPassword.input"
 import { UserMailer } from "./user.mailer"
+import { CurrentUser } from "../shared/currentUser"
 
 @Service()
 @Resolver(() => User)
@@ -76,6 +77,13 @@ export default class UserResolver {
 
   @FieldResolver(() => String)
   fullName(@Root() user: User) {
+    if (!user.firstName && !user.lastName) return ""
+    return (user.firstName + " " + user.lastName).trim()
+  }
+
+  @FieldResolver(() => String)
+  email(@CurrentUser() currentUser: User, @Root() user: User) {
+    if (currentUser.id !== user.id) return ""
     if (!user.firstName && !user.lastName) return ""
     return (user.firstName + " " + user.lastName).trim()
   }
