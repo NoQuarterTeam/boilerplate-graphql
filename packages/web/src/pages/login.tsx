@@ -13,6 +13,7 @@ import { Input } from "components/Input"
 import { SESSION_TOKEN } from "lib/config"
 import { FormError } from "components/FormError"
 import { useForm } from "lib/hooks/useForm"
+import { withNoAuth } from "components/hoc/withNoAuth"
 
 export const LOGIN = gql`
   mutation Login($data: LoginInput!) {
@@ -31,7 +32,7 @@ const LoginSchema = Yup.object().shape({
   password: Yup.string().min(8, "Must be at least 8 characters"),
 })
 
-export default function Login() {
+function Login() {
   const client = useApolloClient()
 
   const [login, { loading }] = useLoginMutation()
@@ -79,3 +80,5 @@ export default function Login() {
     </Center>
   )
 }
+
+export default withNoAuth(Login)

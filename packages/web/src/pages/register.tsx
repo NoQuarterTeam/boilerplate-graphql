@@ -13,6 +13,7 @@ import { Input } from "components/Input"
 import { SESSION_TOKEN } from "lib/config"
 import { FormError } from "components/FormError"
 import { useForm } from "lib/hooks/useForm"
+import { withNoAuth } from "components/hoc/withNoAuth"
 
 export const REGISTER = gql`
   mutation Register($data: RegisterInput!) {
@@ -33,7 +34,7 @@ const RegisterSchema = Yup.object().shape({
   lastName: Yup.string().required("Required"),
 })
 
-export default function Register() {
+function Register() {
   const client = useApolloClient()
 
   const [register, { loading }] = useRegisterMutation()
@@ -80,3 +81,4 @@ export default function Register() {
     </Center>
   )
 }
+export default withNoAuth(Register)
