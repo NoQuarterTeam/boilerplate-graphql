@@ -18,7 +18,6 @@ import { BiMoon, BiSun } from "react-icons/bi"
 import { useLogout } from "lib/hooks/useLogout"
 import { ButtonGroup } from "components/ButtonGroup"
 import { useMe } from "lib/hooks/useMe"
-import { UsersList } from "components/UsersList"
 
 export default function Home() {
   const { me, loading } = useMe()
@@ -46,7 +45,6 @@ export default function Home() {
                   Logout
                 </Button>
               </ButtonGroup>
-              <UsersList />
             </Stack>
           ) : (
             <HStack>

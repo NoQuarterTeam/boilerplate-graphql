@@ -13,6 +13,7 @@ import { createToken, decryptToken } from "../../lib/jwt"
 import { ResetPasswordInput } from "./inputs/resetPassword.input"
 import { UserMailer } from "./user.mailer"
 import { CurrentUser } from "../shared/currentUser"
+import { UsersResponse } from "./responses/users.response"
 
 @Service()
 @Resolver(() => User)
@@ -22,9 +23,13 @@ export default class UserResolver {
   @Inject(() => UserService)
   userService: UserService
 
-  @Query(() => [User])
-  async users(@Args() args: FindManyUserArgs): Promise<User[]> {
-    return await prisma.user.findMany(args)
+  @Query(() => UsersResponse)
+  async users(@Args() args: FindManyUserArgs): Promise<UsersResponse> {
+    const [items, count] = await prisma.$transaction([
+      prisma.user.findMany(args),
+      prisma.user.count({ ...args, take: undefined, skip: undefined }),
+    ])
+    return { items, count }
   }
 
   // ME
@@ -82,9 +87,7 @@ export default class UserResolver {
   }
 
   @FieldResolver(() => String)
-  email(@CurrentUser() currentUser: User, @Root() user: User) {
-    if (currentUser.id !== user.id) return ""
-    if (!user.firstName && !user.lastName) return ""
-    return (user.firstName + " " + user.lastName).trim()
+  email(@CurrentUser() currentUser: User) {
+    return currentUser.email
   }
 }
