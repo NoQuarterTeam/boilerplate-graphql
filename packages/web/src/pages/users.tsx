@@ -1,12 +1,13 @@
 import * as React from "react"
 import { gql } from "@apollo/client"
-import { Box, Center, Flex, HStack, Input, Text } from "@chakra-ui/react"
+import { Box, Center, Flex, HStack, Text } from "@chakra-ui/react"
 import dayjs from "dayjs"
 
 import { QueryMode, SortOrder, useGetUsersQuery, UserItemFragment } from "lib/graphql"
 import { paginate } from "lib/apollo/helpers"
 import { Column, Sort, Table } from "components/Table"
 import { withAuth } from "components/hoc/withAuth"
+import { Search } from "components/Search"
 
 export const USER_FRAG = gql`
   fragment UserItem on User {
@@ -57,12 +58,7 @@ function Users() {
     <Box p={10}>
       <Flex mb={6} align="center" justify="space-between">
         <HStack>
-          <Input
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search users"
-            minW={{ base: 200, xl: 300 }}
-          />
+          <Search search={search} onSearch={setSearch} placeholder="Search users" />
         </HStack>
       </Flex>
       {error ? (
