@@ -39,7 +39,7 @@
     "dayjs": "1.10.4",
     "framer-motion": "4.1.17",
     "lib": "link:./src/lib",
-    "next": "10.2.2",
+    "next": "10.2.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-hook-form": "7.6.6",
