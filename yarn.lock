@@ -3070,7 +3070,7 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@swc/cli@^0.1.42":
+"@swc/cli@0.1.42":
   version "0.1.42"
   resolved "https://registry.yarnpkg.com/@swc/cli/-/cli-0.1.42.tgz#6578f77deaf66e980bf33c10f276932bcecb8f7a"
   integrity sha512-IgM4CZTTvzw4paCF6mhSJZe0Amq92rD53JXor9MbQypmzkCD9GiCogHPMNH0K82U/uwAhAx2cR6ZhZo94nGuYQ==
@@ -3127,7 +3127,7 @@
   resolved "https://registry.yarnpkg.com/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.2.58.tgz#470e856affe53cfd786665a1c932b25dd67e0ed1"
   integrity sha512-HPmxovhC7DbNcXLJe5nUmo+4o6Ea2d7oFdli3IvTgDri0IynQaRlfVWIuNnZmEsN7Gl1kW7PUK5WZXPUosMn8A==
 
-"@swc/core@^1.2.58":
+"@swc/core@1.2.58":
   version "1.2.58"
   resolved "https://registry.yarnpkg.com/@swc/core/-/core-1.2.58.tgz#7922ead4e4b2051b0686dab1438c136be3c48161"
   integrity sha512-u/vaon34x4ISDDdgZLaxacPB4Ly8SqqmFkBKPp2VtUDbD12VqKzb6EoLDC3A5EULFQDgIdIMHuVlBB+mc8dq0w==
@@ -5078,7 +5078,6 @@ compare-versions@^3.6.0:
 
 "components@link:./packages/web/src/components":
   version "0.0.0"
-  uid ""
 
 compress-commons@^3.0.0:
   version "3.0.0"
@@ -8099,7 +8098,6 @@ levn@^0.4.1:
 
 "lib@link:./packages/web/src/lib":
   version "0.0.0"
-  uid ""
 
 libnpmaccess@^4.0.1:
   version "4.0.1"
