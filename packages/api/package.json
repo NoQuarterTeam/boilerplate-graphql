@@ -60,7 +60,7 @@
     "type-graphql": "1.1.1",
     "type-graphql-dataloader": "0.3.7",
     "typedi": "0.10.0",
-    "typegraphql-prisma": "0.14.2"
+    "typegraphql-prisma": "0.14.3"
   },
   "devDependencies": {
     "@swc/cli": "0.1.42",
