@@ -3506,10 +3506,10 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
-"@types/react@17.0.7":
-  version "17.0.7"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.7.tgz#5f2ca73d8baee8c286e96c95df557799ac0d1996"
-  integrity sha512-lBc3fY20hRFQ/pXQT2XdtmpJeXZnRH8N+WPnEzEfPTzuKmaJTA7k/xGWHBaPvKceKpbf0ZnMlLWY/0sFZ5rfkw==
+"@types/react@17.0.8":
+  version "17.0.8"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.8.tgz#fe76e3ba0fbb5602704110fd1e3035cf394778e3"
+  integrity sha512-3sx4c0PbXujrYAKwXxNONXUtRp9C+hE2di0IuxFyf5BELD+B+AXL8G7QrmSKhVwKZDbv0igiAjQAMhXj8Yg3aw==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -5539,10 +5539,10 @@ dateformat@~1.0.4-1.2.3:
     get-stdin "^4.0.1"
     meow "^3.3.0"
 
-dayjs@1.10.4:
-  version "1.10.4"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.10.4.tgz#8e544a9b8683f61783f570980a8a80eaf54ab1e2"
-  integrity sha512-RI/Hh4kqRc1UKLOAf/T5zdMMX5DQIlDxwUe3wSyMMnEbGunnpENCdbUgM+dW7kXidZqCttBrmw7BhN4TMddkCw==
+dayjs@1.10.5:
+  version "1.10.5"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.10.5.tgz#5600df4548fc2453b3f163ebb2abbe965ccfb986"
+  integrity sha512-BUFis41ikLz+65iH6LHQCDm4YPMj5r1YFLdupPIyM4SGcXMmtiLQ7U37i+hGS8urIuqe7I/ou3IS1jVc4nbN4g==
 
 debounce@^1.2.0:
   version "1.2.1"
