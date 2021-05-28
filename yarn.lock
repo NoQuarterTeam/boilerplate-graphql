@@ -3129,10 +3129,10 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@swc/cli@0.1.44":
-  version "0.1.44"
-  resolved "https://registry.yarnpkg.com/@swc/cli/-/cli-0.1.44.tgz#be7d7c7d40af3e12fe264605422009e11a1c8bc2"
-  integrity sha512-pCjzCPKsEDfD/JGrUajiErOyvLIslwfhr9RXeGkhxiv03dBGaw8y7yLTOiMgC2HsTNlJ1WJhTg4e/VpKCHOcwQ==
+"@swc/cli@0.1.45":
+  version "0.1.45"
+  resolved "https://registry.yarnpkg.com/@swc/cli/-/cli-0.1.45.tgz#811592008165ee938438c76992f405684c5b3d05"
+  integrity sha512-J2Q49WYJ0LR5jBCHaEIHiLu+GGHw2mR8vCsCsnYbb7qP9qORtBYNrJ6FN8ohV+3OZI4HSXr6ytAL09AddmVpxg==
   dependencies:
     commander "^7.1.0"
     convert-source-map "^1.6.0"
@@ -10315,10 +10315,10 @@ react-focus-lock@2.5.0:
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
 
-react-hook-form@7.6.8:
-  version "7.6.8"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.6.8.tgz#d47308b04e98a2beed73059125bdff84412d8194"
-  integrity sha512-Ri+XImhd/2bY4rV+aME0ij3G1L3cyhAErlhKmhDkgJx3NjCNQ+5et2Y1qp87mSDIyZq5UOFtRm0tDXEaTP3DPw==
+react-hook-form@7.6.9:
+  version "7.6.9"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.6.9.tgz#288c3d03f9d59985f8418205ea042e9be0d8545c"
+  integrity sha512-nz+btC4WFIm3zPBjw22K3t9nnJtlMMwj8slcbPYoTKlkSVA5l+q3Ai+VF0YzeRi7vbyyeGQvpyibov1xd/TV7A==
 
 react-icons@4.2.0:
   version "4.2.0"

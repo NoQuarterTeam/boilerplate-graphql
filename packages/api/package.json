@@ -63,7 +63,7 @@
     "typegraphql-prisma": "0.14.3"
   },
   "devDependencies": {
-    "@swc/cli": "0.1.44",
+    "@swc/cli": "0.1.45",
     "@swc/core": "1.2.58",
     "@types/bcryptjs": "2.4.2",
     "@types/express": "4.17.12",
