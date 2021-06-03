@@ -87,7 +87,8 @@ export default class UserResolver {
   }
 
   @FieldResolver(() => String)
-  email(@CurrentUser() currentUser: User) {
+  email(@Root() user: User, @CurrentUser() currentUser: User) {
+    if (user.id !== currentUser.id) return ""
     return currentUser.email
   }
 }
