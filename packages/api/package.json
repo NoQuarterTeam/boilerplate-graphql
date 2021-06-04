@@ -58,7 +58,7 @@
     "prisma": "2.23.0",
     "reflect-metadata": "0.1.13",
     "type-graphql": "1.1.1",
-    "type-graphql-dataloader": "0.3.7",
+    "type-graphql-dataloader": "0.4.0",
     "typedi": "0.10.0",
     "typegraphql-prisma": "0.14.3"
   },
