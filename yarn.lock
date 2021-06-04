@@ -5148,7 +5148,6 @@ compare-versions@^3.6.0:
 
 "components@link:./packages/web/src/components":
   version "0.0.0"
-  uid ""
 
 compress-commons@^3.0.0:
   version "3.0.0"
@@ -7582,10 +7581,10 @@ invariant@^2.2.4:
   dependencies:
     loose-envify "^1.0.0"
 
-ioredis@4.27.3:
-  version "4.27.3"
-  resolved "https://registry.yarnpkg.com/ioredis/-/ioredis-4.27.3.tgz#4a020c9056bf4e016c476910fb59620a0d899654"
-  integrity sha512-eAirtUIljFkHJwuKQhbGajVrdCUMNKRuOrhzRFeYZRvXnLs4757Oss1S8aiheB4NSO1RsLeG+2RUjY/0/XiSig==
+ioredis@4.27.4:
+  version "4.27.4"
+  resolved "https://registry.yarnpkg.com/ioredis/-/ioredis-4.27.4.tgz#a5361147eff9847e82b78d5d3b48cb03b6cebcba"
+  integrity sha512-1n91WZ+L1tHL4hEN9pT16s3f0+Dg82GfvyJGaD47BhEvQb63gIsmDkt/dmzDFBTYfwwlQn8TsT/QSPcjHiT3CQ==
   dependencies:
     cluster-key-slot "^1.1.0"
     debug "^4.3.1"
@@ -8225,7 +8224,6 @@ levn@^0.4.1:
 
 "lib@link:./packages/web/src/lib":
   version "0.0.0"
-  uid ""
 
 libnpmaccess@^4.0.1:
   version "4.0.1"
