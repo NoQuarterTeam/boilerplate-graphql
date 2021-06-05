@@ -7,7 +7,7 @@ if (APP_ENV) {
 } else {
   const hostname = typeof window !== "undefined" && window?.location?.hostname
   if (hostname) {
-    if (hostname.includes("greymen")) {
+    if (hostname.includes("boilerplate")) {
       env = "production"
     } else {
       env = "development"
@@ -19,15 +19,13 @@ if (APP_ENV) {
 
 export const IS_PRODUCTION = env === "production"
 export const IS_DEV = !IS_PRODUCTION
-
-export const SENTRY_DSN = "SENTRY DSN"
-
 export const REDIRECT_PATH = "redirect"
 
+export const SENTRY_DSN = "https://5d0371a223bb4509902f8940cb957daf@o204549.ingest.sentry.io/5741383"
 export const API_URL = IS_PRODUCTION
-  ? "https://greymen.herokuapp.com/graphql"
+  ? "https://nq-fullstack-boilerplate.herokuapp.com/graphql"
   : "http://localhost:5000/graphql"
 
-export const WEB_URL = IS_PRODUCTION ? "greymen.nl" : "localhost:3000"
+export const WEB_URL = IS_PRODUCTION ? "admin.boilerplate.noquarter.co" : "localhost:3001"
 
-export const SESSION_TOKEN = "greymen.admin.token"
+export const SESSION_TOKEN = "fullstack.boilerplate.admin.token"
