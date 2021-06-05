@@ -15,9 +15,9 @@ import {
 import Head from "next/head"
 import { BiMoon, BiSun } from "react-icons/bi"
 
-import { useLogout } from "lib/hooks/useLogout"
-import { ButtonGroup } from "components/ButtonGroup"
-import { useMe } from "lib/hooks/useMe"
+import { useLogout } from "@web/lib/hooks/useLogout"
+import { ButtonGroup } from "@web/components/ButtonGroup"
+import { useMe } from "@web/lib/hooks/useMe"
 
 export default function Home() {
   const { me, loading } = useMe()

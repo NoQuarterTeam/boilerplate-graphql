@@ -4,20 +4,19 @@ import { gql, useApolloClient } from "@apollo/client"
 import { Box, Stack, Heading, Button, Center, Flex } from "@chakra-ui/react"
 import Link from "next/link"
 import Head from "next/head"
-import { useRouter } from "next/router"
 
-import { MeFragmentDoc, LoginInput, MeQuery, MeDocument, useLoginMutation } from "@web/lib/graphql"
-import Yup from "@web/lib/yup"
-import { Form } from "@web/components/Form"
-import { Input } from "@web/components/Input"
-import { SESSION_TOKEN } from "@web/lib/config"
-import { FormError } from "@web/components/FormError"
-import { useForm } from "@web/lib/hooks/useForm"
-import { withNoAuth } from "@web/components/hoc/withNoAuth"
+import { MeFragmentDoc, LoginInput, MeQuery, MeDocument, useLoginMutation } from "@admin/lib/graphql"
+import Yup from "@admin/lib/yup"
+import { Form } from "@admin/components/Form"
+import { Input } from "@admin/components/Input"
+import { SESSION_TOKEN } from "@admin/lib/config"
+import { FormError } from "@admin/components/FormError"
+import { useForm } from "@admin/lib/hooks/useForm"
+import { withNoAuth } from "@admin/components/hoc/withNoAuth"
 
 export const LOGIN = gql`
   mutation Login($data: LoginInput!) {
-    login(data: $data) {
+    loginAdmin(data: $data) {
       user {
         ...Me
       }
@@ -36,29 +35,23 @@ function Login() {
   const client = useApolloClient()
 
   const [login, { loading }] = useLoginMutation()
-  const router = useRouter()
-  const redirectTo = router.query.redirectTo as string | undefined
   const form = useForm({ schema: LoginSchema })
 
   const onSubmit = (values: LoginInput) => {
     return form.handler(() => login({ variables: { data: values } }), {
-      onSuccess: (data) => {
-        document.cookie = cookie.serialize(SESSION_TOKEN, data.login.token, {
+      onSuccess: async (data) => {
+        document.cookie = cookie.serialize(SESSION_TOKEN, data.loginAdmin.token, {
           path: "/",
           maxAge: 30 * 24 * 60 * 60, // 30 days
         })
-        client.writeQuery<MeQuery>({
-          query: MeDocument,
-          data: { me: data.login.user },
-        })
-        router.replace(redirectTo || "/")
+        client.writeQuery<MeQuery>({ query: MeDocument, data: { me: data.loginAdmin.user } })
       },
     })
   }
   return (
     <Center minH="100vh">
       <Head>
-        <title>Fullstack boilerplate - Login</title>
+        <title>Login</title>
       </Head>
       <Box w={["100%", 400]}>
         <Form onSubmit={onSubmit} {...form}>
@@ -66,12 +59,11 @@ function Login() {
             <Heading as="h1">Login</Heading>
             <Input name="email" label="Email" placeholder="jim@gmail.com" />
             <Input name="password" label="Password" type="password" placeholder="********" />
-            <Button colorScheme="purple" type="submit" isFullWidth isLoading={loading} isDisabled={loading}>
+            <Button colorScheme="pink" type="submit" isFullWidth isLoading={loading} isDisabled={loading}>
               Login
             </Button>
             <FormError />
             <Flex justify="space-between">
-              <Link href="/register">Register</Link>
               <Link href="/forgot-password">Forgot password?</Link>
             </Flex>
           </Stack>

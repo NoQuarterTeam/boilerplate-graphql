@@ -2,6 +2,14 @@
 # yarn lockfile v1
 
 
+"@admin/components@link:./packages/admin/src/components":
+  version "0.0.0"
+  uid ""
+
+"@admin/lib@link:./packages/admin/src/lib":
+  version "0.0.0"
+  uid ""
+
 "@apollo/client@3.3.19":
   version "3.3.19"
   resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.3.19.tgz#f1172dc9b9d7eae04c8940b047fd3b452ef92d2c"
@@ -3713,6 +3721,14 @@
     "@typescript-eslint/types" "4.26.0"
     eslint-visitor-keys "^2.0.0"
 
+"@web/components@link:./packages/web/src/components":
+  version "0.0.0"
+  uid ""
+
+"@web/lib@link:./packages/web/src/lib":
+  version "0.0.0"
+  uid ""
+
 "@wry/context@^0.6.0":
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/@wry/context/-/context-0.6.0.tgz#f903eceb89d238ef7e8168ed30f4511f92d83e06"
@@ -5145,9 +5161,6 @@ compare-versions@^3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/compare-versions/-/compare-versions-3.6.0.tgz#1a5689913685e5a87637b8d3ffca75514ec41d62"
   integrity sha512-W6Af2Iw1z4CB7q4uU4hv646dW9GQuBM+YpC0UvUCWSD8w90SJjp+ujJuXaEMtAXBtSqGfMPuFOVn4/+FlaqfBA==
-
-"components@link:./packages/web/src/components":
-  version "0.0.0"
 
 compress-commons@^3.0.0:
   version "3.0.0"
@@ -8222,9 +8235,6 @@ levn@^0.4.1:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
 
-"lib@link:./packages/web/src/lib":
-  version "0.0.0"
-
 libnpmaccess@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/libnpmaccess/-/libnpmaccess-4.0.1.tgz#17e842e03bef759854adf6eb6c2ede32e782639f"
@@ -10371,10 +10381,10 @@ react-focus-lock@2.5.0:
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
 
-react-hook-form@7.8.0:
-  version "7.8.0"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.8.0.tgz#a2c5beb25f3786ce16d7a960e7c974057303f20e"
-  integrity sha512-lHQOtterhYegtOxFDh6BeQE98XZl6B3c8wADe3bVWDKizCJPsxT0Esnl4QnwxOpXDkiAC64f46vGYjCOTibgyQ==
+react-hook-form@7.8.1:
+  version "7.8.1"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.8.1.tgz#291609c50778bf8bc94e5d4c586e9ee5c6dd512f"
+  integrity sha512-pwWxd4UfwsKVh/W2YE2Hnu7KBY4KTCZq3QO1PMISzP31AZ5Kmv6ji085QVIHVWVSLT4oX6IhmZ2bWJ2oBIwobQ==
 
 react-icons@4.2.0:
   version "4.2.0"

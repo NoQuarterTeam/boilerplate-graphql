@@ -1,10 +1,10 @@
 {
   "private": true,
-  "name": "@fullstack-boilerplate/web",
+  "name": "@fullstack-boilerplate/admin",
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 3001",
     "build": "next build",
     "start": "next start",
     "serve": "next start -p $PORT",
@@ -28,6 +28,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@admin/components": "link:./src/components",
+    "@admin/lib": "link:./src/lib",
     "@apollo/client": "3.3.19",
     "@chakra-ui/react": "1.6.3",
     "@emotion/react": "11.4.0",
@@ -35,8 +37,6 @@
     "@hookform/resolvers": "2.5.2",
     "@sentry/react": "6.5.1",
     "@sentry/tracing": "6.5.1",
-    "@web/components": "link:./src/components",
-    "@web/lib": "link:./src/lib",
     "dayjs": "1.10.5",
     "framer-motion": "4.1.17",
     "next": "10.2.3",

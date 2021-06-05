@@ -6,9 +6,9 @@ import { ChakraProvider } from "@chakra-ui/react"
 import * as Sentry from "@sentry/react"
 import { Integrations } from "@sentry/tracing"
 
-import { useApollo } from "@web/lib/apollo/client"
-import { theme } from "@web/lib/theme"
-import { IS_PRODUCTION, SENTRY_DSN } from "@web/lib/config"
+import { useApollo } from "@admin/lib/apollo/client"
+import { IS_PRODUCTION, SENTRY_DSN } from "@admin/lib/config"
+import { theme } from "@admin/lib/theme"
 
 if (IS_PRODUCTION) {
   Sentry.init({
@@ -21,7 +21,6 @@ if (IS_PRODUCTION) {
 
 export default function FullstackBoilerplateApp(props: AppProps<any>) {
   const { Component, pageProps } = props
-
   const apolloClient = useApollo(pageProps.initialApolloState)
 
   return (

@@ -1,7 +1,7 @@
 import * as React from "react"
 import { useFormContext, UseFormReturn, FormProvider } from "react-hook-form"
 import { Box } from "@chakra-ui/react"
-import { useToast } from "@web/lib/hooks/useToast"
+import { useToast } from "@admin/lib/hooks/useToast"
 
 interface FormContainerProps {
   onSubmit?: (values: any) => Promise<any> | any

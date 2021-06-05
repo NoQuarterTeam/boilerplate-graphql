@@ -5,12 +5,13 @@ import { useRouter } from "next/router"
 import Link from "next/link"
 import Head from "next/head"
 
-import { Form } from "@web/components/Form"
-import { Input } from "@web/components/Input"
-import { useToast } from "@web/lib/hooks/useToast"
-import Yup from "@web/lib/yup"
-import { useResetPasswordMutation, ResetPasswordInput } from "@web/lib/graphql"
-import { useForm } from "@web/lib/hooks/useForm"
+import { Form } from "@admin/components/Form"
+import { Input } from "@admin/components/Input"
+import { useToast } from "@admin/lib/hooks/useToast"
+import Yup from "@admin/lib/yup"
+import { useResetPasswordMutation, ResetPasswordInput } from "@admin/lib/graphql"
+import { useForm } from "@admin/lib/hooks/useForm"
+import { withNoAuth } from "@admin/components/hoc/withNoAuth"
 
 export const RESET_PASSWORD = gql`
   mutation ResetPassword($data: ResetPasswordInput!) {
@@ -22,7 +23,7 @@ const ResetPasswordSchema = Yup.object().shape({
   password: Yup.string().min(8, "Must be at least 8 characters"),
 })
 
-export default function ResetPassword() {
+function ResetPassword() {
   const { query, push } = useRouter()
   const token = query.token as string
   const [reset, { loading }] = useResetPasswordMutation()
@@ -44,7 +45,7 @@ export default function ResetPassword() {
   return (
     <Center minH="100vh">
       <Head>
-        <title>Fullstack boilerplate - Reset password</title>
+        <title>Reset password</title>
       </Head>
       <Box w={["100%", 400]}>
         <Form {...form} onSubmit={handleSubmit}>
@@ -54,7 +55,7 @@ export default function ResetPassword() {
               <Text>Enter a new password below.</Text>
             </Box>
             <Input name="password" placeholder="*********" type="password" />
-            <Button isFullWidth colorScheme="purple" type="submit" isDisabled={loading} isLoading={loading}>
+            <Button isFullWidth colorScheme="pink" type="submit" isDisabled={loading} isLoading={loading}>
               Reset
             </Button>
             <Link href="/login">Login</Link>
@@ -64,3 +65,5 @@ export default function ResetPassword() {
     </Center>
   )
 }
+
+export default withNoAuth(ResetPassword)

@@ -1,6 +1,6 @@
 import { Arg, Args, Ctx, FieldResolver, Mutation, Query, Resolver, Root } from "type-graphql"
 import { Inject, Service } from "typedi"
-import { User, FindManyUserArgs } from "@generated"
+import { User, Role, FindManyUserArgs } from "@generated"
 
 import { UserService } from "./user.service"
 import { AuthResponse } from "./responses/auth.response"
@@ -14,6 +14,7 @@ import { ResetPasswordInput } from "./inputs/resetPassword.input"
 import { UserMailer } from "./user.mailer"
 import { CurrentUser } from "../shared/currentUser"
 import { UsersResponse } from "./responses/users.response"
+import { AuthenticationError } from "apollo-server-express"
 
 @Service()
 @Resolver(() => User)
@@ -42,6 +43,16 @@ export default class UserResolver {
   @Mutation(() => AuthResponse)
   async login(@Arg("data") data: LoginInput, @Ctx() context: ResolverContext): Promise<AuthResponse> {
     const user = await this.userService.login(data)
+    const token = this.userService.createAuthToken(user)
+    context.req.user = user
+    return { user, token }
+  }
+
+  // LOGIN ADMIN
+  @Mutation(() => AuthResponse)
+  async loginAdmin(@Arg("data") data: LoginInput, @Ctx() context: ResolverContext): Promise<AuthResponse> {
+    const user = await this.userService.login(data)
+    if (user.role !== Role.ADMIN) throw new AuthenticationError("Not authorized")
     const token = this.userService.createAuthToken(user)
     context.req.user = user
     return { user, token }
@@ -88,7 +99,7 @@ export default class UserResolver {
 
   @FieldResolver(() => String)
   email(@Root() user: User, @CurrentUser() currentUser: User) {
-    if (user.id !== currentUser.id) return ""
-    return currentUser.email
+    if (currentUser.role !== Role.ADMIN && user.id !== currentUser.id) return ""
+    return user.email
   }
 }

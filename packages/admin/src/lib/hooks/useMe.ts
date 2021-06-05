@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client"
 
-import { MeFragmentDoc, useMeQuery } from "@web/lib/graphql"
+import { MeFragmentDoc, useMeQuery } from "@admin/lib/graphql"
 
 export const ME_FRAGMENT = gql`
   fragment Me on User {

@@ -53,10 +53,7 @@ class FullstackBoilerplate extends Server {
       schema,
     })
 
-    apolloServer.applyMiddleware({
-      cors: CORS_OPTIONS,
-      app: this.app,
-    })
+    apolloServer.applyMiddleware({ cors: CORS_OPTIONS, app: this.app })
     this.logger.info("Apollo setup")
   }
 }
