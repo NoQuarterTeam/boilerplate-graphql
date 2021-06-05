@@ -7581,10 +7581,10 @@ invariant@^2.2.4:
   dependencies:
     loose-envify "^1.0.0"
 
-ioredis@4.27.4:
-  version "4.27.4"
-  resolved "https://registry.yarnpkg.com/ioredis/-/ioredis-4.27.4.tgz#a5361147eff9847e82b78d5d3b48cb03b6cebcba"
-  integrity sha512-1n91WZ+L1tHL4hEN9pT16s3f0+Dg82GfvyJGaD47BhEvQb63gIsmDkt/dmzDFBTYfwwlQn8TsT/QSPcjHiT3CQ==
+ioredis@4.27.5:
+  version "4.27.5"
+  resolved "https://registry.yarnpkg.com/ioredis/-/ioredis-4.27.5.tgz#b62192bb6198f8a5a02947902117150aef39b7f1"
+  integrity sha512-JJ3HzOzU6kgUk3gKhpx8kxEYn9ruI5TkpOtGvbw/hLyWxfC19T9uCZTgmw4Mci4al4aOCCMfAjYzJ7aqQkLbJg==
   dependencies:
     cluster-key-slot "^1.1.0"
     debug "^4.3.1"
@@ -10371,10 +10371,10 @@ react-focus-lock@2.5.0:
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
 
-react-hook-form@7.8.0:
-  version "7.8.0"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.8.0.tgz#a2c5beb25f3786ce16d7a960e7c974057303f20e"
-  integrity sha512-lHQOtterhYegtOxFDh6BeQE98XZl6B3c8wADe3bVWDKizCJPsxT0Esnl4QnwxOpXDkiAC64f46vGYjCOTibgyQ==
+react-hook-form@7.8.1:
+  version "7.8.1"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.8.1.tgz#291609c50778bf8bc94e5d4c586e9ee5c6dd512f"
+  integrity sha512-pwWxd4UfwsKVh/W2YE2Hnu7KBY4KTCZq3QO1PMISzP31AZ5Kmv6ji085QVIHVWVSLT4oX6IhmZ2bWJ2oBIwobQ==
 
 react-icons@4.2.0:
   version "4.2.0"
