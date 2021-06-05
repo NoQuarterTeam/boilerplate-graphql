@@ -78,6 +78,13 @@ export default class UserResolver {
     return true
   }
 
+  // DESTROY ACCOUNT
+  @Mutation(() => Boolean)
+  async destroyAccount(@CurrentUser() user: User): Promise<boolean> {
+    await prisma.user.delete({ where: { id: user.id } })
+    return true
+  }
+
   // RESET PASSWORD
   @Mutation(() => Boolean)
   async resetPassword(@Arg("data") data: ResetPasswordInput): Promise<boolean> {

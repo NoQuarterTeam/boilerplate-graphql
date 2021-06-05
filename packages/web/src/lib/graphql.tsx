@@ -23,18 +23,11 @@ export type AffectedRowsOutput = {
   count: Scalars["Int"]
 }
 
-export type AggregatePost = {
-  __typename?: "AggregatePost"
-  count?: Maybe<PostCountAggregate>
-  min?: Maybe<PostMinAggregate>
-  max?: Maybe<PostMaxAggregate>
-}
-
 export type AggregateUser = {
   __typename?: "AggregateUser"
-  count?: Maybe<UserCountAggregate>
-  min?: Maybe<UserMinAggregate>
-  max?: Maybe<UserMaxAggregate>
+  _count?: Maybe<UserCountAggregate>
+  _min?: Maybe<UserMinAggregate>
+  _max?: Maybe<UserMaxAggregate>
 }
 
 export type AuthResponse = {
@@ -67,9 +60,9 @@ export type DateTimeWithAggregatesFilter = {
   gt?: Maybe<Scalars["DateTime"]>
   gte?: Maybe<Scalars["DateTime"]>
   not?: Maybe<NestedDateTimeWithAggregatesFilter>
-  count?: Maybe<NestedIntFilter>
-  min?: Maybe<NestedDateTimeFilter>
-  max?: Maybe<NestedDateTimeFilter>
+  _count?: Maybe<NestedIntFilter>
+  _min?: Maybe<NestedDateTimeFilter>
+  _max?: Maybe<NestedDateTimeFilter>
 }
 
 export type EnumRoleFieldUpdateOperationsInput = {
@@ -88,9 +81,9 @@ export type EnumRoleWithAggregatesFilter = {
   in?: Maybe<Array<Role>>
   notIn?: Maybe<Array<Role>>
   not?: Maybe<NestedEnumRoleWithAggregatesFilter>
-  count?: Maybe<NestedIntFilter>
-  min?: Maybe<NestedEnumRoleFilter>
-  max?: Maybe<NestedEnumRoleFilter>
+  _count?: Maybe<NestedIntFilter>
+  _min?: Maybe<NestedEnumRoleFilter>
+  _max?: Maybe<NestedEnumRoleFilter>
 }
 
 export type LoginInput = {
@@ -100,13 +93,6 @@ export type LoginInput = {
 
 export type Mutation = {
   __typename?: "Mutation"
-  createPost: Post
-  createManyPost: AffectedRowsOutput
-  deletePost?: Maybe<Post>
-  updatePost?: Maybe<Post>
-  deleteManyPost: AffectedRowsOutput
-  updateManyPost: AffectedRowsOutput
-  upsertPost: Post
   createUser: User
   createManyUser: AffectedRowsOutput
   deleteUser?: Maybe<User>
@@ -115,42 +101,11 @@ export type Mutation = {
   updateManyUser: AffectedRowsOutput
   upsertUser: User
   login: AuthResponse
+  loginAdmin: AuthResponse
   register: AuthResponse
   forgotPassword: Scalars["Boolean"]
+  destroyAccount: Scalars["Boolean"]
   resetPassword: Scalars["Boolean"]
-}
-
-export type MutationCreatePostArgs = {
-  data: PostCreateInput
-}
-
-export type MutationCreateManyPostArgs = {
-  data: Array<PostCreateManyInput>
-  skipDuplicates?: Maybe<Scalars["Boolean"]>
-}
-
-export type MutationDeletePostArgs = {
-  where: PostWhereUniqueInput
-}
-
-export type MutationUpdatePostArgs = {
-  data: PostUpdateInput
-  where: PostWhereUniqueInput
-}
-
-export type MutationDeleteManyPostArgs = {
-  where?: Maybe<PostWhereInput>
-}
-
-export type MutationUpdateManyPostArgs = {
-  data: PostUpdateManyMutationInput
-  where?: Maybe<PostWhereInput>
-}
-
-export type MutationUpsertPostArgs = {
-  where: PostWhereUniqueInput
-  create: PostCreateInput
-  update: PostUpdateInput
 }
 
 export type MutationCreateUserArgs = {
@@ -190,6 +145,10 @@ export type MutationLoginArgs = {
   data: LoginInput
 }
 
+export type MutationLoginAdminArgs = {
+  data: LoginInput
+}
+
 export type MutationRegisterArgs = {
   data: RegisterInput
 }
@@ -222,9 +181,9 @@ export type NestedDateTimeWithAggregatesFilter = {
   gt?: Maybe<Scalars["DateTime"]>
   gte?: Maybe<Scalars["DateTime"]>
   not?: Maybe<NestedDateTimeWithAggregatesFilter>
-  count?: Maybe<NestedIntFilter>
-  min?: Maybe<NestedDateTimeFilter>
-  max?: Maybe<NestedDateTimeFilter>
+  _count?: Maybe<NestedIntFilter>
+  _min?: Maybe<NestedDateTimeFilter>
+  _max?: Maybe<NestedDateTimeFilter>
 }
 
 export type NestedEnumRoleFilter = {
@@ -239,9 +198,9 @@ export type NestedEnumRoleWithAggregatesFilter = {
   in?: Maybe<Array<Role>>
   notIn?: Maybe<Array<Role>>
   not?: Maybe<NestedEnumRoleWithAggregatesFilter>
-  count?: Maybe<NestedIntFilter>
-  min?: Maybe<NestedEnumRoleFilter>
-  max?: Maybe<NestedEnumRoleFilter>
+  _count?: Maybe<NestedIntFilter>
+  _min?: Maybe<NestedEnumRoleFilter>
+  _max?: Maybe<NestedEnumRoleFilter>
 }
 
 export type NestedIntFilter = {
@@ -306,9 +265,9 @@ export type NestedStringNullableWithAggregatesFilter = {
   startsWith?: Maybe<Scalars["String"]>
   endsWith?: Maybe<Scalars["String"]>
   not?: Maybe<NestedStringNullableWithAggregatesFilter>
-  count?: Maybe<NestedIntNullableFilter>
-  min?: Maybe<NestedStringNullableFilter>
-  max?: Maybe<NestedStringNullableFilter>
+  _count?: Maybe<NestedIntNullableFilter>
+  _min?: Maybe<NestedStringNullableFilter>
+  _max?: Maybe<NestedStringNullableFilter>
 }
 
 export type NestedStringWithAggregatesFilter = {
@@ -323,151 +282,23 @@ export type NestedStringWithAggregatesFilter = {
   startsWith?: Maybe<Scalars["String"]>
   endsWith?: Maybe<Scalars["String"]>
   not?: Maybe<NestedStringWithAggregatesFilter>
-  count?: Maybe<NestedIntFilter>
-  min?: Maybe<NestedStringFilter>
-  max?: Maybe<NestedStringFilter>
+  _count?: Maybe<NestedIntFilter>
+  _min?: Maybe<NestedStringFilter>
+  _max?: Maybe<NestedStringFilter>
 }
 
 export type NullableStringFieldUpdateOperationsInput = {
   set?: Maybe<Scalars["String"]>
 }
 
-export type Post = {
-  __typename?: "Post"
-  id: Scalars["String"]
-  title: Scalars["String"]
-}
-
-export type PostCountAggregate = {
-  __typename?: "PostCountAggregate"
-  id: Scalars["Int"]
-  title: Scalars["Int"]
-  _all: Scalars["Int"]
-}
-
-export type PostCreateInput = {
-  id?: Maybe<Scalars["String"]>
-  title: Scalars["String"]
-}
-
-export type PostCreateManyInput = {
-  id?: Maybe<Scalars["String"]>
-  title: Scalars["String"]
-}
-
-export type PostGroupBy = {
-  __typename?: "PostGroupBy"
-  id: Scalars["String"]
-  title: Scalars["String"]
-  count?: Maybe<PostCountAggregate>
-  min?: Maybe<PostMinAggregate>
-  max?: Maybe<PostMaxAggregate>
-}
-
-export type PostMaxAggregate = {
-  __typename?: "PostMaxAggregate"
-  id?: Maybe<Scalars["String"]>
-  title?: Maybe<Scalars["String"]>
-}
-
-export type PostMinAggregate = {
-  __typename?: "PostMinAggregate"
-  id?: Maybe<Scalars["String"]>
-  title?: Maybe<Scalars["String"]>
-}
-
-export type PostOrderByInput = {
-  id?: Maybe<SortOrder>
-  title?: Maybe<SortOrder>
-}
-
-export enum PostScalarFieldEnum {
-  Id = "id",
-  Title = "title",
-}
-
-export type PostScalarWhereWithAggregatesInput = {
-  AND?: Maybe<Array<PostScalarWhereWithAggregatesInput>>
-  OR?: Maybe<Array<PostScalarWhereWithAggregatesInput>>
-  NOT?: Maybe<Array<PostScalarWhereWithAggregatesInput>>
-  id?: Maybe<StringWithAggregatesFilter>
-  title?: Maybe<StringWithAggregatesFilter>
-}
-
-export type PostUpdateInput = {
-  id?: Maybe<StringFieldUpdateOperationsInput>
-  title?: Maybe<StringFieldUpdateOperationsInput>
-}
-
-export type PostUpdateManyMutationInput = {
-  id?: Maybe<StringFieldUpdateOperationsInput>
-  title?: Maybe<StringFieldUpdateOperationsInput>
-}
-
-export type PostWhereInput = {
-  AND?: Maybe<Array<PostWhereInput>>
-  OR?: Maybe<Array<PostWhereInput>>
-  NOT?: Maybe<Array<PostWhereInput>>
-  id?: Maybe<StringFilter>
-  title?: Maybe<StringFilter>
-}
-
-export type PostWhereUniqueInput = {
-  id?: Maybe<Scalars["String"]>
-}
-
 export type Query = {
   __typename?: "Query"
-  post?: Maybe<Post>
-  findFirstPost?: Maybe<Post>
-  posts: Array<Post>
-  aggregatePost: AggregatePost
-  groupByPost: Array<PostGroupBy>
   user?: Maybe<User>
   findFirstUser?: Maybe<User>
   users: UsersResponse
   aggregateUser: AggregateUser
   groupByUser: Array<UserGroupBy>
   me?: Maybe<User>
-}
-
-export type QueryPostArgs = {
-  where: PostWhereUniqueInput
-}
-
-export type QueryFindFirstPostArgs = {
-  where?: Maybe<PostWhereInput>
-  orderBy?: Maybe<Array<PostOrderByInput>>
-  cursor?: Maybe<PostWhereUniqueInput>
-  take?: Maybe<Scalars["Int"]>
-  skip?: Maybe<Scalars["Int"]>
-  distinct?: Maybe<Array<PostScalarFieldEnum>>
-}
-
-export type QueryPostsArgs = {
-  where?: Maybe<PostWhereInput>
-  orderBy?: Maybe<Array<PostOrderByInput>>
-  cursor?: Maybe<PostWhereUniqueInput>
-  take?: Maybe<Scalars["Int"]>
-  skip?: Maybe<Scalars["Int"]>
-  distinct?: Maybe<Array<PostScalarFieldEnum>>
-}
-
-export type QueryAggregatePostArgs = {
-  where?: Maybe<PostWhereInput>
-  orderBy?: Maybe<Array<PostOrderByInput>>
-  cursor?: Maybe<PostWhereUniqueInput>
-  take?: Maybe<Scalars["Int"]>
-  skip?: Maybe<Scalars["Int"]>
-}
-
-export type QueryGroupByPostArgs = {
-  where?: Maybe<PostWhereInput>
-  orderBy?: Maybe<Array<PostOrderByInput>>
-  by: Array<PostScalarFieldEnum>
-  having?: Maybe<PostScalarWhereWithAggregatesInput>
-  take?: Maybe<Scalars["Int"]>
-  skip?: Maybe<Scalars["Int"]>
 }
 
 export type QueryUserArgs = {
@@ -583,9 +414,9 @@ export type StringNullableWithAggregatesFilter = {
   endsWith?: Maybe<Scalars["String"]>
   mode?: Maybe<QueryMode>
   not?: Maybe<NestedStringNullableWithAggregatesFilter>
-  count?: Maybe<NestedIntNullableFilter>
-  min?: Maybe<NestedStringNullableFilter>
-  max?: Maybe<NestedStringNullableFilter>
+  _count?: Maybe<NestedIntNullableFilter>
+  _min?: Maybe<NestedStringNullableFilter>
+  _max?: Maybe<NestedStringNullableFilter>
 }
 
 export type StringWithAggregatesFilter = {
@@ -601,9 +432,9 @@ export type StringWithAggregatesFilter = {
   endsWith?: Maybe<Scalars["String"]>
   mode?: Maybe<QueryMode>
   not?: Maybe<NestedStringWithAggregatesFilter>
-  count?: Maybe<NestedIntFilter>
-  min?: Maybe<NestedStringFilter>
-  max?: Maybe<NestedStringFilter>
+  _count?: Maybe<NestedIntFilter>
+  _min?: Maybe<NestedStringFilter>
+  _max?: Maybe<NestedStringFilter>
 }
 
 export type User = {
@@ -674,9 +505,9 @@ export type UserGroupBy = {
   bio?: Maybe<Scalars["String"]>
   createdAt: Scalars["DateTime"]
   updatedAt: Scalars["DateTime"]
-  count?: Maybe<UserCountAggregate>
-  min?: Maybe<UserMinAggregate>
-  max?: Maybe<UserMaxAggregate>
+  _count?: Maybe<UserCountAggregate>
+  _min?: Maybe<UserMinAggregate>
+  _max?: Maybe<UserMaxAggregate>
 }
 
 export type UserMaxAggregate = {
@@ -802,24 +633,6 @@ export type UsersResponse = {
   items: Array<User>
 }
 
-export type UserItemFragment = { __typename?: "User" } & Pick<
-  User,
-  "id" | "firstName" | "lastName" | "createdAt"
->
-
-export type GetUsersQueryVariables = Exact<{
-  take?: Maybe<Scalars["Int"]>
-  orderBy?: Maybe<Array<UserOrderByInput> | UserOrderByInput>
-  where?: Maybe<UserWhereInput>
-  skip?: Maybe<Scalars["Int"]>
-}>
-
-export type GetUsersQuery = { __typename?: "Query" } & {
-  users: { __typename?: "UsersResponse" } & Pick<UsersResponse, "count"> & {
-      items: Array<{ __typename?: "User" } & UserItemFragment>
-    }
-}
-
 export type MeFragment = { __typename?: "User" } & Pick<
   User,
   "id" | "firstName" | "lastName" | "fullName" | "email"
@@ -834,6 +647,10 @@ export type ForgotPasswordMutationVariables = Exact<{
 }>
 
 export type ForgotPasswordMutation = { __typename?: "Mutation" } & Pick<Mutation, "forgotPassword">
+
+export type DestroyAccountMutationVariables = Exact<{ [key: string]: never }>
+
+export type DestroyAccountMutation = { __typename?: "Mutation" } & Pick<Mutation, "destroyAccount">
 
 export type LoginMutationVariables = Exact<{
   data: LoginInput
@@ -861,14 +678,6 @@ export type ResetPasswordMutationVariables = Exact<{
 
 export type ResetPasswordMutation = { __typename?: "Mutation" } & Pick<Mutation, "resetPassword">
 
-export const UserItemFragmentDoc = gql`
-  fragment UserItem on User {
-    id
-    firstName
-    lastName
-    createdAt
-  }
-`
 export const MeFragmentDoc = gql`
   fragment Me on User {
     id
@@ -878,32 +687,6 @@ export const MeFragmentDoc = gql`
     email
   }
 `
-export const GetUsersDocument = gql`
-  query GetUsers($take: Int, $orderBy: [UserOrderByInput!], $where: UserWhereInput, $skip: Int) {
-    users(take: $take, orderBy: $orderBy, where: $where, skip: $skip) {
-      items {
-        ...UserItem
-      }
-      count
-    }
-  }
-  ${UserItemFragmentDoc}
-`
-export function useGetUsersQuery(
-  baseOptions?: ApolloReactHooks.QueryHookOptions<GetUsersQuery, GetUsersQueryVariables>,
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return ApolloReactHooks.useQuery<GetUsersQuery, GetUsersQueryVariables>(GetUsersDocument, options)
-}
-export function useGetUsersLazyQuery(
-  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetUsersQuery, GetUsersQueryVariables>,
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return ApolloReactHooks.useLazyQuery<GetUsersQuery, GetUsersQueryVariables>(GetUsersDocument, options)
-}
-export type GetUsersQueryHookResult = ReturnType<typeof useGetUsersQuery>
-export type GetUsersLazyQueryHookResult = ReturnType<typeof useGetUsersLazyQuery>
-export type GetUsersQueryResult = Apollo.QueryResult<GetUsersQuery, GetUsersQueryVariables>
 export const MeDocument = gql`
   query Me {
     me {
@@ -944,6 +727,26 @@ export type ForgotPasswordMutationResult = Apollo.MutationResult<ForgotPasswordM
 export type ForgotPasswordMutationOptions = Apollo.BaseMutationOptions<
   ForgotPasswordMutation,
   ForgotPasswordMutationVariables
+>
+export const DestroyAccountDocument = gql`
+  mutation DestroyAccount {
+    destroyAccount
+  }
+`
+export function useDestroyAccountMutation(
+  baseOptions?: ApolloReactHooks.MutationHookOptions<DestroyAccountMutation, DestroyAccountMutationVariables>,
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return ApolloReactHooks.useMutation<DestroyAccountMutation, DestroyAccountMutationVariables>(
+    DestroyAccountDocument,
+    options,
+  )
+}
+export type DestroyAccountMutationHookResult = ReturnType<typeof useDestroyAccountMutation>
+export type DestroyAccountMutationResult = Apollo.MutationResult<DestroyAccountMutation>
+export type DestroyAccountMutationOptions = Apollo.BaseMutationOptions<
+  DestroyAccountMutation,
+  DestroyAccountMutationVariables
 >
 export const LoginDocument = gql`
   mutation Login($data: LoginInput!) {
