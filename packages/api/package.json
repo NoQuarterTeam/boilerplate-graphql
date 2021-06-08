@@ -35,7 +35,7 @@
     "@sendgrid/mail": "7.4.4",
     "@sentry/node": "6.5.1",
     "@sentry/tracing": "6.5.1",
-    "apollo-server-express": "2.25.0",
+    "apollo-server-express": "2.25.1",
     "bcryptjs": "2.4.3",
     "chalk": "4.1.1",
     "class-transformer": "0.4.0",
