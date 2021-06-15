@@ -2,7 +2,7 @@ import bcrypt from "bcryptjs"
 import { prisma } from "../../lib/prisma"
 
 prisma.$use(async (params, next) => {
-  if (params.model !== "User") return
+  if (params.model !== "User") return next(params)
   if (params.action === "create" || params.action === "update") {
     // Hash password
     if (params.args.data.password) {
