@@ -3032,10 +3032,10 @@
   dependencies:
     deepmerge "^4.2.2"
 
-"@sendgrid/mail@7.4.4":
-  version "7.4.4"
-  resolved "https://registry.yarnpkg.com/@sendgrid/mail/-/mail-7.4.4.tgz#cc31915342d0233592baa6e80b74beaf32e0bf2b"
-  integrity sha512-9+dyArajxbPY7eJJAd2eps7MVsXW9E4Y294gWeMYku0/Id/qAivexidjstvkkVlZdlrHbEsGDlnMEcw2eXOiFg==
+"@sendgrid/mail@7.4.5":
+  version "7.4.5"
+  resolved "https://registry.yarnpkg.com/@sendgrid/mail/-/mail-7.4.5.tgz#22cef36e793134833b36aff5d3f4f53e8f81dd52"
+  integrity sha512-adXMvrTUOlYr7+UTigZRGSYR9vheBv1y4fF2mugn29NBdQMfcQPGLQ5vIHgSAfcboBFCagZdamZqM5FeSGU0Hw==
   dependencies:
     "@sendgrid/client" "^7.4.3"
     "@sendgrid/helpers" "^7.4.3"
@@ -10406,10 +10406,10 @@ react-focus-lock@2.5.0:
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
 
-react-hook-form@7.8.7:
-  version "7.8.7"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.8.7.tgz#c26ae8b020bc3450f6395dfd1668b5b3a98c3ebc"
-  integrity sha512-wfpiHwgIvGCKN2scqrFzFiGZh0L2Cz7SWyI16v/0NBPYvSGN7T4HybdiOtNIuAbODxLaPyEalab2y8nCV/w7dg==
+react-hook-form@7.8.8:
+  version "7.8.8"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.8.8.tgz#cf68b129e14a71f65078522c07d35620e1a09a60"
+  integrity sha512-hFMPFxAhjqQu2aiUXHHrX87oIUG3wEYFRGWhONdxy5szeMWR7xKlpRj8xJr81oagv0bpTtBvkZWY3nk/uP09EA==
 
 react-icons@4.2.0:
   version "4.2.0"
