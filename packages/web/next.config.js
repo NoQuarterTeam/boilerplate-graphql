@@ -4,7 +4,4 @@ module.exports = {
     ignoreDevErrors: true,
     ignoreBuildErrors: true,
   },
-  future: {
-    webpack5: true,
-  },
 }
