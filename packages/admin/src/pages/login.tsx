@@ -5,14 +5,14 @@ import { Box, Stack, Heading, Button, Center, Flex } from "@chakra-ui/react"
 import Link from "next/link"
 import Head from "next/head"
 
-import { MeFragmentDoc, LoginInput, MeQuery, MeDocument, useLoginMutation } from "@admin/lib/graphql"
-import Yup from "@admin/lib/yup"
-import { Form } from "@admin/components/Form"
-import { Input } from "@admin/components/Input"
-import { SESSION_TOKEN } from "@admin/lib/config"
-import { FormError } from "@admin/components/FormError"
-import { useForm } from "@admin/lib/hooks/useForm"
-import { withNoAuth } from "@admin/components/hoc/withNoAuth"
+import { MeFragmentDoc, LoginInput, MeQuery, MeDocument, useLoginMutation } from "lib/graphql"
+import Yup from "lib/yup"
+import { Form } from "components/Form"
+import { Input } from "components/Input"
+import { SESSION_TOKEN } from "lib/config"
+import { FormError } from "components/FormError"
+import { useForm } from "lib/hooks/useForm"
+import { withNoAuth } from "components/hoc/withNoAuth"
 
 export const LOGIN = gql`
   mutation Login($data: LoginInput!) {
@@ -59,7 +59,7 @@ function Login() {
             <Heading as="h1">Login</Heading>
             <Input name="email" label="Email" placeholder="jim@gmail.com" />
             <Input name="password" label="Password" type="password" placeholder="********" />
-            <Button colorScheme="pink" type="submit" isFullWidth isLoading={loading} isDisabled={loading}>
+            <Button colorScheme="purple" type="submit" isFullWidth isLoading={loading} isDisabled={loading}>
               Login
             </Button>
             <FormError />

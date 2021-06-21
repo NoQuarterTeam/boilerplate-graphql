@@ -6,14 +6,14 @@ import { useRouter } from "next/router"
 import Link from "next/link"
 import Head from "next/head"
 
-import { MeFragmentDoc, RegisterInput, MeQuery, MeDocument, useRegisterMutation } from "@web/lib/graphql"
-import Yup from "@web/lib/yup"
-import { Form } from "@web/components/Form"
-import { Input } from "@web/components/Input"
-import { SESSION_TOKEN } from "@web/lib/config"
-import { FormError } from "@web/components/FormError"
-import { useForm } from "@web/lib/hooks/useForm"
-import { withNoAuth } from "@web/components/hoc/withNoAuth"
+import { MeFragmentDoc, RegisterInput, MeQuery, MeDocument, useRegisterMutation } from "lib/graphql"
+import Yup from "lib/yup"
+import { Form } from "components/Form"
+import { Input } from "components/Input"
+import { SESSION_TOKEN } from "lib/config"
+import { FormError } from "components/FormError"
+import { useForm } from "lib/hooks/useForm"
+import { withNoAuth } from "components/hoc/withNoAuth"
 
 export const REGISTER = gql`
   mutation Register($data: RegisterInput!) {

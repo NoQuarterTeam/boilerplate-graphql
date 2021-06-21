@@ -1,4 +1,4 @@
-const baseFieldStyle = { field: { borderRadius: 0 } }
+const baseFieldStyle = { field: { borderRadius: 2 } }
 
 export const Input = {
   parts: ["field", "addon"],
@@ -11,25 +11,9 @@ export const Input = {
     sm: baseFieldStyle,
     xs: baseFieldStyle,
   },
-  // Styles for the visual style variations
-  variants: {
-    filled: {
-      field: {
-        _focus: {
-          borderColor: "pink.500",
-        },
-      },
-    },
-    outline: {
-      field: {
-        _focus: {
-          borderColor: "pink.500",
-        },
-      },
-    },
-  },
   // The default `size` or `variant` values
   defaultProps: {
     variant: "filled",
+    focusBorderColor: "purple.500",
   },
 }

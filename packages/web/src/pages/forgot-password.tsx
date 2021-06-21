@@ -5,12 +5,12 @@ import { useRouter } from "next/router"
 import Link from "next/link"
 import Head from "next/head"
 
-import { Form } from "@web/components/Form"
-import { Input } from "@web/components/Input"
-import { useToast } from "@web/lib/hooks/useToast"
-import Yup from "@web/lib/yup"
-import { useForm } from "@web/lib/hooks/useForm"
-import { useForgotPasswordMutation, MutationForgotPasswordArgs } from "@web/lib/graphql"
+import { Form } from "components/Form"
+import { Input } from "components/Input"
+import { useToast } from "lib/hooks/useToast"
+import Yup from "lib/yup"
+import { useForm } from "lib/hooks/useForm"
+import { useForgotPasswordMutation, MutationForgotPasswordArgs } from "lib/graphql"
 
 export const FORGOT_PASSWORD = gql`
   mutation ForgotPassword($email: String!) {

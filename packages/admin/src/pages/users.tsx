@@ -5,13 +5,13 @@ import { CgSoftwareDownload, CgUserAdd } from "react-icons/cg"
 import { gql } from "@apollo/client"
 import dayjs from "dayjs"
 
-import { withAuth } from "@admin/components/hoc/withAuth"
-import { Layout } from "@admin/components/Layout"
-import { QueryMode, Role, SortOrder, useGetUsersQuery, UserItemFragment } from "@admin/lib/graphql"
-import { Column, Table } from "@admin/components/Table"
-import { PartialCheckIcon } from "@admin/components/PartialCheckIcon"
-import { paginate } from "@admin/lib/apollo/helpers"
-import { Search } from "@admin/components/Search"
+import { withAuth } from "components/hoc/withAuth"
+import { Layout } from "components/Layout"
+import { QueryMode, Role, SortOrder, useGetUsersQuery, UserItemFragment } from "lib/graphql"
+import { Column, Table } from "components/Table"
+import { PartialCheckIcon } from "components/PartialCheckIcon"
+import { paginate } from "lib/apollo/helpers"
+import { Search } from "components/Search"
 
 export const USER_ITEM = gql`
   fragment UserItem on User {
@@ -33,7 +33,7 @@ export const GET_USERS = gql`
   }
 `
 
-const TAKE = 8
+const TAKE = 10
 function Users() {
   const [search, setSearch] = React.useState("")
   const [selectedUsers, setSelectedUsers] = React.useState<string[]>([])
@@ -93,7 +93,7 @@ function Users() {
         <HStack mb={4}>
           <Search search={search} onSearch={setSearch} placeholder="Search users" />
           <Button leftIcon={<Box boxSize="20px" as={CgSoftwareDownload} />}>Download</Button>
-          <Button colorScheme="pink" leftIcon={<Box boxSize="18px" as={CgUserAdd} />}>
+          <Button colorScheme="purple" leftIcon={<Box boxSize="18px" as={CgUserAdd} />}>
             Create user
           </Button>
           {selectedUsers.length > 0 && <Button variant="ghost">{selectedUsers.length} selected</Button>}
@@ -119,18 +119,18 @@ function Users() {
               maxW="30px"
               header={
                 <Checkbox
-                  colorScheme="pink"
+                  colorScheme="purple"
                   isChecked={data && data.users.count > 0 && selectedUsers.length > 0}
                   onChange={toggleAll}
-                  iconColor="black"
-                  {...(isPartialSelection && { icon: <PartialCheckIcon /> })}
+                  iconColor="white"
+                  {...(isPartialSelection && { icon: <PartialCheckIcon color="white" /> })}
                 />
               }
               row={(user) => (
                 <Checkbox
-                  colorScheme="pink"
+                  colorScheme="purple"
                   isChecked={selectedUsers.includes(user.id)}
-                  iconColor="black"
+                  iconColor="white"
                   onChange={() => toggleSelected(user.id)}
                 />
               )}

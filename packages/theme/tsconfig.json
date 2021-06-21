@@ -5,11 +5,6 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "baseUrl": "./src",
-    "paths": {
-      "components/*": ["components/*"],
-      "lib/*": ["lib/*"]
-    },
     "strictFunctionTypes": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
@@ -21,5 +16,5 @@
     "jsx": "preserve"
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }

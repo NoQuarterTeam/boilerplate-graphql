@@ -5,13 +5,13 @@ import { useRouter } from "next/router"
 import Link from "next/link"
 import Head from "next/head"
 
-import { Form } from "@admin/components/Form"
-import { Input } from "@admin/components/Input"
-import { useToast } from "@admin/lib/hooks/useToast"
-import Yup from "@admin/lib/yup"
-import { useResetPasswordMutation, ResetPasswordInput } from "@admin/lib/graphql"
-import { useForm } from "@admin/lib/hooks/useForm"
-import { withNoAuth } from "@admin/components/hoc/withNoAuth"
+import { Form } from "components/Form"
+import { Input } from "components/Input"
+import { useToast } from "lib/hooks/useToast"
+import Yup from "lib/yup"
+import { useResetPasswordMutation, ResetPasswordInput } from "lib/graphql"
+import { useForm } from "lib/hooks/useForm"
+import { withNoAuth } from "components/hoc/withNoAuth"
 
 export const RESET_PASSWORD = gql`
   mutation ResetPassword($data: ResetPasswordInput!) {

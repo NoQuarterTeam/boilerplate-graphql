@@ -2,9 +2,9 @@ import * as React from "react"
 import { Box, Heading } from "@chakra-ui/react"
 import Head from "next/head"
 
-import { Layout } from "@admin/components/Layout"
-import { withAuth } from "@admin/components/hoc/withAuth"
-import { useMe } from "@admin/lib/hooks/useMe"
+import { Layout } from "components/Layout"
+import { withAuth } from "components/hoc/withAuth"
+import { useMe } from "lib/hooks/useMe"
 
 function Home() {
   const { me } = useMe()

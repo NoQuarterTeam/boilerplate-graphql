@@ -6,14 +6,14 @@ import Link from "next/link"
 import Head from "next/head"
 import { useRouter } from "next/router"
 
-import { MeFragmentDoc, LoginInput, MeQuery, MeDocument, useLoginMutation } from "@web/lib/graphql"
-import Yup from "@web/lib/yup"
-import { Form } from "@web/components/Form"
-import { Input } from "@web/components/Input"
-import { SESSION_TOKEN } from "@web/lib/config"
-import { FormError } from "@web/components/FormError"
-import { useForm } from "@web/lib/hooks/useForm"
-import { withNoAuth } from "@web/components/hoc/withNoAuth"
+import { MeFragmentDoc, LoginInput, MeQuery, MeDocument, useLoginMutation } from "lib/graphql"
+import Yup from "lib/yup"
+import { Form } from "components/Form"
+import { Input } from "components/Input"
+import { SESSION_TOKEN } from "lib/config"
+import { FormError } from "components/FormError"
+import { useForm } from "lib/hooks/useForm"
+import { withNoAuth } from "components/hoc/withNoAuth"
 
 export const LOGIN = gql`
   mutation Login($data: LoginInput!) {

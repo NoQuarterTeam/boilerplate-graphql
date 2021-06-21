@@ -3,8 +3,8 @@ import { ApolloClient, InMemoryCache, NormalizedCacheObject, createHttpLink } fr
 import { setContext } from "@apollo/client/link/context"
 import { mergeDeep } from "@apollo/client/utilities"
 
-import { API_URL, SESSION_TOKEN } from "@admin/lib/config"
-import { parseCookies, isBrowser } from "@admin/lib/helpers/utils"
+import { API_URL, SESSION_TOKEN } from "lib/config"
+import { parseCookies, isBrowser } from "lib/helpers/utils"
 
 type Callback = () => string
 type Options = {

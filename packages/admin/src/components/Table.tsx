@@ -3,7 +3,7 @@ import { Box, Center, FlexProps, Flex, Text, Spinner, Button, useColorModeValue 
 import { TiArrowSortedUp, TiArrowSortedDown } from "react-icons/ti"
 
 import { NoData } from "./NoData"
-import { useToast } from "@admin/lib/hooks/useToast"
+import { useToast } from "lib/hooks/useToast"
 
 interface DataType {
   id: string

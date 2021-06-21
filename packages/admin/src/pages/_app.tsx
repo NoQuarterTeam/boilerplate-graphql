@@ -5,10 +5,10 @@ import { ApolloProvider } from "@apollo/client"
 import { ChakraProvider } from "@chakra-ui/react"
 import * as Sentry from "@sentry/react"
 import { Integrations } from "@sentry/tracing"
+import { theme } from "@fullstack-boilerplate/theme"
 
-import { useApollo } from "@admin/lib/apollo/client"
-import { IS_PRODUCTION, SENTRY_DSN } from "@admin/lib/config"
-import { theme } from "@admin/lib/theme"
+import { useApollo } from "lib/apollo/client"
+import { IS_PRODUCTION, SENTRY_DSN } from "lib/config"
 
 if (IS_PRODUCTION) {
   Sentry.init({

@@ -2,9 +2,9 @@ import * as React from "react"
 import { Spinner, Center } from "@chakra-ui/react"
 import { useRouter } from "next/router"
 
-import { MeFragment } from "@web/lib/graphql"
-import { useMe } from "@web/lib/hooks/useMe"
-import { REDIRECT_PATH } from "@web/lib/config"
+import { MeFragment } from "lib/graphql"
+import { useMe } from "lib/hooks/useMe"
+import { REDIRECT_PATH } from "lib/config"
 
 export function withAuth(Page: any, func?: (user: MeFragment) => boolean) {
   function AuthComponent(props: any) {
