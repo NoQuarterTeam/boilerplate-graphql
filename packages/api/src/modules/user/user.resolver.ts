@@ -1,5 +1,6 @@
 import { Arg, Args, Ctx, FieldResolver, Mutation, Query, Resolver, Root } from "type-graphql"
 import { Inject, Service } from "typedi"
+import { AuthenticationError } from "apollo-server-express"
 import { User, Role, FindManyUserArgs } from "@generated"
 
 import { UserService } from "./user.service"
@@ -14,7 +15,8 @@ import { ResetPasswordInput } from "./inputs/resetPassword.input"
 import { UserMailer } from "./user.mailer"
 import { CurrentUser } from "../shared/currentUser"
 import { UsersResponse } from "./responses/users.response"
-import { AuthenticationError } from "apollo-server-express"
+import { UseAuth } from "../shared/middleware/UseAuth"
+import { CacheControl } from "../shared/middleware/CacheControl"
 
 @Service()
 @Resolver(() => User)
@@ -24,6 +26,7 @@ export default class UserResolver {
   @Inject(() => UserService)
   userService: UserService
 
+  @UseAuth([Role.ADMIN])
   @Query(() => UsersResponse)
   async users(@Args() args: FindManyUserArgs): Promise<UsersResponse> {
     const [items, count] = await prisma.$transaction([
@@ -104,6 +107,7 @@ export default class UserResolver {
     return (user.firstName + " " + user.lastName).trim()
   }
 
+  @CacheControl({ maxAge: 3600 })
   @FieldResolver(() => String)
   email(@Root() user: User, @CurrentUser() currentUser: User) {
     if (currentUser.role !== Role.ADMIN && user.id !== currentUser.id) return ""

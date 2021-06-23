@@ -29,7 +29,9 @@ class FullstackBoilerplate extends Server {
     this.start()
   }
   async setUpDb() {
+    await prisma.$connect()
     loadPrismaHooks()
+    this.logger.info("DB ready")
   }
   async setUpAuth() {
     this.app.use(jwt(JWT_AUTH))
@@ -50,6 +52,7 @@ class FullstackBoilerplate extends Server {
       formatResponse,
       introspection: !IS_PRODUCTION,
       playground: !IS_PRODUCTION,
+      cacheControl: true,
       engine: { apiKey: IS_PRODUCTION ? APOLLO_KEY : undefined },
       schema,
     })
