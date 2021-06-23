@@ -5,7 +5,7 @@ import { buildSchema } from "type-graphql"
 import { Container } from "typedi"
 import jwt from "express-jwt"
 
-import { CORS_OPTIONS, IS_PRODUCTION, JWT_AUTH, RESOLVER_PATHS } from "./lib/config"
+import { APOLLO_KEY, CORS_OPTIONS, IS_PRODUCTION, JWT_AUTH, RESOLVER_PATHS } from "./lib/config"
 import { ErrorInterceptor } from "./lib/globalMiddleware"
 import { ExpressContext } from "./lib/express"
 import { Server } from "./lib/server"
@@ -50,6 +50,7 @@ class FullstackBoilerplate extends Server {
       formatResponse,
       introspection: !IS_PRODUCTION,
       playground: !IS_PRODUCTION,
+      engine: { apiKey: IS_PRODUCTION ? APOLLO_KEY : undefined },
       schema,
     })
 

@@ -4,6 +4,7 @@ export const {
   NODE_ENV = "development",
   APP_ENV = "development",
   APP_SECRET = "APP_SECRET",
+  APOLLO_KEY = "APOLLO_KEY",
   APP_AUTH_SECRET = "APP_AUTH_SECRET",
   SENTRY_DSN = "SENTRY_DSN",
   SENDGRID_API_KEY = "SENDGRID_API_KEY",
