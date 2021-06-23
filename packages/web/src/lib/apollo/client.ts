@@ -31,6 +31,7 @@ function createApolloClient(initialState: null | Record<string, any>, options: O
     ssrMode: !isBrowser,
     ssrForceFetchDelay: 100,
     link: authLink.concat(httpLink),
+    name: "web",
     defaultOptions: {
       mutate: { errorPolicy: "all" },
       query: { errorPolicy: "all" },
