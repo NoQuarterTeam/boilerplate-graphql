@@ -1,7 +1,7 @@
 import { createMethodDecorator } from "type-graphql"
 import { AuthenticationError } from "apollo-server-express"
 import { prisma } from "../../../lib/prisma"
-import { ResolverContext } from "../resolver"
+import { ResolverContext } from "../resolverContext"
 
 export function UseAuth(roles?: string[]): any {
   return createMethodDecorator<ResolverContext>(async ({ context: { req } }, next) => {

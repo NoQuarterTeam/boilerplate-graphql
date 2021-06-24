@@ -1,6 +1,6 @@
 import { User } from "@prisma/client"
 import { createParamDecorator } from "type-graphql"
-import { ResolverContext } from "./resolver"
+import { ResolverContext } from "./resolverContext"
 
 export function ContextUser() {
   return createParamDecorator<ResolverContext>(async ({ context }) => {
