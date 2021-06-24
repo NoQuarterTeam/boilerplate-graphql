@@ -29,11 +29,12 @@ Comes with user authentication included
 
 **Must have node, yarn/npm, postgres and redis installed and setup locally**
 
-1. `git clone https://github.com/NoQuarterCo/fullstack-boilerplate.git`
+1. `git clone https://github.com/NoQuarterTeam/fullstack-boilerplate.git`
 2. `yarn install`
 3. `createdb fullstack-boilerplate` (must have postgres setup locally)
 4. `cd packages/api && yarn watch`
 5. `cd packages/web && yarn dev`
+6. `cd packages/admin && yarn dev`
 
 ### For mailers
 
