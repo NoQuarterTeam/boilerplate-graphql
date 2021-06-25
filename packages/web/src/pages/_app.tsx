@@ -19,7 +19,7 @@ if (IS_PRODUCTION) {
   })
 }
 
-export default function FullstackBoilerplateApp(props: AppProps<any>) {
+export default function WebApp(props: AppProps<any>) {
   const { Component, pageProps } = props
 
   const apolloClient = useApollo(pageProps.initialApolloState)

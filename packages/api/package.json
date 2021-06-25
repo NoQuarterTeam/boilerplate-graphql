@@ -8,7 +8,6 @@
     "schema": "src/db/schema.prisma"
   },
   "scripts": {
-    "ts": "rimraf dist && swc src --out-dir dist && node dist",
     "watch": "tsnd --respawn --transpile-only --no-notify --ignore-watch node_modules src/index.ts",
     "start": "ts-node src/index.ts",
     "generate": "prisma generate",
@@ -63,8 +62,6 @@
     "typegraphql-prisma": "0.14.4"
   },
   "devDependencies": {
-    "@swc/cli": "0.1.46",
-    "@swc/core": "1.2.61",
     "@types/bcryptjs": "2.4.2",
     "@types/express": "4.17.12",
     "@types/express-jwt": "6.0.1",

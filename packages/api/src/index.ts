@@ -14,7 +14,7 @@ import { prisma } from "./lib/prisma"
 import { loadPrismaHooks } from "./lib/hooks"
 import { loadResolvers } from "./lib/loadResolvers"
 
-class FullstackBoilerplate extends Server {
+class App extends Server {
   constructor() {
     super()
     this.init().catch((error) => {
@@ -63,4 +63,4 @@ class FullstackBoilerplate extends Server {
   }
 }
 
-new FullstackBoilerplate()
+new App()

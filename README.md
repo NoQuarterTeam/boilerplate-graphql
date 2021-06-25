@@ -36,6 +36,8 @@ Comes with user authentication included
 5. `cd packages/web && yarn dev`
 6. `cd packages/admin && yarn dev`
 
+Make sure you have created a .env file with the right values, use .env.example as the template
+
 ### For mailers
 
 - Create a Sendgrid account and set a SENDGRID_API_KEY environment variable in .env
@@ -52,4 +54,3 @@ An example is deployed [here](https://boilerplate.noquarter.co)
 We are using Heroku for the API package and Vercel for the WEB package
 
 (Our heroku app is on the free tier so there is a warm up time before it becomes responsive)
-
