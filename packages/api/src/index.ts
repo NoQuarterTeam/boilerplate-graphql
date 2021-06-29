@@ -13,6 +13,7 @@ import { formatResponse } from "./lib/formatResponse"
 import { prisma } from "./lib/prisma"
 import { loadPrismaHooks } from "./lib/hooks"
 import { loadResolvers } from "./lib/loadResolvers"
+import { currentUser } from "./lib/currentUser"
 
 class App extends Server {
   constructor() {
@@ -35,10 +36,12 @@ class App extends Server {
     this.logger.info("DB ready")
   }
   async setUpAuth() {
-    this.app.use(jwt(JWT_AUTH))
-    this.app.use((err: any, _: any, __: any, next: any) => {
-      if (err.name === "UnauthorizedError") next()
-    })
+    this.app
+      .use(jwt(JWT_AUTH))
+      .use((err: any, _: any, __: any, next: any) => {
+        if (err.name === "UnauthorizedError") next()
+      })
+      .use(currentUser)
     this.logger.info("Auth ready")
   }
 

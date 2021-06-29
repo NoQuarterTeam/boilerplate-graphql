@@ -4,10 +4,8 @@ import { ResolverContext } from "./resolverContext"
 
 export function CurrentUser() {
   return createParamDecorator<ResolverContext>(async ({ context }) => {
-    if (context.req.user) {
-      const user = await context.prisma.user.findUnique({ where: { id: context.req.user.id } })
-      if (!user) throw new AuthenticationError("Not authenticated")
-      return user
+    if (context.req.currentUser) {
+      return context.req.currentUser
     } else {
       throw new AuthenticationError("Not authenticated")
     }
