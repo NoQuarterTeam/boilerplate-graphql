@@ -59,7 +59,7 @@
     "type-graphql": "1.1.1",
     "type-graphql-dataloader": "0.4.0",
     "typedi": "0.10.0",
-    "typegraphql-prisma": "0.14.4"
+    "typegraphql-prisma": "0.14.5"
   },
   "devDependencies": {
     "@types/bcryptjs": "2.4.2",
@@ -72,6 +72,6 @@
     "@types/node": "14.17.4",
     "@types/nodemailer": "6.4.2",
     "ts-node": "10.0.0",
-    "ts-node-dev": "1.1.6"
+    "ts-node-dev": "1.1.7"
   }
 }
