@@ -16,7 +16,7 @@ import { UserMailer } from "./user.mailer"
 import { CurrentUser } from "../shared/currentUser"
 import { UsersResponse } from "./responses/users.response"
 import { UseAuth } from "../shared/middleware/UseAuth"
-import { CacheControl } from "../shared/middleware/CacheControl"
+import { UseCacheControl } from "../shared/middleware/UseCacheControl"
 
 @Service()
 @Resolver(() => User)
@@ -107,7 +107,7 @@ export default class UserResolver {
     return (user.firstName + " " + user.lastName).trim()
   }
 
-  @CacheControl({ maxAge: 3600 })
+  @UseCacheControl({ maxAge: 3600 })
   @FieldResolver(() => String)
   email(@Root() user: User, @CurrentUser() currentUser: User) {
     if (currentUser.role !== Role.ADMIN && user.id !== currentUser.id) return ""
