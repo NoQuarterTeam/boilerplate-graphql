@@ -42,7 +42,7 @@
     "readline-sync": "1.4.10",
     "rimraf": "3.0.2",
     "shelljs": "0.8.4",
-    "typescript": "4.3.4"
+    "typescript": "4.3.5"
   },
   "resolutions": {
     "prettier": "2.3.2"
