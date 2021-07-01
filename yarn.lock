@@ -11932,10 +11932,10 @@ ts-morph@^11.0.0:
     "@ts-morph/common" "~0.10.0"
     code-block-writer "^10.1.1"
 
-ts-node-dev@1.1.7:
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/ts-node-dev/-/ts-node-dev-1.1.7.tgz#f157c25235e86a9e8ce3470b1ec04b89bacd90ff"
-  integrity sha512-/YvByJdIw/p88RXmaRB3Kkk+PiUP7g/EAbBvQjDIG+kkm0CMvhdHSB21yEiws22Uls4uFAfCiuEZM4929yjWjg==
+ts-node-dev@1.1.8:
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/ts-node-dev/-/ts-node-dev-1.1.8.tgz#95520d8ab9d45fffa854d6668e2f8f9286241066"
+  integrity sha512-Q/m3vEwzYwLZKmV6/0VlFxcZzVV/xcgOt+Tx/VjaaRHyiBcFlV0541yrT09QjzzCxlDZ34OzKjrFAynlmtflEg==
   dependencies:
     chokidar "^3.5.1"
     dynamic-dedupe "^0.3.0"
