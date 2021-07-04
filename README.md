@@ -30,12 +30,15 @@ Comes with user authentication included
 
 **Must have node, yarn/npm, postgres and redis installed and setup locally**
 
+Delete whatever packages you don't need for the project, e.g. maybe you dont need the React Native app
+
 1. `git clone https://github.com/NoQuarterTeam/boilerplate.git`
 2. `yarn install`
 3. `createdb boilerplate` (must have postgres setup locally)
 4. `cd packages/api && yarn watch`
 5. `cd packages/web && yarn dev`
 6. `cd packages/admin && yarn dev`
+7. `cd packages/app && yarn start`
 
 Make sure you have created a .env file with the right values, use .env.example as the template
 
