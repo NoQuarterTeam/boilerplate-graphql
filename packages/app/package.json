@@ -1,0 +1,58 @@
+{
+  "name": "@fullstack-boilerplate/app",
+  "version": "1.0.0",
+  "main": "__generated__/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "typecheck": "tsc --noEmit",
+    "generate": "DEBUG=true graphql-codegen",
+    "generate:watch": "graphql-codegen --watch",
+    "lint": "eslint --fix --cache --ext .ts,.tsx src",
+    "lint:test": "eslint --cache --ext .ts,.tsx src",
+    "prettify": "prettier --write src",
+    "pre-commit": "lint-staged",
+    "postinstall": "expo-yarn-workspaces postinstall"
+  },
+  "lint-staged": {
+    "*.(js|jsx|json|ts|tsx|html)|!graphql.tsx": [
+      "prettier --write"
+    ],
+    "*.(ts|tsx)|!graphql.tsx": [
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "@apollo/client": "3.3.20",
+    "@react-native-async-storage/async-storage": "~1.15.0",
+    "@react-navigation/core": "5.15.3",
+    "@react-navigation/native": "5.9.4",
+    "@react-navigation/stack": "5.14.5",
+    "expo": "~42.0.0",
+    "expo-status-bar": "~1.0.4",
+    "native-base": "3.0.3",
+    "react": "17.0.2",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native-safe-area-context": "3.2.0",
+    "react-native-screens": "~3.4.0",
+    "react-native-svg": "12.1.1",
+    "styled-components": "5.3.0",
+    "styled-system": "^5.1.5"
+  },
+  "devDependencies": {
+    "@babel/core": "7.9.0",
+    "@graphql-codegen/add": "2.0.2",
+    "@graphql-codegen/cli": "1.21.6",
+    "@graphql-codegen/typescript": "1.22.4",
+    "@graphql-codegen/typescript-operations": "1.18.3",
+    "@graphql-codegen/typescript-react-apollo": "2.3.0",
+    "@types/react": "17.0.13",
+    "@types/react-native": "~0.63.2",
+    "eslint-plugin-react": "7.24.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "expo-yarn-workspaces": "^1.5.2"
+  },
+  "private": true
+}

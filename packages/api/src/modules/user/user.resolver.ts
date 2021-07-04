@@ -48,6 +48,7 @@ export default class UserResolver {
     const user = await this.userService.login(data)
     const token = this.userService.createAuthToken(user)
     context.req.user = user
+    context.req.currentUser = user
     return { user, token }
   }
 
@@ -58,6 +59,7 @@ export default class UserResolver {
     if (user.role !== Role.ADMIN) throw new AuthenticationError("Not authorized")
     const token = this.userService.createAuthToken(user)
     context.req.user = user
+    context.req.currentUser = user
     return { user, token }
   }
 
@@ -67,6 +69,7 @@ export default class UserResolver {
     const user = await this.userService.register(data)
     const token = this.userService.createAuthToken(user)
     context.req.user = user
+    context.req.currentUser = user
     return { user, token }
   }
 

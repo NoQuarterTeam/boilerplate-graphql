@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["react-app", "plugin:react/recommended", "../../.eslintrc.js"],
+  extends: ["next", "../../.eslintrc.js"],
   rules: {
     "jsx-a11y/anchor-is-valid": "off",
     "no-extend-native": "off",
