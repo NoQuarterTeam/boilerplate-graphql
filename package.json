@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build:api": "cd packages/api && yarn build",
-    "heroku-prebuild": "rm -rf packages/web",
+    "heroku-prebuild": "rm -rf packages/{web,app,admin}",
     "heroku-cleanup": "cd packages/api && yarn generate",
     "build": "yarn build:api",
     "typecheck": "lerna run typecheck",
