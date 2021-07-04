@@ -1,12 +1,13 @@
-# Fullstack Boilerplate
+# Boilerplate
 
-## Typescript + React + Graphql
+## Typescript + React + React Native + GraphQL
 
 Comes with user authentication included
 
 - [React](https://github.com/facebook/react)
 - [TypeGraphQL](https://github.com/19majkel94/type-graphql)
 - [Prisma](https://www.prisma.io)
+- Web, Admin + App clients
 - Postgres
 - TypeScript
 - Eslint
@@ -29,9 +30,9 @@ Comes with user authentication included
 
 **Must have node, yarn/npm, postgres and redis installed and setup locally**
 
-1. `git clone https://github.com/NoQuarterTeam/fullstack-boilerplate.git`
+1. `git clone https://github.com/NoQuarterTeam/boilerplate.git`
 2. `yarn install`
-3. `createdb fullstack-boilerplate` (must have postgres setup locally)
+3. `createdb boilerplate` (must have postgres setup locally)
 4. `cd packages/api && yarn watch`
 5. `cd packages/web && yarn dev`
 6. `cd packages/admin && yarn dev`

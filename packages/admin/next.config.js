@@ -1,2 +1,2 @@
-const withTM = require("next-transpile-modules")(["@fullstack-boilerplate/theme"])
+const withTM = require("next-transpile-modules")(["@boilerplate/theme"])
 module.exports = withTM({})

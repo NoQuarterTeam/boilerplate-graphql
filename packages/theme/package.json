@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@fullstack-boilerplate/theme",
+  "name": "@boilerplate/theme",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.ts",

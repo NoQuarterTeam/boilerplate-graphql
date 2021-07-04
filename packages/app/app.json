@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Fullstack Boilerplate",
-    "slug": "fullstack-boilerplate",
+    "slug": "boilerplate",
     "version": "1.0.0",
     "orientation": "default",
     "icon": "./assets/icon.png",

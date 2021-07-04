@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@fullstack-boilerplate/web",
+  "name": "@boilerplate/web",
   "version": "1.0.0",
   "description": "",
   "scripts": {
