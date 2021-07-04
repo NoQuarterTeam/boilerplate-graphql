@@ -1,20 +1,29 @@
 import * as React from "react"
-import { Box, Center, FlexProps, Flex, Text, Spinner, Button, useColorModeValue } from "@chakra-ui/react"
-import { TiArrowSortedUp, TiArrowSortedDown } from "react-icons/ti"
-
-import { NoData } from "./NoData"
+import NextLink from "next/link"
+import {
+  Box,
+  Center,
+  FlexProps,
+  Flex,
+  Text,
+  Spinner,
+  Button,
+  useColorModeValue,
+  Link,
+} from "@chakra-ui/react"
+import { CgArrowLongDown, CgArrowLongUp } from "react-icons/cg"
 import { useToast } from "lib/hooks/useToast"
+import { SortOrder } from "lib/graphql"
+import { NoData } from "./NoData"
 
 interface DataType {
   id: string
 }
 
-export interface Order {
-  order: "ASC" | "DESC"
-  orderBy: string
-}
+export type Sort = { [key: string]: SortOrder.Desc | SortOrder.Asc }
+
 interface Props<T extends DataType> {
-  isLoading?: boolean
+  isLoading: boolean
   children:
     | ArrayLike<React.ReactElement<ColumnProps<T>> | undefined>
     | React.ReactElement<ColumnProps<T>>
@@ -22,10 +31,11 @@ interface Props<T extends DataType> {
   count?: number
   data?: T[]
   take?: number
+  getRowHref?: (item: T) => string
   onFetchMore?: () => Promise<any> | void | undefined
   noDataText?: string
-  onSort?: (order: Order) => void
-  sort?: Order
+  onSort?: (sort: Sort) => void
+  sort?: Sort
 }
 
 export function Table<T extends DataType>(props: Props<T>) {
@@ -59,17 +69,17 @@ export function Table<T extends DataType>(props: Props<T>) {
 
   return (
     <Flex flexGrow={1} direction="column" overflow="hidden">
-      <Flex>
+      <Flex px={4} py={3}>
         {columns.map(({ sortKey, header, row, ...column }: ColumnProps<T>, i: number) => (
           <Flex
             key={i.toString()}
             flex={1}
             overflow="hidden"
             justifyContent={i === columns.length - 1 ? "flex-end" : "flex-start"}
-            {...column}
             align="center"
+            {...column}
           >
-            {header && (
+            {header && row && (
               <Button
                 as={props.sort && props.onSort && sortKey ? "button" : "div"}
                 display="flex"
@@ -78,40 +88,26 @@ export function Table<T extends DataType>(props: Props<T>) {
                 minW="auto"
                 fontSize="sm"
                 h="auto"
-                py={3}
                 fontWeight={700}
                 cursor={props.sort && props.onSort && sortKey ? "pointer" : "default"}
                 onClick={() =>
                   props.sort && props.onSort && sortKey
                     ? props.onSort({
-                        order: props.sort.order === "DESC" ? "ASC" : "DESC",
-                        orderBy: sortKey,
+                        [sortKey]:
+                          props.sort[sortKey as string] === SortOrder.Desc ? SortOrder.Asc : SortOrder.Desc,
                       })
                     : {}
                 }
               >
                 {header}
                 {props.sort && props.onSort && !!sortKey && (
-                  <Flex ml={2} flexDir="column" align="center">
-                    <Box
-                      as={TiArrowSortedUp}
-                      size="16px"
-                      m="-4px"
-                      color={
-                        props.sort.orderBy === sortKey && props.sort.order === "ASC" ? "gray.600" : "gray.400"
-                      }
-                    />
-                    <Box
-                      as={TiArrowSortedDown}
-                      size="16px"
-                      m="-4px"
-                      color={
-                        props.sort.orderBy === sortKey && props.sort.order === "DESC"
-                          ? "gray.600"
-                          : "gray.400"
-                      }
-                    />
-                  </Flex>
+                  <Center ml={2}>
+                    {props.sort[sortKey as string] && props.sort[sortKey as string] === SortOrder.Asc ? (
+                      <Box as={CgArrowLongUp} size="16px" m="-4px" />
+                    ) : props.sort[sortKey as string] && props.sort[sortKey as string] === SortOrder.Desc ? (
+                      <Box as={CgArrowLongDown} size="16px" m="-4px" />
+                    ) : null}
+                  </Center>
                 )}
               </Button>
             )}
@@ -127,16 +123,23 @@ export function Table<T extends DataType>(props: Props<T>) {
         <Flex direction="column" justify="space-between" flexGrow={1}>
           <Box overflowY="scroll">
             {data.map((item) => (
-              <Flex key={item.id} w="100%" align="center">
+              <Row key={item.id} href={props.getRowHref?.(item)}>
                 {columns.map(({ row, sortKey, header, ...column }: ColumnProps<T>, i: number) => (
-                  <Row key={i.toString()} isLast={i === columns.length - 1} fontSize="sm" {...column}>
+                  <ColumnField key={i.toString()} isLast={i === columns.length - 1} fontSize="sm" {...column}>
                     {row?.(item)}
-                  </Row>
+                  </ColumnField>
                 ))}
-              </Flex>
+              </Row>
             ))}
           </Box>
-          <Flex py={3} align="center" justify="space-between" borderTop="1px solid" borderColor={borderColor}>
+          <Flex
+            py={3}
+            px={4}
+            align="center"
+            justify="space-between"
+            borderTop="1px solid"
+            borderColor={borderColor}
+          >
             <Text w="100%" fontSize="sm">
               {props.count} results
             </Text>
@@ -160,31 +163,25 @@ export function Table<T extends DataType>(props: Props<T>) {
   )
 }
 
-interface ColumnProps<T> {
+interface ColumnProps<T> extends FlexProps {
   row?: (item: T) => React.ReactNode
-  sortKey?: string
+  sortKey?: keyof T
   header?: React.ReactNode
 }
 
-export function Column<T extends DataType>(_: FlexProps & ColumnProps<T>) {
+export function Column<T extends DataType>(_: ColumnProps<T>) {
   return null
 }
 
-function _Row({ isLast, ...props }: FlexProps & { isLast?: boolean; children: React.ReactNode }) {
-  const borderColor = useColorModeValue("gray.200", "gray.700")
-
+function _ColumnField({ isLast, ...props }: FlexProps & { isLast?: boolean; children: React.ReactNode }) {
   return (
     <Flex
       flex={1}
-      py={3}
-      h="50px"
       align="center"
       isTruncated
       fontSize="sm"
       justify={isLast ? "flex-end" : "flex-start"}
       overflowX="auto"
-      borderTop="1px solid"
-      borderColor={borderColor}
       {...props}
     >
       {props.children}
@@ -192,4 +189,35 @@ function _Row({ isLast, ...props }: FlexProps & { isLast?: boolean; children: Re
   )
 }
 
-const Row = React.memo(_Row)
+const ColumnField = React.memo(_ColumnField)
+
+interface RowProps {
+  children: React.ReactNode
+  href?: string
+}
+
+function Row(props: RowProps) {
+  const borderColor = useColorModeValue("gray.200", "gray.700")
+  const bg = useColorModeValue("gray.50", "gray.900")
+  return !!props.href ? (
+    <NextLink passHref href={props.href}>
+      <Link _hover={{ textDecor: "none" }}>
+        <Flex
+          _hover={{ bg }}
+          w="100%"
+          px={4}
+          h="50px"
+          align="center"
+          borderTop="1px solid"
+          borderColor={borderColor}
+        >
+          {props.children}
+        </Flex>
+      </Link>
+    </NextLink>
+  ) : (
+    <Flex w="100%" px={4} h="50px" align="center" borderTop="1px solid" borderColor={borderColor}>
+      {props.children}
+    </Flex>
+  )
+}
