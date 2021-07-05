@@ -1,28 +1,29 @@
 # Boilerplate
 
-## Typescript + React + React Native + GraphQL
+## Typescript + React + React Native + GraphQL + Prisma
 
 Comes with user authentication included
 
 - [React](https://github.com/facebook/react)
+- [React Native](https://github.com/facebook/react-native)
+- [Expo](https://www.expo.io)
 - [TypeGraphQL](https://github.com/19majkel94/type-graphql)
 - [Prisma](https://www.prisma.io)
-- Web, Admin + App clients
-- Postgres
+- Web, Admin, App & API monorepo
+- Next.js
 - TypeScript
-- Eslint
-- Graphql Code Generator
+- Postgres
 - Apollo Client
 - Apollo Server
 - Express
-- Customizable Theme
-- Dark mode
-- React hooks
+- React hook form
+- Chakra UI
+- Customizable shared theme & Dark mode
+- Eslint
+- Prettier
+- Graphql Code Generator
 - Sendgrid SMTP
 - Sentry
-- Chakra UI
-- React hook form
-- Lerna Monorepo
 
 & many more tasty treats
 
