@@ -5873,10 +5873,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/express-jwt@6.0.1":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@types/express-jwt/-/express-jwt-6.0.1.tgz#616cbd149438345084c41544d7dd49cfeca60079"
-  integrity sha512-zB/oXzS8/NTWUzAG343frlqUrsygHPeyYMVcbJ8YYk7rF1G15eUapPgWh0HdeFi51ajFkkUOU+Q540z1Eu4hJQ==
+"@types/express-jwt@6.0.2":
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/@types/express-jwt/-/express-jwt-6.0.2.tgz#15938f9a50945ccab35361227e438f98abdb713f"
+  integrity sha512-WDnO/0jeWyhX253TOIJHZzLE/pmXSucslKeztphjZDxim/wYDaDeDcj6/U9YAHcgFfwBu+I3Obfy+xB6/VaRcA==
   dependencies:
     "@types/express" "*"
     "@types/express-unless" "*"
