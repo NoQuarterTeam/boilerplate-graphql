@@ -52,7 +52,7 @@ export default function Home() {
         <title>Fullstack boilerplate</title>
       </Head>
 
-      <Center minH="100vh">
+      <Center minH="100vh" p={4}>
         <VStack spacing={6}>
           <Heading as="h1">Welcome to the Fullstack boilerplate</Heading>
 
