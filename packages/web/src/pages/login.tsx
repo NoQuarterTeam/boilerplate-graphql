@@ -56,7 +56,7 @@ function Login() {
     })
   }
   return (
-    <Center minH="100vh">
+    <Center minH="100vh" p={4}>
       <Head>
         <title>Fullstack boilerplate - Login</title>
       </Head>
