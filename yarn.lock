@@ -6466,12 +6466,12 @@
   dependencies:
     compare-versions "^3.4.0"
 
-"@unimodules/react-native-adapter@~6.3.1":
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/@unimodules/react-native-adapter/-/react-native-adapter-6.3.1.tgz#7a7910d95ed7943e639824bd4b27a89815b3fa5f"
-  integrity sha512-gWHdLygtiTwBD+NJ/MxaU+XeFfwDqyIPr2HeJd7k5cg7SXWOpOUZw+OLUslfvqmTYjYN7HTIukAACo6ySm1Qzg==
+"@unimodules/react-native-adapter@~6.3.3":
+  version "6.3.3"
+  resolved "https://registry.yarnpkg.com/@unimodules/react-native-adapter/-/react-native-adapter-6.3.3.tgz#7c5249f910f4f2b92e2d778f83183c0bbd646c24"
+  integrity sha512-X/s7HL3r2nSi7zU4YpK7uWrI7CzEXnpsucnh8sVqRWT6BCzHu0aOLGMtwszstxKAXg8/R5Jy8s8EwJo3qTuL5Q==
   dependencies:
-    expo-modules-autolinking "^0.0.2"
+    expo-modules-autolinking "^0.0.3"
     invariant "^2.2.4"
 
 "@webassemblyjs/ast@1.9.0":
@@ -10624,10 +10624,10 @@ expo-keep-awake@~9.2.0:
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-9.2.0.tgz#9cbdcc8264c943ef29a58326236cd34267e98f43"
   integrity sha512-R5jAx5j3MqrhKFB307FBpaHtYSYeVIFX/rVforBF5inKonYjXRWVhjGoBjolF4geAryNamC3NKhMfxyaaB0W6Q==
 
-expo-modules-autolinking@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/expo-modules-autolinking/-/expo-modules-autolinking-0.0.2.tgz#6015c4e0ba995144145ad29fb2a4b34deba73955"
-  integrity sha512-+tEosOIwQ1MlLbHoWNq9fu5C5itSbmrwzIX3KOoBCgEsHlE/xFJ1NoZCWIxCJ0K49Z4Gzab1wCpT0PhdidImnA==
+expo-modules-autolinking@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/expo-modules-autolinking/-/expo-modules-autolinking-0.0.3.tgz#45ba8cb1798f9339347ae35e96e9cc70eafb3727"
+  integrity sha512-azkCRYj/DxbK4udDuDxA9beYzQTwpJ5a9QA0bBgha2jHtWdFGF4ZZWSY+zNA5mtU3KqzYt8jWHfoqgSvKyu1Aw==
   dependencies:
     chalk "^4.1.0"
     commander "^7.2.0"
@@ -10669,16 +10669,16 @@ expo-yarn-workspaces@1.5.2:
     minimist "^1.2.5"
     mkdirp "^0.5.1"
 
-expo@42.0.0:
-  version "42.0.0"
-  resolved "https://registry.yarnpkg.com/expo/-/expo-42.0.0.tgz#edf55d1bab197aa6e6883b4b593de2bb87f18e14"
-  integrity sha512-m1/rPzh/Jgmy2Kx8I2wK7bjhMhwcp6oNJcYr3JqUphYYW4k+UgoKw/O5Dztt/Sy+vYAUH1tFAd+wLcMCmPUJbg==
+expo@42.0.1:
+  version "42.0.1"
+  resolved "https://registry.yarnpkg.com/expo/-/expo-42.0.1.tgz#f0f9301951113055e2c501578bf4e12239e3750a"
+  integrity sha512-8IDYZXZcauRn8dlMAdxkZCmlnYhvqqqdgIBQhnoBSQbi/fpiHwXcbm5bzF+/o9bpBTWa0fyv3WY++0XDigh5Ag==
   dependencies:
     "@babel/runtime" "^7.1.2"
     "@expo/metro-config" "^0.1.70"
     "@expo/vector-icons" "^12.0.4"
     "@unimodules/core" "~7.1.1"
-    "@unimodules/react-native-adapter" "~6.3.1"
+    "@unimodules/react-native-adapter" "~6.3.3"
     babel-preset-expo "~8.4.0"
     cross-spawn "^6.0.5"
     expo-application "~3.2.0"
