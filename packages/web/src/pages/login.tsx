@@ -10,7 +10,7 @@ import { MeFragmentDoc, LoginInput, MeQuery, MeDocument, useLoginMutation } from
 import Yup from "lib/yup"
 import { Form } from "components/Form"
 import { Input } from "components/Input"
-import { SESSION_TOKEN } from "lib/config"
+import { REDIRECT_PATH, SESSION_TOKEN } from "lib/config"
 import { FormError } from "components/FormError"
 import { useForm } from "lib/hooks/useForm"
 import { withNoAuth } from "components/hoc/withNoAuth"
@@ -37,21 +37,18 @@ function Login() {
 
   const [login, { loading }] = useLoginMutation()
   const router = useRouter()
-  const redirectTo = router.query.redirectTo as string | undefined
+  const redirect = router.query[REDIRECT_PATH] as string | undefined
   const form = useForm({ schema: LoginSchema })
 
-  const onSubmit = (values: LoginInput) => {
-    return form.handler(() => login({ variables: { data: values } }), {
+  const onSubmit = (data: LoginInput) => {
+    return form.handler(() => login({ variables: { data } }), {
       onSuccess: (data) => {
         document.cookie = cookie.serialize(SESSION_TOKEN, data.login.token, {
           path: "/",
           maxAge: 30 * 24 * 60 * 60, // 30 days
         })
-        client.writeQuery<MeQuery>({
-          query: MeDocument,
-          data: { me: data.login.user },
-        })
-        router.replace(redirectTo || "/")
+        client.writeQuery<MeQuery>({ query: MeDocument, data: { me: data.login.user } })
+        router.replace(redirect || "/")
       },
     })
   }

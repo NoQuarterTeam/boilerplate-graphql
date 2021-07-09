@@ -113,20 +113,18 @@ export default function Home() {
               </AlertDialog>
             </>
           ) : (
-            <>
-              <HStack mt={4}>
-                <NextLink passHref href="/login">
-                  <Button as={Link} variant="ghost" href="/login" sx={{ textDecor: "none !important" }}>
-                    Login
-                  </Button>
-                </NextLink>
-                <NextLink passHref href="/register">
-                  <Button colorScheme="purple" as={Link} sx={{ textDecor: "none !important" }}>
-                    Register
-                  </Button>
-                </NextLink>
-              </HStack>
-            </>
+            <HStack mt={4}>
+              <NextLink passHref href="/login">
+                <Button as={Link} variant="ghost" href="/login" sx={{ textDecor: "none !important" }}>
+                  Login
+                </Button>
+              </NextLink>
+              <NextLink passHref href="/register">
+                <Button colorScheme="purple" as={Link} sx={{ textDecor: "none !important" }}>
+                  Register
+                </Button>
+              </NextLink>
+            </HStack>
           )}
 
           <Box pos="absolute" top={4} right={4}>

@@ -43,7 +43,7 @@ function ForgotPassword() {
     })
   }
   return (
-    <Center minH="100vh">
+    <Center minH="100vh" p={4}>
       <Head>
         <title>Forgot password</title>
       </Head>
