@@ -92,8 +92,17 @@ function Users() {
         </Heading>
         <HStack mb={4}>
           <Search search={search} onSearch={setSearch} placeholder="Search users" />
-          <Button leftIcon={<Box boxSize="20px" as={CgSoftwareDownload} />}>Download</Button>
-          <Button colorScheme="purple" leftIcon={<Box boxSize="18px" as={CgUserAdd} />}>
+          <Button
+            display={{ base: "none", md: "flex" }}
+            leftIcon={<Box boxSize="20px" as={CgSoftwareDownload} />}
+          >
+            Download
+          </Button>
+          <Button
+            display={{ base: "none", md: "flex" }}
+            colorScheme="purple"
+            leftIcon={<Box boxSize="18px" as={CgUserAdd} />}
+          >
             Create user
           </Button>
           {selectedUsers.length > 0 && <Button variant="ghost">{selectedUsers.length} selected</Button>}
@@ -116,6 +125,7 @@ function Users() {
             isLoading={loading && !!!data}
           >
             <Column<UserItemFragment>
+              display={{ base: "none", md: "flex" }}
               maxW="30px"
               header={
                 <Checkbox
@@ -136,7 +146,11 @@ function Users() {
               )}
             />
             <Column<UserItemFragment> header="Name" row={(user) => user.fullName} />
-            <Column<UserItemFragment> header="Email" row={(user) => user.email} />
+            <Column<UserItemFragment>
+              display={{ base: "none", md: "flex" }}
+              header="Email"
+              row={(user) => user.email}
+            />
             <Column<UserItemFragment>
               header="Last updated"
               row={(user) => dayjs(user.updatedAt).format("DD/MM/YYYY")}

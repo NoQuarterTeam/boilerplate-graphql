@@ -57,7 +57,6 @@ export default function Home() {
           <Heading as="h1" textAlign="center">
             Welcome to the Fullstack boilerplate
           </Heading>
-
           {loading ? (
             <Center>
               <Spinner />

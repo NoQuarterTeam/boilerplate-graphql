@@ -10,12 +10,16 @@ import {
   Button,
   Center,
   LinkProps,
+  Text,
+  Icon,
 } from "@chakra-ui/react"
 import NextLink from "next/link"
 import { useRouter } from "next/router"
 import { BiSun, BiMoon } from "react-icons/bi"
 
 import { useLogout } from "lib/hooks/useLogout"
+import { CgExternal, CgHome, CgUser } from "react-icons/cg"
+import { IconType } from "react-icons"
 
 interface Props {
   children: React.ReactNode
@@ -31,16 +35,21 @@ export function Layout(props: Props) {
       <Flex
         flexDir="column"
         justify="space-between"
-        w={200}
-        p={8}
+        w={{ base: "70px", md: "200px" }}
+        p={{ base: 4, md: 8 }}
+        py={8}
         h="100vh"
         bg={useColorModeValue("white", "gray.900")}
         borderRight="1px solid"
         borderColor={useColorModeValue("gray.100", "gray.900")}
       >
-        <Stack>
-          <SidebarLink href="/">Home</SidebarLink>
-          <SidebarLink href="/users">Users</SidebarLink>
+        <Stack spacing={4}>
+          <SidebarLink href="/" icon={CgHome}>
+            Home
+          </SidebarLink>
+          <SidebarLink href="/users" icon={CgUser}>
+            Users
+          </SidebarLink>
         </Stack>
         <Stack>
           <Center>
@@ -52,11 +61,17 @@ export function Layout(props: Props) {
             />
           </Center>
           <Button variant="outline" onClick={() => logout()}>
-            Logout
+            <Icon boxSize="20px" as={CgExternal} mr={{ base: 0, md: 2 }} />
+            <Text d={{ base: "none", md: "block" }}>Logout</Text>
           </Button>
         </Stack>
       </Flex>
-      <Box w="calc(100vw - 200px)" px={10} py={8} overflow="scroll">
+      <Box
+        w={{ base: "calc(100vw - 70px)", md: "calc(100vw - 200px)" }}
+        px={{ base: 4, md: 10 }}
+        py={8}
+        overflow="scroll"
+      >
         {props.children}
       </Box>
     </Flex>
@@ -65,16 +80,24 @@ export function Layout(props: Props) {
 
 interface SidebarLinkProps extends LinkProps {
   href: string
+  icon: IconType
   children: string
 }
 
-function SidebarLink({ href, ...props }: SidebarLinkProps) {
+function SidebarLink({ href, icon, ...props }: SidebarLinkProps) {
   const router = useRouter()
   const isActive = router.asPath === href
   return (
     <NextLink passHref href={href}>
-      <Link {...props} fontWeight="bold" color={isActive ? "purple.500" : undefined}>
-        {props.children}
+      <Link
+        display="flex"
+        justifyContent={{ base: "center", md: "flex-start" }}
+        fontWeight="bold"
+        color={isActive ? "purple.500" : undefined}
+        {...props}
+      >
+        <Icon boxSize="20px" as={icon} mr={{ base: 0, md: 2 }} />
+        <Text d={{ base: "none", md: "block" }}>{props.children}</Text>
       </Link>
     </NextLink>
   )
