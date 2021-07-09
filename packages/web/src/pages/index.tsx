@@ -52,9 +52,11 @@ export default function Home() {
         <title>Fullstack boilerplate</title>
       </Head>
 
-      <Center minH="100vh" p={4}>
+      <Center minH={{ base: "auto", md: "100vh" }} p={4} pt={{ base: 40, md: 4 }}>
         <VStack spacing={6}>
-          <Heading as="h1">Welcome to the Fullstack boilerplate</Heading>
+          <Heading as="h1" textAlign="center">
+            Welcome to the Fullstack boilerplate
+          </Heading>
 
           {loading ? (
             <Center>

@@ -56,7 +56,7 @@ function Login() {
     })
   }
   return (
-    <Center minH="100vh" p={4}>
+    <Center minH={{ base: "auto", md: "100vh" }} p={4} pt={{ base: 40, md: 4 }}>
       <Head>
         <title>Fullstack boilerplate - Login</title>
       </Head>
