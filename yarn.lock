@@ -14854,10 +14854,10 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-native-base@3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/native-base/-/native-base-3.0.3.tgz#089250778919509dc1eb3d18d60ab282fbcda28b"
-  integrity sha512-hCPHDUynl223A2nbgMY3jJUcw/GElLvjnNFvyg0Pewa4cNlngbg2StjUmKiBdnEgmwGYyl2AtE3tUnFKAXjqJQ==
+native-base@3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/native-base/-/native-base-3.0.4.tgz#c61c0bb3b180cc3856da899692148a1a252899bd"
+  integrity sha512-w8qphjxvUBDmniqYtvtdV39iQwCP/qnJTA+klNYUqxOrxVAoYPNwOCN8upTkwSnEORkxwho9p4Dpm4o0ZrNoMA==
   dependencies:
     "@react-aria/visually-hidden" "^3.2.1"
     "@react-native-aria/button" "^0.2.4"
