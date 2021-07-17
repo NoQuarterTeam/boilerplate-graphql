@@ -1,11 +1,12 @@
 import "reflect-metadata"
 import "dotenv/config"
 import { ApolloServer } from "apollo-server-express"
+import { ApolloServerPluginCacheControl } from "apollo-server-core"
 import { buildSchema } from "type-graphql"
 import { Container } from "typedi"
 import jwt from "express-jwt"
 
-import { APOLLO_KEY, CORS_OPTIONS, IS_PRODUCTION, JWT_AUTH } from "./lib/config"
+import { JWT_AUTH } from "./lib/config"
 import { ErrorInterceptor } from "./lib/globalMiddleware"
 import { ExpressContext } from "./lib/express"
 import { Server } from "./lib/server"
@@ -54,14 +55,11 @@ class App extends Server {
     const apolloServer = new ApolloServer({
       context: ({ req, res }: ExpressContext) => ({ req, res, prisma }),
       formatResponse,
-      introspection: !IS_PRODUCTION,
-      playground: !IS_PRODUCTION,
-      cacheControl: true,
-      engine: { apiKey: IS_PRODUCTION ? APOLLO_KEY : undefined },
+      plugins: [ApolloServerPluginCacheControl()],
       schema,
     })
-
-    apolloServer.applyMiddleware({ cors: CORS_OPTIONS, app: this.app })
+    await apolloServer.start()
+    apolloServer.applyMiddleware({ app: this.app, cors: true })
     this.logger.info("Apollo setup")
   }
 }

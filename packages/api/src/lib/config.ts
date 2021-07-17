@@ -1,4 +1,3 @@
-import CORS from "cors"
 // ENV VARIABLES
 export const {
   NODE_ENV = "development",
@@ -16,12 +15,6 @@ export const {
 
 // IS PRODUCTION
 export const IS_PRODUCTION = APP_ENV === "production"
-
-// CORS
-export const CORS_OPTIONS: CORS.CorsOptions = {
-  origin: "*",
-  maxAge: 86400,
-}
 
 //  JWT AUTH
 export const JWT_AUTH = {

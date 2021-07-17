@@ -1,4 +1,4 @@
-import { CacheHint } from "apollo-cache-control"
+import { CacheHint } from "apollo-server-types"
 import { UseMiddleware } from "type-graphql"
 
 export function UseCacheControl(hint: CacheHint) {
