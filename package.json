@@ -10,18 +10,12 @@
   },
   "scripts": {
     "build:api": "cd packages/api && yarn build",
-    "heroku-prebuild": "rm -rf packages/{web,app,admin}",
+    "heroku-prebuild": "rm -rf packages/{web,app}",
     "heroku-cleanup": "cd packages/api && yarn generate",
     "build": "yarn build:api",
     "typecheck": "lerna run typecheck",
     "lint": "lerna run lint",
     "ci": "yarn typecheck && yarn lint"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lerna run  --concurrency 1 --stream  pre-commit"
-    }
   },
   "devDependencies": {
     "@commitlint/cli": "12.1.4",
@@ -34,7 +28,7 @@
     "eslint-plugin-flowtype": "5.8.0",
     "eslint-plugin-import": "2.23.4",
     "eslint-plugin-jsx-a11y": "6.4.1",
-    "husky": "4.3.8",
+    "husky": "7.0.1",
     "lerna": "4.0.0",
     "lint-staged": "11.0.1",
     "prettier": "2.3.2",
