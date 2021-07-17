@@ -5,7 +5,7 @@ import { Spinner, Center } from "@chakra-ui/react"
 import { useMe } from "lib/hooks/useMe"
 import { REDIRECT_PATH } from "lib/config"
 
-export const withNoAuth = (App: NextPage, redirectUrl?: string) => {
+export const withNoAuth = (Page: NextPage, redirectUrl?: string) => {
   function NoAuthComponent(props: any) {
     const { me, loading } = useMe()
     const router = useRouter()
@@ -22,7 +22,7 @@ export const withNoAuth = (App: NextPage, redirectUrl?: string) => {
           <Spinner />
         </Center>
       )
-    return <App {...props} />
+    return <Page {...props} />
   }
 
   return NoAuthComponent

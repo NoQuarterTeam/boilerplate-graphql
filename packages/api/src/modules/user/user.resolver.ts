@@ -1,6 +1,5 @@
 import { Arg, Args, Ctx, FieldResolver, Mutation, Query, Resolver, Root } from "type-graphql"
 import { Inject, Service } from "typedi"
-import { AuthenticationError } from "apollo-server-express"
 import { User, Role, FindManyUserArgs } from "@generated"
 
 import { UserService } from "./user.service"
@@ -46,17 +45,6 @@ export default class UserResolver {
   @Mutation(() => AuthResponse)
   async login(@Arg("data") data: LoginInput, @Ctx() context: ResolverContext): Promise<AuthResponse> {
     const user = await this.userService.login(data)
-    const token = this.userService.createAuthToken(user)
-    context.req.user = user
-    context.req.currentUser = user
-    return { user, token }
-  }
-
-  // LOGIN ADMIN
-  @Mutation(() => AuthResponse)
-  async loginAdmin(@Arg("data") data: LoginInput, @Ctx() context: ResolverContext): Promise<AuthResponse> {
-    const user = await this.userService.login(data)
-    if (user.role !== Role.ADMIN) throw new AuthenticationError("Not authorized")
     const token = this.userService.createAuthToken(user)
     context.req.user = user
     context.req.currentUser = user

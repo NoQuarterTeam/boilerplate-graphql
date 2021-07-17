@@ -6,7 +6,7 @@ import { gql } from "@apollo/client"
 import dayjs from "dayjs"
 
 import { withAuth } from "components/hoc/withAuth"
-import { Layout } from "components/Layout"
+import { AdminLayout } from "components/AdminLayout"
 import { QueryMode, Role, SortOrder, useGetUsersQuery, UserItemFragment } from "lib/graphql"
 import { Column, Table } from "components/Table"
 import { PartialCheckIcon } from "components/PartialCheckIcon"
@@ -81,7 +81,7 @@ function Users() {
   const isPartialSelection = !!users && selectedUsers.length > 0 && selectedUsers.length < users.length
 
   return (
-    <Layout>
+    <AdminLayout>
       <Head>
         <title>Users</title>
       </Head>
@@ -158,8 +158,8 @@ function Users() {
           </Table>
         )}
       </Box>
-    </Layout>
+    </AdminLayout>
   )
 }
 
-export default withAuth(Users)
+export default withAuth(Users, (user) => user.role === Role.Admin)

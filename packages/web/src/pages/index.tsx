@@ -126,18 +126,17 @@ export default function Home() {
               </NextLink>
             </HStack>
           )}
-
-          <Box pos="absolute" top={4} right={4}>
-            <IconButton
-              borderRadius="full"
-              aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
-              variant="ghost"
-              onClick={toggleColorMode}
-              icon={<Box as={isDark ? BiSun : BiMoon} boxSize="20px" />}
-            />
-          </Box>
         </VStack>
       </Center>
+      <Box pos="absolute" top={4} right={4}>
+        <IconButton
+          borderRadius="full"
+          aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+          variant="ghost"
+          onClick={toggleColorMode}
+          icon={<Box as={isDark ? BiSun : BiMoon} boxSize="20px" />}
+        />
+      </Box>
     </Box>
   )
 }

@@ -28,36 +28,38 @@ export function Search({ onSearch, search, ...props }: Props) {
   const pendingSearch = form.watch("search") as string
 
   return (
-    <Form {...form} onSubmit={handleSubmit}>
-      <InputGroup>
-        <InputLeftElement w={10}>
-          <IconButton
-            type="submit"
-            size="sm"
-            aria-label="search"
-            variant="ghost"
-            icon={<Box as={CgSearch} />}
-          />
-        </InputLeftElement>
-        <Input
-          name="search"
-          px={10}
-          placeholder={props.placeholder}
-          minW={{ base: 200, xl: 300 }}
-          {...props}
-        />
-        <InputRightElement w={10}>
-          {(!!pendingSearch || !!search) && (
+    <Box>
+      <Form {...form} onSubmit={handleSubmit}>
+        <InputGroup>
+          <InputLeftElement w={10}>
             <IconButton
-              onClick={clearSearch}
+              type="submit"
               size="sm"
-              aria-label="clear search"
+              aria-label="search"
               variant="ghost"
-              icon={<Box as={CgClose} />}
+              icon={<Box as={CgSearch} />}
             />
-          )}
-        </InputRightElement>
-      </InputGroup>
-    </Form>
+          </InputLeftElement>
+          <Input
+            name="search"
+            px={10}
+            placeholder={props.placeholder}
+            minW={{ base: 200, xl: 300 }}
+            {...props}
+          />
+          <InputRightElement w={10}>
+            {(!!pendingSearch || !!search) && (
+              <IconButton
+                onClick={clearSearch}
+                size="sm"
+                aria-label="clear search"
+                variant="ghost"
+                icon={<Box as={CgClose} />}
+              />
+            )}
+          </InputRightElement>
+        </InputGroup>
+      </Form>
+    </Box>
   )
 }

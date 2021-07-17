@@ -19,9 +19,8 @@ if (IS_PRODUCTION) {
   })
 }
 
-export default function WebApp(props: AppProps<any>) {
+export default function BoilerplateApp(props: AppProps<any>) {
   const { Component, pageProps } = props
-
   const apolloClient = useApollo(pageProps.initialApolloState)
 
   return (

@@ -9,7 +9,7 @@ Comes with user authentication included
 - [Expo](https://www.expo.io)
 - [TypeGraphQL](https://github.com/19majkel94/type-graphql)
 - [Prisma](https://www.prisma.io)
-- Web, Admin, App & API monorepo
+- Web, App & API monorepo
 - Next.js
 - TypeScript
 - Postgres
@@ -38,8 +38,7 @@ Delete whatever packages you don't need for the project, e.g. maybe you dont nee
 3. `createdb boilerplate` (must have postgres setup locally)
 4. `cd packages/api && yarn watch`
 5. `cd packages/web && yarn dev`
-6. `cd packages/admin && yarn dev`
-7. `cd packages/app && yarn start`
+6. `cd packages/app && yarn start`
 
 Make sure you have created a .env file with the right values, use .env.example as the template
 

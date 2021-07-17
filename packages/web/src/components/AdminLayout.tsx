@@ -24,7 +24,7 @@ import { IconType } from "react-icons"
 interface Props {
   children: React.ReactNode
 }
-export function Layout(props: Props) {
+export function AdminLayout(props: Props) {
   const { colorMode, toggleColorMode } = useColorMode()
   const isDark = colorMode === "dark"
 
@@ -44,10 +44,10 @@ export function Layout(props: Props) {
         borderColor={useColorModeValue("gray.100", "gray.900")}
       >
         <Stack spacing={4}>
-          <SidebarLink href="/" icon={CgHome}>
+          <SidebarLink href="/admin" icon={CgHome}>
             Home
           </SidebarLink>
-          <SidebarLink href="/users" icon={CgUser}>
+          <SidebarLink href="/admin/users" icon={CgUser}>
             Users
           </SidebarLink>
         </Stack>
