@@ -9,6 +9,10 @@ export const theme = extendTheme({
     useSystemColorMode: false,
     initialColorMode: "light",
   },
+  fonts: {
+    body: "Poppins, sans-serif",
+    heading: "Poppins, serif",
+  },
   components: {
     Button,
     Input,

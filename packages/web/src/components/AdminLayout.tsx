@@ -16,10 +16,9 @@ import {
 import NextLink from "next/link"
 import { useRouter } from "next/router"
 import { BiSun, BiMoon } from "react-icons/bi"
+import { CgExternal, CgHome, CgUser } from "react-icons/cg"
 
 import { useLogout } from "lib/hooks/useLogout"
-import { CgExternal, CgHome, CgUser } from "react-icons/cg"
-import { IconType } from "react-icons"
 
 interface Props {
   children: React.ReactNode
@@ -44,10 +43,10 @@ export function AdminLayout(props: Props) {
         borderColor={useColorModeValue("gray.100", "gray.900")}
       >
         <Stack spacing={4}>
-          <SidebarLink href="/admin" icon={CgHome}>
+          <SidebarLink href="/admin" icon={<Box boxSize="16px" as={CgHome} />}>
             Home
           </SidebarLink>
-          <SidebarLink href="/admin/users" icon={CgUser}>
+          <SidebarLink href="/admin/users" icon={<Box boxSize="18px" as={CgUser} />}>
             Users
           </SidebarLink>
         </Stack>
@@ -60,7 +59,7 @@ export function AdminLayout(props: Props) {
               icon={<Box as={isDark ? BiSun : BiMoon} boxSize="20px" />}
             />
           </Center>
-          <Button variant="outline" onClick={() => logout()}>
+          <Button variant="outline" onClick={() => logout()} size="sm">
             <Icon boxSize="20px" as={CgExternal} mr={{ base: 0, md: 2 }} />
             <Text d={{ base: "none", md: "block" }}>Logout</Text>
           </Button>
@@ -80,7 +79,7 @@ export function AdminLayout(props: Props) {
 
 interface SidebarLinkProps extends LinkProps {
   href: string
-  icon: IconType
+  icon: React.ReactNode
   children: string
 }
 
@@ -91,13 +90,16 @@ function SidebarLink({ href, icon, ...props }: SidebarLinkProps) {
     <NextLink passHref href={href}>
       <Link
         display="flex"
+        alignItems="center"
         justifyContent={{ base: "center", md: "flex-start" }}
-        fontWeight="bold"
+        fontWeight="semibold"
         color={isActive ? "purple.500" : undefined}
         {...props}
       >
-        <Icon boxSize="20px" as={icon} mr={{ base: 0, md: 2 }} />
-        <Text d={{ base: "none", md: "block" }}>{props.children}</Text>
+        <Center w="26px">{icon}</Center>
+        <Text ml={2} d={{ base: "none", md: "block" }}>
+          {props.children}
+        </Text>
       </Link>
     </NextLink>
   )
