@@ -18,36 +18,47 @@ Comes with user authentication included
 - Express
 - React hook form
 - Chakra UI
-- Customizable shared theme & Dark mode
+- Customizable theme & Dark mode
 - Eslint
 - Prettier
 - Graphql Code Generator
 - Sendgrid SMTP
 - Sentry
+- Husky
+- Lint staged
 
 & many more tasty treats
 
 ## Get Started
 
-**Must have node, yarn/npm, postgres and redis installed and setup locally**
+**Must have node, yarn, postgres and redis installed and setup locally**
 
 Delete whatever packages you don't need for the project, e.g. maybe you dont need the React Native app
 
-1. `git clone https://github.com/NoQuarterTeam/boilerplate.git`
-2. `yarn install`
-3. `createdb boilerplate` (must have postgres setup locally)
-4. `cd packages/api && yarn watch`
-5. `cd packages/web && yarn dev`
-6. `cd packages/app && yarn start`
+1. `yarn install`
+2. `createdb boilerplate`
+3. `cd packages/api && yarn watch`
+4. `cd packages/web && yarn dev`
+5. `cd packages/app && yarn start`
 
 Make sure you have created a .env file with the right values, use .env.example as the template
 
-### For mailers
+We use Husky to run a couple of checks each commit (prettier, eslint & commitlint), make sure to add a
+.huskyrc file to your home directory ~/.huskyrc, and add this in:
+
+```bash
+export PATH="/usr/local/bin:$PATH"
+
+```
+
+## Production
+
+### Mailers
 
 - Create a Sendgrid account and set a SENDGRID_API_KEY environment variable in .env
 - Create templates for each email you want to send and use the templateId in the corresponding mailer class
 
-### For error tracing
+### Error tracing
 
 - Create a Sentry account + project for each package and add the DSN to the web config and the api env variables
 
