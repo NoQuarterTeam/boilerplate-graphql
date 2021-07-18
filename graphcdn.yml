@@ -1,0 +1,19 @@
+name: boilerplate
+originUrl: 'https://nq-boilerplate.herokuapp.com/graphql'
+schema: 'packages/api/schema.graphql'
+scopes:
+  AUTHENTICATED: 'cookie:boilerplate.session.token|header:Authorization'
+rules:
+  - description: Cache everything (default)
+    maxAge: 900
+    scope: AUTHENTICATED
+    swr: 900
+    types:
+      Query: true
+  - description: Users
+    maxAge: 900
+    scope: AUTHENTICATED
+    swr: 900
+    types:
+      Query:
+        users: true
