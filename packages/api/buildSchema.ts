@@ -7,7 +7,7 @@ export default async () => {
     await buildSchema({
       container: Container,
       resolvers: loadResolvers(),
-      emitSchemaFile: { path: "packages/api/schema.graphql" },
+      emitSchemaFile: { path: "./schema.graphql" },
     })
   } catch (error) {
     console.log(error)
