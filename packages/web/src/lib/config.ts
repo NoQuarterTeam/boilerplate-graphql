@@ -28,4 +28,4 @@ export const API_URL = IS_PRODUCTION
 
 export const WEB_URL = IS_PRODUCTION ? "boilerplate.noquarter.co" : "localhost:3000"
 
-export const SESSION_TOKEN = "fullstack.boilerplate.token"
+export const SESSION_TOKEN = "boilerplate.session.token"
