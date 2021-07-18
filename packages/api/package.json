@@ -13,6 +13,7 @@
     "generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "build": "rimraf dist && tsc --build",
+    "buildSchema": "ts-node buildSchema.ts",
     "typecheck": "tsc --noEmit",
     "lint": "eslint --fix --cache --ext .ts,.tsx src",
     "lint:test": "eslint --cache --ext .ts,.tsx src",
