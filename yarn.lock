@@ -3275,10 +3275,10 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
-"@hookform/resolvers@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-2.6.1.tgz#d41296521ccebba71f671e105b75cf36071fa293"
-  integrity sha512-7tml6bUUzdkk7tYb5LBk4i6ctV/1Rs4U5qVxrNBXZd8ZhxvsELI0TyYrnCK0XSlCo8Htlat8TOzxSZcKWOH5KQ==
+"@hookform/resolvers@2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-2.7.0.tgz#f34577899294738541ef0905a50eb23b3ff43bb1"
+  integrity sha512-uWKw0hSFiljLmNe4FR/k6bZ/dp7xvZG9CAXFUM24E7CunGhU5Ltvu6KUrkNDOKsoIrpc01pQsQ1Sjim1P6FaAg==
 
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
@@ -6159,10 +6159,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.31.tgz#72286bd33d137aa0d152d47ec7c1762563d34055"
   integrity sha512-vFHy/ezP5qI0rFgJ7aQnjDXwAMrG0KqqIH7tQG5PPv3BWBayOPIQNBjVc/P6hhdZfMx51REc6tfDNXHUio893g==
 
-"@types/node@14.17.6":
-  version "14.17.6"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.6.tgz#cc61c8361c89e70c468cda464d1fa3dd7e5ebd62"
-  integrity sha512-iBxsxU7eswQDGhlr3AiamBxOssaYxbM+NKXVil8jg9yFXvrfEFbDumLD/2dMTB+zYyg7w+Xjt8yuxfdbUHAtcQ==
+"@types/node@14.17.7":
+  version "14.17.7"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.7.tgz#e106997493e617edeba52fdbd965930da494113b"
+  integrity sha512-SYTdMaW47se8499q8m0fYKZZRlmq0RaRv6oYmlVm6DUm31l0fhOl1D03X8hGxohCKTI2Bg6w7W0TiYB51aJzag==
 
 "@types/node@^10.1.0":
   version "10.17.54"
@@ -16873,10 +16873,10 @@ react-focus-lock@2.5.0:
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
 
-react-hook-form@7.12.1:
-  version "7.12.1"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.12.1.tgz#dc6adbbd78a3c8817129672a6367d45479e9ca3e"
-  integrity sha512-JBu5TZK3IXzDKw9SuNFwyQFdIx5uGZSmN9QTDsNsDSYdccU/O+43jBUh0zKG4jDc4hiNYYgDw34lLt7qLSeusA==
+react-hook-form@7.12.2:
+  version "7.12.2"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.12.2.tgz#2660afbf03c4ef360a9314ebf46ce3d972296c77"
+  integrity sha512-cpxocjrgpMAJCMJQR51BQhMoEx80/EQqePNihMTgoTYTqCRbd2GExi+N4GJIr+cFqrmbwNj9wxk5oLWYQsUefg==
 
 react-icons@4.2.0:
   version "4.2.0"
