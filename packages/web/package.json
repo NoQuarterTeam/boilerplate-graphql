@@ -32,7 +32,7 @@
     "@chakra-ui/react": "1.6.5",
     "@emotion/react": "11.4.0",
     "@emotion/styled": "11.3.0",
-    "@hookform/resolvers": "2.6.1",
+    "@hookform/resolvers": "2.7.0",
     "@sentry/react": "6.10.0",
     "@sentry/tracing": "6.10.0",
     "dayjs": "1.10.6",
