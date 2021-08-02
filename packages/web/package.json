@@ -28,7 +28,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@apollo/client": "3.4.2",
+    "@apollo/client": "3.4.3",
     "@chakra-ui/react": "1.6.5",
     "@emotion/react": "11.4.0",
     "@emotion/styled": "11.3.0",
