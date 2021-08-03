@@ -46,11 +46,11 @@
     "yup": "0.32.9"
   },
   "devDependencies": {
-    "@graphql-codegen/add": "2.0.2",
-    "@graphql-codegen/cli": "1.21.8",
-    "@graphql-codegen/typescript": "1.23.0",
-    "@graphql-codegen/typescript-operations": "1.18.4",
-    "@graphql-codegen/typescript-react-apollo": "2.3.1",
+    "@graphql-codegen/add": "3.0.0",
+    "@graphql-codegen/cli": "2.0.1",
+    "@graphql-codegen/typescript": "2.0.0",
+    "@graphql-codegen/typescript-operations": "2.0.1",
+    "@graphql-codegen/typescript-react-apollo": "3.0.0",
     "@types/cookie": "0.4.1",
     "@types/react": "17.0.15",
     "@types/react-dom": "17.0.9",
