@@ -28,8 +28,7 @@ function createApolloClient(initialState: null | Record<string, any>, options: O
   })
 
   return new ApolloClient({
-    ssrMode: !isBrowser,
-    ssrForceFetchDelay: 100,
+    ssrMode: false,
     link: authLink.concat(httpLink),
     name: "web",
     defaultOptions: {
