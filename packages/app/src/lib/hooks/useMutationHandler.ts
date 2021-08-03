@@ -1,8 +1,6 @@
-import { UseToastOptions } from "@chakra-ui/react"
 import { ExecutionResult } from "graphql"
 import { FieldError } from "react-hook-form"
 import * as Sentry from "@sentry/react"
-import { useToast } from "./useToast"
 
 export interface ValidationError {
   property: string
@@ -28,7 +26,6 @@ export interface MutationHandler<T> {
 function mutationHandler<T>(
   res: ExecutionResult<NonNullable<T>> | void,
   handler: MutationHandler<T>,
-  toast: (props: UseToastOptions) => void,
   actions?: {
     setFieldErrors: (errors: FieldError[]) => void
     setAppError: (message: any) => void
@@ -44,12 +41,12 @@ function mutationHandler<T>(
       res.errors?.[0].message.includes("Access denied!") ||
       res.errors?.[0].message.includes("Not authorized")
     ) {
-      toast({
+      console.log({
         status: "error",
         description: "You are not authorized to perform this action.",
       })
     } else if (res.errors?.[0].message.includes("Not authenticated")) {
-      toast({
+      console.log({
         status: "error",
         description: "Please login to continue.",
       })
@@ -64,13 +61,13 @@ function mutationHandler<T>(
       if (handler.onAppError) {
         handler.onAppError(res.errors[0].message)
       } else {
-        toast({ status: "error", description: res.errors[0].message })
+        console.log({ status: "error", description: res.errors[0].message })
       }
     } else if (res.errors?.[0].message) {
       if (handler.onServerError) {
         handler.onServerError(res.errors[0].message)
       } else {
-        toast({
+        console.log({
           status: "error",
           description: "Server error. We have been notified.",
         })
@@ -79,7 +76,7 @@ function mutationHandler<T>(
   } catch (e) {
     Sentry.captureException(e)
     console.log(e)
-    toast({
+    console.log({
       status: "error",
       description: "Server error. We have been notified.",
     })
@@ -92,7 +89,7 @@ function mutationHandler<T>(
 }
 
 export function useMutationHandler() {
-  const toast = useToast()
+  // const toast = useToast()
   async function handle<T>(
     mutation: () => Promise<ExecutionResult<NonNullable<T>> | void>,
     actions?: MutationHandler<T>,
@@ -103,12 +100,11 @@ export function useMutationHandler() {
   ) {
     try {
       const res = await mutation()
-      return mutationHandler(res, actions || {}, toast, formActions)
+      return mutationHandler(res, actions || {}, formActions)
     } catch (e) {
       // TODO: is block this needed?
       Sentry.captureException(e)
-      console.log(e)
-      toast({
+      console.log({
         description: "Something went wrong. We have been notified!",
         status: "error",
       })
