@@ -42,7 +42,7 @@
     "styled-system": "5.1.5"
   },
   "devDependencies": {
-    "@babel/core": "7.14.8",
+    "@babel/core": "7.15.0",
     "@graphql-codegen/add": "3.0.0",
     "@graphql-codegen/cli": "2.0.1",
     "@graphql-codegen/typescript": "2.0.0",
