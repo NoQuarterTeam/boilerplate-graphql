@@ -2,7 +2,7 @@
 
 ## We're hiring!
 
-We are looking at hiring a Senior Developer, someone who would be comfortble with this stack. If this sounds like you, please get in contact via our [website](https://www.noquarter.co)!
+We are looking at hiring a Senior Developer, someone who would be comfortable with this stack. If this sounds like you, please get in contact via our [website](https://www.noquarter.co)!
 
 ## Typescript + React + React Native + GraphQL + Prisma
 
