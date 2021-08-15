@@ -5332,10 +5332,10 @@
     sudo-prompt "^9.0.0"
     wcwidth "^1.0.1"
 
-"@react-navigation/core@5.15.5", "@react-navigation/core@^5.15.5":
-  version "5.15.5"
-  resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-5.15.5.tgz#9b5a534ed101df8a18a89356f3fa1d8e5f6e3826"
-  integrity sha512-xrUQ0xVQTMuuMiILRhhRpBzoI4TaFh4dJ4INCy6uwK9dwHjLwtsx+++ZefV/K4tbMQmGFxq4zSnLtTRtfMZKrA==
+"@react-navigation/core@5.16.0", "@react-navigation/core@^5.16.0":
+  version "5.16.0"
+  resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-5.16.0.tgz#93f96661df146180415e9c852f4d604884877e63"
+  integrity sha512-dy/sfO2Tl41r3vB2uUXTh6d9HY7Q2i43CxfqsU4fnGw5QRmp+7LaMidhGYOoH1wJ50IMWoBC2TdAr0x+5iluHg==
   dependencies:
     "@react-navigation/routers" "^5.7.4"
     escape-string-regexp "^4.0.0"
@@ -5343,12 +5343,12 @@
     query-string "^6.13.6"
     react-is "^16.13.0"
 
-"@react-navigation/native@5.9.6":
-  version "5.9.6"
-  resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-5.9.6.tgz#3ad9bcdeb62008f0ae9bdfbb8c0df183fe57cc24"
-  integrity sha512-m2F2AWBr0qbi4a5MBk2puGNWyVQnfmVHcpuIzQ37juptX6QCCuXjmOxvtdyqRzh2gKGnUlIeNaQKcACYj4zG/w==
+"@react-navigation/native@5.9.7":
+  version "5.9.7"
+  resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-5.9.7.tgz#2edcbbd973629959da1f6b36b414b79236223428"
+  integrity sha512-aFamJhREIVab4PfUKfv1Kfwm/NGfjjwsGc01oXEgtQNSjofnCQTIO4LB8TQgTj0Cyp4xpaQo0JMHOwTMJmlfbQ==
   dependencies:
-    "@react-navigation/core" "^5.15.5"
+    "@react-navigation/core" "^5.16.0"
     escape-string-regexp "^4.0.0"
     nanoid "^3.1.15"
 
@@ -5359,10 +5359,10 @@
   dependencies:
     nanoid "^3.1.15"
 
-"@react-navigation/stack@5.14.7":
-  version "5.14.7"
-  resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-5.14.7.tgz#8ac38d10fb2546613012b88cc065952f1e4506dc"
-  integrity sha512-Ew+MYaJGvJUpZ3XYIilSCRruldr3JXNOWYM8bqE21EeJ5d3mfynpTPihck5ol0AN8uFEAeskQzoixGWh5eMYuA==
+"@react-navigation/stack@5.14.8":
+  version "5.14.8"
+  resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-5.14.8.tgz#faf328fe8bd6c0d06977a400e7b6495eae89724b"
+  integrity sha512-2ctC9PEB8Z1msPFI3ECHCGxJGizwcH1Hj/Wj69fbT5eGgXXqgHJZTp/bwiYHb7Wu/ScP1mRoGdu0IEdSOk1TqA==
   dependencies:
     color "^3.1.3"
     react-native-iphone-x-helper "^1.3.0"
