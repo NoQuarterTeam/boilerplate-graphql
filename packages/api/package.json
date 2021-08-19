@@ -30,7 +30,7 @@
     ]
   },
   "dependencies": {
-    "@prisma/client": "2.27.0",
+    "@prisma/client": "2.29.0",
     "@sendgrid/client": "7.4.6",
     "@sendgrid/mail": "7.4.6",
     "@sentry/node": "6.11.0",
@@ -55,7 +55,7 @@
     "morgan": "1.10.0",
     "nodemailer": "6.6.3",
     "pg": "8.7.1",
-    "prisma": "2.27.0",
+    "prisma": "2.29.0",
     "reflect-metadata": "0.1.13",
     "type-graphql": "1.1.1",
     "type-graphql-dataloader": "0.4.0",

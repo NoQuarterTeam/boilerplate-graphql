@@ -1,11 +1,12 @@
 import * as React from "react"
 import { StatusBar } from "expo-status-bar"
-import { NativeBaseProvider, extendTheme } from "native-base"
+import { NativeBaseProvider } from "native-base"
 import { setContext } from "@apollo/client/link/context"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import { Screens } from "./screens"
 import { ApolloClient, ApolloProvider, createHttpLink, from, InMemoryCache } from "@apollo/client"
 import { API_URL, SESSION_TOKEN } from "../lib/config"
+import { theme } from "../lib/theme"
 
 const httpLink = createHttpLink({ uri: API_URL })
 
@@ -25,8 +26,6 @@ const client = new ApolloClient({
     query: { errorPolicy: "all" },
   },
 })
-
-const theme = extendTheme({ useSystemColorMode: false, initialColorMode: "light" })
 
 export function App() {
   return (

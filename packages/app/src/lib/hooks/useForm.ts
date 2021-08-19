@@ -8,9 +8,8 @@ import {
 } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { ExecutionResult } from "graphql"
-
+import * as Yup from "yup"
 import { MutationHandler, useMutationHandler } from "./useMutationHandler"
-import Yup from "../yup"
 
 interface Props<T> extends UseFormProps<T> {
   schema?: Yup.ObjectSchema<any>

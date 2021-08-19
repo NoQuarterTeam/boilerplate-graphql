@@ -24,20 +24,26 @@
       "eslint --fix"
     ]
   },
+  "expo-yarn-workspaces": {
+    "symlinks": [
+      "native-base"
+    ]
+  },
   "dependencies": {
     "@apollo/client": "3.4.8",
     "@react-native-async-storage/async-storage": "1.15.6",
     "@react-navigation/core": "5.16.1",
     "@react-navigation/native": "5.9.8",
     "@react-navigation/stack": "5.14.9",
-    "expo": "42.0.3",
     "expo-status-bar": "1.0.4",
+    "expo": "42.0.3",
     "native-base": "3.1.0",
-    "react": "17.0.2",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
-    "react-native-safe-area-context": "3.3.0",
-    "react-native-screens": "3.5.0",
+    "polished": "3.7.2",
+    "react-native-safe-area-context": "3.2.0",
+    "react-native-screens": "3.4.0",
     "react-native-svg": "12.1.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react": "17.0.2",
     "styled-components": "5.3.0",
     "styled-system": "5.1.5"
   },
@@ -45,14 +51,19 @@
     "@babel/core": "7.15.0",
     "@graphql-codegen/add": "3.0.0",
     "@graphql-codegen/cli": "2.0.1",
-    "@graphql-codegen/typescript": "2.0.0",
     "@graphql-codegen/typescript-operations": "2.0.1",
     "@graphql-codegen/typescript-react-apollo": "3.0.0",
-    "@types/react": "17.0.19",
+    "@graphql-codegen/typescript": "2.0.0",
     "@types/react-native": "0.64.13",
-    "eslint-plugin-react": "7.24.0",
+    "@types/react": "17.0.19",
     "eslint-plugin-react-hooks": "4.2.0",
+    "eslint-plugin-react": "7.24.0",
     "expo-yarn-workspaces": "1.5.2"
   },
-  "private": true
+  "private": true,
+  "workspaces": {
+    "nohoist": [
+      "eslint-import-resolver-node"
+    ]
+  }
 }

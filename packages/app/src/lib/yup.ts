@@ -1,21 +1,13 @@
-import * as Yup from "yup"
+import * as yup from "yup"
 
-Yup.addMethod(Yup.string, "nullIfEmpty", function () {
-  return this.transform((val, origVal) => (origVal.trim() === "" ? null : val)).nullable()
+yup.addMethod<yup.StringSchema<string | null | undefined>>(yup.string, "nullIfEmpty", function () {
+  return this.transform((val, origVal) => {
+    return origVal.trim() === "" ? undefined : val
+  }).nullable()
 })
 
-Yup.addMethod(Yup.number, "nullIfEmpty", function () {
+yup.addMethod<yup.NumberSchema<number | undefined | null>>(yup.number, "nullIfEmpty", function () {
   return this.transform((val, origVal) => (origVal === "" ? null : val)).nullable()
 })
 
-Yup.addMethod(Yup.array, "nullIfEmpty", function () {
-  return this.transform((val, origVal) => (origVal === [] ? null : val)).nullable()
-})
-Yup.addMethod(Yup.array, "nullIfEmpty", function () {
-  return this.transform((val, origVal) => (origVal === [] ? null : val)).nullable()
-})
-Yup.addMethod(Yup.mixed, "nullIfEmpty", function () {
-  return this.transform((val, origVal) => origVal || val).nullable()
-})
-
-export default Yup
+export const Yup = yup

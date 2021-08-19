@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Button, Stack, Center, Text } from "native-base"
+import { Button, Stack, Text, Flex } from "native-base"
 import { useMe } from "../lib/hooks/useMe"
 import { useNavigation } from "@react-navigation/core"
 import { useLogout } from "../lib/hooks/useLogout"
@@ -9,14 +9,13 @@ export function Home() {
   const { navigate } = useNavigation()
   const logout = useLogout()
   return (
-    <Center h="100%" p={4}>
+    <Flex h="100%" p={4} py={20} justifyContent="space-between">
       <Text fontSize="3xl" textAlign="center" fontWeight="bold">
         Welcome to the Fullstack boilerplate
       </Text>
-
       {loading ? null : me ? (
         <Stack p={4} space={4} w="100%">
-          <Text fontSize="lg">Hey {me.firstName}!</Text>
+          <Text fontSize="2xl">Hey {me.firstName}!</Text>
           <Button colorScheme="purple" onPress={logout}>
             Logout
           </Button>
@@ -26,6 +25,7 @@ export function Home() {
           Login
         </Button>
       )}
-    </Center>
+      <Flex />
+    </Flex>
   )
 }

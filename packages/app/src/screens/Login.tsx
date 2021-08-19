@@ -1,10 +1,16 @@
 import * as React from "react"
-import { Button, Input, Text, Stack } from "native-base"
+import { Text, Stack, SmallCloseIcon, Pressable } from "native-base"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import { gql, useApolloClient } from "@apollo/client"
+import { useNavigation } from "@react-navigation/core"
+
 import { MeDocument, useLoginMutation } from "../lib/graphql"
 import { SESSION_TOKEN } from "../lib/config"
-import { useNavigation } from "@react-navigation/core"
+import { Form, FormButton } from "../components/Form"
+import { useForm } from "../lib/hooks/useForm"
+import { Input } from "../components/Input"
+import { Yup } from "../lib/yup"
+import { withTheme } from "../components/hoc/withTheme"
 
 export const LOGIN = gql`
   mutation Login($data: LoginInput!) {
@@ -17,48 +23,55 @@ export const LOGIN = gql`
   }
 `
 
-export function Login() {
-  const { navigate } = useNavigation()
+const LoginSchema = Yup.object().shape({
+  email: Yup.string().email("Invalid email").required("Required"),
+  password: Yup.string().min(8, "Must be at least 8 characters"),
+})
+
+function _Login() {
+  const { navigate, goBack } = useNavigation()
   const client = useApolloClient()
+  const defaultValues = { email: "", password: "" }
+  const form = useForm({ defaultValues, schema: LoginSchema })
   const [login] = useLoginMutation()
-  const [email, setEmail] = React.useState("")
-  const [password, setPassword] = React.useState("")
-  const handleLogin = async () => {
-    try {
-      const res = await login({ variables: { data: { email, password } } })
-      if (res.data?.login.token) {
-        await AsyncStorage.setItem(SESSION_TOKEN, res.data.login.token)
-        client.writeQuery({ query: MeDocument, data: { me: res.data.login.user } })
-        navigate("Home")
-      }
-    } catch (error) {
-      console.log(error)
-    }
+
+  const handleLogin = async (data: typeof defaultValues) => {
+    return form.handler(() => login({ variables: { data } }), {
+      onSuccess: async (data) => {
+        try {
+          await AsyncStorage.setItem(SESSION_TOKEN, data.login.token)
+          client.writeQuery({ query: MeDocument, data: { me: data.login.user } })
+          navigate("Home")
+        } catch (error) {
+          console.log(error)
+        }
+      },
+    })
   }
   return (
-    <Stack p={6} mt={10} space={2} w="100%">
-      <Text mb={10} fontSize="2xl" fontWeight="bold">
-        Login
-      </Text>
-      <Input
-        _focus={{ borderColor: "purple.500" }}
-        type="email"
-        autoCapitalize="none"
-        placeholder="Email"
-        value={email}
-        onChangeText={setEmail}
-      />
-      <Input
-        _focus={{ borderColor: "purple.500" }}
-        placeholder="Password"
-        type="password"
-        autoCapitalize="none"
-        value={password}
-        onChangeText={setPassword}
-      />
-      <Button onPress={handleLogin} colorScheme="purple">
-        Submit
-      </Button>
-    </Stack>
+    <Form {...form}>
+      <Stack p={6} space={2} w="100%">
+        <Pressable pos="absolute" top={4} right={4} onPress={goBack}>
+          <SmallCloseIcon />
+        </Pressable>
+
+        <Text mt={5} mb={6} fontSize="4xl" fontWeight="bold">
+          Login
+        </Text>
+        <Input autoCapitalize="none" placeholder="jim@bob.com" name="email" label="Email" />
+        <Input
+          placeholder="********"
+          secureTextEntry
+          autoCapitalize="none"
+          name="password"
+          label="Password"
+        />
+        <FormButton colorScheme="purple" onPress={handleLogin}>
+          Submit
+        </FormButton>
+      </Stack>
+    </Form>
   )
 }
+
+export const Login = withTheme(_Login)
