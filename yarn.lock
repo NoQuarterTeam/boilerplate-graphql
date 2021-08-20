@@ -2867,10 +2867,10 @@
     "@graphql-codegen/plugin-helpers" "^2.1.0"
     tslib "~2.3.0"
 
-"@graphql-codegen/cli@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-2.1.0.tgz#989f15f9d8f95c4a34256ef9a21f7ea45b370ef8"
-  integrity sha512-UNp92FIj9oKLpiGtwv+i8+OPBQf44/Hl9XicSUP80AzcmfRxrwx/ugL4ZjnUEdqBVRLF8OHlinxA12MwxnhzTQ==
+"@graphql-codegen/cli@2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-2.1.1.tgz#1123f7434292852ac1e101924b37d674ca1e92f3"
+  integrity sha512-burl5HdZeaAOhe3gx/3LBNxNyboqNHSDQLlZUazm1Gu8lUdVN1trtO3P5xF7MCBm4MFTjzaAXdPT7FoYvYaWMg==
   dependencies:
     "@graphql-codegen/core" "2.1.0"
     "@graphql-codegen/plugin-helpers" "^2.1.0"
