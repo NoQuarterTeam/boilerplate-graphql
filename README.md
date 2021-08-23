@@ -1,8 +1,8 @@
 # Boilerplate
 
-## We're hiring!
+## We need your help!
 
-We are looking at hiring a Senior Developer, someone who would be comfortable with this stack. If this sounds like you, please get in contact via our [website](https://www.noquarter.co)!
+We are looking for someone who would be comfortable working with this stack to help us with some client projects. We are a remote first team and are flexible with hours. If this sounds like something for you, please get in contact via our [website](https://www.noquarter.co)!
 
 ## Typescript + React + React Native + GraphQL + Prisma
 
