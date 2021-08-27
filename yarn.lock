@@ -5512,10 +5512,10 @@
   resolved "https://registry.yarnpkg.com/@types/html-minifier-terser/-/html-minifier-terser-5.1.2.tgz#693b316ad323ea97eed6b38ed1a3cc02b1672b57"
   integrity sha512-h4lTMgMJctJybDp8CQrxTUiiYmedihHWkjnF/8Pxseu2S6Nlfcy8kwboQ8yejh456rP2yWoEVm1sS/FVsfM48w==
 
-"@types/ioredis@4.27.0":
-  version "4.27.0"
-  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.27.0.tgz#906d23460134f5450ba833944d94beff5bb00983"
-  integrity sha512-H3Uaffcxav+KmZob0bF1glq04DzENDv2fcMovDc+/yt2fIKZN3LKEOtR8OIAvQvIq0UW2s5m6C0AZwQKLHg13Q==
+"@types/ioredis@4.27.1":
+  version "4.27.1"
+  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.27.1.tgz#f1c2d8a4341ed5ff9f4dd7aebfb38e275e3b3197"
+  integrity sha512-+JichYPCtVapxi5Z+7V/8Uhn+4Piz+rkb03JQTQ0kW0pkV71+bmzSTkpwmIqa7FfWIszp0VbRyN8gfgWDNQMdA==
   dependencies:
     "@types/node" "*"
 
@@ -15987,10 +15987,10 @@ react-focus-lock@2.5.0:
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
 
-react-hook-form@7.13.0:
-  version "7.13.0"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.13.0.tgz#af451e4771af2ddcb4ccb2f6a11eeb191c66bbdc"
-  integrity sha512-ofjzl78xNTRmBHFZ/gOn65HDiqM/LHxbVMlaFoemyMQIDFTR4aG4h2CpCG/N0TbW5IQbh21hBYUvvmqK0ByEhg==
+react-hook-form@7.14.0:
+  version "7.14.0"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.14.0.tgz#b2b336510ddb352cde2fc1f5137e763d5db6c938"
+  integrity sha512-JwnIFedpGwUqxtMLv7lLq8PS6M6snFVeDvAQnG/0lyForn0ucWKMr58j86+9HobUGX6SAFmv7sVIJdLaxxzb8A==
 
 react-icons@4.2.0:
   version "4.2.0"
