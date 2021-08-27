@@ -9508,10 +9508,10 @@ eslint-module-utils@^2.6.2:
     debug "^3.2.7"
     pkg-dir "^2.0.0"
 
-eslint-plugin-flowtype@5.9.0:
-  version "5.9.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-5.9.0.tgz#8d2d81d3d79bb53470ed62b97409b31684757e30"
-  integrity sha512-aBUVPA5Wt0XyuV3Wg8flfVqYJR6yR2nRLuyPwoTjCg5VTk4G1X1zQpInr39tUGgRxqrA+d+B9GYK4+/d1i0Rfw==
+eslint-plugin-flowtype@5.9.1:
+  version "5.9.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-5.9.1.tgz#21ae5c5063cb87d80ad740611761b0cfeea0738f"
+  integrity sha512-ncUBL9lbhrcOlM5p6xQJT2c0z9co/FlP0mXdva6FrkvtzOoN7wdc8ioASonEpcWffOxnJPFPI8N0sHCavE6NAg==
   dependencies:
     lodash "^4.17.15"
     string-natural-compare "^3.0.1"
