@@ -5926,10 +5926,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-native@0.64.14":
-  version "0.64.14"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.64.14.tgz#6a72d7585c7075da51d45c1c825d04d09cb240b5"
-  integrity sha512-RBBc55sV2AS/ibdiyuju+Ju0HXZH6AP//ZlcK4lWatOWgeFYqBZlYWl+nKa4efYwlotg+1gWkyd2vYEKVF1a/w==
+"@types/react-native@0.65.0":
+  version "0.65.0"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.65.0.tgz#bef9ca619f421abafae891ac0629e27cbfe63b42"
+  integrity sha512-GgM6d47SQM9a6iOWKsdseFtTsKZGvmbr0FEaJMdCVy2SJmgtUq5JVpr3+aqHdrJQrg93e08VxPAWmz0qUtIPOg==
   dependencies:
     "@types/react" "*"
 
@@ -16270,10 +16270,10 @@ react-focus-lock@2.5.0:
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
 
-react-hook-form@7.15.0:
-  version "7.15.0"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.15.0.tgz#f6eb3a18ca797d39a5407114db07719d5c55e7fb"
-  integrity sha512-UWEkNhcTvA+o/FUZ2RMvpKgxxEg0rJqEjHMDwh3I4TIdHX38TtN8IywyGieqeWLiHEpoNVOuEhLVPZ9/srXUhA==
+react-hook-form@7.15.1:
+  version "7.15.1"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.15.1.tgz#445003b9b653a4fe09971390ca1cb088e59a0519"
+  integrity sha512-+f4T2dXWE9mJFq+b4J91yQ7cTD/2974O8J2TMGIgVjuz+fb3DdT+8vPx7SHzoCE0ZanfZ95mL0Fan7zxdeGSNA==
 
 react-icons@4.2.0:
   version "4.2.0"
