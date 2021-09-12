@@ -15,7 +15,7 @@ import { FormError } from "components/FormError"
 import { useForm } from "lib/hooks/useForm"
 import { withNoAuth } from "components/hoc/withNoAuth"
 
-export const LOGIN = gql`
+const _ = gql`
   mutation Login($data: LoginInput!) {
     login(data: $data) {
       user {

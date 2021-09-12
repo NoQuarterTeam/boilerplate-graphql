@@ -28,7 +28,7 @@ import { useMe } from "lib/hooks/useMe"
 import { useMutationHandler } from "lib/hooks/useMutationHandler"
 import { useDestroyAccountMutation } from "lib/graphql"
 
-export const DESTROY_ACCOUNT = gql`
+const _ = gql`
   mutation DestroyAccount {
     destroyAccount
   }

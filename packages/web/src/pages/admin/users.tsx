@@ -13,7 +13,7 @@ import { PartialCheckIcon } from "components/PartialCheckIcon"
 import { paginate } from "lib/apollo/helpers"
 import { Search } from "components/Search"
 
-export const USER_ITEM = gql`
+const _ = gql`
   fragment UserItem on User {
     id
     fullName
@@ -22,7 +22,7 @@ export const USER_ITEM = gql`
   }
 `
 
-export const GET_USERS = gql`
+const __ = gql`
   query GetUsers($take: Int, $orderBy: [UserOrderByWithRelationInput!], $where: UserWhereInput, $skip: Int) {
     users(take: $take, orderBy: $orderBy, where: $where, skip: $skip) {
       items {

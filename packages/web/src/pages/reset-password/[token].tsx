@@ -12,7 +12,7 @@ import Yup from "lib/yup"
 import { useResetPasswordMutation, ResetPasswordInput } from "lib/graphql"
 import { useForm } from "lib/hooks/useForm"
 
-export const RESET_PASSWORD = gql`
+const _ = gql`
   mutation ResetPassword($data: ResetPasswordInput!) {
     resetPassword(data: $data)
   }

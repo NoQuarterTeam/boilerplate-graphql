@@ -12,7 +12,7 @@ import Yup from "lib/yup"
 import { useForm } from "lib/hooks/useForm"
 import { useForgotPasswordMutation, MutationForgotPasswordArgs } from "lib/graphql"
 
-export const FORGOT_PASSWORD = gql`
+const _ = gql`
   mutation ForgotPassword($email: String!) {
     forgotPassword(email: $email)
   }
