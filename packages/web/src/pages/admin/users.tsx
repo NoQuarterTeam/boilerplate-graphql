@@ -23,7 +23,7 @@ export const USER_ITEM = gql`
 `
 
 export const GET_USERS = gql`
-  query GetUsers($take: Int, $orderBy: [UserOrderByInput!], $where: UserWhereInput, $skip: Int) {
+  query GetUsers($take: Int, $orderBy: [UserOrderByWithRelationInput!], $where: UserWhereInput, $skip: Int) {
     users(take: $take, orderBy: $orderBy, where: $where, skip: $skip) {
       items {
         ...UserItem
