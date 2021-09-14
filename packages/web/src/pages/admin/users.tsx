@@ -5,13 +5,12 @@ import { CgSoftwareDownload, CgUserAdd } from "react-icons/cg"
 import { gql } from "@apollo/client"
 import dayjs from "dayjs"
 
-import { withAuth } from "components/hoc/withAuth"
-import { AdminLayout } from "components/AdminLayout"
 import { QueryMode, Role, SortOrder, useGetUsersQuery, UserItemFragment } from "lib/graphql"
 import { Column, Table } from "components/Table"
 import { PartialCheckIcon } from "components/PartialCheckIcon"
 import { paginate } from "lib/apollo/helpers"
 import { Search } from "components/Search"
+import { withAdmin } from "components/hoc/withAdmin"
 
 const _ = gql`
   fragment UserItem on User {
@@ -81,85 +80,82 @@ function Users() {
   const isPartialSelection = !!users && selectedUsers.length > 0 && selectedUsers.length < users.length
 
   return (
-    <AdminLayout>
+    <Box>
       <Head>
         <title>Users</title>
       </Head>
-
-      <Box>
-        <Heading mb={2} fontWeight={800}>
-          Users
-        </Heading>
-        <HStack mb={4}>
-          <Search search={search} onSearch={setSearch} placeholder="Search users" />
-          <Button
+      <Heading mb={2} fontWeight={800}>
+        Users
+      </Heading>
+      <HStack mb={4}>
+        <Search search={search} onSearch={setSearch} placeholder="Search users" />
+        <Button
+          display={{ base: "none", md: "flex" }}
+          leftIcon={<Box boxSize="20px" as={CgSoftwareDownload} />}
+        >
+          Download
+        </Button>
+        <Button
+          display={{ base: "none", md: "flex" }}
+          colorScheme="purple"
+          leftIcon={<Box boxSize="18px" as={CgUserAdd} />}
+        >
+          Create user
+        </Button>
+        {selectedUsers.length > 0 && <Button variant="ghost">{selectedUsers.length} selected</Button>}
+      </HStack>
+      {loading ? (
+        <Center h={300}>
+          <Spinner />
+        </Center>
+      ) : !!!users ? (
+        <Center h={300}>
+          <Text>Error getting users</Text>
+        </Center>
+      ) : (
+        <Table
+          noDataText="No users found"
+          data={users}
+          take={TAKE}
+          onFetchMore={handleFetchMore}
+          count={data?.users.count}
+          isLoading={loading && !!!data}
+        >
+          <Column<UserItemFragment>
             display={{ base: "none", md: "flex" }}
-            leftIcon={<Box boxSize="20px" as={CgSoftwareDownload} />}
-          >
-            Download
-          </Button>
-          <Button
+            maxW="30px"
+            header={
+              <Checkbox
+                colorScheme="purple"
+                isChecked={data && data.users.count > 0 && selectedUsers.length > 0}
+                onChange={toggleAll}
+                iconColor="white"
+                {...(isPartialSelection && { icon: <PartialCheckIcon color="white" /> })}
+              />
+            }
+            row={(user) => (
+              <Checkbox
+                colorScheme="purple"
+                isChecked={selectedUsers.includes(user.id)}
+                iconColor="white"
+                onChange={() => toggleSelected(user.id)}
+              />
+            )}
+          />
+          <Column<UserItemFragment> header="Name" row={(user) => user.fullName} />
+          <Column<UserItemFragment>
             display={{ base: "none", md: "flex" }}
-            colorScheme="purple"
-            leftIcon={<Box boxSize="18px" as={CgUserAdd} />}
-          >
-            Create user
-          </Button>
-          {selectedUsers.length > 0 && <Button variant="ghost">{selectedUsers.length} selected</Button>}
-        </HStack>
-        {loading ? (
-          <Center h={300}>
-            <Spinner />
-          </Center>
-        ) : !!!users ? (
-          <Center h={300}>
-            <Text>Error getting users</Text>
-          </Center>
-        ) : (
-          <Table
-            noDataText="No users found"
-            data={users}
-            take={TAKE}
-            onFetchMore={handleFetchMore}
-            count={data?.users.count}
-            isLoading={loading && !!!data}
-          >
-            <Column<UserItemFragment>
-              display={{ base: "none", md: "flex" }}
-              maxW="30px"
-              header={
-                <Checkbox
-                  colorScheme="purple"
-                  isChecked={data && data.users.count > 0 && selectedUsers.length > 0}
-                  onChange={toggleAll}
-                  iconColor="white"
-                  {...(isPartialSelection && { icon: <PartialCheckIcon color="white" /> })}
-                />
-              }
-              row={(user) => (
-                <Checkbox
-                  colorScheme="purple"
-                  isChecked={selectedUsers.includes(user.id)}
-                  iconColor="white"
-                  onChange={() => toggleSelected(user.id)}
-                />
-              )}
-            />
-            <Column<UserItemFragment> header="Name" row={(user) => user.fullName} />
-            <Column<UserItemFragment>
-              display={{ base: "none", md: "flex" }}
-              header="Email"
-              row={(user) => user.email}
-            />
-            <Column<UserItemFragment>
-              header="Last updated"
-              row={(user) => dayjs(user.updatedAt).format("DD/MM/YYYY")}
-            />
-          </Table>
-        )}
-      </Box>
-    </AdminLayout>
+            header="Email"
+            row={(user) => user.email}
+          />
+          <Column<UserItemFragment>
+            header="Last updated"
+            row={(user) => dayjs(user.updatedAt).format("DD/MM/YYYY")}
+          />
+        </Table>
+      )}
+    </Box>
   )
 }
 
-export default withAuth(Users, (user) => user.role === Role.Admin)
+export default withAdmin(Users)

@@ -4321,10 +4321,10 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.4.4.tgz#11d5db19bd178936ec89cd84519c4de439574398"
   integrity sha512-1oO6+dN5kdIA3sKPZhRGJTfGVP4SWV6KqlMOwry4J3HfyD68sl/3KmG7DeYUzvN+RbhXDnv/D8vNNB8168tAMg==
 
-"@prisma/client@3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-3.0.1.tgz#beb09349fae23a76f66d3ae07e766e35f63bcc54"
-  integrity sha512-o/5wd1LqI2nr0/8L8Tg0cm5/wL/z7FLx5pd0D7MbnUoBv62sxHP5wRgturjljUwCBm4GpfRnBZUTWTuKA610MA==
+"@prisma/client@3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-3.0.2.tgz#f04d9b252f3d0c6918df43ad228eac27d03f6db1"
+  integrity sha512-6SrDYY2Yr5AmYpVB3XAXFqfzxKMdDTemXR7FmfXthnxWhQHoBwRLNZ3B3GyI/MmWa5tr+kaaGDJjp1LU0vuYvQ==
   dependencies:
     "@prisma/engines-version" "2.31.0-32.2452cc6313d52b8b9a96999ac0e974d0aedf88db"
 
@@ -14230,7 +14230,7 @@ next-transpile-modules@8.0.0:
     enhanced-resolve "^5.7.0"
     escalade "^3.1.1"
 
-next@11.1.2:
+next@^11.1.2:
   version "11.1.2"
   resolved "https://registry.yarnpkg.com/next/-/next-11.1.2.tgz#527475787a9a362f1bc916962b0c0655cc05bc91"
   integrity sha512-azEYL0L+wFjv8lstLru3bgvrzPvK0P7/bz6B/4EJ9sYkXeW8r5Bjh78D/Ol7VOg0EIPz0CXoe72hzAlSAXo9hw==
@@ -15900,10 +15900,10 @@ prettysize@^2.0.0:
   resolved "https://registry.yarnpkg.com/prettysize/-/prettysize-2.0.0.tgz#902c02480d865d9cc0813011c9feb4fa02ce6996"
   integrity sha512-VVtxR7sOh0VsG8o06Ttq5TrI1aiZKmC+ClSn4eBPaNf4SHr5lzbYW+kYGX3HocBL/MfpVrRfFZ9V3vCbLaiplg==
 
-prisma@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/prisma/-/prisma-3.0.1.tgz#7f52b6533b562d0bb32e1b74403b146ee6d89029"
-  integrity sha512-ENmYAopd56nkds5/IOSTGixbkbUN2QdEzB4cp/mtaGB/G0OArbP6cnbA/9u02Pe29RdErbNOoIdCGASjpItJwQ==
+prisma@3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/prisma/-/prisma-3.0.2.tgz#e86cb6abf4a815c7ac97b9d0ed383f01c253ce34"
+  integrity sha512-TyOCbtWGDVdWvsM1RhUzJXoGClXGalHhyYWIc5eizSF8T1ScGiOa34asBUdTnXOUBFSErbsqMNw40DHAteBm1A==
   dependencies:
     "@prisma/engines" "2.31.0-32.2452cc6313d52b8b9a96999ac0e974d0aedf88db"
 
