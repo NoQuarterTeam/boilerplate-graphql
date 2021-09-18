@@ -11,7 +11,7 @@
   "scripts": {
     "start:api": "node packages/api/dist",
     "build:api": "cd packages/api && yarn build",
-    "release:api": "rm -rf packages/{web,app} && yarn install && cd packages/api && yarn build && prisma migrate deploy",
+    "release:api": "rm -rf packages/web && rm -rf packages/app && yarn install && cd packages/api && yarn build && prisma migrate deploy",
     "heroku-prebuild": "rm -rf packages/{web,app}",
     "heroku-cleanup": "cd packages/api && yarn generate",
     "build": "yarn build:api",
