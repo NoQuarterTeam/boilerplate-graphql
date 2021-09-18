@@ -1,7 +1,7 @@
 import "reflect-metadata"
 import "dotenv/config"
 import { ApolloServer } from "apollo-server-express"
-import { ApolloServerPluginCacheControl } from "apollo-server-core"
+import { ApolloServerPluginCacheControl, ApolloServerPluginLandingPageDisabled } from "apollo-server-core"
 import { buildSchema } from "type-graphql"
 import { Container } from "typedi"
 import jwt from "express-jwt"
@@ -55,7 +55,7 @@ class App extends Server {
     const apolloServer = new ApolloServer({
       context: ({ req, res }: ExpressContext) => ({ req, res, prisma }),
       formatResponse,
-      plugins: [ApolloServerPluginCacheControl()],
+      plugins: [ApolloServerPluginCacheControl(), ApolloServerPluginLandingPageDisabled()],
       schema,
     })
     await apolloServer.start()
