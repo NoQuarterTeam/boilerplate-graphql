@@ -46,7 +46,7 @@
     "express": "4.17.1",
     "express-jwt": "6.1.0",
     "glob": "7.1.7",
-    "graphql": "15.5.3",
+    "graphql": "15.6.0",
     "graphql-fields": "2.0.3",
     "graphql-scalars": "1.10.1",
     "handlebars": "4.7.7",
