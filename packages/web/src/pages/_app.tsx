@@ -4,21 +4,10 @@ import type { AppProps } from "next/app"
 import Head from "next/head"
 import { ApolloProvider } from "@apollo/client"
 import { ChakraProvider } from "@chakra-ui/react"
-import * as Sentry from "@sentry/react"
-import { Integrations } from "@sentry/tracing"
+
 import { theme } from "@boilerplate/theme"
-
 import { useApollo } from "lib/apollo/client"
-import { IS_PRODUCTION, SENTRY_DSN } from "lib/config"
 
-if (IS_PRODUCTION) {
-  Sentry.init({
-    dsn: SENTRY_DSN,
-    integrations: [new Integrations.BrowserTracing()],
-    enabled: IS_PRODUCTION,
-    tracesSampleRate: 1.0,
-  })
-}
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: React.ReactElement) => React.ReactNode
 }
