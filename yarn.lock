@@ -5409,6 +5409,18 @@
     "@sentry/utils" "6.13.1"
     tslib "^1.9.3"
 
+"@sentry/cli@^1.68.0":
+  version "1.68.0"
+  resolved "https://registry.yarnpkg.com/@sentry/cli/-/cli-1.68.0.tgz#2ced8fac67ee01e746a45e8ee45a518d4526937e"
+  integrity sha512-zc7+cxKDqpHLREGJKRH6KwE8fZW8bnczg3OLibJ0czleXoWPdAuOK1Xm1BTMcOnaXfg3VKAh0rI7S1PTdj+SrQ==
+  dependencies:
+    https-proxy-agent "^5.0.0"
+    mkdirp "^0.5.5"
+    node-fetch "^2.6.0"
+    npmlog "^4.1.2"
+    progress "^2.0.3"
+    proxy-from-env "^1.1.0"
+
 "@sentry/core@6.13.1":
   version "6.13.1"
   resolved "https://registry.yarnpkg.com/@sentry/core/-/core-6.13.1.tgz#158cb7391c1aed4083fe12f40a3aecc951e3d354"
@@ -5429,6 +5441,16 @@
     "@sentry/utils" "6.13.1"
     tslib "^1.9.3"
 
+"@sentry/integrations@6.13.1":
+  version "6.13.1"
+  resolved "https://registry.yarnpkg.com/@sentry/integrations/-/integrations-6.13.1.tgz#8af9468fc5522f79688880ab9ad90ac7efaf8c1a"
+  integrity sha512-QUrn3tPDY2J4T66K/xK6oIbKHMQ+foUFLtmtipS55xaThowOPVNxkNfKVwS6Jex0dIKqWPWqhjYuLHjmGQODsQ==
+  dependencies:
+    "@sentry/types" "6.13.1"
+    "@sentry/utils" "6.13.1"
+    localforage "^1.8.1"
+    tslib "^1.9.3"
+
 "@sentry/minimal@6.13.1":
   version "6.13.1"
   resolved "https://registry.yarnpkg.com/@sentry/minimal/-/minimal-6.13.1.tgz#86865cc0d6090d9c8be2c44ec7f14a9c66910e7d"
@@ -5436,6 +5458,20 @@
   dependencies:
     "@sentry/hub" "6.13.1"
     "@sentry/types" "6.13.1"
+    tslib "^1.9.3"
+
+"@sentry/nextjs@6.13.1":
+  version "6.13.1"
+  resolved "https://registry.yarnpkg.com/@sentry/nextjs/-/nextjs-6.13.1.tgz#3d78e497d4669930ea0451ae573a6727b3eca011"
+  integrity sha512-32qiuhLYB8FKWQz6o1qDzlzLjg1S05GWHZ+ErGkzy+KVyysUNAQouTCpCDydzVNkueS3DpOQmvLZxK+JkxWZJA==
+  dependencies:
+    "@sentry/core" "6.13.1"
+    "@sentry/integrations" "6.13.1"
+    "@sentry/node" "6.13.1"
+    "@sentry/react" "6.13.1"
+    "@sentry/tracing" "6.13.1"
+    "@sentry/utils" "6.13.1"
+    "@sentry/webpack-plugin" "1.17.1"
     tslib "^1.9.3"
 
 "@sentry/node@6.13.1":
@@ -5488,6 +5524,13 @@
   dependencies:
     "@sentry/types" "6.13.1"
     tslib "^1.9.3"
+
+"@sentry/webpack-plugin@1.17.1":
+  version "1.17.1"
+  resolved "https://registry.yarnpkg.com/@sentry/webpack-plugin/-/webpack-plugin-1.17.1.tgz#1b3ebbe9991e4d77125ace2b24594059a088268a"
+  integrity sha512-L47a0hxano4a+9jbvQSBzHCT1Ph8fYAvGGUvFg8qc69yXS9si5lXRNIH/pavN6mqJjhQjAcEsEp+vxgvT4xZDQ==
+  dependencies:
+    "@sentry/cli" "^1.68.0"
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
@@ -11700,6 +11743,11 @@ image-size@^0.6.0:
   resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.6.3.tgz#e7e5c65bb534bd7cdcedd6cb5166272a85f75fb2"
   integrity sha512-47xSUiQioGaB96nqtp5/q55m0aBQSQdyIloMOc/x+QVTDZLNmXE892IIDrJ0hM1A5vcNUDD5tDffkSP5lCaIIA==
 
+immediate@~3.0.5:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/immediate/-/immediate-3.0.6.tgz#9db1dbd0faf8de6fbe0f5dd5e56bb606280de69b"
+  integrity sha1-nbHb0Pr43m++D13V5Wu2BigN5ps=
+
 immer@8.0.1:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/immer/-/immer-8.0.1.tgz#9c73db683e2b3975c424fb0572af5889877ae656"
@@ -12904,6 +12952,13 @@ libphonenumber-js@^1.9.7:
   resolved "https://registry.yarnpkg.com/libphonenumber-js/-/libphonenumber-js-1.9.23.tgz#e28babdaaaf7e09fbaf23a1c714166fa63001ea3"
   integrity sha512-+qWSwPyJWSV9ukb7Iu21WpWEP7irFWR1ojoYykL2itAfXKj9FjsTjS6PPZoPUOZk+1kxliHjwsilqA1TNeOhuQ==
 
+lie@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/lie/-/lie-3.1.1.tgz#9a436b2cc7746ca59de7a41fa469b3efb76bd87e"
+  integrity sha1-mkNrLMd0bKWd56QfpGmz77dr2H4=
+  dependencies:
+    immediate "~3.0.5"
+
 lines-and-columns@^1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
@@ -13051,6 +13106,13 @@ loader-utils@^1.0.0, loader-utils@^1.1.0, loader-utils@^1.2.3, loader-utils@^1.4
     big.js "^5.2.2"
     emojis-list "^3.0.0"
     json5 "^1.0.1"
+
+localforage@^1.8.1:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/localforage/-/localforage-1.10.0.tgz#5c465dc5f62b2807c3a84c0c6a1b1b3212781dd4"
+  integrity sha512-14/H1aX7hzBBmmh7sGPd+AOMkkIrHM3Z1PAyGgZigA1H1p5O5ANnMyWzvpAETtG68/dC4pC0ncy3+PPGzXZHPg==
+  dependencies:
+    lie "3.1.1"
 
 locate-path@^2.0.0:
   version "2.0.0"
@@ -16037,6 +16099,11 @@ proxy-addr@~2.0.5:
   dependencies:
     forwarded "0.2.0"
     ipaddr.js "1.9.1"
+
+proxy-from-env@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/proxy-from-env/-/proxy-from-env-1.1.0.tgz#e102f16ca355424865755d2c9e8ea4f24d58c3e2"
+  integrity sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==
 
 prr@~1.0.1:
   version "1.0.1"
