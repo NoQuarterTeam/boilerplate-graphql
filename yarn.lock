@@ -14533,10 +14533,10 @@ node-stream-zip@^1.9.1:
   resolved "https://registry.yarnpkg.com/node-stream-zip/-/node-stream-zip-1.14.0.tgz#fdf9b86d10d55c1e50aa1be4fea88bae256c4eba"
   integrity sha512-SKXyiBy9DBemsPHf/piHT00Y+iPK+zwru1G6+8UdOBzITnmmPMHYBMV6M1znyzyhDhUFQW0HEmbGiPqtp51M6Q==
 
-nodemailer@6.6.3:
-  version "6.6.3"
-  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.6.3.tgz#31fb53dd4d8ae16fc088a65cb9ffa8d928a69b48"
-  integrity sha512-faZFufgTMrphYoDjvyVpbpJcYzwyFnbAMmQtj1lVBYAUSm3SOy2fIdd9+Mr4UxPosBa0JRw9bJoIwQn+nswiew==
+nodemailer@6.6.4:
+  version "6.6.4"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.6.4.tgz#7888b9817cbd59ac842b2b62fb99000cd873f117"
+  integrity sha512-7ZXmys0IIaX531apjP+m/w1YYX3LGToDeRGTrxaPPdWLPernM8ZM+2w6pYp1eNF6LJxbUbAN8KHmlGaFz/HqqQ==
 
 nopt@^4.0.1:
   version "4.0.3"
