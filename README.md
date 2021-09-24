@@ -1,9 +1,5 @@
 # Boilerplate
 
-## We need your help!
-
-We are looking for someone who would be comfortable working with this stack to help us with some client projects. We are a remote first team and are flexible with hours. If this sounds like something for you, please get in contact via our [website](https://www.noquarter.co)!
-
 ## Typescript + React + React Native + GraphQL + Prisma
 
 Comes with user authentication included
