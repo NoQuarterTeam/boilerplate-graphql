@@ -35,7 +35,7 @@
     "@react-navigation/core": "5.16.1",
     "@react-navigation/native": "5.9.8",
     "@react-navigation/stack": "5.14.9",
-    "expo": "42.0.3",
+    "expo": "42.0.4",
     "expo-status-bar": "1.0.4",
     "native-base": "3.2.0",
     "polished": "4.1.3",
