@@ -33,7 +33,7 @@
     "@emotion/react": "11.4.1",
     "@emotion/styled": "11.3.0",
     "@hookform/resolvers": "2.8.1",
-    "@sentry/nextjs": "6.13.1",
+    "@sentry/nextjs": "6.13.2",
     "dayjs": "1.10.7",
     "framer-motion": "4.1.17",
     "next": "11.1.2",
@@ -51,7 +51,7 @@
     "@graphql-codegen/typescript-operations": "2.1.4",
     "@graphql-codegen/typescript-react-apollo": "3.1.4",
     "@types/cookie": "0.4.1",
-    "@types/react": "17.0.22",
+    "@types/react": "17.0.24",
     "@types/react-dom": "17.0.9",
     "eslint-config-next": "11.1.2"
   }
