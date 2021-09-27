@@ -1,6 +1,7 @@
 module.exports = {
   extends: ["plugin:react/recommended", "plugin:react-hooks/recommended", "../../.eslintrc.js"],
   plugins: ["simple-import-sort"],
+  ignorePatterns: ["AppEntry.js"],
   rules: {
     "simple-import-sort/imports": [
       "warn",
