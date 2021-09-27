@@ -1,4 +1,4 @@
-import { ObjectType, Field, ClassType, Int } from "type-graphql"
+import { ClassType, Field, Int, ObjectType } from "type-graphql"
 
 export function ConnectionResponse<TItem>(getNodesType: () => [ClassType<TItem>]) {
   @ObjectType({ isAbstract: true })

@@ -1,6 +1,6 @@
 import * as React from "react"
-import { FormControl, FormErrorMessage } from "@chakra-ui/react"
 import { useFormContext, UseFormReturn } from "react-hook-form"
+import { FormControl, FormErrorMessage } from "@chakra-ui/react"
 
 interface Props {
   error?: string

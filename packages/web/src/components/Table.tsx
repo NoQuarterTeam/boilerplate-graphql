@@ -1,19 +1,21 @@
 import * as React from "react"
-import NextLink from "next/link"
+import { CgArrowLongDown, CgArrowLongUp } from "react-icons/cg"
 import {
   Box,
-  Center,
-  FlexProps,
-  Flex,
-  Text,
-  Spinner,
   Button,
-  useColorModeValue,
+  Center,
+  Flex,
+  FlexProps,
   Link,
+  Spinner,
+  Text,
+  useColorModeValue,
 } from "@chakra-ui/react"
-import { CgArrowLongDown, CgArrowLongUp } from "react-icons/cg"
-import { useToast } from "lib/hooks/useToast"
+import NextLink from "next/link"
+
 import { SortOrder } from "lib/graphql"
+import { useToast } from "lib/hooks/useToast"
+
 import { NoData } from "./NoData"
 
 interface DataType {

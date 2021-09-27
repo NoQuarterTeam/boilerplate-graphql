@@ -1,4 +1,5 @@
 import * as glob from "glob"
+
 import { HOOK_PATHS } from "./config"
 
 export function loadPrismaHooks() {

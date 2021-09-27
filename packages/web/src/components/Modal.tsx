@@ -1,13 +1,12 @@
 import * as React from "react"
-
 import {
   Modal as CModal,
-  ModalOverlay,
+  ModalBody,
+  ModalCloseButton,
   ModalContent,
   ModalHeader,
-  ModalBody,
+  ModalOverlay,
   ModalProps,
-  ModalCloseButton,
 } from "@chakra-ui/react"
 
 interface Props extends ModalProps {

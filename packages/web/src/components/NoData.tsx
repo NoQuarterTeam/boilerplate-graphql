@@ -1,6 +1,6 @@
 import * as React from "react"
-import { Text, Box, FlexProps, HStack } from "@chakra-ui/react"
 import { FiAlertTriangle } from "react-icons/fi"
+import { Box, FlexProps, HStack, Text } from "@chakra-ui/react"
 
 interface Props extends FlexProps {
   children: React.ReactNode

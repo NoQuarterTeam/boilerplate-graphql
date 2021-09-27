@@ -1,6 +1,6 @@
 import * as React from "react"
-import { Stack, Text, WarningTwoIcon } from "native-base"
 import { FieldError } from "react-hook-form"
+import { Stack, Text, WarningTwoIcon } from "native-base"
 
 interface Props {
   error?: FieldError | string

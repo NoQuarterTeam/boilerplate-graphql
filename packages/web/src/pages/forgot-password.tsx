@@ -1,16 +1,16 @@
 import * as React from "react"
-import { Button, Text, Stack, Heading, Box, Center } from "@chakra-ui/react"
 import { gql } from "@apollo/client"
-import { useRouter } from "next/router"
-import Link from "next/link"
+import { Box, Button, Center, Heading, Stack, Text } from "@chakra-ui/react"
 import Head from "next/head"
+import Link from "next/link"
+import { useRouter } from "next/router"
 
-import { Form } from "components/Form"
-import { Input } from "components/Input"
+import { MutationForgotPasswordArgs, useForgotPasswordMutation } from "lib/graphql"
+import { useForm } from "lib/hooks/useForm"
 import { useToast } from "lib/hooks/useToast"
 import Yup from "lib/yup"
-import { useForm } from "lib/hooks/useForm"
-import { useForgotPasswordMutation, MutationForgotPasswordArgs } from "lib/graphql"
+import { Form } from "components/Form"
+import { Input } from "components/Input"
 
 const _ = gql`
   mutation ForgotPassword($email: String!) {

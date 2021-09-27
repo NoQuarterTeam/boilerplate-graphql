@@ -1,6 +1,5 @@
 import * as React from "react"
 import { FormProvider, useFormContext, UseFormReturn } from "react-hook-form"
-
 import { Button, IButtonProps } from "native-base"
 
 export const Form: React.FC<UseFormReturn<any>> = ({ children, ...props }) => {

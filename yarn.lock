@@ -9935,6 +9935,11 @@ eslint-plugin-react@^7.23.1:
     resolve "^2.0.0-next.3"
     string.prototype.matchall "^4.0.5"
 
+eslint-plugin-simple-import-sort@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-simple-import-sort/-/eslint-plugin-simple-import-sort-7.0.0.tgz#a1dad262f46d2184a90095a60c66fef74727f0f8"
+  integrity sha512-U3vEDB5zhYPNfxT5TYR7u01dboFZp+HNpnGhkDB2g/2E4wZ/g1Q9Ton8UwCLfRV9yAKyYqDh62oHOamvkFxsvw==
+
 eslint-scope@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-4.0.3.tgz#ca03833310f6889a3264781aa82e63eb9cfe7848"
@@ -16393,10 +16398,10 @@ react-focus-lock@2.5.0:
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
 
-react-hook-form@7.16.0:
-  version "7.16.0"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.16.0.tgz#7769dabe5f81690568dae4ef44fbd19525ae04cd"
-  integrity sha512-94sQPKcDSK7D88IMzOI4ASFQpegtlR+rlA+RFfHDQUAq2jbgUN8D3fR0hA9/X0Wusg/LyDdrB4NMt0SL6vttuA==
+react-hook-form@7.16.1:
+  version "7.16.1"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.16.1.tgz#669046df378a71949e5cf8a2398cbe20d5cb27bc"
+  integrity sha512-kcLDmSmlyLUFx2UU5bG/o4+3NeK753fhKodJa8gkplXohGkpAq0/p+TR24OWjZmkEc3ES7ppC5v5d6KUk+fJTA==
 
 react-icons@4.2.0:
   version "4.2.0"

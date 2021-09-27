@@ -1,32 +1,32 @@
 import * as React from "react"
-import NextLink from "next/link"
+import { BiMoon, BiSun } from "react-icons/bi"
+import { gql } from "@apollo/client"
 import {
-  Box,
-  Link,
-  Center,
-  Button,
-  Heading,
-  HStack,
-  IconButton,
-  useColorMode,
-  Spinner,
-  useDisclosure,
   AlertDialog,
   AlertDialogBody,
   AlertDialogContent,
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogOverlay,
+  Box,
+  Button,
+  Center,
+  Heading,
+  HStack,
+  IconButton,
+  Link,
+  Spinner,
+  useColorMode,
+  useDisclosure,
   VStack,
 } from "@chakra-ui/react"
 import Head from "next/head"
-import { BiMoon, BiSun } from "react-icons/bi"
-import { gql } from "@apollo/client"
+import NextLink from "next/link"
 
+import { useDestroyAccountMutation } from "lib/graphql"
 import { useLogout } from "lib/hooks/useLogout"
 import { useMe } from "lib/hooks/useMe"
 import { useMutationHandler } from "lib/hooks/useMutationHandler"
-import { useDestroyAccountMutation } from "lib/graphql"
 
 const _ = gql`
   mutation DestroyAccount {

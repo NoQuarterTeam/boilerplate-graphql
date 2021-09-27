@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken"
-import { APP_SECRET, APP_AUTH_SECRET } from "./config"
+
+import { APP_AUTH_SECRET, APP_SECRET } from "./config"
 
 type Payload = Record<string, any>
 

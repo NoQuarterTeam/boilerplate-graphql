@@ -1,9 +1,9 @@
-import cookie from "cookie"
 import { useApolloClient } from "@apollo/client"
+import cookie from "cookie"
 import { useRouter } from "next/router"
 
-import { useToast } from "./useToast"
 import { SESSION_TOKEN } from "../config"
+import { useToast } from "./useToast"
 
 export const useLogout = (redirectPath?: string) => {
   const client = useApolloClient()

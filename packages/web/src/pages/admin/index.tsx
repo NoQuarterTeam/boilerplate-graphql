@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Center, Heading } from "@chakra-ui/react"
+
 import { withAdmin } from "components/hoc/withAdmin"
 
 function AdminHome() {

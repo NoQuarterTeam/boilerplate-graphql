@@ -1,8 +1,8 @@
 import * as React from "react"
-import { TextInputProps } from "react-native"
 import { FieldError, useFormContext } from "react-hook-form"
+import { TextInputProps } from "react-native"
+import { Box, IBoxProps, Input as NInput, ITextProps, Text } from "native-base"
 
-import { Text, ITextProps, Box, IBoxProps, Input as NInput } from "native-base"
 import { InputError } from "./InputError"
 
 interface Props extends Omit<TextInputProps, "onChangeText" | "value"> {

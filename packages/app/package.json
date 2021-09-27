@@ -10,9 +10,9 @@
     "typecheck": "tsc --noEmit",
     "generate": "DEBUG=true graphql-codegen",
     "generate:watch": "graphql-codegen --watch",
-    "lint": "eslint --fix --cache --ext .ts,.tsx src",
-    "lint:test": "eslint --cache --ext .ts,.tsx src",
-    "prettify": "prettier --write src",
+    "lint:fix": "eslint --fix --cache --ext .ts,.tsx,.js ./",
+    "lint": "eslint --cache --ext .ts,.tsx,.js ./",
+    "prettify": "prettier --write ./",
     "pre-commit": "lint-staged",
     "postinstall": "expo-yarn-workspaces postinstall"
   },
@@ -20,7 +20,7 @@
     "*.(js|jsx|json|ts|tsx|html)|!graphql.tsx": [
       "prettier --write"
     ],
-    "*.(ts|tsx)|!graphql.tsx": [
+    "*.(js|ts|tsx)|!graphql.tsx": [
       "eslint --fix"
     ]
   },

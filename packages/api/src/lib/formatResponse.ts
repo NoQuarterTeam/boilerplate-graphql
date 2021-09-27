@@ -1,4 +1,4 @@
-import { GraphQLResponse, GraphQLRequestContext } from "apollo-server-types"
+import { GraphQLRequestContext, GraphQLResponse } from "apollo-server-types"
 
 export function formatResponse(
   res: GraphQLResponse | null,

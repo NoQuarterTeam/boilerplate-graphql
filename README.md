@@ -48,7 +48,12 @@ We use Husky to run a couple of checks each commit (prettier, eslint & commitlin
 
 ```bash
 export PATH="/usr/local/bin:$PATH"
+```
 
+then run
+
+```bash
+npx husky install
 ```
 
 ## Production

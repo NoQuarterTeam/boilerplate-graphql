@@ -1,11 +1,11 @@
 import * as React from "react"
+import { ApolloProvider } from "@apollo/client"
+import { theme } from "@boilerplate/theme"
+import { ChakraProvider } from "@chakra-ui/react"
 import type { NextPage } from "next"
 import type { AppProps } from "next/app"
 import Head from "next/head"
-import { ApolloProvider } from "@apollo/client"
-import { ChakraProvider } from "@chakra-ui/react"
 
-import { theme } from "@boilerplate/theme"
 import { useApollo } from "lib/apollo/client"
 
 type NextPageWithLayout = NextPage & {

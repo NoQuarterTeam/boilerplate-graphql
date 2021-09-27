@@ -1,4 +1,5 @@
 import * as glob from "glob"
+
 import { RESOLVER_PATHS } from "./config"
 
 export type NonEmptyArray<TItem> = readonly [TItem, ...TItem[]] | [TItem, ...TItem[]]

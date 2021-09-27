@@ -1,8 +1,9 @@
 import * as React from "react"
-import { Button, Stack, Text, Flex } from "native-base"
-import { useMe } from "../lib/hooks/useMe"
 import { useNavigation } from "@react-navigation/core"
+import { Button, Flex, Stack, Text } from "native-base"
+
 import { useLogout } from "../lib/hooks/useLogout"
+import { useMe } from "../lib/hooks/useMe"
 
 export function Home() {
   const { me, loading } = useMe()

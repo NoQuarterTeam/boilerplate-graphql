@@ -1,8 +1,9 @@
 import * as React from "react"
-import { Flex, Checkbox as CCheckbox, CheckboxProps, FormControl, Box } from "@chakra-ui/react"
-import { useFormContext, FieldError } from "react-hook-form"
+import { FieldError, useFormContext } from "react-hook-form"
+import { Box, Checkbox as CCheckbox, CheckboxProps, Flex, FormControl } from "@chakra-ui/react"
+
 import { InlineInputError, InputError } from "./InputError"
-import { InputLabel, InlineInputLabel } from "./InputLabel"
+import { InlineInputLabel, InputLabel } from "./InputLabel"
 
 interface Props extends CheckboxProps {
   name: string

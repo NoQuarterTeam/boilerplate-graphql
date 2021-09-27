@@ -1,22 +1,22 @@
 import * as React from "react"
+import { BiMoon, BiSun } from "react-icons/bi"
+import { CgExternal, CgHome, CgUser } from "react-icons/cg"
 import {
-  Flex,
   Box,
-  Link,
-  Stack,
-  useColorModeValue,
-  IconButton,
-  useColorMode,
   Button,
   Center,
-  LinkProps,
-  Text,
+  Flex,
   Icon,
+  IconButton,
+  Link,
+  LinkProps,
+  Stack,
+  Text,
+  useColorMode,
+  useColorModeValue,
 } from "@chakra-ui/react"
 import NextLink from "next/link"
 import { useRouter } from "next/router"
-import { BiSun, BiMoon } from "react-icons/bi"
-import { CgExternal, CgHome, CgUser } from "react-icons/cg"
 
 import { useLogout } from "lib/hooks/useLogout"
 

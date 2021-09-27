@@ -1,5 +1,6 @@
-import { createMethodDecorator } from "type-graphql"
 import { AuthenticationError } from "apollo-server-express"
+import { createMethodDecorator } from "type-graphql"
+
 import { ResolverContext } from "../resolverContext"
 
 export function UseAuth(roles?: string[]): any {

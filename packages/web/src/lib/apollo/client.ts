@@ -1,10 +1,10 @@
 import * as React from "react"
-import { ApolloClient, InMemoryCache, NormalizedCacheObject, createHttpLink } from "@apollo/client"
+import { ApolloClient, createHttpLink, InMemoryCache, NormalizedCacheObject } from "@apollo/client"
 import { setContext } from "@apollo/client/link/context"
 import { mergeDeep } from "@apollo/client/utilities"
 
 import { API_URL, SESSION_TOKEN } from "lib/config"
-import { parseCookies, isBrowser } from "lib/helpers/utils"
+import { isBrowser, parseCookies } from "lib/helpers/utils"
 
 type Callback = () => string
 type Options = {

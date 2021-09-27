@@ -1,5 +1,6 @@
 import * as React from "react"
 import { NativeBaseProvider } from "native-base"
+
 import { theme } from "../lib/theme"
 
 interface Props {

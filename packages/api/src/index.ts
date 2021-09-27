@@ -1,20 +1,21 @@
 import "reflect-metadata"
 import "dotenv/config"
-import { ApolloServer } from "apollo-server-express"
+
 import { ApolloServerPluginCacheControl, ApolloServerPluginLandingPageDisabled } from "apollo-server-core"
+import { ApolloServer } from "apollo-server-express"
+import jwt from "express-jwt"
 import { buildSchema } from "type-graphql"
 import { Container } from "typedi"
-import jwt from "express-jwt"
 
 import { JWT_AUTH } from "./lib/config"
-import { ErrorInterceptor } from "./lib/globalMiddleware"
+import { currentUser } from "./lib/currentUser"
 import { ExpressContext } from "./lib/express"
-import { Server } from "./lib/server"
 import { formatResponse } from "./lib/formatResponse"
-import { prisma } from "./lib/prisma"
+import { ErrorInterceptor } from "./lib/globalMiddleware"
 import { loadPrismaHooks } from "./lib/hooks"
 import { loadResolvers } from "./lib/loadResolvers"
-import { currentUser } from "./lib/currentUser"
+import { prisma } from "./lib/prisma"
+import { Server } from "./lib/server"
 
 class App extends Server {
   constructor() {

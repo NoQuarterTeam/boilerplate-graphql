@@ -1,9 +1,9 @@
-import sendgrid from "@sendgrid/mail"
 import sendgridClient from "@sendgrid/client"
+import sendgrid from "@sendgrid/mail"
+import * as Sentry from "@sentry/node"
+import dayjs from "dayjs"
 import handlebars from "handlebars"
 import nodemailer, { Transporter } from "nodemailer"
-import dayjs from "dayjs"
-import * as Sentry from "@sentry/node"
 
 import { DEV_EMAIL_OPTIONS, IS_PRODUCTION, SENDGRID_API_KEY } from "./config"
 

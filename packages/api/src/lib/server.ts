@@ -1,10 +1,11 @@
 import "reflect-metadata"
 import "dotenv/config"
-import express from "express"
-import chalk from "chalk"
-import morgan from "morgan"
-import { Integrations } from "@sentry/tracing"
+
 import * as Sentry from "@sentry/node"
+import { Integrations } from "@sentry/tracing"
+import chalk from "chalk"
+import express from "express"
+import morgan from "morgan"
 
 import { IS_PRODUCTION, PORT, SENTRY_DSN } from "./config"
 

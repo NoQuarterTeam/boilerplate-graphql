@@ -1,8 +1,9 @@
 import * as React from "react"
-import { Flex, Input as CInput, InputProps, FormControl } from "@chakra-ui/react"
-import { useFormContext, FieldError } from "react-hook-form"
+import { FieldError, useFormContext } from "react-hook-form"
+import { Flex, FormControl, Input as CInput, InputProps } from "@chakra-ui/react"
+
 import { InlineInputError, InputError } from "./InputError"
-import { InputLabel, InlineInputLabel } from "./InputLabel"
+import { InlineInputLabel, InputLabel } from "./InputLabel"
 
 interface Props extends InputProps {
   name: string

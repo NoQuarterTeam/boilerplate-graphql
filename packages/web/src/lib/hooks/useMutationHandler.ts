@@ -1,7 +1,8 @@
-import { UseToastOptions } from "@chakra-ui/react"
-import { ExecutionResult } from "graphql"
 import { FieldError } from "react-hook-form"
+import { UseToastOptions } from "@chakra-ui/react"
 import * as Sentry from "@sentry/react"
+import { ExecutionResult } from "graphql"
+
 import { useToast } from "./useToast"
 
 export interface ValidationError {

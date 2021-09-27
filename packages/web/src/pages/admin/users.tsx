@@ -1,16 +1,16 @@
 import * as React from "react"
-import { Box, Button, Center, Checkbox, Heading, HStack, Spinner, Text } from "@chakra-ui/react"
-import Head from "next/head"
 import { CgSoftwareDownload, CgUserAdd } from "react-icons/cg"
 import { gql } from "@apollo/client"
+import { Box, Button, Center, Checkbox, Heading, HStack, Spinner, Text } from "@chakra-ui/react"
 import dayjs from "dayjs"
+import Head from "next/head"
 
-import { QueryMode, Role, SortOrder, useGetUsersQuery, UserItemFragment } from "lib/graphql"
-import { Column, Table } from "components/Table"
-import { PartialCheckIcon } from "components/PartialCheckIcon"
 import { paginate } from "lib/apollo/helpers"
-import { Search } from "components/Search"
+import { QueryMode, Role, SortOrder, useGetUsersQuery, UserItemFragment } from "lib/graphql"
 import { withAdmin } from "components/hoc/withAdmin"
+import { PartialCheckIcon } from "components/PartialCheckIcon"
+import { Search } from "components/Search"
+import { Column, Table } from "components/Table"
 
 const _ = gql`
   fragment UserItem on User {

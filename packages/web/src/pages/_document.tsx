@@ -1,6 +1,6 @@
 import * as React from "react"
-import Document, { Html, Head, Main, NextScript } from "next/document"
 import { ColorModeScript } from "@chakra-ui/react"
+import Document, { Head, Html, Main, NextScript } from "next/document"
 
 export default class BoilerplateDocument extends Document {
   static getInitialProps(ctx: any) {

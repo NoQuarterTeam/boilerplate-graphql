@@ -1,12 +1,13 @@
 import * as React from "react"
-import { StatusBar } from "expo-status-bar"
-import { NativeBaseProvider } from "native-base"
+import { ApolloClient, ApolloProvider, createHttpLink, from, InMemoryCache } from "@apollo/client"
 import { setContext } from "@apollo/client/link/context"
 import AsyncStorage from "@react-native-async-storage/async-storage"
-import { Screens } from "./screens"
-import { ApolloClient, ApolloProvider, createHttpLink, from, InMemoryCache } from "@apollo/client"
+import { StatusBar } from "expo-status-bar"
+import { NativeBaseProvider } from "native-base"
+
 import { API_URL, SESSION_TOKEN } from "../lib/config"
 import { theme } from "../lib/theme"
+import { Screens } from "./screens"
 
 const httpLink = createHttpLink({ uri: API_URL })
 

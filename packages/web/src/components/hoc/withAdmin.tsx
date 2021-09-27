@@ -1,7 +1,7 @@
 import * as React from "react"
-import { Spinner, Center } from "@chakra-ui/react"
-import { useRouter } from "next/router"
+import { Center, Spinner } from "@chakra-ui/react"
 import type { NextPage } from "next"
+import { useRouter } from "next/router"
 
 import { Role } from "lib/graphql"
 import { useMe } from "lib/hooks/useMe"

@@ -1,6 +1,6 @@
-import { MiddlewareFn, ArgumentValidationError } from "type-graphql"
-import { UserInputError, AuthenticationError } from "apollo-server-express"
+import { AuthenticationError, UserInputError } from "apollo-server-express"
 import chalk from "chalk"
+import { ArgumentValidationError, MiddlewareFn } from "type-graphql"
 
 export const ErrorInterceptor: MiddlewareFn = async ({}, next) => {
   try {

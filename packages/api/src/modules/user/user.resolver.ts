@@ -1,21 +1,22 @@
 import { Arg, Args, Ctx, FieldResolver, Mutation, Query, Resolver, Root } from "type-graphql"
 import { Inject, Service } from "typedi"
-import { User, Role, FindManyUserArgs } from "@generated"
 
-import { UserService } from "./user.service"
-import { AuthResponse } from "./responses/auth.response"
-import { LoginInput } from "./inputs/login.input"
-import { prisma } from "../../lib/prisma"
-import { ResolverContext } from "../shared/resolverContext"
-import { RegisterInput } from "./inputs/register.input"
-import { ContextUser } from "../shared/contextUser"
+import { FindManyUserArgs, Role, User } from "@generated"
+
 import { createToken, decryptToken } from "../../lib/jwt"
-import { ResetPasswordInput } from "./inputs/resetPassword.input"
-import { UserMailer } from "./user.mailer"
+import { prisma } from "../../lib/prisma"
+import { ContextUser } from "../shared/contextUser"
 import { CurrentUser } from "../shared/currentUser"
-import { UsersResponse } from "./responses/users.response"
 import { UseAuth } from "../shared/middleware/UseAuth"
 import { UseCacheControl } from "../shared/middleware/UseCacheControl"
+import { ResolverContext } from "../shared/resolverContext"
+import { LoginInput } from "./inputs/login.input"
+import { RegisterInput } from "./inputs/register.input"
+import { ResetPasswordInput } from "./inputs/resetPassword.input"
+import { AuthResponse } from "./responses/auth.response"
+import { UsersResponse } from "./responses/users.response"
+import { UserMailer } from "./user.mailer"
+import { UserService } from "./user.service"
 
 @Service()
 @Resolver(() => User)

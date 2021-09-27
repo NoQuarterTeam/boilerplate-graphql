@@ -1,5 +1,5 @@
 import * as React from "react"
-import { FormLabel, Text, FormLabelProps, useColorModeValue } from "@chakra-ui/react"
+import { FormLabel, FormLabelProps, Text, useColorModeValue } from "@chakra-ui/react"
 
 interface Props extends Omit<FormLabelProps, "children"> {
   name?: string

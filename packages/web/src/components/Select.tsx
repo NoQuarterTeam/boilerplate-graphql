@@ -1,6 +1,7 @@
 import * as React from "react"
-import { Select as CSelect, Flex, SelectProps, FormControl } from "@chakra-ui/react"
-import { useFormContext, FieldError } from "react-hook-form"
+import { FieldError, useFormContext } from "react-hook-form"
+import { Flex, FormControl, Select as CSelect, SelectProps } from "@chakra-ui/react"
+
 import { InlineInputError, InputError } from "./InputError"
 import { InlineInputLabel, InputLabel } from "./InputLabel"
 

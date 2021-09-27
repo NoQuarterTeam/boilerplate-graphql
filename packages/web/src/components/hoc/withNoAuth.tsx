@@ -1,9 +1,10 @@
 import * as React from "react"
+import { Center, Spinner } from "@chakra-ui/react"
 import { NextPage } from "next"
 import { useRouter } from "next/router"
-import { Spinner, Center } from "@chakra-ui/react"
-import { useMe } from "lib/hooks/useMe"
+
 import { REDIRECT_PATH } from "lib/config"
+import { useMe } from "lib/hooks/useMe"
 
 export const withNoAuth = (Page: NextPage, redirectUrl?: string) => {
   function NoAuthComponent(props: any) {

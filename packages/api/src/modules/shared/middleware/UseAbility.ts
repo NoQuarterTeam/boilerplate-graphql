@@ -1,6 +1,7 @@
 import { GraphQLResolveInfo } from "graphql"
 import { UseMiddleware } from "type-graphql"
 import { Middleware } from "type-graphql/dist/interfaces/Middleware"
+
 import { ResolverContext } from "../resolverContext"
 
 export interface AbilityContext<Data> {

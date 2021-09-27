@@ -1,6 +1,6 @@
-import { InputType, Field } from "type-graphql"
-import { IsNotEmpty } from "class-validator"
 import { User } from "@prisma/client"
+import { IsNotEmpty } from "class-validator"
+import { Field, InputType } from "type-graphql"
 
 @InputType()
 export class ResetPasswordInput implements Partial<User> {

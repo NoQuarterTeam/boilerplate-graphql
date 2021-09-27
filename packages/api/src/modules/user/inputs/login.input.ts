@@ -1,5 +1,6 @@
-import { InputType, Field } from "type-graphql"
 import { IsNotEmpty } from "class-validator"
+import { Field, InputType } from "type-graphql"
+
 import { User } from "@generated"
 
 @InputType()

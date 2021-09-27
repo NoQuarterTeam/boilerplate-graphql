@@ -1,11 +1,11 @@
 import * as React from "react"
-import { Spinner, Center } from "@chakra-ui/react"
-import { useRouter } from "next/router"
+import { Center, Spinner } from "@chakra-ui/react"
 import { NextPage } from "next"
+import { useRouter } from "next/router"
 
+import { REDIRECT_PATH } from "lib/config"
 import { MeFragment } from "lib/graphql"
 import { useMe } from "lib/hooks/useMe"
-import { REDIRECT_PATH } from "lib/config"
 
 export function withAuth(Page: NextPage, isAuthorized?: (user: MeFragment) => boolean) {
   function AuthComponent(props: any) {

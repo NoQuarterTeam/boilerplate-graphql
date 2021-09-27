@@ -1,8 +1,9 @@
 import * as React from "react"
-import { Textarea as CTextarea, FormControl, Flex, TextareaProps } from "@chakra-ui/react"
-import { useFormContext, FieldError } from "react-hook-form"
+import { FieldError, useFormContext } from "react-hook-form"
+import { Flex, FormControl, Textarea as CTextarea, TextareaProps } from "@chakra-ui/react"
+
 import { InlineInputError, InputError } from "./InputError"
-import { InputLabel, InlineInputLabel } from "./InputLabel"
+import { InlineInputLabel, InputLabel } from "./InputLabel"
 
 interface Props extends TextareaProps {
   name: string

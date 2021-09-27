@@ -1,16 +1,16 @@
 import * as React from "react"
-import { Stack, Button, Text, Heading, Box, Center } from "@chakra-ui/react"
 import { gql } from "@apollo/client"
-import { useRouter } from "next/router"
-import Link from "next/link"
+import { Box, Button, Center, Heading, Stack, Text } from "@chakra-ui/react"
 import Head from "next/head"
+import Link from "next/link"
+import { useRouter } from "next/router"
 
-import { Form } from "components/Form"
-import { Input } from "components/Input"
+import { ResetPasswordInput, useResetPasswordMutation } from "lib/graphql"
+import { useForm } from "lib/hooks/useForm"
 import { useToast } from "lib/hooks/useToast"
 import Yup from "lib/yup"
-import { useResetPasswordMutation, ResetPasswordInput } from "lib/graphql"
-import { useForm } from "lib/hooks/useForm"
+import { Form } from "components/Form"
+import { Input } from "components/Input"
 
 const _ = gql`
   mutation ResetPassword($data: ResetPasswordInput!) {
