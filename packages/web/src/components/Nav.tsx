@@ -1,11 +1,12 @@
 import * as React from "react"
+import { BiMoon,BiSun } from "react-icons/bi"
 import { GiHamburgerMenu } from "react-icons/gi"
 import {
+  Avatar,
   Box,
   Button,
   Fade,
   HStack,
-  IconButton,
   Link,
   LinkProps,
   Menu,
@@ -13,6 +14,7 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
+  useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react"
 import NextLink from "next/link"
@@ -25,8 +27,10 @@ import { Limiter } from "./Limiter"
 import { LinkButton } from "./LinkButton"
 
 export function Nav() {
-  const { me, loading } = useMe()
+  const { me } = useMe()
   const logout = useLogout()
+  const { colorMode, toggleColorMode } = useColorMode()
+  const isDark = colorMode === "dark"
 
   return (
     <Box
@@ -48,53 +52,57 @@ export function Nav() {
         w="100%"
       >
         {/* Left link list */}
-        <HStack spacing={4}>
+        <HStack>
           <HomeLink href="/" color="purple.600" pl={0} textTransform="uppercase" fontWeight="bold">
             Boilerplate
           </HomeLink>
         </HStack>
 
         {/* Right link list */}
-        {loading ? null : me ? (
-          <Fade in>
-            <HStack spacing={4} display={{ base: "none", md: "flex" }}>
-              <NextLink passHref href="/">
-                <Button variant="outline" borderWidth={2} colorScheme="purple" as={Link}>
-                  Dashboard
-                </Button>
-              </NextLink>
-            </HStack>
-          </Fade>
-        ) : (
-          <Fade in>
-            <HStack spacing={4} display={{ base: "none", md: "flex" }}>
-              <LinkButton href="/login" variant="ghost">
-                Login
-              </LinkButton>
-              <LinkButton href="/register" variant="solid" colorScheme="purple">
-                Register
-              </LinkButton>
-            </HStack>
-          </Fade>
-        )}
 
-        {/* Mobile link list */}
-        <Menu>
-          <MenuButton
-            as={IconButton}
-            display={{ base: "flex", md: "none" }}
-            icon={<GiHamburgerMenu />}
-            variant="ghost"
-          />
-          <MenuList>
+        <Fade in>
+          <HStack spacing={4} display={{ base: "none", md: me ? "none" : "flex" }}>
+            <LinkButton href="/login" variant="ghost">
+              Login
+            </LinkButton>
+            <LinkButton href="/register" variant="solid" colorScheme="purple">
+              Register
+            </LinkButton>
+          </HStack>
+        </Fade>
+
+        {/* Right menu list */}
+        <Menu placement="bottom-end">
+          <MenuButton as={Button} display={{ base: "flex", md: me ? "flex" : "none" }} variant="unstyled">
+            {me ? <Avatar size="xs" src={me.avatar || undefined} /> : <Box as={GiHamburgerMenu} />}
+          </MenuButton>
+          <MenuList fontSize="md">
             {me ? (
               <>
-                <MenuItem>Profile</MenuItem>
+                <NextLink passHref href="/profile">
+                  <MenuItem>Profile</MenuItem>
+                </NextLink>
+                <MenuDivider />
+                <MenuItem
+                  closeOnSelect={false}
+                  icon={<Box as={isDark ? BiSun : BiMoon} boxSize="20px" />}
+                  onClick={toggleColorMode}
+                >
+                  Toggle theme
+                </MenuItem>
                 <MenuDivider />
                 <MenuItem onClick={() => logout()}>Logout</MenuItem>
               </>
             ) : (
               <>
+                <MenuItem
+                  closeOnSelect={false}
+                  icon={<Box as={isDark ? BiSun : BiMoon} boxSize="20px" />}
+                  onClick={toggleColorMode}
+                >
+                  Toggle theme
+                </MenuItem>
+                <MenuDivider />
                 <NextLink passHref href="/login">
                   <MenuItem>Login</MenuItem>
                 </NextLink>
