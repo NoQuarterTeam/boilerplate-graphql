@@ -306,10 +306,10 @@ export type UsersResponse = {
 export type MeFragment = {
   __typename?: "User"
   id: string
-  firstName?: Maybe<string>
-  lastName?: Maybe<string>
+  firstName?: string | null | undefined
+  lastName?: string | null | undefined
   fullName: string
-  avatar?: Maybe<string>
+  avatar?: string | null | undefined
   email: string
   role: Role
 }
@@ -318,16 +318,19 @@ export type MeQueryVariables = Exact<{ [key: string]: never }>
 
 export type MeQuery = {
   __typename?: "Query"
-  me?: Maybe<{
-    __typename?: "User"
-    id: string
-    firstName?: Maybe<string>
-    lastName?: Maybe<string>
-    fullName: string
-    avatar?: Maybe<string>
-    email: string
-    role: Role
-  }>
+  me?:
+    | {
+        __typename?: "User"
+        id: string
+        firstName?: string | null | undefined
+        lastName?: string | null | undefined
+        fullName: string
+        avatar?: string | null | undefined
+        email: string
+        role: Role
+      }
+    | null
+    | undefined
 }
 
 export type GetSignedUrlForPutMutationVariables = Exact<{
@@ -336,7 +339,7 @@ export type GetSignedUrlForPutMutationVariables = Exact<{
 
 export type GetSignedUrlForPutMutation = {
   __typename?: "Mutation"
-  getSignedS3UrlForPut?: Maybe<{ __typename?: "SignedResponse"; url: string; uploadUrl: string }>
+  getSignedS3UrlForPut?: { __typename?: "SignedResponse"; url: string; uploadUrl: string } | null | undefined
 }
 
 export type GetBulkSignedUrlForPutMutationVariables = Exact<{
@@ -345,9 +348,10 @@ export type GetBulkSignedUrlForPutMutationVariables = Exact<{
 
 export type GetBulkSignedUrlForPutMutation = {
   __typename?: "Mutation"
-  getBulkSignedS3UrlForPut?: Maybe<
-    Array<{ __typename?: "SignedResponse"; url: string; uploadUrl: string; key: string }>
-  >
+  getBulkSignedS3UrlForPut?:
+    | Array<{ __typename?: "SignedResponse"; url: string; uploadUrl: string; key: string }>
+    | null
+    | undefined
 }
 
 export type UserItemFragment = {
@@ -380,10 +384,6 @@ export type ForgotPasswordMutationVariables = Exact<{
 
 export type ForgotPasswordMutation = { __typename?: "Mutation"; forgotPassword: boolean }
 
-export type DestroyAccountMutationVariables = Exact<{ [key: string]: never }>
-
-export type DestroyAccountMutation = { __typename?: "Mutation"; destroyAccount: boolean }
-
 export type LoginMutationVariables = Exact<{
   data: LoginInput
 }>
@@ -396,10 +396,10 @@ export type LoginMutation = {
     user: {
       __typename?: "User"
       id: string
-      firstName?: Maybe<string>
-      lastName?: Maybe<string>
+      firstName?: string | null | undefined
+      lastName?: string | null | undefined
       fullName: string
-      avatar?: Maybe<string>
+      avatar?: string | null | undefined
       email: string
       role: Role
     }
@@ -415,14 +415,18 @@ export type UpdateMeMutation = {
   updateMe: {
     __typename?: "User"
     id: string
-    firstName?: Maybe<string>
-    lastName?: Maybe<string>
+    firstName?: string | null | undefined
+    lastName?: string | null | undefined
     fullName: string
-    avatar?: Maybe<string>
+    avatar?: string | null | undefined
     email: string
     role: Role
   }
 }
+
+export type DestroyAccountMutationVariables = Exact<{ [key: string]: never }>
+
+export type DestroyAccountMutation = { __typename?: "Mutation"; destroyAccount: boolean }
 
 export type RegisterMutationVariables = Exact<{
   data: RegisterInput
@@ -436,10 +440,10 @@ export type RegisterMutation = {
     user: {
       __typename?: "User"
       id: string
-      firstName?: Maybe<string>
-      lastName?: Maybe<string>
+      firstName?: string | null | undefined
+      lastName?: string | null | undefined
       fullName: string
-      avatar?: Maybe<string>
+      avatar?: string | null | undefined
       email: string
       role: Role
     }
@@ -591,26 +595,6 @@ export type ForgotPasswordMutationOptions = Apollo.BaseMutationOptions<
   ForgotPasswordMutation,
   ForgotPasswordMutationVariables
 >
-export const DestroyAccountDocument = gql`
-  mutation DestroyAccount {
-    destroyAccount
-  }
-`
-export function useDestroyAccountMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<DestroyAccountMutation, DestroyAccountMutationVariables>,
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return ApolloReactHooks.useMutation<DestroyAccountMutation, DestroyAccountMutationVariables>(
-    DestroyAccountDocument,
-    options,
-  )
-}
-export type DestroyAccountMutationHookResult = ReturnType<typeof useDestroyAccountMutation>
-export type DestroyAccountMutationResult = Apollo.MutationResult<DestroyAccountMutation>
-export type DestroyAccountMutationOptions = Apollo.BaseMutationOptions<
-  DestroyAccountMutation,
-  DestroyAccountMutationVariables
->
 export const LoginDocument = gql`
   mutation Login($data: LoginInput!) {
     login(data: $data) {
@@ -648,6 +632,26 @@ export function useUpdateMeMutation(
 export type UpdateMeMutationHookResult = ReturnType<typeof useUpdateMeMutation>
 export type UpdateMeMutationResult = Apollo.MutationResult<UpdateMeMutation>
 export type UpdateMeMutationOptions = Apollo.BaseMutationOptions<UpdateMeMutation, UpdateMeMutationVariables>
+export const DestroyAccountDocument = gql`
+  mutation DestroyAccount {
+    destroyAccount
+  }
+`
+export function useDestroyAccountMutation(
+  baseOptions?: ApolloReactHooks.MutationHookOptions<DestroyAccountMutation, DestroyAccountMutationVariables>,
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return ApolloReactHooks.useMutation<DestroyAccountMutation, DestroyAccountMutationVariables>(
+    DestroyAccountDocument,
+    options,
+  )
+}
+export type DestroyAccountMutationHookResult = ReturnType<typeof useDestroyAccountMutation>
+export type DestroyAccountMutationResult = Apollo.MutationResult<DestroyAccountMutation>
+export type DestroyAccountMutationOptions = Apollo.BaseMutationOptions<
+  DestroyAccountMutation,
+  DestroyAccountMutationVariables
+>
 export const RegisterDocument = gql`
   mutation Register($data: RegisterInput!) {
     register(data: $data) {
