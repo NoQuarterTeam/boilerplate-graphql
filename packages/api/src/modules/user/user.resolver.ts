@@ -3,6 +3,7 @@ import { Inject, Service } from "typedi"
 
 import { FindManyUserArgs, Role, User } from "@generated"
 
+import { S3_URL } from "../../lib/config"
 import { createToken, decryptToken } from "../../lib/jwt"
 import { prisma } from "../../lib/prisma"
 import { ContextUser } from "../shared/contextUser"
@@ -13,6 +14,7 @@ import { ResolverContext } from "../shared/resolverContext"
 import { LoginInput } from "./inputs/login.input"
 import { RegisterInput } from "./inputs/register.input"
 import { ResetPasswordInput } from "./inputs/resetPassword.input"
+import { UpdateUserInput } from "./inputs/updateUser.input"
 import { AuthResponse } from "./responses/auth.response"
 import { UsersResponse } from "./responses/users.response"
 import { UserMailer } from "./user.mailer"
@@ -40,6 +42,13 @@ export default class UserResolver {
   @Query(() => User, { nullable: true })
   me(@ContextUser() user: ContextUser): User | null {
     return user
+  }
+
+  // UPDATE ME
+  @UseAuth()
+  @Mutation(() => User)
+  async updateMe(@CurrentUser() currentUser: User, @Arg("data") data: UpdateUserInput): Promise<User> {
+    return await prisma.user.update({ where: { id: currentUser.id }, data })
   }
 
   // LOGIN
@@ -104,5 +113,12 @@ export default class UserResolver {
   email(@Root() user: User, @CurrentUser() currentUser: User) {
     if (currentUser.role !== Role.ADMIN && user.id !== currentUser.id) return ""
     return user.email
+  }
+
+  @UseCacheControl({ maxAge: 3600 })
+  @FieldResolver(() => String, { nullable: true })
+  avatar(@Root() user: User) {
+    if (!user.avatar) return null
+    return S3_URL + user.avatar
   }
 }

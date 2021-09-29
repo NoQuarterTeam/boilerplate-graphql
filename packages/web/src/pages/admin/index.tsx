@@ -1,9 +1,9 @@
 import * as React from "react"
 import { Center, Heading } from "@chakra-ui/react"
 
-import { withAdmin } from "components/hoc/withAdmin"
+import { AdminLayout } from "components/AdminLayout"
 
-function AdminHome() {
+export default function AdminHome() {
   return (
     <Center pt={20}>
       <Heading>Welcome to the admin dashboard</Heading>
@@ -11,4 +11,4 @@ function AdminHome() {
   )
 }
 
-export default withAdmin(AdminHome)
+AdminHome.getLayout = (page: React.ReactNode) => <AdminLayout>{page}</AdminLayout>

@@ -14,7 +14,7 @@ export class S3Service {
     this.bucket = AWS_S3_BUCKET
   }
   getSignedUrlForGet(key: string): string {
-    // todo: use signing for everything?
+    // TODO: use signing for everything?
     return S3_URL + key
   }
 

@@ -4,7 +4,6 @@ import { gql } from "@apollo/client"
 import { useGetBulkSignedUrlForPutMutation, useGetSignedUrlForPutMutation } from "../graphql"
 import { formatFileName } from "../helpers/utils"
 import { useMutationHandler } from "./useMutationHandler"
-import { useToast } from "./useToast"
 
 const _ = gql`
   mutation GetSignedUrlForPut($data: S3SignedUrlInput!) {
@@ -27,50 +26,48 @@ export type UploadFile = {
 }
 export function useS3Upload(
   props?: Props,
-): [(file: File, lazyProps?: Props) => Promise<UploadFile | void>, { loading: boolean }] {
+): [(file: File, lazyProps?: Props) => Promise<UploadFile>, { loading: boolean }] {
   const [loading, setLoading] = React.useState(false)
   const [getS3SignedRequest] = useGetSignedUrlForPutMutation()
-  const toast = useToast()
   const handler = useMutationHandler()
 
   async function upload(file: File, lazyProps?: Props) {
-    setLoading(true)
-    let parsedKey = props?.path || lazyProps?.path || "/unknown"
-    if (parsedKey[parsedKey.length - 1] === "/") {
-      parsedKey = parsedKey.slice(0, -1)
-    }
-    if (parsedKey[0] === "/") {
-      parsedKey = parsedKey.substr(1)
-    }
-    const formattedName = formatFileName(file.name)
-    const key = parsedKey + "/" + formattedName
-    const res = await handler(() => getS3SignedRequest({ variables: { data: { key, fileType: file.type } } }))
-    if (!res || !res.data || !res.data.getSignedS3UrlForPut) {
-      setLoading(false)
-      return toast({
-        status: "error",
-        description: "Error uploading file, please try again",
+    try {
+      setLoading(true)
+      let parsedKey = props?.path || lazyProps?.path || "/unknown"
+      if (parsedKey[parsedKey.length - 1] === "/") {
+        parsedKey = parsedKey.slice(0, -1)
+      }
+      if (parsedKey[0] === "/") {
+        parsedKey = parsedKey.substr(1)
+      }
+      const formattedName = formatFileName(file.name)
+      const key = parsedKey + "/" + formattedName
+      const res = await handler(() =>
+        getS3SignedRequest({ variables: { data: { key, fileType: file.type } } }),
+      )
+      if (!res || !res.data || !res.data.getSignedS3UrlForPut) throw new Error("Error fetching signed url")
+      await fetch(res.data.getSignedS3UrlForPut.uploadUrl, {
+        method: "PUT",
+        headers: { "Content-Type": file.type },
+        body: file,
       })
-    }
-    await fetch(res.data.getSignedS3UrlForPut.uploadUrl, {
-      method: "PUT",
-      headers: { "Content-Type": file.type },
-      body: file,
-    }).catch(() => {
-      toast({ status: "error", description: "Error uploading file" })
-    })
-    setLoading(false)
-    return {
-      fileUrl: res.data.getSignedS3UrlForPut.url,
-      fileKey: key,
-      fileName: file.name,
-      fileType: file.type || null,
+      setLoading(false)
+      return {
+        fileUrl: res.data.getSignedS3UrlForPut.url,
+        fileKey: key,
+        fileName: file.name,
+        fileType: file.type || null,
+      }
+    } catch (error) {
+      setLoading(false)
+      throw error
     }
   }
   return [upload, { loading }]
 }
 
-export const GET_BULK_SIGNED_URL_FOR_PUT = gql`
+const __ = gql`
   mutation GetBulkSignedUrlForPut($data: S3BulkSignedUrlInput!) {
     getBulkSignedS3UrlForPut(data: $data) {
       url
@@ -88,13 +85,12 @@ export type BulkUploadFile = {
 
 export function useS3BulkUpload(
   props: Props,
-): [(files: File[], lazyProps?: Props) => Promise<BulkUploadFile[] | void>, { loading: boolean }] {
+): [(files: File[], lazyProps?: Props) => Promise<BulkUploadFile[]>, { loading: boolean }] {
   const [loading, setLoading] = React.useState(false)
   const [getBulkSigned] = useGetBulkSignedUrlForPutMutation()
-  const toast = useToast()
   const handler = useMutationHandler()
 
-  async function upload(files: File[], lazyProps?: Props): Promise<BulkUploadFile[] | void> {
+  async function upload(files: File[], lazyProps?: Props): Promise<BulkUploadFile[]> {
     setLoading(true)
     let parsedKey = props?.path || lazyProps?.path || "/unknown"
     if (parsedKey[parsedKey.length - 1] === "/") {
@@ -116,14 +112,7 @@ export function useS3BulkUpload(
         },
       }),
     )
-    if (!res || !res.data || !res.data.getBulkSignedS3UrlForPut) {
-      setLoading(false)
-
-      return toast({
-        status: "error",
-        description: "Error uploading image, please try again",
-      })
-    }
+    if (!res || !res.data || !res.data.getBulkSignedS3UrlForPut) throw new Error("Error fetching signed url")
 
     try {
       await Promise.all(
@@ -137,17 +126,16 @@ export function useS3BulkUpload(
           })
         }),
       )
-    } catch (err) {
       setLoading(false)
-      return toast({ status: "error", description: "Error uploading files" })
+      return fileData.map((f) => ({
+        fileKey: f.fileKey,
+        fileName: f.fileName,
+        fileType: f.fileType,
+      }))
+    } catch (error) {
+      setLoading(false)
+      throw error
     }
-
-    setLoading(false)
-    return fileData.map((f) => ({
-      fileKey: f.fileKey,
-      fileName: f.fileName,
-      fileType: f.fileType,
-    }))
   }
   return [upload, { loading }]
 }

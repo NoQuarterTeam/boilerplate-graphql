@@ -1,6 +1,6 @@
 import * as React from "react"
 import { gql, useApolloClient } from "@apollo/client"
-import { Box, Button, Flex, Heading, Stack } from "@chakra-ui/react"
+import { Box, Button, Center, Heading, Stack } from "@chakra-ui/react"
 import cookie from "cookie"
 import Head from "next/head"
 import Link from "next/link"
@@ -56,7 +56,7 @@ function Register() {
     })
   }
   return (
-    <Flex justify="center" pt={10}>
+    <Center flexDir="column" mt={10}>
       <Head>
         <title>Boilerplate - Register</title>
       </Head>
@@ -76,7 +76,7 @@ function Register() {
           </Stack>
         </Form>
       </Box>
-    </Flex>
+    </Center>
   )
 }
 

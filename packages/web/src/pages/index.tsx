@@ -1,16 +1,9 @@
 import * as React from "react"
-import { gql } from "@apollo/client"
 import { Box, Center, Heading, Spinner, VStack } from "@chakra-ui/react"
 import Head from "next/head"
 
 import { useMe } from "lib/hooks/useMe"
 import { HomeLayout } from "components/HomeLayout"
-
-const _ = gql`
-  mutation DestroyAccount {
-    destroyAccount
-  }
-`
 
 export default function Home() {
   const { me, loading } = useMe()

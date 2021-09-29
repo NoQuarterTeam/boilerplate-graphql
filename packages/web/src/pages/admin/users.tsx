@@ -7,7 +7,7 @@ import Head from "next/head"
 
 import { paginate } from "lib/apollo/helpers"
 import { QueryMode, Role, SortOrder, useGetUsersQuery, UserItemFragment } from "lib/graphql"
-import { withAdmin } from "components/hoc/withAdmin"
+import { AdminLayout } from "components/AdminLayout"
 import { PartialCheckIcon } from "components/PartialCheckIcon"
 import { Search } from "components/Search"
 import { Column, Table } from "components/Table"
@@ -33,7 +33,7 @@ const __ = gql`
 `
 
 const TAKE = 10
-function Users() {
+export default function Users() {
   const [search, setSearch] = React.useState("")
   const [selectedUsers, setSelectedUsers] = React.useState<string[]>([])
 
@@ -158,4 +158,4 @@ function Users() {
   )
 }
 
-export default withAdmin(Users)
+Users.getLayout = (page: React.ReactNode) => <AdminLayout>{page}</AdminLayout>

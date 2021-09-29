@@ -10,6 +10,7 @@ import {
   IconButton,
   Link,
   LinkProps,
+  Spinner,
   Stack,
   Text,
   useColorMode,
@@ -18,7 +19,9 @@ import {
 import NextLink from "next/link"
 import { useRouter } from "next/router"
 
+import { Role } from "lib/graphql"
 import { useLogout } from "lib/hooks/useLogout"
+import { useMe } from "lib/hooks/useMe"
 
 interface Props {
   children: React.ReactNode
@@ -28,7 +31,25 @@ export function AdminLayout(props: Props) {
   const isDark = colorMode === "dark"
 
   const logout = useLogout()
+  const { me, loading } = useMe()
+  const router = useRouter()
 
+  React.useEffect(() => {
+    if (loading) return
+    if (!me || me.role !== Role.Admin) {
+      router.replace(`/`)
+    }
+  }, [loading, me, router])
+
+  const bg = useColorModeValue("white", "gray.900")
+  const borderColor = useColorModeValue("gray.100", "gray.900")
+  if (loading || !me || me.role !== Role.Admin) {
+    return (
+      <Center minH="100vh">
+        <Spinner />
+      </Center>
+    )
+  }
   return (
     <Flex w="100vw" h="100vh" overflow="hidden">
       <Flex
@@ -38,9 +59,9 @@ export function AdminLayout(props: Props) {
         p={{ base: 4, md: 8 }}
         py={8}
         h="100vh"
-        bg={useColorModeValue("white", "gray.900")}
+        bg={bg}
         borderRight="1px solid"
-        borderColor={useColorModeValue("gray.100", "gray.900")}
+        borderColor={borderColor}
       >
         <Stack spacing={4}>
           <SidebarLink href="/admin" icon={<Box boxSize="16px" as={CgHome} />}>

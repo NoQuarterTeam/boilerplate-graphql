@@ -1,6 +1,6 @@
 import * as React from "react"
 import { gql, useApolloClient } from "@apollo/client"
-import { Box, Button, Flex, Heading, Stack } from "@chakra-ui/react"
+import { Box, Button, Center, Flex, Heading, Stack } from "@chakra-ui/react"
 import cookie from "cookie"
 import Head from "next/head"
 import Link from "next/link"
@@ -54,7 +54,7 @@ function Login() {
     })
   }
   return (
-    <Flex justify="center" pt={10}>
+    <Center flexDir="column" pt={10}>
       <Head>
         <title>Boilerplate - Login</title>
       </Head>
@@ -75,7 +75,7 @@ function Login() {
           </Stack>
         </Form>
       </Box>
-    </Flex>
+    </Center>
   )
 }
 

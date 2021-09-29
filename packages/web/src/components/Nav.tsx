@@ -1,12 +1,12 @@
 import * as React from "react"
-import { BiMoon,BiSun } from "react-icons/bi"
+import { BiExit, BiMoon, BiSun, BiUser } from "react-icons/bi"
 import { GiHamburgerMenu } from "react-icons/gi"
 import {
   Avatar,
   Box,
-  Button,
   Fade,
   HStack,
+  IconButton,
   Link,
   LinkProps,
   Menu,
@@ -53,7 +53,13 @@ export function Nav() {
       >
         {/* Left link list */}
         <HStack>
-          <HomeLink href="/" color="purple.600" pl={0} textTransform="uppercase" fontWeight="bold">
+          <HomeLink
+            href="/"
+            color={useColorModeValue("purple.600", "purple.400")}
+            pl={0}
+            textTransform="uppercase"
+            fontWeight="bold"
+          >
             Boilerplate
           </HomeLink>
         </HStack>
@@ -73,31 +79,37 @@ export function Nav() {
 
         {/* Right menu list */}
         <Menu placement="bottom-end">
-          <MenuButton as={Button} display={{ base: "flex", md: me ? "flex" : "none" }} variant="unstyled">
-            {me ? <Avatar size="xs" src={me.avatar || undefined} /> : <Box as={GiHamburgerMenu} />}
-          </MenuButton>
+          <MenuButton
+            as={IconButton}
+            display={{ base: "flex", md: me ? "flex" : "none" }}
+            variant="unstyled"
+            icon={me ? <Avatar size="xs" src={me.avatar || undefined} /> : <Box as={GiHamburgerMenu} />}
+          />
+
           <MenuList fontSize="md">
             {me ? (
               <>
                 <NextLink passHref href="/profile">
-                  <MenuItem>Profile</MenuItem>
+                  <MenuItem icon={<Box as={BiUser} boxSize="16px" />}>Profile</MenuItem>
                 </NextLink>
                 <MenuDivider />
                 <MenuItem
                   closeOnSelect={false}
-                  icon={<Box as={isDark ? BiSun : BiMoon} boxSize="20px" />}
+                  icon={<Box as={isDark ? BiSun : BiMoon} boxSize="16px" />}
                   onClick={toggleColorMode}
                 >
                   Toggle theme
                 </MenuItem>
                 <MenuDivider />
-                <MenuItem onClick={() => logout()}>Logout</MenuItem>
+                <MenuItem onClick={() => logout()} icon={<Box as={BiExit} boxSize="16px" />}>
+                  Logout
+                </MenuItem>
               </>
             ) : (
               <>
                 <MenuItem
                   closeOnSelect={false}
-                  icon={<Box as={isDark ? BiSun : BiMoon} boxSize="20px" />}
+                  icon={<Box as={isDark ? BiSun : BiMoon} boxSize="16px" />}
                   onClick={toggleColorMode}
                 >
                   Toggle theme

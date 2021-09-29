@@ -56,6 +56,7 @@ export type Mutation = {
   login: AuthResponse
   register: AuthResponse
   resetPassword: Scalars["Boolean"]
+  updateMe: User
 }
 
 export type MutationForgotPasswordArgs = {
@@ -80,6 +81,10 @@ export type MutationRegisterArgs = {
 
 export type MutationResetPasswordArgs = {
   data: ResetPasswordInput
+}
+
+export type MutationUpdateMeArgs = {
+  data: UpdateUserInput
 }
 
 export type NestedDateTimeFilter = {
@@ -219,6 +224,15 @@ export type StringNullableFilter = {
   not?: Maybe<NestedStringNullableFilter>
   notIn?: Maybe<Array<Scalars["String"]>>
   startsWith?: Maybe<Scalars["String"]>
+}
+
+export type UpdateUserInput = {
+  avatar?: Maybe<Scalars["String"]>
+  bio?: Maybe<Scalars["String"]>
+  email?: Maybe<Scalars["String"]>
+  firstName?: Maybe<Scalars["String"]>
+  lastName?: Maybe<Scalars["String"]>
+  password?: Maybe<Scalars["String"]>
 }
 
 export type User = {
@@ -389,6 +403,24 @@ export type LoginMutation = {
       email: string
       role: Role
     }
+  }
+}
+
+export type UpdateMeMutationVariables = Exact<{
+  data: UpdateUserInput
+}>
+
+export type UpdateMeMutation = {
+  __typename?: "Mutation"
+  updateMe: {
+    __typename?: "User"
+    id: string
+    firstName?: Maybe<string>
+    lastName?: Maybe<string>
+    fullName: string
+    avatar?: Maybe<string>
+    email: string
+    role: Role
   }
 }
 
@@ -599,6 +631,23 @@ export function useLoginMutation(
 export type LoginMutationHookResult = ReturnType<typeof useLoginMutation>
 export type LoginMutationResult = Apollo.MutationResult<LoginMutation>
 export type LoginMutationOptions = Apollo.BaseMutationOptions<LoginMutation, LoginMutationVariables>
+export const UpdateMeDocument = gql`
+  mutation UpdateMe($data: UpdateUserInput!) {
+    updateMe(data: $data) {
+      ...Me
+    }
+  }
+  ${MeFragmentDoc}
+`
+export function useUpdateMeMutation(
+  baseOptions?: ApolloReactHooks.MutationHookOptions<UpdateMeMutation, UpdateMeMutationVariables>,
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return ApolloReactHooks.useMutation<UpdateMeMutation, UpdateMeMutationVariables>(UpdateMeDocument, options)
+}
+export type UpdateMeMutationHookResult = ReturnType<typeof useUpdateMeMutation>
+export type UpdateMeMutationResult = Apollo.MutationResult<UpdateMeMutation>
+export type UpdateMeMutationOptions = Apollo.BaseMutationOptions<UpdateMeMutation, UpdateMeMutationVariables>
 export const RegisterDocument = gql`
   mutation Register($data: RegisterInput!) {
     register(data: $data) {

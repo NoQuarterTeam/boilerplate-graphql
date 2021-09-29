@@ -1,6 +1,6 @@
 import * as React from "react"
 import { gql } from "@apollo/client"
-import { Box, Button, Flex, Heading, Stack, Text } from "@chakra-ui/react"
+import { Box, Button, Center, Heading, Stack, Text } from "@chakra-ui/react"
 import Head from "next/head"
 import Link from "next/link"
 import { useRouter } from "next/router"
@@ -43,7 +43,7 @@ export default function ResetPassword() {
     })
   }
   return (
-    <Flex justify="center" pt={10}>
+    <Center flexDir="column" pt={10}>
       <Head>
         <title>Boilerplate - Reset password</title>
       </Head>
@@ -62,7 +62,7 @@ export default function ResetPassword() {
           </Stack>
         </Form>
       </Box>
-    </Flex>
+    </Center>
   )
 }
 ResetPassword.getLayout = (page: React.ReactNode) => <HomeLayout>{page}</HomeLayout>
