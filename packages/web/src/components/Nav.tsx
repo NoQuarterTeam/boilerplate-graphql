@@ -27,7 +27,7 @@ import { Limiter } from "./Limiter"
 import { LinkButton } from "./LinkButton"
 
 export function Nav() {
-  const { me } = useMe()
+  const { me, loading } = useMe()
   const logout = useLogout()
   const { colorMode, toggleColorMode } = useColorMode()
   const isDark = colorMode === "dark"
@@ -66,16 +66,18 @@ export function Nav() {
 
         {/* Right link list */}
 
-        <Fade in>
-          <HStack spacing={4} display={{ base: "none", md: me ? "none" : "flex" }}>
-            <LinkButton href="/login" variant="ghost">
-              Login
-            </LinkButton>
-            <LinkButton href="/register" variant="solid" colorScheme="purple">
-              Register
-            </LinkButton>
-          </HStack>
-        </Fade>
+        {!me && !loading && (
+          <Fade in>
+            <HStack spacing={4} display={{ base: "none", md: "flex" }}>
+              <LinkButton href="/login" variant="ghost">
+                Login
+              </LinkButton>
+              <LinkButton href="/register" variant="solid" colorScheme="purple">
+                Register
+              </LinkButton>
+            </HStack>
+          </Fade>
+        )}
 
         {/* Right menu list */}
         <Menu placement="bottom-end">
