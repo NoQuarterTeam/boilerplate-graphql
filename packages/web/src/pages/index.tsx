@@ -1,12 +1,12 @@
 import * as React from "react"
-import { Box, Center, Heading, Spinner, VStack } from "@chakra-ui/react"
+import { Box, Center, Heading, VStack } from "@chakra-ui/react"
 import Head from "next/head"
 
 import { useMe } from "lib/hooks/useMe"
 import { HomeLayout } from "components/HomeLayout"
 
 export default function Home() {
-  const { me, loading } = useMe()
+  const { me } = useMe()
 
   return (
     <Box>
@@ -14,21 +14,13 @@ export default function Home() {
         <title>Boilerplate</title>
       </Head>
 
-      <Center minH="80vh" p={4} pt={{ base: 40, md: 4 }} pos="relative">
+      <Center pt={20}>
         <VStack spacing={6}>
-          <Heading as="h1" textAlign="center">
-            Welcome to the Boilerplate
-          </Heading>
-          {loading ? (
-            <Center>
-              <Spinner />
-            </Center>
-          ) : (
-            me && (
-              <Heading as="h3" fontSize="2xl">
-                Hello, {me.firstName}!
-              </Heading>
-            )
+          <Heading as="h1">Welcome to the Boilerplate</Heading>
+          {me && (
+            <Heading as="h2" fontSize="2xl">
+              Hello, {me.firstName}!
+            </Heading>
           )}
         </VStack>
       </Center>
