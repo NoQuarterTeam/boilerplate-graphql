@@ -1,12 +1,7 @@
 module.exports = {
   extends: ["plugin:react/recommended", "plugin:react-hooks/recommended", "../../.eslintrc.js"],
-  plugins: ["simple-import-sort"],
   ignorePatterns: ["AppEntry.js"],
   rules: {
-    "simple-import-sort/imports": [
-      "warn",
-      { groups: [["^\\u0000"], ["^react", "^@?\\w"], ["^"], ["^lib?\\w", "^components?\\w"], ["^\\."]] },
-    ],
     "jsx-a11y/anchor-is-valid": "off",
     "no-extend-native": "off",
     "react/prop-types": "off",

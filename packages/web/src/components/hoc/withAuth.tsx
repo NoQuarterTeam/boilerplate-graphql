@@ -7,7 +7,11 @@ import { REDIRECT_PATH } from "lib/config"
 import { MeFragment } from "lib/graphql"
 import { useMe } from "lib/hooks/useMe"
 
-export function withAuth(Page: NextPage, isAuthorized?: (user: MeFragment) => boolean) {
+type NextPageWithLayout = NextPage & {
+  getLayout?: (page: React.ReactElement) => React.ReactNode
+}
+
+export function withAuth(Page: NextPageWithLayout, isAuthorized?: (user: MeFragment) => boolean) {
   function AuthComponent(props: any) {
     const { me, loading } = useMe()
     const router = useRouter()
@@ -37,5 +41,7 @@ export function withAuth(Page: NextPage, isAuthorized?: (user: MeFragment) => bo
     }
     return <Page {...props} />
   }
+  const getPageLayout = Page.getLayout ?? ((page: React.ReactElement) => page)
+  AuthComponent.getLayout = (page: React.ReactElement) => <>{getPageLayout(page)}</>
   return AuthComponent
 }

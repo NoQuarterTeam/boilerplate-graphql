@@ -1,6 +1,6 @@
 import * as React from "react"
 import { gql } from "@apollo/client"
-import { Box, Button, Center, Heading, Stack, Text } from "@chakra-ui/react"
+import { Box, Button, Flex, Heading, Stack, Text } from "@chakra-ui/react"
 import Head from "next/head"
 import Link from "next/link"
 import { useRouter } from "next/router"
@@ -10,6 +10,7 @@ import { useForm } from "lib/hooks/useForm"
 import { useToast } from "lib/hooks/useToast"
 import Yup from "lib/yup"
 import { Form } from "components/Form"
+import { HomeLayout } from "components/HomeLayout"
 import { Input } from "components/Input"
 
 const _ = gql`
@@ -42,9 +43,9 @@ export default function ForgotPassword() {
     })
   }
   return (
-    <Center minH={{ base: "auto", md: "100vh" }} p={4} pt={{ base: 40, md: 4 }}>
+    <Flex justify="center" pt={10}>
       <Head>
-        <title>Fullstack boilerplate - Forgot password</title>
+        <title>Boilerplate - Forgot password</title>
       </Head>
       <Box w={["100%", 400]}>
         <Form {...form} onSubmit={handleSubmit}>
@@ -60,6 +61,7 @@ export default function ForgotPassword() {
           </Stack>
         </Form>
       </Box>
-    </Center>
+    </Flex>
   )
 }
+ForgotPassword.getLayout = (page: React.ReactNode) => <HomeLayout>{page}</HomeLayout>

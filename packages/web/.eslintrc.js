@@ -1,11 +1,7 @@
 module.exports = {
   extends: ["../../.eslintrc.js", "next"],
-  plugins: ["simple-import-sort"],
+  ignorePatterns: ["./src/lib/graphql.tsx"],
   rules: {
-    "simple-import-sort/imports": [
-      "warn",
-      { groups: [["^react", "^@?\\w", "^\\u0000"], ["^"], ["^lib?\\w", "^components?\\w"], ["^\\."]] },
-    ],
     "jsx-a11y/anchor-is-valid": "off",
     "no-extend-native": "off",
     "react/prop-types": "off",

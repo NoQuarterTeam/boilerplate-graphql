@@ -6,8 +6,8 @@
   "main": "src/index.ts",
   "types": "src/index.ts",
   "scripts": {
-    "lint:fix": "eslint --fix --cache --ext .ts,.tsx,.js ./src",
     "lint": "eslint --cache --ext .ts,.tsx,.js ./src",
+    "lint:fix": "eslint --fix --config .eslintrc.commit.js --cache --ext .ts,.tsx,.js ./src",
     "prettify": "prettier --write ./src",
     "pre-commit": "lint-staged"
   },
@@ -16,7 +16,7 @@
       "prettier --write"
     ],
     "*.(ts|tsx)": [
-      "eslint --fix"
+      "eslint --fix --config .eslintrc.commit.js"
     ]
   },
   "keywords": [],

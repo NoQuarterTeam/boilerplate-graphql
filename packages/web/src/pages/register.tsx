@@ -1,6 +1,6 @@
 import * as React from "react"
 import { gql, useApolloClient } from "@apollo/client"
-import { Box, Button, Center, Heading, Stack } from "@chakra-ui/react"
+import { Box, Button, Flex, Heading, Stack } from "@chakra-ui/react"
 import cookie from "cookie"
 import Head from "next/head"
 import Link from "next/link"
@@ -13,6 +13,7 @@ import Yup from "lib/yup"
 import { Form } from "components/Form"
 import { FormError } from "components/FormError"
 import { withNoAuth } from "components/hoc/withNoAuth"
+import { HomeLayout } from "components/HomeLayout"
 import { Input } from "components/Input"
 
 const _ = gql`
@@ -55,9 +56,9 @@ function Register() {
     })
   }
   return (
-    <Center minH={{ base: "auto", md: "100vh" }} p={4} pt={{ base: 40, md: 4 }}>
+    <Flex justify="center" pt={10}>
       <Head>
-        <title>Fullstack boilerplate - Register</title>
+        <title>Boilerplate - Register</title>
       </Head>
       <Box w={["100%", 400]}>
         <Form onSubmit={onSubmit} {...form}>
@@ -75,7 +76,9 @@ function Register() {
           </Stack>
         </Form>
       </Box>
-    </Center>
+    </Flex>
   )
 }
+
+Register.getLayout = (page: React.ReactNode) => <HomeLayout>{page}</HomeLayout>
 export default withNoAuth(Register)

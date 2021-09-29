@@ -12,7 +12,7 @@
     "typecheck": "tsc --noEmit",
     "generate": "DEBUG=true graphql-codegen",
     "generate:watch": "graphql-codegen --watch",
-    "lint:fix": "eslint --fix --cache --ext .ts,.tsx src",
+    "lint:fix": "eslint --config .eslintrc.commit.js --fix --cache --ext .ts,.tsx src",
     "prettify": "prettier --write src",
     "pre-commit": "lint-staged"
   },
@@ -21,7 +21,7 @@
       "prettier --write"
     ],
     "*.(ts|tsx)|!graphql.tsx": [
-      "eslint --fix"
+      "eslint --fix --config .eslintrc.commit.js"
     ]
   },
   "keywords": [],
