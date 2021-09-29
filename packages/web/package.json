@@ -18,7 +18,7 @@
   },
   "lint-staged": {
     "*.(js|jsx|json|ts|tsx|html)|!graphql.tsx": [
-      "prettier --write --ignore-path ./prettierignore"
+      "prettier --write"
     ],
     "*.(ts|tsx)|!graphql.tsx": [
       "eslint --fix --config .eslintrc.commit.js"
