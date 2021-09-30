@@ -1,5 +1,5 @@
 import * as React from "react"
-import { BiExit, BiMoon, BiSun, BiUser } from "react-icons/bi"
+import { BiCog, BiExit, BiMoon, BiSun, BiUser } from "react-icons/bi"
 import { GiHamburgerMenu } from "react-icons/gi"
 import {
   Avatar,
@@ -20,6 +20,7 @@ import {
 import NextLink from "next/link"
 import { useRouter } from "next/router"
 
+import { Role } from "lib/graphql"
 import { useLogout } from "lib/hooks/useLogout"
 import { useMe } from "lib/hooks/useMe"
 
@@ -94,6 +95,11 @@ export function Nav() {
                 <NextLink passHref href="/profile">
                   <MenuItem icon={<Box as={BiUser} boxSize="16px" />}>Profile</MenuItem>
                 </NextLink>
+                {me.role === Role.Admin && (
+                  <NextLink passHref href="/admin">
+                    <MenuItem icon={<Box as={BiCog} boxSize="16px" />}>Admin</MenuItem>
+                  </NextLink>
+                )}
                 <MenuDivider />
                 <MenuItem
                   closeOnSelect={false}
