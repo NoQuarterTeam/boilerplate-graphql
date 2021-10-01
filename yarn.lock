@@ -7132,7 +7132,7 @@ available-typed-arrays@^1.0.4:
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.4.tgz#9e0ae84ecff20caae6a94a1c3bc39b955649b7a9"
   integrity sha512-SA5mXJWrId1TaQjfxUYghbqQ/hYioKmLJvPJyDuYRtXXenFNMjj4hSSt1Cf1xsuXSXrtxrVC5Ot4eU6cOtBDdA==
 
-aws-sdk@^2.996.0:
+aws-sdk@2.996.0:
   version "2.996.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.996.0.tgz#0cee788fba00df15685f0dc27989824f06b97abc"
   integrity sha512-LZcus/r/36lwmGhRcwwllzQUucZ6sozDt3r78lXqdaQzZNbv44K44nXsqCPH2UpTcznrVUSJOW+o5s8yEbKFzg==
@@ -16432,7 +16432,7 @@ react-dom@17.0.2:
     object-assign "^4.1.1"
     scheduler "^0.20.2"
 
-react-dropzone@^11.4.2:
+react-dropzone@11.4.2:
   version "11.4.2"
   resolved "https://registry.yarnpkg.com/react-dropzone/-/react-dropzone-11.4.2.tgz#1eb99e9def4cc7520f4f58e85c853ce52c483d56"
   integrity sha512-ocYzYn7Qgp0tFc1gQtUTOaHHSzVTwhWHxxY+r7cj2jJTPfMTZB5GWSJHdIVoxsl+EQENpjJ/6Zvcw0BqKZQ+Eg==
