@@ -8,11 +8,11 @@ import { buildSchema } from "type-graphql"
 import { Container } from "typedi"
 
 import { JWT_AUTH } from "./lib/config"
-import { currentUser } from "./lib/currentUser"
 import { ExpressContext } from "./lib/express"
 import { formatResponse } from "./lib/formatResponse"
 import { ErrorInterceptor } from "./lib/globalMiddleware"
 import { loadPrismaHooks } from "./lib/hooks"
+import { loadCurrentUser } from "./lib/loadCurrentUser"
 import { loadResolvers } from "./lib/loadResolvers"
 import { prisma } from "./lib/prisma"
 import { Server } from "./lib/server"
@@ -43,7 +43,7 @@ class App extends Server {
       .use((err: any, _: any, __: any, next: any) => {
         if (err.name === "UnauthorizedError") next()
       })
-      .use(currentUser)
+      .use(loadCurrentUser)
     this.logger.info("Auth ready")
   }
 

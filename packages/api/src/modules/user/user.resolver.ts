@@ -1,15 +1,13 @@
-import { Arg, Args, Ctx, FieldResolver, Mutation, Query, Resolver, Root } from "type-graphql"
+import { Arg, Args, Ctx, Mutation, Query, Resolver } from "type-graphql"
 import { Inject, Service } from "typedi"
 
 import { FindManyUserArgs, Role, User } from "@generated"
 
-import { S3_URL } from "../../lib/config"
 import { createToken, decryptToken } from "../../lib/jwt"
 import { prisma } from "../../lib/prisma"
 import { ContextUser } from "../shared/contextUser"
 import { CurrentUser } from "../shared/currentUser"
 import { UseAuth } from "../shared/middleware/UseAuth"
-import { UseCacheControl } from "../shared/middleware/UseCacheControl"
 import { ResolverContext } from "../shared/resolverContext"
 import { LoginInput } from "./inputs/login.input"
 import { RegisterInput } from "./inputs/register.input"
@@ -100,25 +98,5 @@ export default class UserResolver {
     } catch (error) {
       return false
     }
-  }
-
-  @FieldResolver(() => String)
-  fullName(@Root() user: User) {
-    if (!user.firstName && !user.lastName) return ""
-    return (user.firstName + " " + user.lastName).trim()
-  }
-
-  @UseCacheControl({ maxAge: 3600 })
-  @FieldResolver(() => String)
-  email(@Root() user: User, @CurrentUser() currentUser: User) {
-    if (currentUser.role !== Role.ADMIN && user.id !== currentUser.id) return ""
-    return user.email
-  }
-
-  @UseCacheControl({ maxAge: 3600 })
-  @FieldResolver(() => String, { nullable: true })
-  avatar(@Root() user: User) {
-    if (!user.avatar) return null
-    return S3_URL + user.avatar
   }
 }
