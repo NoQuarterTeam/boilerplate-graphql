@@ -1,6 +1,6 @@
 import * as React from "react"
 import { BiMoon, BiSun } from "react-icons/bi"
-import { CgExternal, CgHome, CgUser } from "react-icons/cg"
+import { CgExternal, CgUser } from "react-icons/cg"
 import {
   Box,
   Button,
@@ -64,9 +64,6 @@ export function AdminLayout(props: Props) {
         borderColor={borderColor}
       >
         <Stack spacing={4}>
-          <SidebarLink href="/admin" icon={<Box boxSize="16px" as={CgHome} />}>
-            Home
-          </SidebarLink>
           <SidebarLink href="/admin/users" icon={<Box boxSize="18px" as={CgUser} />}>
             Users
           </SidebarLink>
@@ -106,7 +103,7 @@ interface SidebarLinkProps extends LinkProps {
 
 function SidebarLink({ href, icon, ...props }: SidebarLinkProps) {
   const router = useRouter()
-  const isActive = router.asPath === href
+  const isActive = router.asPath.includes(href)
   return (
     <NextLink passHref href={href}>
       <Link

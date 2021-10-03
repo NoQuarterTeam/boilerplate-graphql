@@ -118,22 +118,25 @@ export function Table<T extends DataType>(props: Props<T>) {
       </Flex>
 
       {props.isLoading ? (
-        <Center p={10} h={400}>
+        <Center p={10} h={100}>
           <Spinner />
         </Center>
       ) : data.length > 0 ? (
         <Flex direction="column" justify="space-between" flexGrow={1}>
-          <Box overflowY="scroll">
-            {data.map((item) => (
-              <Row key={item.id} href={props.getRowHref?.(item)}>
-                {columns.map(({ row, sortKey, header, ...column }: ColumnProps<T>, i: number) => (
-                  <ColumnField key={i.toString()} isLast={i === columns.length - 1} fontSize="sm" {...column}>
-                    {row?.(item)}
-                  </ColumnField>
-                ))}
-              </Row>
-            ))}
-          </Box>
+          {data.map((item) => (
+            <Row key={item.id} hasHref={!!props.getRowHref}>
+              {columns.map(({ row, sortKey, header, ...column }: ColumnProps<T>, i: number) => (
+                <ColumnField
+                  key={i.toString()}
+                  href={props.getRowHref?.(item)}
+                  isLast={i === columns.length - 1}
+                  {...column}
+                >
+                  {row?.(item)}
+                </ColumnField>
+              ))}
+            </Row>
+          ))}
           <Flex
             py={3}
             px={4}
@@ -143,7 +146,7 @@ export function Table<T extends DataType>(props: Props<T>) {
             borderColor={borderColor}
           >
             <Text w="100%" fontSize="sm">
-              {props.count} results
+              {props.data?.length} / {props.count}
             </Text>
 
             {!!props.onFetchMore &&
@@ -167,7 +170,8 @@ export function Table<T extends DataType>(props: Props<T>) {
 
 interface ColumnProps<T> extends FlexProps {
   row?: (item: T) => React.ReactNode
-  sortKey?: keyof T
+  sortKey?: string
+  hasNoLink?: boolean
   header?: React.ReactNode
 }
 
@@ -175,19 +179,30 @@ export function Column<T extends DataType>(_: ColumnProps<T>) {
   return null
 }
 
-function _ColumnField({ isLast, ...props }: FlexProps & { isLast?: boolean; children: React.ReactNode }) {
-  return (
-    <Flex
-      flex={1}
-      align="center"
-      isTruncated
-      fontSize="sm"
-      justify={isLast ? "flex-end" : "flex-start"}
-      overflowX="auto"
-      {...props}
-    >
-      {props.children}
-    </Flex>
+function _ColumnField<T>({
+  isLast,
+  hasNoLink,
+  href,
+  ...props
+}: ColumnProps<T> & { href?: string; isLast?: boolean }) {
+  const sharedProps: FlexProps = {
+    flex: 1,
+    align: "center",
+    h: "50px",
+    isTruncated: true,
+    fontSize: "sm",
+    justify: isLast ? "flex-end" : "flex-start",
+    overflowX: "auto",
+    ...props,
+  }
+  return !!!hasNoLink && !!href ? (
+    <NextLink passHref href={href}>
+      <Flex as={Link} _hover={{ textDecor: "none" }} {...sharedProps}>
+        {props.children}
+      </Flex>
+    </NextLink>
+  ) : (
+    <Flex {...sharedProps}>{props.children}</Flex>
   )
 }
 
@@ -195,31 +210,40 @@ const ColumnField = React.memo(_ColumnField)
 
 interface RowProps {
   children: React.ReactNode
-  href?: string
+  hasHref?: boolean
 }
 
 function Row(props: RowProps) {
   const borderColor = useColorModeValue("gray.200", "gray.700")
   const bg = useColorModeValue("gray.50", "gray.900")
-  return !!props.href ? (
-    <NextLink passHref href={props.href}>
-      <Link _hover={{ textDecor: "none" }}>
-        <Flex
-          _hover={{ bg }}
-          w="100%"
-          px={4}
-          h="50px"
-          align="center"
-          borderTop="1px solid"
-          borderColor={borderColor}
-        >
-          {props.children}
-        </Flex>
-      </Link>
-    </NextLink>
-  ) : (
-    <Flex w="100%" px={4} h="50px" align="center" borderTop="1px solid" borderColor={borderColor}>
+  return (
+    <Flex
+      w="100%"
+      {...(props.hasHref && { cursor: "pointer", _hover: { bg } })}
+      px={4}
+      align="center"
+      borderTop="1px solid"
+      borderColor={borderColor}
+    >
       {props.children}
     </Flex>
   )
+}
+
+// Sometimes we have table thats using nested data, and so the sortKey needs to be nested
+// e.g { user: { createdAt: "desc" } }, instead of just { createdAt: "desc" }
+// so this function allows us to pass "user.createdAt" as the sortKey
+// and it converts it to the nested structure, pretty sweet right?
+
+export function getOrderBy(sort: Sort) {
+  const key = Object.keys(sort)[0]
+  const value = sort[key]
+  let object = {} as any
+  const result = object
+  const arr = key.split(".")
+  for (let i = 0; i < arr.length - 1; i++) {
+    object = object[arr[i]] = {}
+  }
+  object[arr[arr.length - 1]] = value
+  return result
 }

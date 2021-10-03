@@ -37,9 +37,10 @@ Delete whatever packages you don't need for the project, e.g. maybe you dont nee
 
 1. `yarn install`
 2. `createdb boilerplate`
-3. `cd packages/api && yarn watch`
-4. `cd packages/web && yarn dev`
-5. `cd packages/app && yarn start`
+3. `cd packages/api && yarn db:migrate`
+4. `cd packages/api && yarn watch`
+5. `cd packages/web && yarn dev`
+6. `cd packages/app && yarn start`
 
 Make sure you have created a .env file with the right values, use .env.example as the template
 

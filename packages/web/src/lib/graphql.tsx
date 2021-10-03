@@ -137,11 +137,21 @@ export type Query = {
   __typename?: "Query"
   getSignedS3UrlForGet?: Maybe<Scalars["String"]>
   me?: Maybe<User>
+  user?: Maybe<User>
   users: UsersResponse
 }
 
 export type QueryGetSignedS3UrlForGetArgs = {
   key: Scalars["String"]
+}
+
+export type QueryUserArgs = {
+  cursor?: Maybe<UserWhereUniqueInput>
+  distinct?: Maybe<Array<UserScalarFieldEnum>>
+  orderBy?: Maybe<Array<UserOrderByWithRelationInput>>
+  skip?: Maybe<Scalars["Int"]>
+  take?: Maybe<Scalars["Int"]>
+  where?: Maybe<UserWhereInput>
 }
 
 export type QueryUsersArgs = {
@@ -354,12 +364,42 @@ export type GetBulkSignedUrlForPutMutation = {
     | undefined
 }
 
+export type UserDetailFragment = {
+  __typename?: "User"
+  id: string
+  fullName: string
+  bio?: string | null | undefined
+  avatar?: string | null | undefined
+  email: string
+  createdAt: string
+}
+
+export type GetUserQueryVariables = Exact<{
+  where?: Maybe<UserWhereInput>
+}>
+
+export type GetUserQuery = {
+  __typename?: "Query"
+  user?:
+    | {
+        __typename?: "User"
+        id: string
+        fullName: string
+        bio?: string | null | undefined
+        avatar?: string | null | undefined
+        email: string
+        createdAt: string
+      }
+    | null
+    | undefined
+}
+
 export type UserItemFragment = {
   __typename?: "User"
   id: string
   fullName: string
   email: string
-  updatedAt: string
+  createdAt: string
 }
 
 export type GetUsersQueryVariables = Exact<{
@@ -374,7 +414,7 @@ export type GetUsersQuery = {
   users: {
     __typename?: "UsersResponse"
     count: number
-    items: Array<{ __typename?: "User"; id: string; fullName: string; email: string; updatedAt: string }>
+    items: Array<{ __typename?: "User"; id: string; fullName: string; email: string; createdAt: string }>
   }
 }
 
@@ -467,12 +507,22 @@ export const MeFragmentDoc = gql`
     role
   }
 `
+export const UserDetailFragmentDoc = gql`
+  fragment UserDetail on User {
+    id
+    fullName
+    bio
+    avatar
+    email
+    createdAt
+  }
+`
 export const UserItemFragmentDoc = gql`
   fragment UserItem on User {
     id
     fullName
     email
-    updatedAt
+    createdAt
   }
 `
 export const MeDocument = gql`
@@ -549,6 +599,29 @@ export type GetBulkSignedUrlForPutMutationOptions = Apollo.BaseMutationOptions<
   GetBulkSignedUrlForPutMutation,
   GetBulkSignedUrlForPutMutationVariables
 >
+export const GetUserDocument = gql`
+  query GetUser($where: UserWhereInput) {
+    user(where: $where) {
+      ...UserDetail
+    }
+  }
+  ${UserDetailFragmentDoc}
+`
+export function useGetUserQuery(
+  baseOptions?: ApolloReactHooks.QueryHookOptions<GetUserQuery, GetUserQueryVariables>,
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return ApolloReactHooks.useQuery<GetUserQuery, GetUserQueryVariables>(GetUserDocument, options)
+}
+export function useGetUserLazyQuery(
+  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetUserQuery, GetUserQueryVariables>,
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return ApolloReactHooks.useLazyQuery<GetUserQuery, GetUserQueryVariables>(GetUserDocument, options)
+}
+export type GetUserQueryHookResult = ReturnType<typeof useGetUserQuery>
+export type GetUserLazyQueryHookResult = ReturnType<typeof useGetUserLazyQuery>
+export type GetUserQueryResult = Apollo.QueryResult<GetUserQuery, GetUserQueryVariables>
 export const GetUsersDocument = gql`
   query GetUsers($take: Int, $orderBy: [UserOrderByWithRelationInput!], $where: UserWhereInput, $skip: Int) {
     users(take: $take, orderBy: $orderBy, where: $where, skip: $skip) {

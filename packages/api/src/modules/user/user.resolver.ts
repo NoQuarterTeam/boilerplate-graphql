@@ -1,7 +1,7 @@
 import { Arg, Args, Ctx, Mutation, Query, Resolver } from "type-graphql"
 import { Inject, Service } from "typedi"
 
-import { FindManyUserArgs, Role, User } from "@generated"
+import { FindFirstUserArgs, FindManyUserArgs, Role, User } from "@generated"
 
 import { createToken, decryptToken } from "../../lib/jwt"
 import { prisma } from "../../lib/prisma"
@@ -27,12 +27,16 @@ export default class UserResolver {
   userService: UserService
 
   @UseAuth([Role.ADMIN])
+  @Query(() => User, { nullable: true })
+  async user(@Args() args: FindFirstUserArgs): Promise<User | null> {
+    return await prisma.user.findFirst(args)
+  }
+
+  @UseAuth([Role.ADMIN])
   @Query(() => UsersResponse)
   async users(@Args() args: FindManyUserArgs): Promise<UsersResponse> {
-    const [items, count] = await prisma.$transaction([
-      prisma.user.findMany(args),
-      prisma.user.count({ ...args, take: undefined, skip: undefined }),
-    ])
+    const items = await prisma.user.findMany(args)
+    const count = await prisma.user.count({ ...args, take: undefined, skip: undefined })
     return { items, count }
   }
 
