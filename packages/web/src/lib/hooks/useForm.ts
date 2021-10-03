@@ -7,7 +7,7 @@ import {
   UseFormReturn,
 } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
-import { ExecutionResult } from "graphql"
+import type { ExecutionResult } from "graphql"
 
 import Yup from "../yup"
 import { MutationHandler, useMutationHandler } from "./useMutationHandler"
