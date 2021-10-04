@@ -51,7 +51,7 @@
     "graphql-fields": "2.0.3",
     "graphql-scalars": "1.10.1",
     "handlebars": "4.7.7",
-    "ioredis": "4.27.9",
+    "ioredis": "4.27.10",
     "jsonwebtoken": "8.5.1",
     "morgan": "1.10.0",
     "nodemailer": "6.6.5",
