@@ -1,9 +1,10 @@
 import * as React from "react"
-import { Box, Center, Heading, VStack } from "@chakra-ui/react"
+import { Box, Heading, VStack } from "@chakra-ui/react"
 import Head from "next/head"
 
 import { useMe } from "lib/hooks/useMe"
 import { HomeLayout } from "components/HomeLayout"
+import { Limiter } from "components/Limiter"
 
 export default function Home() {
   const { me } = useMe()
@@ -14,7 +15,7 @@ export default function Home() {
         <title>Boilerplate</title>
       </Head>
 
-      <Center pt={20} minH="100vh">
+      <Limiter pt={20} minH="100vh">
         <VStack spacing={6}>
           <Heading as="h1">Welcome to the Boilerplate</Heading>
           {me && (
@@ -23,7 +24,7 @@ export default function Home() {
             </Heading>
           )}
         </VStack>
-      </Center>
+      </Limiter>
     </Box>
   )
 }
