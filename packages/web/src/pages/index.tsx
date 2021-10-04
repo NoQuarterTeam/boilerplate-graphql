@@ -14,7 +14,7 @@ export default function Home() {
         <title>Boilerplate</title>
       </Head>
 
-      <Center pt={20}>
+      <Center pt={20} minH="100vh">
         <VStack spacing={6}>
           <Heading as="h1">Welcome to the Boilerplate</Heading>
           {me && (
