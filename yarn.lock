@@ -9984,6 +9984,15 @@ eslint-module-utils@^2.6.2:
     debug "^3.2.7"
     pkg-dir "^2.0.0"
 
+eslint-module-utils@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/eslint-module-utils/-/eslint-module-utils-2.7.0.tgz#9e97c12688113401259b39d960e6a1f09f966435"
+  integrity sha512-hqSE88MmHl3ru9SYvDyGrlo0JwROlf9fiEMplEV7j/EAuq9iSlIlyCFbBT6pdULQBSnBYtYKiMLps+hKkyP7Gg==
+  dependencies:
+    debug "^3.2.7"
+    find-up "^2.1.0"
+    pkg-dir "^2.0.0"
+
 eslint-plugin-flowtype@6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-6.1.0.tgz#626f44d9adbdb681644accd5fa29dffcb0d6d531"
@@ -9992,17 +10001,17 @@ eslint-plugin-flowtype@6.1.0:
     lodash "^4.17.21"
     string-natural-compare "^3.0.1"
 
-eslint-plugin-import@2.25.1:
-  version "2.25.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.25.1.tgz#b4b23bef08309f91303e528b13ecdffc42f8bb89"
-  integrity sha512-YiQtY+ehqQXb6dvdrFUVdl3hsTvl+g3aKoTLZFIy1j/mKxjrLcRISI2rA7dNmEReJdr5xzjLld6vJ8pC1bfCfw==
+eslint-plugin-import@2.25.2:
+  version "2.25.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.25.2.tgz#b3b9160efddb702fc1636659e71ba1d10adbe9e9"
+  integrity sha512-qCwQr9TYfoBHOFcVGKY9C9unq05uOxxdklmBXLVvcwo68y5Hta6/GzCZEMx2zQiu0woKNEER0LE7ZgaOfBU14g==
   dependencies:
     array-includes "^3.1.4"
     array.prototype.flat "^1.2.5"
     debug "^2.6.9"
     doctrine "^2.1.0"
     eslint-import-resolver-node "^0.3.6"
-    eslint-module-utils "^2.6.2"
+    eslint-module-utils "^2.7.0"
     has "^1.0.3"
     is-core-module "^2.7.0"
     is-glob "^4.0.3"
@@ -20283,10 +20292,10 @@ yocto-queue@^0.1.0:
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
-yup@0.32.10:
-  version "0.32.10"
-  resolved "https://registry.yarnpkg.com/yup/-/yup-0.32.10.tgz#b8809bb9a5c4782672b86651cae41adef1decbb8"
-  integrity sha512-xRZnd0EEXz+zNQ3mIN5p5r9FbSeK811oKXT3SKU+yml0NiqEd5qj+Roy37kkMYVaOM6TTQs/D/sfWHS/JxXeTg==
+yup@0.32.11:
+  version "0.32.11"
+  resolved "https://registry.yarnpkg.com/yup/-/yup-0.32.11.tgz#d67fb83eefa4698607982e63f7ca4c5ed3cf18c5"
+  integrity sha512-Z2Fe1bn+eLstG8DRR6FTavGD+MeAwyfmouhHsIUgaADz8jvFKbO/fXc2trJKZg+5EBjh4gGm3iU/t3onKlXHIg==
   dependencies:
     "@babel/runtime" "^7.15.4"
     "@types/lodash" "^4.14.175"
