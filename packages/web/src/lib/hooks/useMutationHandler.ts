@@ -20,13 +20,13 @@ export function formatValidations(errors: ValidationError[]): FieldError[] {
 
 export interface MutationHandler<T> {
   onSuccess?: (data: NonNullable<T>, toast: (props: UseToastOptions) => void) => Promise<any> | any
-  onValidationError?: (errors: FieldError[], toast: (props: UseToastOptions) => void) => void
-  onAppError?: (message: string, toast: (props: UseToastOptions) => void) => void
-  onServerError?: (message: string, toast: (props: UseToastOptions) => void) => void
-  onFinish?: (toast: (props: UseToastOptions) => void) => void
+  onValidationError?: (errors: FieldError[], toast: (props: UseToastOptions) => void) => Promise<any> | any
+  onAppError?: (message: string, toast: (props: UseToastOptions) => void) => Promise<any> | any
+  onServerError?: (message: string, toast: (props: UseToastOptions) => void) => Promise<any> | any
+  onFinish?: (toast: (props: UseToastOptions) => void) => Promise<any> | any
 }
 
-function mutationHandler<T>(
+async function mutationHandler<T>(
   res: ExecutionResult<NonNullable<T>> | void,
   handler: MutationHandler<T>,
   toast: (props: UseToastOptions) => void,
@@ -39,7 +39,7 @@ function mutationHandler<T>(
     if (!res) throw new Error("No response")
     if (res.data && !res.errors) {
       if (handler.onSuccess) {
-        handler.onSuccess(res.data, toast)
+        await handler.onSuccess(res.data, toast)
       }
     } else if (
       res.errors?.[0].message.includes("Access denied!") ||
@@ -57,19 +57,19 @@ function mutationHandler<T>(
     } else if (res.errors?.[0].extensions?.exception?.validationErrors) {
       const validationErrors = res.errors?.[0].extensions?.exception?.validationErrors
       if (handler.onValidationError) {
-        handler.onValidationError(formatValidations(validationErrors), toast)
+        await handler.onValidationError(formatValidations(validationErrors), toast)
       } else if (actions) {
         actions.setFieldErrors(formatValidations(validationErrors))
       }
     } else if (res.errors?.[0].extensions?.code === "BAD_USER_INPUT") {
       if (handler.onAppError) {
-        handler.onAppError(res.errors[0].message, toast)
+        await handler.onAppError(res.errors[0].message, toast)
       } else {
         toast({ status: "error", description: res.errors[0].message })
       }
     } else if (res.errors?.[0].message) {
       if (handler.onServerError) {
-        handler.onServerError(res.errors[0].message, toast)
+        await handler.onServerError(res.errors[0].message, toast)
       } else {
         toast({
           status: "error",
@@ -86,7 +86,7 @@ function mutationHandler<T>(
     })
   } finally {
     if (handler?.onFinish) {
-      handler.onFinish(toast)
+      await handler.onFinish(toast)
     }
     return res
   }
