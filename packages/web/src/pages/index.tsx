@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Box, Heading, VStack } from "@chakra-ui/react"
+import { Box, Center,Heading } from "@chakra-ui/react"
 import Head from "next/head"
 
 import { useMe } from "lib/hooks/useMe"
@@ -16,14 +16,16 @@ export default function Home() {
       </Head>
 
       <Limiter pt={20} minH="100vh">
-        <VStack spacing={6}>
-          <Heading as="h1">Welcome to the Boilerplate</Heading>
+        <Center spacing={6}>
+          <Heading as="h1" mb={4}>
+            Welcome to the Boilerplate
+          </Heading>
           {me && (
             <Heading as="h2" fontSize="2xl">
               Hello, {me.firstName}!
             </Heading>
           )}
-        </VStack>
+        </Center>
       </Limiter>
     </Box>
   )
