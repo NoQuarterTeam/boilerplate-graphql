@@ -6020,7 +6020,7 @@
   dependencies:
     compare-versions "^3.4.0"
 
-"@unimodules/react-native-adapter@~6.3.7":
+"@unimodules/react-native-adapter@~6.3.8":
   version "6.3.9"
   resolved "https://registry.yarnpkg.com/@unimodules/react-native-adapter/-/react-native-adapter-6.3.9.tgz#2f4bef6b7532dce5bf9f236e69f96403d0243c30"
   integrity sha512-i9/9Si4AQ8awls+YGAKkByFbeAsOPgUNeLoYeh2SQ3ddjxJ5ZJDtq/I74clDnpDcn8zS9pYlcDJ9fgVJa39Glw==
@@ -9991,10 +9991,10 @@ expo-pwa@0.0.88:
     commander "2.20.0"
     update-check "1.5.3"
 
-expo-status-bar@1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/expo-status-bar/-/expo-status-bar-1.0.4.tgz#d8a4c4418b5868c1606969b12bdee85b6fa7d8a4"
-  integrity sha512-s7nc496D/Zn1NGiMJ5wu6HyIdXxbgGtmZZtbHm7rpbcmLdf28GmMSNHDx7M0t00BMhky7VAurTCUo+BJs8ugsw==
+expo-status-bar@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/expo-status-bar/-/expo-status-bar-1.1.0.tgz#b1015a69c8563b7cadcb5b6c726227397610725d"
+  integrity sha512-XgAbGfDV/Q6br2h4yzQwcZRYi37bZ/nvc06vvaJ7i7w9tRxb05OJmXBxl7ywkKlFCMcN6q3Miaf2wnzEgMwJoQ==
 
 expo-yarn-workspaces@1.5.2:
   version "1.5.2"
@@ -10009,16 +10009,16 @@ expo-yarn-workspaces@1.5.2:
     minimist "^1.2.5"
     mkdirp "^0.5.1"
 
-expo@42.0.4:
-  version "42.0.4"
-  resolved "https://registry.yarnpkg.com/expo/-/expo-42.0.4.tgz#07b0e044e43f7cb366e2082850b41b8bb5117a21"
-  integrity sha512-i1QvMb3cIXdsx7OQh0/N0KJHkPwFlBGEGsXRr/IF2DJFHMWd/J4DR8IaAnTAhx0ifborWHmENgXj5hgWJgirog==
+expo@42.0.5:
+  version "42.0.5"
+  resolved "https://registry.yarnpkg.com/expo/-/expo-42.0.5.tgz#3f1e02ea324f6c67c8fbe213b134368943310f73"
+  integrity sha512-geIJJYnZoSi7lrww+pQZpr94paGYac0xwU/kiAZ1EGkdXUFUGAx19aQhfVX5AWoeOFWvDvx63pdXEwie72jj7Q==
   dependencies:
     "@babel/runtime" "^7.1.2"
     "@expo/metro-config" "^0.1.70"
     "@expo/vector-icons" "^12.0.4"
     "@unimodules/core" "~7.1.2"
-    "@unimodules/react-native-adapter" "~6.3.7"
+    "@unimodules/react-native-adapter" "~6.3.8"
     babel-preset-expo "~8.4.1"
     cross-spawn "^6.0.5"
     expo-application "~3.2.0"
