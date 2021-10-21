@@ -58,7 +58,7 @@
     "@types/react-native": "0.65.9",
     "eslint-plugin-react": "7.26.1",
     "eslint-plugin-react-hooks": "4.2.0",
-    "expo-yarn-workspaces": "1.5.2"
+    "expo-yarn-workspaces": "1.6.0"
   },
   "private": true,
   "workspaces": {
