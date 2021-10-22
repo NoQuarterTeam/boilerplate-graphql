@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Box, Center,Heading } from "@chakra-ui/react"
+import { Box, Center, Heading } from "@chakra-ui/react"
 import Head from "next/head"
 
 import { useMe } from "lib/hooks/useMe"
@@ -16,8 +16,8 @@ export default function Home() {
       </Head>
 
       <Limiter pt={20} minH="100vh">
-        <Center spacing={6}>
-          <Heading as="h1" mb={4}>
+        <Center flexDir="column">
+          <Heading as="h1" mb={4} textAlign="center">
             Welcome to the Boilerplate
           </Heading>
           {me && (
