@@ -18010,10 +18010,10 @@ type-fest@^0.8.0, type-fest@^0.8.1:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
 
-type-graphql-dataloader@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/type-graphql-dataloader/-/type-graphql-dataloader-0.4.0.tgz#565e4616ab13450a1ced83fba21b78f9e0a1dc75"
-  integrity sha512-C45+lca1cofjCrhenRQCb4mQrEyItdanfQZX3Z9eCOM3r4rDqJZdW0xYNScq6PXGgDWb3lwc7UEm6kzecDo5uA==
+type-graphql-dataloader@0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/type-graphql-dataloader/-/type-graphql-dataloader-0.4.1.tgz#187a02a1e4d991ee7ffda1d18ad39d190f7714b4"
+  integrity sha512-gSEGkK2qb3+RmhloF9hSV9bD+B75Jz4P2wh0LZMe3Fqd4wVSeIVjy/UhzjKfeA1n8/Bkx1oN0STxB3aDsTjInw==
   dependencies:
     dataloader "^2.0.0"
     lodash "^4.17.21"
