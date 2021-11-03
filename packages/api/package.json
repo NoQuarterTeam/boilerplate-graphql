@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@prisma/client": "^3.3.0",
-    "@sendgrid/client": "7.5.0",
+    "@sendgrid/client": "7.6.0",
     "@sendgrid/mail": "7.5.0",
     "@sentry/node": "6.14.0",
     "@sentry/tracing": "6.14.0",
