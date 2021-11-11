@@ -8,7 +8,7 @@ export const {
   SENTRY_DSN = "SENTRY_DSN",
   SENDGRID_API_KEY = "SENDGRID_API_KEY",
   AWS_S3_BUCKET = "S3_BUCKET",
-  PORT = 5000,
+  PORT = 5555,
   DATABASE_URL = "",
   WEB_URL = "localhost:3001",
   REDIS_URL = "",
