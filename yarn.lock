@@ -7903,10 +7903,10 @@ cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
-class-transformer@0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/class-transformer/-/class-transformer-0.5.0.tgz#4b599307707dc1c0bb785e995303d59afbed605c"
-  integrity sha512-ONKKYWNXc1IxBqmTeQZCArFryPG/w4ilHd5Mn4Y/NJlkAlAG4UWUcrnPbfSym0eZBr0pj3i0MdZqyxGHCGlCdQ==
+class-transformer@0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/class-transformer/-/class-transformer-0.5.1.tgz#24147d5dffd2a6cea930a3250a677addf96ab336"
+  integrity sha512-SQa1Ws6hUbfC98vKGxZH3KFY0Y1lm5Zm0SY8XX9zbK7FJCyVEac3ATW0RIpwzW+oOfmHE5PMPufDG9hCfoEOMw==
 
 class-utils@^0.3.5:
   version "0.3.6"
