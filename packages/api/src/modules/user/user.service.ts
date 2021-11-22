@@ -2,12 +2,13 @@ import { UserInputError } from "apollo-server-express"
 import bcrypt from "bcryptjs"
 import { Service } from "typedi"
 
-import { User, UserWhereInput } from "@generated"
+import { UserWhereInput } from "@generated"
 
 import { createAuthToken } from "../../lib/jwt"
 import { prisma } from "../../lib/prisma"
 import { LoginInput } from "./inputs/login.input"
 import { RegisterInput } from "./inputs/register.input"
+import { User } from "./user.model"
 
 @Service()
 export class UserService {

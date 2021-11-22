@@ -20,8 +20,8 @@ export class User extends BaseModel implements Partial<Prisma.User> {
   @Field()
   lastName: string
 
-  @Field()
-  bio?: string
+  @Field(() => String)
+  bio: string | null
 
   @Field(() => Role)
   role: Prisma.Role

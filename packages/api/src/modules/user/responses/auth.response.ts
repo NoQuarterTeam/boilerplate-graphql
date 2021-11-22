@@ -1,6 +1,6 @@
 import { Field, ObjectType } from "type-graphql"
 
-import { User } from "@generated"
+import { User } from "../user.model"
 
 @ObjectType()
 export class AuthResponse {

@@ -5,6 +5,7 @@ generator client {
 generator typegraphql {
   provider = "typegraphql-prisma"
   output   = "../../../../node_modules/@generated"
+  emitOnly = "inputs,enums,crudResolvers"
 }
 
 datasource db {
@@ -22,8 +23,8 @@ model User {
   email     String   @unique
   /// @TypeGraphQL.omit(output: true)
   password  String
-  firstName String?
-  lastName  String?
+  firstName String
+  lastName  String
   avatar    String?
   role      Role     @default(USER)
   bio       String?

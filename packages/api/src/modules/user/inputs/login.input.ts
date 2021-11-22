@@ -1,7 +1,7 @@
 import { IsNotEmpty } from "class-validator"
 import { Field, InputType } from "type-graphql"
 
-import { User } from "@generated"
+import { User } from "../user.model"
 
 @InputType()
 export class LoginInput implements Partial<User> {

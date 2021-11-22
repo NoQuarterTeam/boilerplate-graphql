@@ -1,9 +1,9 @@
-import { User } from "@prisma/client"
 import * as Sentry from "@sentry/node"
 import { Service } from "typedi"
 
 import { FULL_WEB_URL } from "../../lib/config"
 import { Mailer } from "../../lib/mailer"
+import { User } from "./user.model"
 
 @Service()
 export class UserMailer extends Mailer {

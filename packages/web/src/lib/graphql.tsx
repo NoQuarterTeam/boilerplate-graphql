@@ -3,6 +3,7 @@ import { gql } from "@apollo/client"
 import * as Apollo from "@apollo/client"
 import * as ApolloReactHooks from "@apollo/client"
 export type Maybe<T> = T | null
+export type InputMaybe<T> = Maybe<T>
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] }
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> }
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> }
@@ -25,21 +26,21 @@ export type AuthResponse = {
 }
 
 export type DateTimeFilter = {
-  equals?: Maybe<Scalars["DateTime"]>
-  gt?: Maybe<Scalars["DateTime"]>
-  gte?: Maybe<Scalars["DateTime"]>
-  in?: Maybe<Array<Scalars["DateTime"]>>
-  lt?: Maybe<Scalars["DateTime"]>
-  lte?: Maybe<Scalars["DateTime"]>
-  not?: Maybe<NestedDateTimeFilter>
-  notIn?: Maybe<Array<Scalars["DateTime"]>>
+  equals?: InputMaybe<Scalars["DateTime"]>
+  gt?: InputMaybe<Scalars["DateTime"]>
+  gte?: InputMaybe<Scalars["DateTime"]>
+  in?: InputMaybe<Array<Scalars["DateTime"]>>
+  lt?: InputMaybe<Scalars["DateTime"]>
+  lte?: InputMaybe<Scalars["DateTime"]>
+  not?: InputMaybe<NestedDateTimeFilter>
+  notIn?: InputMaybe<Array<Scalars["DateTime"]>>
 }
 
 export type EnumRoleFilter = {
-  equals?: Maybe<Role>
-  in?: Maybe<Array<Role>>
-  not?: Maybe<NestedEnumRoleFilter>
-  notIn?: Maybe<Array<Role>>
+  equals?: InputMaybe<Role>
+  in?: InputMaybe<Array<Role>>
+  not?: InputMaybe<NestedEnumRoleFilter>
+  notIn?: InputMaybe<Array<Role>>
 }
 
 export type LoginInput = {
@@ -88,49 +89,49 @@ export type MutationUpdateMeArgs = {
 }
 
 export type NestedDateTimeFilter = {
-  equals?: Maybe<Scalars["DateTime"]>
-  gt?: Maybe<Scalars["DateTime"]>
-  gte?: Maybe<Scalars["DateTime"]>
-  in?: Maybe<Array<Scalars["DateTime"]>>
-  lt?: Maybe<Scalars["DateTime"]>
-  lte?: Maybe<Scalars["DateTime"]>
-  not?: Maybe<NestedDateTimeFilter>
-  notIn?: Maybe<Array<Scalars["DateTime"]>>
+  equals?: InputMaybe<Scalars["DateTime"]>
+  gt?: InputMaybe<Scalars["DateTime"]>
+  gte?: InputMaybe<Scalars["DateTime"]>
+  in?: InputMaybe<Array<Scalars["DateTime"]>>
+  lt?: InputMaybe<Scalars["DateTime"]>
+  lte?: InputMaybe<Scalars["DateTime"]>
+  not?: InputMaybe<NestedDateTimeFilter>
+  notIn?: InputMaybe<Array<Scalars["DateTime"]>>
 }
 
 export type NestedEnumRoleFilter = {
-  equals?: Maybe<Role>
-  in?: Maybe<Array<Role>>
-  not?: Maybe<NestedEnumRoleFilter>
-  notIn?: Maybe<Array<Role>>
+  equals?: InputMaybe<Role>
+  in?: InputMaybe<Array<Role>>
+  not?: InputMaybe<NestedEnumRoleFilter>
+  notIn?: InputMaybe<Array<Role>>
 }
 
 export type NestedStringFilter = {
-  contains?: Maybe<Scalars["String"]>
-  endsWith?: Maybe<Scalars["String"]>
-  equals?: Maybe<Scalars["String"]>
-  gt?: Maybe<Scalars["String"]>
-  gte?: Maybe<Scalars["String"]>
-  in?: Maybe<Array<Scalars["String"]>>
-  lt?: Maybe<Scalars["String"]>
-  lte?: Maybe<Scalars["String"]>
-  not?: Maybe<NestedStringFilter>
-  notIn?: Maybe<Array<Scalars["String"]>>
-  startsWith?: Maybe<Scalars["String"]>
+  contains?: InputMaybe<Scalars["String"]>
+  endsWith?: InputMaybe<Scalars["String"]>
+  equals?: InputMaybe<Scalars["String"]>
+  gt?: InputMaybe<Scalars["String"]>
+  gte?: InputMaybe<Scalars["String"]>
+  in?: InputMaybe<Array<Scalars["String"]>>
+  lt?: InputMaybe<Scalars["String"]>
+  lte?: InputMaybe<Scalars["String"]>
+  not?: InputMaybe<NestedStringFilter>
+  notIn?: InputMaybe<Array<Scalars["String"]>>
+  startsWith?: InputMaybe<Scalars["String"]>
 }
 
 export type NestedStringNullableFilter = {
-  contains?: Maybe<Scalars["String"]>
-  endsWith?: Maybe<Scalars["String"]>
-  equals?: Maybe<Scalars["String"]>
-  gt?: Maybe<Scalars["String"]>
-  gte?: Maybe<Scalars["String"]>
-  in?: Maybe<Array<Scalars["String"]>>
-  lt?: Maybe<Scalars["String"]>
-  lte?: Maybe<Scalars["String"]>
-  not?: Maybe<NestedStringNullableFilter>
-  notIn?: Maybe<Array<Scalars["String"]>>
-  startsWith?: Maybe<Scalars["String"]>
+  contains?: InputMaybe<Scalars["String"]>
+  endsWith?: InputMaybe<Scalars["String"]>
+  equals?: InputMaybe<Scalars["String"]>
+  gt?: InputMaybe<Scalars["String"]>
+  gte?: InputMaybe<Scalars["String"]>
+  in?: InputMaybe<Array<Scalars["String"]>>
+  lt?: InputMaybe<Scalars["String"]>
+  lte?: InputMaybe<Scalars["String"]>
+  not?: InputMaybe<NestedStringNullableFilter>
+  notIn?: InputMaybe<Array<Scalars["String"]>>
+  startsWith?: InputMaybe<Scalars["String"]>
 }
 
 export type Query = {
@@ -146,21 +147,21 @@ export type QueryGetSignedS3UrlForGetArgs = {
 }
 
 export type QueryUserArgs = {
-  cursor?: Maybe<UserWhereUniqueInput>
-  distinct?: Maybe<Array<UserScalarFieldEnum>>
-  orderBy?: Maybe<Array<UserOrderByWithRelationInput>>
-  skip?: Maybe<Scalars["Int"]>
-  take?: Maybe<Scalars["Int"]>
-  where?: Maybe<UserWhereInput>
+  cursor?: InputMaybe<UserWhereUniqueInput>
+  distinct?: InputMaybe<Array<UserScalarFieldEnum>>
+  orderBy?: InputMaybe<Array<UserOrderByWithRelationInput>>
+  skip?: InputMaybe<Scalars["Int"]>
+  take?: InputMaybe<Scalars["Int"]>
+  where?: InputMaybe<UserWhereInput>
 }
 
 export type QueryUsersArgs = {
-  cursor?: Maybe<UserWhereUniqueInput>
-  distinct?: Maybe<Array<UserScalarFieldEnum>>
-  orderBy?: Maybe<Array<UserOrderByWithRelationInput>>
-  skip?: Maybe<Scalars["Int"]>
-  take?: Maybe<Scalars["Int"]>
-  where?: Maybe<UserWhereInput>
+  cursor?: InputMaybe<UserWhereUniqueInput>
+  distinct?: InputMaybe<Array<UserScalarFieldEnum>>
+  orderBy?: InputMaybe<Array<UserOrderByWithRelationInput>>
+  skip?: InputMaybe<Scalars["Int"]>
+  take?: InputMaybe<Scalars["Int"]>
+  where?: InputMaybe<UserWhereInput>
 }
 
 export enum QueryMode {
@@ -207,70 +208,69 @@ export enum SortOrder {
 }
 
 export type StringFilter = {
-  contains?: Maybe<Scalars["String"]>
-  endsWith?: Maybe<Scalars["String"]>
-  equals?: Maybe<Scalars["String"]>
-  gt?: Maybe<Scalars["String"]>
-  gte?: Maybe<Scalars["String"]>
-  in?: Maybe<Array<Scalars["String"]>>
-  lt?: Maybe<Scalars["String"]>
-  lte?: Maybe<Scalars["String"]>
-  mode?: Maybe<QueryMode>
-  not?: Maybe<NestedStringFilter>
-  notIn?: Maybe<Array<Scalars["String"]>>
-  startsWith?: Maybe<Scalars["String"]>
+  contains?: InputMaybe<Scalars["String"]>
+  endsWith?: InputMaybe<Scalars["String"]>
+  equals?: InputMaybe<Scalars["String"]>
+  gt?: InputMaybe<Scalars["String"]>
+  gte?: InputMaybe<Scalars["String"]>
+  in?: InputMaybe<Array<Scalars["String"]>>
+  lt?: InputMaybe<Scalars["String"]>
+  lte?: InputMaybe<Scalars["String"]>
+  mode?: InputMaybe<QueryMode>
+  not?: InputMaybe<NestedStringFilter>
+  notIn?: InputMaybe<Array<Scalars["String"]>>
+  startsWith?: InputMaybe<Scalars["String"]>
 }
 
 export type StringNullableFilter = {
-  contains?: Maybe<Scalars["String"]>
-  endsWith?: Maybe<Scalars["String"]>
-  equals?: Maybe<Scalars["String"]>
-  gt?: Maybe<Scalars["String"]>
-  gte?: Maybe<Scalars["String"]>
-  in?: Maybe<Array<Scalars["String"]>>
-  lt?: Maybe<Scalars["String"]>
-  lte?: Maybe<Scalars["String"]>
-  mode?: Maybe<QueryMode>
-  not?: Maybe<NestedStringNullableFilter>
-  notIn?: Maybe<Array<Scalars["String"]>>
-  startsWith?: Maybe<Scalars["String"]>
+  contains?: InputMaybe<Scalars["String"]>
+  endsWith?: InputMaybe<Scalars["String"]>
+  equals?: InputMaybe<Scalars["String"]>
+  gt?: InputMaybe<Scalars["String"]>
+  gte?: InputMaybe<Scalars["String"]>
+  in?: InputMaybe<Array<Scalars["String"]>>
+  lt?: InputMaybe<Scalars["String"]>
+  lte?: InputMaybe<Scalars["String"]>
+  mode?: InputMaybe<QueryMode>
+  not?: InputMaybe<NestedStringNullableFilter>
+  notIn?: InputMaybe<Array<Scalars["String"]>>
+  startsWith?: InputMaybe<Scalars["String"]>
 }
 
 export type UpdateUserInput = {
-  avatar?: Maybe<Scalars["String"]>
-  bio?: Maybe<Scalars["String"]>
-  email?: Maybe<Scalars["String"]>
-  firstName?: Maybe<Scalars["String"]>
-  lastName?: Maybe<Scalars["String"]>
-  password?: Maybe<Scalars["String"]>
+  avatar?: InputMaybe<Scalars["String"]>
+  bio?: InputMaybe<Scalars["String"]>
+  email?: InputMaybe<Scalars["String"]>
+  firstName?: InputMaybe<Scalars["String"]>
+  lastName?: InputMaybe<Scalars["String"]>
+  password?: InputMaybe<Scalars["String"]>
 }
 
 export type User = {
   __typename?: "User"
   avatar?: Maybe<Scalars["String"]>
-  bio?: Maybe<Scalars["String"]>
+  bio: Scalars["String"]
   createdAt: Scalars["DateTime"]
   email: Scalars["String"]
-  firstName?: Maybe<Scalars["String"]>
+  firstName: Scalars["String"]
   fullName: Scalars["String"]
   id: Scalars["String"]
-  lastName?: Maybe<Scalars["String"]>
-  password: Scalars["String"]
+  lastName: Scalars["String"]
   role: Role
   updatedAt: Scalars["DateTime"]
 }
 
 export type UserOrderByWithRelationInput = {
-  avatar?: Maybe<SortOrder>
-  bio?: Maybe<SortOrder>
-  createdAt?: Maybe<SortOrder>
-  email?: Maybe<SortOrder>
-  firstName?: Maybe<SortOrder>
-  id?: Maybe<SortOrder>
-  lastName?: Maybe<SortOrder>
-  password?: Maybe<SortOrder>
-  role?: Maybe<SortOrder>
-  updatedAt?: Maybe<SortOrder>
+  avatar?: InputMaybe<SortOrder>
+  bio?: InputMaybe<SortOrder>
+  createdAt?: InputMaybe<SortOrder>
+  email?: InputMaybe<SortOrder>
+  firstName?: InputMaybe<SortOrder>
+  id?: InputMaybe<SortOrder>
+  lastName?: InputMaybe<SortOrder>
+  password?: InputMaybe<SortOrder>
+  role?: InputMaybe<SortOrder>
+  updatedAt?: InputMaybe<SortOrder>
 }
 
 export enum UserScalarFieldEnum {
@@ -287,24 +287,24 @@ export enum UserScalarFieldEnum {
 }
 
 export type UserWhereInput = {
-  AND?: Maybe<Array<UserWhereInput>>
-  NOT?: Maybe<Array<UserWhereInput>>
-  OR?: Maybe<Array<UserWhereInput>>
-  avatar?: Maybe<StringNullableFilter>
-  bio?: Maybe<StringNullableFilter>
-  createdAt?: Maybe<DateTimeFilter>
-  email?: Maybe<StringFilter>
-  firstName?: Maybe<StringNullableFilter>
-  id?: Maybe<StringFilter>
-  lastName?: Maybe<StringNullableFilter>
-  password?: Maybe<StringFilter>
-  role?: Maybe<EnumRoleFilter>
-  updatedAt?: Maybe<DateTimeFilter>
+  AND?: InputMaybe<Array<UserWhereInput>>
+  NOT?: InputMaybe<Array<UserWhereInput>>
+  OR?: InputMaybe<Array<UserWhereInput>>
+  avatar?: InputMaybe<StringNullableFilter>
+  bio?: InputMaybe<StringNullableFilter>
+  createdAt?: InputMaybe<DateTimeFilter>
+  email?: InputMaybe<StringFilter>
+  firstName?: InputMaybe<StringFilter>
+  id?: InputMaybe<StringFilter>
+  lastName?: InputMaybe<StringFilter>
+  password?: InputMaybe<StringFilter>
+  role?: InputMaybe<EnumRoleFilter>
+  updatedAt?: InputMaybe<DateTimeFilter>
 }
 
 export type UserWhereUniqueInput = {
-  email?: Maybe<Scalars["String"]>
-  id?: Maybe<Scalars["String"]>
+  email?: InputMaybe<Scalars["String"]>
+  id?: InputMaybe<Scalars["String"]>
 }
 
 export type UsersResponse = {
@@ -316,8 +316,8 @@ export type UsersResponse = {
 export type MeFragment = {
   __typename?: "User"
   id: string
-  firstName?: string | null | undefined
-  lastName?: string | null | undefined
+  firstName: string
+  lastName: string
   fullName: string
   avatar?: string | null | undefined
   email: string
@@ -332,8 +332,8 @@ export type MeQuery = {
     | {
         __typename?: "User"
         id: string
-        firstName?: string | null | undefined
-        lastName?: string | null | undefined
+        firstName: string
+        lastName: string
         fullName: string
         avatar?: string | null | undefined
         email: string
@@ -368,14 +368,14 @@ export type UserDetailFragment = {
   __typename?: "User"
   id: string
   fullName: string
-  bio?: string | null | undefined
+  bio: string
   avatar?: string | null | undefined
   email: string
   createdAt: string
 }
 
 export type GetUserQueryVariables = Exact<{
-  where?: Maybe<UserWhereInput>
+  where?: InputMaybe<UserWhereInput>
 }>
 
 export type GetUserQuery = {
@@ -385,7 +385,7 @@ export type GetUserQuery = {
         __typename?: "User"
         id: string
         fullName: string
-        bio?: string | null | undefined
+        bio: string
         avatar?: string | null | undefined
         email: string
         createdAt: string
@@ -403,10 +403,10 @@ export type UserItemFragment = {
 }
 
 export type GetUsersQueryVariables = Exact<{
-  take?: Maybe<Scalars["Int"]>
-  orderBy?: Maybe<Array<UserOrderByWithRelationInput> | UserOrderByWithRelationInput>
-  where?: Maybe<UserWhereInput>
-  skip?: Maybe<Scalars["Int"]>
+  take?: InputMaybe<Scalars["Int"]>
+  orderBy?: InputMaybe<Array<UserOrderByWithRelationInput> | UserOrderByWithRelationInput>
+  where?: InputMaybe<UserWhereInput>
+  skip?: InputMaybe<Scalars["Int"]>
 }>
 
 export type GetUsersQuery = {
@@ -436,8 +436,8 @@ export type LoginMutation = {
     user: {
       __typename?: "User"
       id: string
-      firstName?: string | null | undefined
-      lastName?: string | null | undefined
+      firstName: string
+      lastName: string
       fullName: string
       avatar?: string | null | undefined
       email: string
@@ -455,8 +455,8 @@ export type UpdateMeMutation = {
   updateMe: {
     __typename?: "User"
     id: string
-    firstName?: string | null | undefined
-    lastName?: string | null | undefined
+    firstName: string
+    lastName: string
     fullName: string
     avatar?: string | null | undefined
     email: string
@@ -480,8 +480,8 @@ export type RegisterMutation = {
     user: {
       __typename?: "User"
       id: string
-      firstName?: string | null | undefined
-      lastName?: string | null | undefined
+      firstName: string
+      lastName: string
       fullName: string
       avatar?: string | null | undefined
       email: string

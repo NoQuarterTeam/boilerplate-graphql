@@ -1,7 +1,7 @@
 import { Arg, Args, Ctx, Mutation, Query, Resolver } from "type-graphql"
 import { Inject, Service } from "typedi"
 
-import { FindFirstUserArgs, FindManyUserArgs, Role, User } from "@generated"
+import { FindFirstUserArgs, FindManyUserArgs, Role } from "@generated"
 
 import { createToken, decryptToken } from "../../lib/jwt"
 import { prisma } from "../../lib/prisma"
@@ -16,6 +16,7 @@ import { UpdateUserInput } from "./inputs/updateUser.input"
 import { AuthResponse } from "./responses/auth.response"
 import { UsersResponse } from "./responses/users.response"
 import { UserMailer } from "./user.mailer"
+import { User } from "./user.model"
 import { UserService } from "./user.service"
 
 @Service()

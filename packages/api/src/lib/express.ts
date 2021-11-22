@@ -1,6 +1,7 @@
 import { Request, Response } from "express"
 
-import { User } from "@generated"
+import { User } from "../modules/user/user.model"
+
 export interface ExpressRequest extends Request {
   user?: { id: string }
   currentUser?: User

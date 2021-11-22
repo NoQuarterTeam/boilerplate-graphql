@@ -1,10 +1,9 @@
 import { FieldResolver, Resolver, Root } from "type-graphql"
 import { Service } from "typedi"
 
-import { User } from "@generated"
-
 import { S3_URL } from "../../lib/config"
 import { UseCacheControl } from "../shared/middleware/UseCacheControl"
+import { User } from "./user.model"
 
 @Service()
 @Resolver(() => User)

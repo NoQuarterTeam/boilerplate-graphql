@@ -1,6 +1,7 @@
-import { Role } from "@prisma/client"
 import { AuthenticationError } from "apollo-server-express"
 import { createMethodDecorator } from "type-graphql"
+
+import { Role } from "@generated"
 
 import { ResolverContext } from "../../shared/resolverContext"
 
