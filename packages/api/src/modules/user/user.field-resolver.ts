@@ -1,10 +1,9 @@
 import { FieldResolver, Resolver, Root } from "type-graphql"
 import { Service } from "typedi"
 
-import { Role, User } from "@generated"
+import { User } from "@generated"
 
 import { S3_URL } from "../../lib/config"
-import { CurrentUser } from "../shared/currentUser"
 import { UseCacheControl } from "../shared/middleware/UseCacheControl"
 
 @Service()
@@ -14,13 +13,6 @@ export default class UserFieldResolver {
   fullName(@Root() user: User) {
     if (!user.firstName && !user.lastName) return ""
     return (user.firstName + " " + user.lastName).trim()
-  }
-
-  @UseCacheControl({ maxAge: 3600 })
-  @FieldResolver(() => String)
-  email(@Root() user: User, @CurrentUser() currentUser: User) {
-    if (currentUser.role !== Role.ADMIN && user.id !== currentUser.id) return ""
-    return user.email
   }
 
   @UseCacheControl({ maxAge: 3600 })
