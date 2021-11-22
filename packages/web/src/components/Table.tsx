@@ -72,7 +72,7 @@ export function Table<T extends DataType>(props: Props<T>) {
   return (
     <Flex flexGrow={1} direction="column" overflow="hidden">
       <Flex px={4} py={3}>
-        {columns.map(({ sortKey, header, row, ...column }: ColumnProps<T>, i: number) => (
+        {columns.map(({ sortKey, header, row, hasNoLink, ...column }: ColumnProps<T>, i: number) => (
           <Flex
             key={i.toString()}
             flex={1}
