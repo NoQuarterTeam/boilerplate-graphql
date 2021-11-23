@@ -5769,10 +5769,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.1.tgz#2e50a649a50fc403433a14f829eface1a3443e97"
   integrity sha512-PYGcJHL9mwl1Ek3PLiYgyEKtwTMmkMw4vbiyz/ps3pfdRYLVv+SN7qHVAImrjdAXxgluDEw6Ph4lyv+m9UpRmA==
 
-"@types/node@16.11.9":
-  version "16.11.9"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.9.tgz#879be3ad7af29f4c1a5c433421bf99fab7047185"
-  integrity sha512-MKmdASMf3LtPzwLyRrFjtFFZ48cMf8jmX5VRYrDQiJa8Ybu5VAmkqBWqKU8fdCwD8ysw4mQ9nrEHvzg6gunR7A==
+"@types/node@16.11.10":
+  version "16.11.10"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.10.tgz#2e3ad0a680d96367103d3e670d41c2fed3da61ae"
+  integrity sha512-3aRnHa1KlOEEhJ6+CvyHKK5vE9BcLGjtUpwvqYLRvYNQKMfabu3BwfJaA/SLW8dxe28LsNDjtHwePTuzn3gmOA==
 
 "@types/node@^10.1.0":
   version "10.17.60"
@@ -10694,10 +10694,10 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-framer-motion@5.3.1:
-  version "5.3.1"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-5.3.1.tgz#5588f904f16b20a617f112ee2b10573e7392c488"
-  integrity sha512-wBqW2eAoIxGcp6zhIPlzHq9b6FqWG3Xir6ovgg/HZgbKajGLfcfYRsQU6qri0U53Qov5QZwb7CkfMjl0UIxL4A==
+framer-motion@5.3.2:
+  version "5.3.2"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-5.3.2.tgz#d749f597d8083a4ae2fba3a2c0821930f2cc7ad4"
+  integrity sha512-39xU+ev4inXRAMb2DtdrMnWEinlMLTsk1lmYKcHmHy2WjwewqN9vL+dzqRuhzoPz3fia4U4x2h2w/bNpgh7egA==
   dependencies:
     framesync "6.0.1"
     hey-listen "^1.0.8"
