@@ -7,7 +7,7 @@ import { BaseModel } from "../shared/base.model"
 import { UseIsCurrentUser } from "./middleware/UseIsCurrentUser"
 
 @ObjectType()
-export class User extends BaseModel implements Partial<Prisma.User> {
+export class User extends BaseModel implements Prisma.User {
   @UseIsCurrentUser()
   @Field()
   email: string
