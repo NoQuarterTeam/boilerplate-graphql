@@ -38,11 +38,8 @@ Delete whatever packages you don't need for the project, e.g. maybe you dont nee
 1. `yarn install`
 2. `createdb boilerplate`
 3. `cd packages/api && yarn db:migrate`
-4. `cd packages/api && yarn watch`
-5. `cd packages/web && yarn dev`
-6. `cd packages/app && yarn start`
 
-Make sure you have created a .env file with the right values, use .env.example as the template
+Make sure you have created a .env file in the api package with the right values, you can use .env.example as the template
 
 We use Husky to run a couple of checks each commit (prettier, eslint & commitlint), make sure to add a
 .huskyrc file to your home directory ~/.huskyrc, and add this in:
@@ -56,6 +53,14 @@ then run
 ```bash
 npx husky install
 ```
+
+
+## Development
+
+1. `cd packages/api && yarn watch`
+2. `cd packages/web && yarn dev`
+3. `cd packages/app && yarn start`
+
 
 ## Production
 
@@ -74,4 +79,3 @@ An example is deployed [here](https://boilerplate.noquarter.co)
 
 We are using Heroku for the API package and Vercel for the WEB package
 
-(Our heroku app is on the free tier so there is a warm up time before it becomes responsive)
