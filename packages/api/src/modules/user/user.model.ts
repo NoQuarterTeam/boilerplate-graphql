@@ -20,7 +20,7 @@ export class User extends BaseModel implements Prisma.User {
   @Field()
   lastName: string
 
-  @Field(() => String)
+  @Field(() => String, { nullable: true })
   bio: string | null
 
   @Field(() => Role)
