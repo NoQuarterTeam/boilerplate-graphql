@@ -3063,10 +3063,10 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
-"@hookform/resolvers@2.8.3":
-  version "2.8.3"
-  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-2.8.3.tgz#d362360f6057bcca7318ad22d49e5f0c47290e27"
-  integrity sha512-9G6/vCUNvg3O4MeAK4l749syOz/2r1DF/Pq3Njuk3sI4ObHoRyV0nxio5NrNLGC+7N1Ixu9vJ/loNhaUNXTX6A==
+"@hookform/resolvers@2.8.4":
+  version "2.8.4"
+  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-2.8.4.tgz#bfda18ddf2e63043550bfe1d9af3fa239a06f99f"
+  integrity sha512-2Uf/aqtfzpEpCsB2ao4GOqmKhjOAxeaaq4CUMGBu+sNz1XQane1Dj2cUfhDII/rj/EWUTObIuUwqljLBbXjxeQ==
 
 "@humanwhocodes/config-array@^0.6.0":
   version "0.6.0"
@@ -5650,10 +5650,10 @@
   resolved "https://registry.yarnpkg.com/@types/html-minifier-terser/-/html-minifier-terser-5.1.2.tgz#693b316ad323ea97eed6b38ed1a3cc02b1672b57"
   integrity sha512-h4lTMgMJctJybDp8CQrxTUiiYmedihHWkjnF/8Pxseu2S6Nlfcy8kwboQ8yejh456rP2yWoEVm1sS/FVsfM48w==
 
-"@types/ioredis@4.28.1":
-  version "4.28.1"
-  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.28.1.tgz#27d66f4c0540145826d984b6d0a5b54bbb88c32a"
-  integrity sha512-raYHPqRWrfnEoym94BY28mG1+tcZqh3dsp2q7x5IyMAAEvIdu+H0X8diASMpncIm+oHyH9dalOeOnGOL/YnuOA==
+"@types/ioredis@4.28.2":
+  version "4.28.2"
+  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.28.2.tgz#7ff68944cbb58afefb2a1d8b250ebf48760e93c9"
+  integrity sha512-kOCG4ExodOAoslFjsUzwAK1fxqVRx3JX5m7lm3MkWf5WkDwNTtXBtlBig6cQyFwS7P7TPaTWRreQaMwl7e1FFA==
   dependencies:
     "@types/node" "*"
 
