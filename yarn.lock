@@ -5596,10 +5596,10 @@
   dependencies:
     "@types/ms" "*"
 
-"@types/express-jwt@6.0.2":
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/@types/express-jwt/-/express-jwt-6.0.2.tgz#15938f9a50945ccab35361227e438f98abdb713f"
-  integrity sha512-WDnO/0jeWyhX253TOIJHZzLE/pmXSucslKeztphjZDxim/wYDaDeDcj6/U9YAHcgFfwBu+I3Obfy+xB6/VaRcA==
+"@types/express-jwt@6.0.3":
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/@types/express-jwt/-/express-jwt-6.0.3.tgz#51bc9601b3be4352395e0fd3b55e299f80980767"
+  integrity sha512-Bgiub77mzsFTc9YagQXmqLcARJhlKZ/qDRnEvDVLgEIQEsSFnQt/ep9Lr1x15lWAa4wRA62TG7yKWgi0LhQ4MQ==
   dependencies:
     "@types/express" "*"
     "@types/express-unless" "*"
