@@ -18562,10 +18562,10 @@ typedi@0.10.0:
   resolved "https://registry.yarnpkg.com/typedi/-/typedi-0.10.0.tgz#e8f9a5ee100b84addbdfb57fe90d8d9ed2a21dea"
   integrity sha512-v3UJF8xm68BBj6AF4oQML3ikrfK2c9EmZUyLOfShpJuItAqVBHWP/KtpGinkSsIiP6EZyyb6Z3NXyW9dgS9X1w==
 
-typegraphql-prisma@0.18.1:
-  version "0.18.1"
-  resolved "https://registry.yarnpkg.com/typegraphql-prisma/-/typegraphql-prisma-0.18.1.tgz#6604e3e3916cb730baea82dfa50fdb80055ec7ef"
-  integrity sha512-ZLPvmvbg9dE4tkbjcuZyM+MqL+yPTOeg5fzk8QX2wC/+46BhH16BHy3VfderDCtcT4aUyuRMg9mPwDaipYBAEA==
+typegraphql-prisma@0.18.2:
+  version "0.18.2"
+  resolved "https://registry.yarnpkg.com/typegraphql-prisma/-/typegraphql-prisma-0.18.2.tgz#eead94bcedd5650c0a5833092f125cb6ef8aa510"
+  integrity sha512-CDMkxcHIJCvWH+udxTcOPTbc0RcM0j6Vyws0WcaiL/XtW3UVzC0oPzyXF9viqp+bNAONhEuCyeFsf8dMrTpDXA==
   dependencies:
     "@prisma/generator-helper" "~3.6.0"
     "@prisma/sdk" "~3.6.0"
