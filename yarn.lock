@@ -5541,10 +5541,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.12.tgz#ac7fb693ac587ee182c3780c26eb65546a1a3c10"
   integrity sha512-+2Iggwg7PxoO5Kyhvsq9VarmPbIelXP070HMImEpbtGCoyWNINQj4wzjbQCXzdHTRXnqufutJb5KAURZANNBAw==
 
-"@types/node@16.11.13":
-  version "16.11.13"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.13.tgz#6b71641b81a98c6a538d89892440c06f147edddc"
-  integrity sha512-eUXZzHLHoZqj1frtUetNkUetYoJ6X55UmrVnFD4DMhVeAmwLjniZhtBmsRiemQh4uq4G3vUra/Ws/hs9vEvL3Q==
+"@types/node@16.11.14":
+  version "16.11.14"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.14.tgz#4939fb42e5b0ffb3ea7e193c28244fe7414977a6"
+  integrity sha512-mK6BKLpL0bG6v2CxHbm0ed6RcZrAtTHBTd/ZpnlVPVa3HkumsqLE4BC4u6TQ8D7pnrRbOU0am6epuALs+Ncnzw==
 
 "@types/node@^10.1.0":
   version "10.17.60"
@@ -10377,10 +10377,10 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-framer-motion@5.5.1:
-  version "5.5.1"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-5.5.1.tgz#2f6debbb20ca30c4ce8665b4a2653dc6bd9a6fe3"
-  integrity sha512-kPfQpMO4BH+ouIORDMGNt3o+vEgNnIKHyKIgFG4zalTFJaNx9YF2hM2cSdlNdZ6OpiBEkSyKg5DkpFkhmZpRDQ==
+framer-motion@5.5.3:
+  version "5.5.3"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-5.5.3.tgz#3a4e0725eae458830202b0eb80202951698f8c8d"
+  integrity sha512-rS/eeTLdCsxg6F4Ikk+c+X9emawLSngwxdmXtgfT9qB8yiR2gi8/bdmfeSwyh3ngw63WcVVx3olIkwAY7x3p3A==
   dependencies:
     framesync "6.0.1"
     hey-listen "^1.0.8"
@@ -15878,10 +15878,10 @@ react-freeze@^1.0.0:
   resolved "https://registry.yarnpkg.com/react-freeze/-/react-freeze-1.0.0.tgz#b21c65fe1783743007c8c9a2952b1c8879a77354"
   integrity sha512-yQaiOqDmoKqks56LN9MTgY06O0qQHgV4FUrikH357DydArSZHQhl0BJFqGKIZoTqi8JizF9Dxhuk1FIZD6qCaw==
 
-react-hook-form@7.22.0:
-  version "7.22.0"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.22.0.tgz#391f0827d487d133333789b60ad7a00e70ad1bdf"
-  integrity sha512-0gPE29N0wdd/5ZMD+TaAq5LF4NTguLnPaTqdSiWyu1QiSkB6jmWY1q0550JYu2BSgfOHecA7pxky9q+zWAwMqg==
+react-hook-form@7.22.1:
+  version "7.22.1"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.22.1.tgz#604cfb2572ed2fcbc7426982a320056cdc23cf18"
+  integrity sha512-c1jMj8k0AyvLhqU08B85HZGU2n1RknmyOEDcbROWaraW8kT4ga7kCsi/4XH6A7KCDzAM0sWoa30DVyqkIsJl9Q==
 
 react-icons@4.3.1:
   version "4.3.1"
