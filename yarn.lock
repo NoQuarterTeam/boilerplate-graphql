@@ -9944,7 +9944,7 @@ expo-pwa@0.0.109:
     commander "2.20.0"
     update-check "1.5.3"
 
-expo-status-bar@~1.2.0:
+expo-status-bar@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/expo-status-bar/-/expo-status-bar-1.2.0.tgz#16e73205da563f9536f562e439081e30e318a82e"
   integrity sha512-pVZZ/kDCXFK79E4dCtRecs3XLC8aiwlciutSd/fFmUPJSQZ1Txia6hlKajPt0GAYft8/YnT0V3URXzWZOBniYQ==
@@ -9962,7 +9962,7 @@ expo-yarn-workspaces@1.7.0:
     minimist "^1.2.5"
     mkdirp "^0.5.1"
 
-expo@~44.0.0:
+expo@44.0.0:
   version "44.0.0"
   resolved "https://registry.yarnpkg.com/expo/-/expo-44.0.0.tgz#794d1f062e232018d26ef01ad570673c78a5f54d"
   integrity sha512-N8bykKCT1EIk9L0UBsWXRtnbUtlmWkmVYXNacAEpHixVLBA8HBhs7BnSG5zd+O7beHWUA9FZmCK4CgduNFzBVQ==
