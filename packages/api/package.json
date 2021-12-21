@@ -17,13 +17,13 @@
     "typecheck": "tsc --noEmit",
     "lint:fix": "eslint --fix --config .eslintrc.commit.js --cache --ext .ts,.tsx src",
     "lint": "eslint --cache --ext .ts,.tsx src",
-    "prettify": "prettier --write './src/**/*.ts'",
+    "prettify": "prettier --write './src/**/*.ts' --ignore-path ../../.prettierignore",
     "pre-commit": "lint-staged",
     "postinstall": "prisma generate"
   },
   "lint-staged": {
     "*.(js|jsx|json|ts|tsx|html)": [
-      "prettier --write"
+      "prettier --write --ignore-path ../../.prettierignore"
     ],
     "*.(ts|tsx)": [
       "eslint --fix --config .eslintrc.commit.js"

@@ -1,6 +1,6 @@
 import * as React from "react"
 import { gql } from "@apollo/client"
-import { Avatar,Box, Center, Flex, Heading, Spinner, Stack, Text } from "@chakra-ui/react"
+import { Avatar, Box, Center, Flex, Heading, Spinner, Stack, Text } from "@chakra-ui/react"
 import Head from "next/head"
 import { useRouter } from "next/router"
 

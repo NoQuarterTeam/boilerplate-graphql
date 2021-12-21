@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Button, ButtonProps,Link } from "@chakra-ui/react"
+import { Button, ButtonProps, Link } from "@chakra-ui/react"
 import NextLink from "next/link"
 
 interface Props extends ButtonProps {

@@ -1,6 +1,6 @@
 import * as React from "react"
 import { gql } from "@apollo/client"
-import { Avatar, Button, Center,Spinner, Stack } from "@chakra-ui/react"
+import { Avatar, Button, Center, Spinner, Stack } from "@chakra-ui/react"
 
 import { useUpdateMeMutation } from "lib/graphql"
 import { useForm } from "lib/hooks/useForm"

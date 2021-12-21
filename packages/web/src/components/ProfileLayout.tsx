@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Box, Flex, Heading, Link,LinkProps, Stack, useColorModeValue } from "@chakra-ui/react"
+import { Box, Flex, Heading, Link, LinkProps, Stack, useColorModeValue } from "@chakra-ui/react"
 import NextLink from "next/link"
 import { useRouter } from "next/router"
 

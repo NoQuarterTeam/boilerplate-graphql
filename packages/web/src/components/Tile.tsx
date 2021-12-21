@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Box, BoxProps, Flex, FlexProps,Heading, HeadingProps, useColorModeValue } from "@chakra-ui/react"
+import { Box, BoxProps, Flex, FlexProps, Heading, HeadingProps, useColorModeValue } from "@chakra-ui/react"
 
 export function Tile({ children, ...props }: BoxProps) {
   return (

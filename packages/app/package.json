@@ -12,13 +12,13 @@
     "generate:watch": "graphql-codegen --watch",
     "lint": "eslint --cache --ext .ts,.tsx,.js ./",
     "lint:fix": "eslint --fix --config .eslintrc.commit.js --cache --ext .ts,.tsx,.js ./",
-    "prettify": "prettier --write ./",
+    "prettify": "prettier --write ./ --ignore-path ../../.prettierignore",
     "pre-commit": "lint-staged",
     "postinstall": "expo-yarn-workspaces postinstall"
   },
   "lint-staged": {
     "*.(js|jsx|json|ts|tsx|html)|!graphql.tsx": [
-      "prettier --write"
+      "prettier --write --ignore-path ../../.prettierignore"
     ],
     "*.(js|ts|tsx)|!graphql.tsx": [
       "eslint --fix --config .eslintrc.commit.js"

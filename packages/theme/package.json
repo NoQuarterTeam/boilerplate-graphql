@@ -8,12 +8,12 @@
   "scripts": {
     "lint": "eslint --cache --ext .ts,.tsx,.js ./src",
     "lint:fix": "eslint --fix --config .eslintrc.commit.js --cache --ext .ts,.tsx,.js ./src",
-    "prettify": "prettier --write ./src",
+    "prettify": "prettier --write ./src --ignore-path ../../.prettierignore",
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
     "*.(js|jsx|json|ts|tsx|html)": [
-      "prettier --write"
+      "prettier --write --ignore-path ../../.prettierignore"
     ],
     "*.(ts|tsx)": [
       "eslint --fix --config .eslintrc.commit.js"
