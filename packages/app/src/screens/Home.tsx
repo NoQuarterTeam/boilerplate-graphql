@@ -12,7 +12,7 @@ export function Home() {
   return (
     <Flex h="100%" p={4} py={20} justifyContent="space-between">
       <Text fontSize="3xl" textAlign="center" fontWeight="bold">
-        Welcome to the Fullstack boilerplate
+        Welcome to the boilerplate
       </Text>
       {loading ? null : me ? (
         <Stack p={4} space={4} w="100%">

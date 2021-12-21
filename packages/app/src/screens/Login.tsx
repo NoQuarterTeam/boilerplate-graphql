@@ -51,7 +51,7 @@ function _Login() {
   return (
     <Form {...form}>
       <Stack p={6} space={2} w="100%">
-        <Pressable pos="absolute" top={4} right={4} onPress={goBack}>
+        <Pressable position="absolute" top={4} right={4} onPress={goBack}>
           <SmallCloseIcon />
         </Pressable>
 

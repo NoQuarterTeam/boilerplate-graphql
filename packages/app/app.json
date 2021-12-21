@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "Fullstack Boilerplate",
-    "slug": "boilerplate",
+    "name": "Boilerplate App",
+    "slug": "boilerplate-app",
     "version": "1.0.0",
-    "orientation": "default",
+    "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
