@@ -17971,83 +17971,83 @@ tunnel-agent@^0.6.0:
   dependencies:
     safe-buffer "^5.0.1"
 
-turbo-darwin-64@1.0.21:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/turbo-darwin-64/-/turbo-darwin-64-1.0.21.tgz#74a5b4582135d6135afc17d05eb3903f2ec40baa"
-  integrity sha512-4bhaTeCqDjFKnXdQoP6ul04J5p2qBGa4+9UK5TLXnM+ih8vPRFU/WrUeQme0QF3jEYNDjW8v6UrueCH18BQZcg==
+turbo-darwin-64@1.0.22:
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/turbo-darwin-64/-/turbo-darwin-64-1.0.22.tgz#aab9cf80421d34b7cdad05640f8488b20fc91c7c"
+  integrity sha512-9nfkCjQzxFbIf9YXvQW721H7nWLlnVzCSxznomAE5hUi1lD0o7LI/772qxry0YPkhO9pk3vHygp2fQO9wP0Vig==
 
-turbo-darwin-arm64@1.0.21:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/turbo-darwin-arm64/-/turbo-darwin-arm64-1.0.21.tgz#221f48856116c0c2349bd79854e5d07ff8abe9ad"
-  integrity sha512-k8/nMyr/nn17lUdF/bUunzPkcjSwXi/d+CNECcvIDf1NUUG88PO9APj4lsYI01s/ICVXuM7uOp6FzPkC8/4OqQ==
+turbo-darwin-arm64@1.0.22:
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/turbo-darwin-arm64/-/turbo-darwin-arm64-1.0.22.tgz#27a98e7e1e6dc858ad2c5814d781e3bf7e7afbba"
+  integrity sha512-at95byKSka3phZrgQJBzEYwkwkNIQ8NGBBkNlqLYsYACL8biQD63zR4rJjc//pFm69sXvA/dNAqxX3X8kwM08Q==
 
-turbo-freebsd-64@1.0.21:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/turbo-freebsd-64/-/turbo-freebsd-64-1.0.21.tgz#019ec703ac591f0d59a58f975ac0f763835a1a39"
-  integrity sha512-csy2vwVKZ8krkHB+Pdr6TQOHtLtkm8QNVZPzINYwKgsTRmPahb0i5t7XPpNOTCbGxGYGOhUOzEqYnGWBMhp2zA==
+turbo-freebsd-64@1.0.22:
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/turbo-freebsd-64/-/turbo-freebsd-64-1.0.22.tgz#e397ac8f536308c2d19614e3410df6e7ca78638a"
+  integrity sha512-fjNYv31Jf8V/MXe9PNmzrB9tR/PyVC0LqETgOdwhiWPj4lE25GRWTCeRPals4mQzKSwq6lk7rrFSq0dYbl/bOQ==
 
-turbo-freebsd-arm64@1.0.21:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/turbo-freebsd-arm64/-/turbo-freebsd-arm64-1.0.21.tgz#43508eccc3bfc23e5fa40c1bfb325dc1f126c4a7"
-  integrity sha512-ybPzwFDqkF3X+fAc0JHj23kMEse/djsnWQvltNSddt2Tcm/6auZ0MJt17S6JZLYfuQM6xSKo23zP73/Nc+bMoA==
+turbo-freebsd-arm64@1.0.22:
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/turbo-freebsd-arm64/-/turbo-freebsd-arm64-1.0.22.tgz#3765f59693ea03563d2e86b7fb99a4f6eed46ae4"
+  integrity sha512-8wBjxqmAtIVUnJq9hu0MOsTK1bO2QS3vYvrkcGgI5ymJm6Dloisn/mahpoF72qKGxMgr9pdVW44gZlnI62Fr9A==
 
-turbo-linux-32@1.0.21:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/turbo-linux-32/-/turbo-linux-32-1.0.21.tgz#420828bc1c0f4fb82fb27135371de151ddcbd994"
-  integrity sha512-SQyDRX/fy26x3YoEX5yQNyJq2IHkfytS7LLuoYiYchmwUpyO3XR0Q2l5sxbDLQFmyzJsdn8nj5aPfgNqEXabWw==
+turbo-linux-32@1.0.22:
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/turbo-linux-32/-/turbo-linux-32-1.0.22.tgz#ac43293af8e32463e4dd9ad08aefc124398369a7"
+  integrity sha512-j58Ib4eVeMEEUlI3HdLp/SvKSNt4rjFLIo3OQ7CYxtSQIqg9L+7eRthJK8MONfPtYZPiotcT8dP3xT0SUct6SA==
 
-turbo-linux-64@1.0.21:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/turbo-linux-64/-/turbo-linux-64-1.0.21.tgz#5aa8667925228cd79094a08335266aa639cff33a"
-  integrity sha512-OxCdDINsZxCace/soIz77stZovsrh/Lqlyp2r0Dh318Ge6Fm55Qkm9sU2Eaq6FqpfKHm6u7yQHx78r6bTZERwg==
+turbo-linux-64@1.0.22:
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/turbo-linux-64/-/turbo-linux-64-1.0.22.tgz#517a8510be0a84b37a6c0f4ac1e8d4692ad054d5"
+  integrity sha512-qunUX+GHr1f9VsUHSHPRVyvQilLte+3e/9BczDnXcCjbUKg5AX0V3Seti1JL37rj3TeKYLqzhIgiyqBKmgFeDA==
 
-turbo-linux-arm64@1.0.21:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/turbo-linux-arm64/-/turbo-linux-arm64-1.0.21.tgz#5c7c114151d7186eb227d5a8ee7006e9b31b4837"
-  integrity sha512-HmP3waXX/9cojTwvdK7cx/x28UsC0P/6Pl4NP3w2X/y3gFFSBF6WbIn6nx60xIYt4DMUfQvjqCsScxbcxxiIVA==
+turbo-linux-arm64@1.0.22:
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/turbo-linux-arm64/-/turbo-linux-arm64-1.0.22.tgz#91c6c087c321f5876c949e9204ef93320c1041cd"
+  integrity sha512-+gZs7HC4zLMx3hDoadTKMPXpwo8YVaIbhW/2zAbeCaUjwCxwJ9mi6fnXVd5+f5STmzJqy5HovWY40wZ5N7FQeQ==
 
-turbo-linux-arm@1.0.21:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/turbo-linux-arm/-/turbo-linux-arm-1.0.21.tgz#bb256da0b310246f85545edbce3cb4041b85f21f"
-  integrity sha512-ssVqcO2z7ByXT2KDIg0QG8DNdTrLgtEbb5xKXsg3nTTsOk+wRMUmi1x7a/rkhhL5voml4NkImTUTWOLwdFvg3g==
+turbo-linux-arm@1.0.22:
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/turbo-linux-arm/-/turbo-linux-arm-1.0.22.tgz#cc49dd30d7f3809f5b58998d1052767e091defea"
+  integrity sha512-BmWR6GoMZF7xLzZ1O359lLckU6JCEo9q0o6069aSy944r/lLFi4+Jw9tardPEt6rtz+kSw3CUW7BGbvUqjD0fA==
 
-turbo-linux-mips64le@1.0.21:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/turbo-linux-mips64le/-/turbo-linux-mips64le-1.0.21.tgz#c9513f2fc8d9f194fafbc3909f04abdc03094e1e"
-  integrity sha512-qkvExc3110/lRTdX/fiRws574Ob9hJMrkB9V8wN+nji/F51AuXTkPDhCMFKLTfNzNzgY60jTU3Rd/CAbxPSt3Q==
+turbo-linux-mips64le@1.0.22:
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/turbo-linux-mips64le/-/turbo-linux-mips64le-1.0.22.tgz#930dc54b0582e86213b4b55f9a294ce89df310d3"
+  integrity sha512-2jLV9e0gBYkEjb+9EXry4+vvLvg2g71/sVd9BhW48C97zewnkjBl3Lg6DD2C6S4rWkvI3I0StdqkhwoZrtnnSQ==
 
-turbo-linux-ppc64le@1.0.21:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/turbo-linux-ppc64le/-/turbo-linux-ppc64le-1.0.21.tgz#b04556780f9722ae1f0bf4990a752a5944affdcf"
-  integrity sha512-vvhx6o2FQIMh5s66d1gX8Cp5J/DSBdCiZjWSiSE+vpeE+caDef4fGiR6XZZ157K5YMhdw5vZBFoyyYlZu6Oc+A==
+turbo-linux-ppc64le@1.0.22:
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/turbo-linux-ppc64le/-/turbo-linux-ppc64le-1.0.22.tgz#d04560a910118a2f442fc12829677c53815b0570"
+  integrity sha512-qxvJBbIRuhkUVy0mMT2frKWrrIT4Dro5+k/kE/mNczT8unxUbvXIuvg49UFc9MxOlUvI13CYXdWoVW3itwftkw==
 
-turbo-windows-32@1.0.21:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/turbo-windows-32/-/turbo-windows-32-1.0.21.tgz#364a65b981d518d1ef6058367ed16581f9a797d7"
-  integrity sha512-aIRS1wSv0GJaRrdceX2jyDvzD1Wqj5HIthuMBrSRIE77kaQT3sWAvKRXhXwVfGaoH8l52NBxhzXCV0IS/nelIA==
+turbo-windows-32@1.0.22:
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/turbo-windows-32/-/turbo-windows-32-1.0.22.tgz#186e6062660b097b29eabffc1bb59bd064e03656"
+  integrity sha512-B2H18adVj5Ed7nJVSweZP5fv9WF9xRZeARX0tdprg187ZiKqEPLc8E7q4ImUL4QsDS0ne9VytXJt7YCWxpkCQQ==
 
-turbo-windows-64@1.0.21:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/turbo-windows-64/-/turbo-windows-64-1.0.21.tgz#c4a19d61d07e2b42b29889a42b31cba879ba6ddf"
-  integrity sha512-zZQ2AqGNCjZVRT7asoGL1cha9Elw/zWbjARfZpH+jfUkm4ds5epYVaRwc5F8C8MMk3YkKN886eWPB+JYrJmmOw==
+turbo-windows-64@1.0.22:
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/turbo-windows-64/-/turbo-windows-64-1.0.22.tgz#50b9d24aeda1e112492b127f956f1100b82f6950"
+  integrity sha512-xYfM1huwd9k0SF4kXegzNioqU/GM5OftxECayg7hL9A3j/y8mu5W5bEzCL6gImWNW8qOf9kyg869r2fHsaWOlg==
 
-turbo@1.0.21:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/turbo/-/turbo-1.0.21.tgz#6feb849997e18fbad7df2813d72843af73c26862"
-  integrity sha512-/XwxX2JWC5BTH42f1ZADRr29LF5y9w14WihPkFqItCeiywmFOIStoFM/lxULT0qFJ43DJPIN5xKtwBAxW2DedA==
+turbo@1.0.22:
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/turbo/-/turbo-1.0.22.tgz#760a352058e0ba1a253304931b46e7f20506b39d"
+  integrity sha512-3nX9e63ELD48F/JpL6QNKHO5Neqa9pfNCYiKNFkrcUWSYxV8fQ5ysdDaDpfuHoBZYGuyz4lU6y4jCx9wVZEsXg==
   optionalDependencies:
-    turbo-darwin-64 "1.0.21"
-    turbo-darwin-arm64 "1.0.21"
-    turbo-freebsd-64 "1.0.21"
-    turbo-freebsd-arm64 "1.0.21"
-    turbo-linux-32 "1.0.21"
-    turbo-linux-64 "1.0.21"
-    turbo-linux-arm "1.0.21"
-    turbo-linux-arm64 "1.0.21"
-    turbo-linux-mips64le "1.0.21"
-    turbo-linux-ppc64le "1.0.21"
-    turbo-windows-32 "1.0.21"
-    turbo-windows-64 "1.0.21"
+    turbo-darwin-64 "1.0.22"
+    turbo-darwin-arm64 "1.0.22"
+    turbo-freebsd-64 "1.0.22"
+    turbo-freebsd-arm64 "1.0.22"
+    turbo-linux-32 "1.0.22"
+    turbo-linux-64 "1.0.22"
+    turbo-linux-arm "1.0.22"
+    turbo-linux-arm64 "1.0.22"
+    turbo-linux-mips64le "1.0.22"
+    turbo-linux-ppc64le "1.0.22"
+    turbo-windows-32 "1.0.22"
+    turbo-windows-64 "1.0.22"
 
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
