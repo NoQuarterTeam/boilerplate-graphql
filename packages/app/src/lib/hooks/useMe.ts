@@ -2,7 +2,7 @@ import { gql } from "@apollo/client"
 
 import { useMeQuery } from "../graphql"
 
-export const ME_FRAGMENT = gql`
+export const _ = gql`
   fragment Me on User {
     id
     firstName
@@ -11,7 +11,7 @@ export const ME_FRAGMENT = gql`
   }
 `
 
-export const ME = gql`
+export const __ = gql`
   query Me {
     me {
       ...Me

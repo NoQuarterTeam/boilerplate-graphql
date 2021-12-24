@@ -9,8 +9,6 @@ generates:
     config:
       withMutationFn: false
       addDocBlocks: false
-      apolloReactHooksImportFrom: "@apollo/client"
-      gqlImport: "@apollo/client#gql"
       scalars:
         DateTime: string
     plugins:

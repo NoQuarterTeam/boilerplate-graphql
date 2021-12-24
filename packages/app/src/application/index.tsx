@@ -28,7 +28,7 @@ const client = new ApolloClient({
   },
 })
 
-export function App() {
+export default function App() {
   return (
     <NativeBaseProvider theme={theme}>
       <ApolloProvider client={client}>

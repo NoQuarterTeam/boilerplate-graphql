@@ -7,6 +7,7 @@ import { useMe } from "../lib/hooks/useMe"
 
 export function Home() {
   const { me, loading } = useMe()
+
   const { navigate } = useNavigation()
   const logout = useLogout()
   return (
@@ -26,6 +27,7 @@ export function Home() {
           Login
         </Button>
       )}
+
       <Flex />
     </Flex>
   )

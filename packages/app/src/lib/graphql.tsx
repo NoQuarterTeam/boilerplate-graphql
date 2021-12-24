@@ -1,330 +1,381 @@
 /* eslint-disable */
-import { gql } from "@apollo/client"
-import * as Apollo from "@apollo/client"
-import * as ApolloReactHooks from "@apollo/client"
-export type Maybe<T> = T | null
-export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] }
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> }
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> }
-const defaultOptions = {}
+import { gql } from '@apollo/client';
+import * as Apollo from '@apollo/client';
+export type Maybe<T> = T | null;
+export type InputMaybe<T> = Maybe<T>;
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+const defaultOptions =  {}
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: string
-  String: string
-  Boolean: boolean
-  Int: number
-  Float: number
+  ID: string;
+  String: string;
+  Boolean: boolean;
+  Int: number;
+  Float: number;
   /** The javascript `Date` as string. Type represents date and time as the ISO Date string. */
-  DateTime: string
-}
+  DateTime: string;
+};
 
 export type AuthResponse = {
-  __typename?: "AuthResponse"
-  user: User
-  token: Scalars["String"]
-}
+  __typename?: 'AuthResponse';
+  token: Scalars['String'];
+  user: User;
+};
 
 export type DateTimeFilter = {
-  equals?: Maybe<Scalars["DateTime"]>
-  in?: Maybe<Array<Scalars["DateTime"]>>
-  notIn?: Maybe<Array<Scalars["DateTime"]>>
-  lt?: Maybe<Scalars["DateTime"]>
-  lte?: Maybe<Scalars["DateTime"]>
-  gt?: Maybe<Scalars["DateTime"]>
-  gte?: Maybe<Scalars["DateTime"]>
-  not?: Maybe<NestedDateTimeFilter>
-}
+  equals?: InputMaybe<Scalars['DateTime']>;
+  gt?: InputMaybe<Scalars['DateTime']>;
+  gte?: InputMaybe<Scalars['DateTime']>;
+  in?: InputMaybe<Array<Scalars['DateTime']>>;
+  lt?: InputMaybe<Scalars['DateTime']>;
+  lte?: InputMaybe<Scalars['DateTime']>;
+  not?: InputMaybe<NestedDateTimeFilter>;
+  notIn?: InputMaybe<Array<Scalars['DateTime']>>;
+};
 
 export type EnumRoleFilter = {
-  equals?: Maybe<Role>
-  in?: Maybe<Array<Role>>
-  notIn?: Maybe<Array<Role>>
-  not?: Maybe<NestedEnumRoleFilter>
-}
+  equals?: InputMaybe<Role>;
+  in?: InputMaybe<Array<Role>>;
+  not?: InputMaybe<NestedEnumRoleFilter>;
+  notIn?: InputMaybe<Array<Role>>;
+};
 
 export type LoginInput = {
-  email: Scalars["String"]
-  password: Scalars["String"]
-}
+  email: Scalars['String'];
+  password: Scalars['String'];
+};
 
 export type Mutation = {
-  __typename?: "Mutation"
-  login: AuthResponse
-  loginAdmin: AuthResponse
-  register: AuthResponse
-  forgotPassword: Scalars["Boolean"]
-  destroyAccount: Scalars["Boolean"]
-  resetPassword: Scalars["Boolean"]
-}
+  __typename?: 'Mutation';
+  destroyAccount: Scalars['Boolean'];
+  forgotPassword: Scalars['Boolean'];
+  getBulkSignedS3UrlForPut?: Maybe<Array<SignedResponse>>;
+  getSignedS3UrlForPut?: Maybe<SignedResponse>;
+  login: AuthResponse;
+  register: AuthResponse;
+  resetPassword: Scalars['Boolean'];
+  updateMe: User;
+};
 
-export type MutationLoginArgs = {
-  data: LoginInput
-}
-
-export type MutationLoginAdminArgs = {
-  data: LoginInput
-}
-
-export type MutationRegisterArgs = {
-  data: RegisterInput
-}
 
 export type MutationForgotPasswordArgs = {
-  email: Scalars["String"]
-}
+  email: Scalars['String'];
+};
+
+
+export type MutationGetBulkSignedS3UrlForPutArgs = {
+  data: S3BulkSignedUrlInput;
+};
+
+
+export type MutationGetSignedS3UrlForPutArgs = {
+  data: S3SignedUrlInput;
+};
+
+
+export type MutationLoginArgs = {
+  data: LoginInput;
+};
+
+
+export type MutationRegisterArgs = {
+  data: RegisterInput;
+};
+
 
 export type MutationResetPasswordArgs = {
-  data: ResetPasswordInput
-}
+  data: ResetPasswordInput;
+};
+
+
+export type MutationUpdateMeArgs = {
+  data: UpdateUserInput;
+};
 
 export type NestedDateTimeFilter = {
-  equals?: Maybe<Scalars["DateTime"]>
-  in?: Maybe<Array<Scalars["DateTime"]>>
-  notIn?: Maybe<Array<Scalars["DateTime"]>>
-  lt?: Maybe<Scalars["DateTime"]>
-  lte?: Maybe<Scalars["DateTime"]>
-  gt?: Maybe<Scalars["DateTime"]>
-  gte?: Maybe<Scalars["DateTime"]>
-  not?: Maybe<NestedDateTimeFilter>
-}
+  equals?: InputMaybe<Scalars['DateTime']>;
+  gt?: InputMaybe<Scalars['DateTime']>;
+  gte?: InputMaybe<Scalars['DateTime']>;
+  in?: InputMaybe<Array<Scalars['DateTime']>>;
+  lt?: InputMaybe<Scalars['DateTime']>;
+  lte?: InputMaybe<Scalars['DateTime']>;
+  not?: InputMaybe<NestedDateTimeFilter>;
+  notIn?: InputMaybe<Array<Scalars['DateTime']>>;
+};
 
 export type NestedEnumRoleFilter = {
-  equals?: Maybe<Role>
-  in?: Maybe<Array<Role>>
-  notIn?: Maybe<Array<Role>>
-  not?: Maybe<NestedEnumRoleFilter>
-}
+  equals?: InputMaybe<Role>;
+  in?: InputMaybe<Array<Role>>;
+  not?: InputMaybe<NestedEnumRoleFilter>;
+  notIn?: InputMaybe<Array<Role>>;
+};
 
 export type NestedStringFilter = {
-  equals?: Maybe<Scalars["String"]>
-  in?: Maybe<Array<Scalars["String"]>>
-  notIn?: Maybe<Array<Scalars["String"]>>
-  lt?: Maybe<Scalars["String"]>
-  lte?: Maybe<Scalars["String"]>
-  gt?: Maybe<Scalars["String"]>
-  gte?: Maybe<Scalars["String"]>
-  contains?: Maybe<Scalars["String"]>
-  startsWith?: Maybe<Scalars["String"]>
-  endsWith?: Maybe<Scalars["String"]>
-  not?: Maybe<NestedStringFilter>
-}
+  contains?: InputMaybe<Scalars['String']>;
+  endsWith?: InputMaybe<Scalars['String']>;
+  equals?: InputMaybe<Scalars['String']>;
+  gt?: InputMaybe<Scalars['String']>;
+  gte?: InputMaybe<Scalars['String']>;
+  in?: InputMaybe<Array<Scalars['String']>>;
+  lt?: InputMaybe<Scalars['String']>;
+  lte?: InputMaybe<Scalars['String']>;
+  not?: InputMaybe<NestedStringFilter>;
+  notIn?: InputMaybe<Array<Scalars['String']>>;
+  startsWith?: InputMaybe<Scalars['String']>;
+};
 
 export type NestedStringNullableFilter = {
-  equals?: Maybe<Scalars["String"]>
-  in?: Maybe<Array<Scalars["String"]>>
-  notIn?: Maybe<Array<Scalars["String"]>>
-  lt?: Maybe<Scalars["String"]>
-  lte?: Maybe<Scalars["String"]>
-  gt?: Maybe<Scalars["String"]>
-  gte?: Maybe<Scalars["String"]>
-  contains?: Maybe<Scalars["String"]>
-  startsWith?: Maybe<Scalars["String"]>
-  endsWith?: Maybe<Scalars["String"]>
-  not?: Maybe<NestedStringNullableFilter>
-}
+  contains?: InputMaybe<Scalars['String']>;
+  endsWith?: InputMaybe<Scalars['String']>;
+  equals?: InputMaybe<Scalars['String']>;
+  gt?: InputMaybe<Scalars['String']>;
+  gte?: InputMaybe<Scalars['String']>;
+  in?: InputMaybe<Array<Scalars['String']>>;
+  lt?: InputMaybe<Scalars['String']>;
+  lte?: InputMaybe<Scalars['String']>;
+  not?: InputMaybe<NestedStringNullableFilter>;
+  notIn?: InputMaybe<Array<Scalars['String']>>;
+  startsWith?: InputMaybe<Scalars['String']>;
+};
 
 export type Query = {
-  __typename?: "Query"
-  users: UsersResponse
-  me?: Maybe<User>
-}
+  __typename?: 'Query';
+  getSignedS3UrlForGet?: Maybe<Scalars['String']>;
+  me?: Maybe<User>;
+  user?: Maybe<User>;
+  users: UsersResponse;
+};
+
+
+export type QueryGetSignedS3UrlForGetArgs = {
+  key: Scalars['String'];
+};
+
+
+export type QueryUserArgs = {
+  cursor?: InputMaybe<UserWhereUniqueInput>;
+  distinct?: InputMaybe<Array<UserScalarFieldEnum>>;
+  orderBy?: InputMaybe<Array<UserOrderByWithRelationInput>>;
+  skip?: InputMaybe<Scalars['Int']>;
+  take?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<UserWhereInput>;
+};
+
 
 export type QueryUsersArgs = {
-  where?: Maybe<UserWhereInput>
-  orderBy?: Maybe<Array<UserOrderByInput>>
-  cursor?: Maybe<UserWhereUniqueInput>
-  take?: Maybe<Scalars["Int"]>
-  skip?: Maybe<Scalars["Int"]>
-  distinct?: Maybe<Array<UserScalarFieldEnum>>
-}
+  cursor?: InputMaybe<UserWhereUniqueInput>;
+  distinct?: InputMaybe<Array<UserScalarFieldEnum>>;
+  orderBy?: InputMaybe<Array<UserOrderByWithRelationInput>>;
+  skip?: InputMaybe<Scalars['Int']>;
+  take?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<UserWhereInput>;
+};
 
 export enum QueryMode {
-  Default = "default",
-  Insensitive = "insensitive",
+  Default = 'default',
+  Insensitive = 'insensitive'
 }
 
 export type RegisterInput = {
-  firstName: Scalars["String"]
-  lastName: Scalars["String"]
-  password: Scalars["String"]
-  email: Scalars["String"]
-}
+  email: Scalars['String'];
+  firstName: Scalars['String'];
+  lastName: Scalars['String'];
+  password: Scalars['String'];
+};
 
 export type ResetPasswordInput = {
-  password: Scalars["String"]
-  token: Scalars["String"]
-}
+  password: Scalars['String'];
+  token: Scalars['String'];
+};
 
 export enum Role {
-  User = "USER",
-  Admin = "ADMIN",
+  Admin = 'ADMIN',
+  User = 'USER'
 }
 
+export type S3BulkSignedUrlInput = {
+  files: Array<S3SignedUrlInput>;
+};
+
+export type S3SignedUrlInput = {
+  fileType: Scalars['String'];
+  key: Scalars['String'];
+};
+
+export type SignedResponse = {
+  __typename?: 'SignedResponse';
+  key: Scalars['String'];
+  uploadUrl: Scalars['String'];
+  url: Scalars['String'];
+};
+
 export enum SortOrder {
-  Asc = "asc",
-  Desc = "desc",
+  Asc = 'asc',
+  Desc = 'desc'
 }
 
 export type StringFilter = {
-  equals?: Maybe<Scalars["String"]>
-  in?: Maybe<Array<Scalars["String"]>>
-  notIn?: Maybe<Array<Scalars["String"]>>
-  lt?: Maybe<Scalars["String"]>
-  lte?: Maybe<Scalars["String"]>
-  gt?: Maybe<Scalars["String"]>
-  gte?: Maybe<Scalars["String"]>
-  contains?: Maybe<Scalars["String"]>
-  startsWith?: Maybe<Scalars["String"]>
-  endsWith?: Maybe<Scalars["String"]>
-  mode?: Maybe<QueryMode>
-  not?: Maybe<NestedStringFilter>
-}
+  contains?: InputMaybe<Scalars['String']>;
+  endsWith?: InputMaybe<Scalars['String']>;
+  equals?: InputMaybe<Scalars['String']>;
+  gt?: InputMaybe<Scalars['String']>;
+  gte?: InputMaybe<Scalars['String']>;
+  in?: InputMaybe<Array<Scalars['String']>>;
+  lt?: InputMaybe<Scalars['String']>;
+  lte?: InputMaybe<Scalars['String']>;
+  mode?: InputMaybe<QueryMode>;
+  not?: InputMaybe<NestedStringFilter>;
+  notIn?: InputMaybe<Array<Scalars['String']>>;
+  startsWith?: InputMaybe<Scalars['String']>;
+};
 
 export type StringNullableFilter = {
-  equals?: Maybe<Scalars["String"]>
-  in?: Maybe<Array<Scalars["String"]>>
-  notIn?: Maybe<Array<Scalars["String"]>>
-  lt?: Maybe<Scalars["String"]>
-  lte?: Maybe<Scalars["String"]>
-  gt?: Maybe<Scalars["String"]>
-  gte?: Maybe<Scalars["String"]>
-  contains?: Maybe<Scalars["String"]>
-  startsWith?: Maybe<Scalars["String"]>
-  endsWith?: Maybe<Scalars["String"]>
-  mode?: Maybe<QueryMode>
-  not?: Maybe<NestedStringNullableFilter>
-}
+  contains?: InputMaybe<Scalars['String']>;
+  endsWith?: InputMaybe<Scalars['String']>;
+  equals?: InputMaybe<Scalars['String']>;
+  gt?: InputMaybe<Scalars['String']>;
+  gte?: InputMaybe<Scalars['String']>;
+  in?: InputMaybe<Array<Scalars['String']>>;
+  lt?: InputMaybe<Scalars['String']>;
+  lte?: InputMaybe<Scalars['String']>;
+  mode?: InputMaybe<QueryMode>;
+  not?: InputMaybe<NestedStringNullableFilter>;
+  notIn?: InputMaybe<Array<Scalars['String']>>;
+  startsWith?: InputMaybe<Scalars['String']>;
+};
+
+export type UpdateUserInput = {
+  avatar?: InputMaybe<Scalars['String']>;
+  bio?: InputMaybe<Scalars['String']>;
+  email?: InputMaybe<Scalars['String']>;
+  firstName?: InputMaybe<Scalars['String']>;
+  lastName?: InputMaybe<Scalars['String']>;
+  password?: InputMaybe<Scalars['String']>;
+};
 
 export type User = {
-  __typename?: "User"
-  id: Scalars["String"]
-  email: Scalars["String"]
-  password: Scalars["String"]
-  firstName?: Maybe<Scalars["String"]>
-  lastName?: Maybe<Scalars["String"]>
-  avatar?: Maybe<Scalars["String"]>
-  role: Role
-  bio?: Maybe<Scalars["String"]>
-  createdAt: Scalars["DateTime"]
-  updatedAt: Scalars["DateTime"]
-  fullName: Scalars["String"]
-}
+  __typename?: 'User';
+  avatar?: Maybe<Scalars['String']>;
+  bio?: Maybe<Scalars['String']>;
+  createdAt: Scalars['DateTime'];
+  email: Scalars['String'];
+  firstName: Scalars['String'];
+  fullName: Scalars['String'];
+  id: Scalars['String'];
+  lastName: Scalars['String'];
+  role: Role;
+  updatedAt: Scalars['DateTime'];
+};
 
-export type UserOrderByInput = {
-  id?: Maybe<SortOrder>
-  email?: Maybe<SortOrder>
-  password?: Maybe<SortOrder>
-  firstName?: Maybe<SortOrder>
-  lastName?: Maybe<SortOrder>
-  avatar?: Maybe<SortOrder>
-  role?: Maybe<SortOrder>
-  bio?: Maybe<SortOrder>
-  createdAt?: Maybe<SortOrder>
-  updatedAt?: Maybe<SortOrder>
-}
+export type UserOrderByWithRelationInput = {
+  avatar?: InputMaybe<SortOrder>;
+  bio?: InputMaybe<SortOrder>;
+  createdAt?: InputMaybe<SortOrder>;
+  email?: InputMaybe<SortOrder>;
+  firstName?: InputMaybe<SortOrder>;
+  id?: InputMaybe<SortOrder>;
+  lastName?: InputMaybe<SortOrder>;
+  password?: InputMaybe<SortOrder>;
+  role?: InputMaybe<SortOrder>;
+  updatedAt?: InputMaybe<SortOrder>;
+};
 
 export enum UserScalarFieldEnum {
-  Id = "id",
-  Email = "email",
-  Password = "password",
-  FirstName = "firstName",
-  LastName = "lastName",
-  Avatar = "avatar",
-  Role = "role",
-  Bio = "bio",
-  CreatedAt = "createdAt",
-  UpdatedAt = "updatedAt",
+  Avatar = 'avatar',
+  Bio = 'bio',
+  CreatedAt = 'createdAt',
+  Email = 'email',
+  FirstName = 'firstName',
+  Id = 'id',
+  LastName = 'lastName',
+  Password = 'password',
+  Role = 'role',
+  UpdatedAt = 'updatedAt'
 }
 
 export type UserWhereInput = {
-  AND?: Maybe<Array<UserWhereInput>>
-  OR?: Maybe<Array<UserWhereInput>>
-  NOT?: Maybe<Array<UserWhereInput>>
-  id?: Maybe<StringFilter>
-  email?: Maybe<StringFilter>
-  password?: Maybe<StringFilter>
-  firstName?: Maybe<StringNullableFilter>
-  lastName?: Maybe<StringNullableFilter>
-  avatar?: Maybe<StringNullableFilter>
-  role?: Maybe<EnumRoleFilter>
-  bio?: Maybe<StringNullableFilter>
-  createdAt?: Maybe<DateTimeFilter>
-  updatedAt?: Maybe<DateTimeFilter>
-}
+  AND?: InputMaybe<Array<UserWhereInput>>;
+  NOT?: InputMaybe<Array<UserWhereInput>>;
+  OR?: InputMaybe<Array<UserWhereInput>>;
+  avatar?: InputMaybe<StringNullableFilter>;
+  bio?: InputMaybe<StringNullableFilter>;
+  createdAt?: InputMaybe<DateTimeFilter>;
+  email?: InputMaybe<StringFilter>;
+  firstName?: InputMaybe<StringFilter>;
+  id?: InputMaybe<StringFilter>;
+  lastName?: InputMaybe<StringFilter>;
+  password?: InputMaybe<StringFilter>;
+  role?: InputMaybe<EnumRoleFilter>;
+  updatedAt?: InputMaybe<DateTimeFilter>;
+};
 
 export type UserWhereUniqueInput = {
-  id?: Maybe<Scalars["String"]>
-  email?: Maybe<Scalars["String"]>
-}
+  email?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['String']>;
+};
 
 export type UsersResponse = {
-  __typename?: "UsersResponse"
-  count: Scalars["Int"]
-  items: Array<User>
-}
+  __typename?: 'UsersResponse';
+  count: Scalars['Int'];
+  items: Array<User>;
+};
 
-export type MeFragment = { __typename?: "User" } & Pick<User, "id" | "firstName" | "lastName" | "email">
+export type MeFragment = { __typename?: 'User', id: string, firstName: string, lastName: string, email: string };
 
-export type MeQueryVariables = Exact<{ [key: string]: never }>
+export type MeQueryVariables = Exact<{ [key: string]: never; }>;
 
-export type MeQuery = { __typename?: "Query" } & { me?: Maybe<{ __typename?: "User" } & MeFragment> }
+
+export type MeQuery = { __typename?: 'Query', me?: { __typename?: 'User', id: string, firstName: string, lastName: string, email: string } | null | undefined };
 
 export type LoginMutationVariables = Exact<{
-  data: LoginInput
-}>
+  data: LoginInput;
+}>;
 
-export type LoginMutation = { __typename?: "Mutation" } & {
-  login: { __typename?: "AuthResponse" } & Pick<AuthResponse, "token"> & {
-      user: { __typename?: "User" } & MeFragment
-    }
-}
+
+export type LoginMutation = { __typename?: 'Mutation', login: { __typename?: 'AuthResponse', token: string, user: { __typename?: 'User', id: string, firstName: string, lastName: string, email: string } } };
 
 export const MeFragmentDoc = gql`
-  fragment Me on User {
-    id
-    firstName
-    lastName
-    email
-  }
-`
+    fragment Me on User {
+  id
+  firstName
+  lastName
+  email
+}
+    `;
 export const MeDocument = gql`
-  query Me {
-    me {
+    query Me {
+  me {
+    ...Me
+  }
+}
+    ${MeFragmentDoc}`;
+export function useMeQuery(baseOptions?: Apollo.QueryHookOptions<MeQuery, MeQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<MeQuery, MeQueryVariables>(MeDocument, options);
+      }
+export function useMeLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<MeQuery, MeQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<MeQuery, MeQueryVariables>(MeDocument, options);
+        }
+export type MeQueryHookResult = ReturnType<typeof useMeQuery>;
+export type MeLazyQueryHookResult = ReturnType<typeof useMeLazyQuery>;
+export type MeQueryResult = Apollo.QueryResult<MeQuery, MeQueryVariables>;
+export const LoginDocument = gql`
+    mutation Login($data: LoginInput!) {
+  login(data: $data) {
+    user {
       ...Me
     }
+    token
   }
-  ${MeFragmentDoc}
-`
-export function useMeQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<MeQuery, MeQueryVariables>) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return ApolloReactHooks.useQuery<MeQuery, MeQueryVariables>(MeDocument, options)
 }
-export function useMeLazyQuery(
-  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<MeQuery, MeQueryVariables>,
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return ApolloReactHooks.useLazyQuery<MeQuery, MeQueryVariables>(MeDocument, options)
-}
-export type MeQueryHookResult = ReturnType<typeof useMeQuery>
-export type MeLazyQueryHookResult = ReturnType<typeof useMeLazyQuery>
-export type MeQueryResult = Apollo.QueryResult<MeQuery, MeQueryVariables>
-export const LoginDocument = gql`
-  mutation Login($data: LoginInput!) {
-    login(data: $data) {
-      user {
-        ...Me
+    ${MeFragmentDoc}`;
+export function useLoginMutation(baseOptions?: Apollo.MutationHookOptions<LoginMutation, LoginMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<LoginMutation, LoginMutationVariables>(LoginDocument, options);
       }
-      token
-    }
-  }
-  ${MeFragmentDoc}
-`
-export function useLoginMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<LoginMutation, LoginMutationVariables>,
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return ApolloReactHooks.useMutation<LoginMutation, LoginMutationVariables>(LoginDocument, options)
-}
-export type LoginMutationHookResult = ReturnType<typeof useLoginMutation>
-export type LoginMutationResult = Apollo.MutationResult<LoginMutation>
-export type LoginMutationOptions = Apollo.BaseMutationOptions<LoginMutation, LoginMutationVariables>
+export type LoginMutationHookResult = ReturnType<typeof useLoginMutation>;
+export type LoginMutationResult = Apollo.MutationResult<LoginMutation>;
+export type LoginMutationOptions = Apollo.BaseMutationOptions<LoginMutation, LoginMutationVariables>;

@@ -4,12 +4,4 @@ const withTM = require("next-transpile-modules")(["@boilerplate/theme"])
 const sentryWebpackPluginOptions = {
   silent: true,
 }
-module.exports = withSentryConfig(
-  withTM({
-    swcMinify: false,
-    experimental: {
-      esmExternals: false,
-    },
-  }),
-  sentryWebpackPluginOptions,
-)
+module.exports = withSentryConfig(withTM({}), sentryWebpackPluginOptions)

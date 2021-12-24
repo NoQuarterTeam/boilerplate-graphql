@@ -2,6 +2,7 @@ import * as React from "react"
 import { gql, useApolloClient } from "@apollo/client"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import { useNavigation } from "@react-navigation/core"
+import { StatusBar } from "expo-status-bar"
 import { Pressable, SmallCloseIcon, Stack, Text } from "native-base"
 
 import { Form, FormButton } from "../components/Form"
@@ -50,7 +51,8 @@ function _Login() {
   }
   return (
     <Form {...form}>
-      <Stack p={6} space={2} w="100%">
+      <StatusBar style="light" />
+      <Stack p={6} space={1} w="100%">
         <Pressable position="absolute" top={4} right={4} onPress={goBack}>
           <SmallCloseIcon />
         </Pressable>

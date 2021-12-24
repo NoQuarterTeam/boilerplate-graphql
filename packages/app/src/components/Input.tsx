@@ -37,11 +37,11 @@ export const Input = ({ label, name, labelStyle, containerStyle, parser, ...prop
   return (
     <Box w="100%" {...containerStyle}>
       {label && (
-        <Text mb={2} fontSize="md" fontWeight={500} {...labelStyle}>
+        <Text mb={1} fontSize="md" fontWeight={500} {...labelStyle}>
           {label}
         </Text>
       )}
-      <NInput value={value} onChangeText={handleUpdate} mb={2} {...props} />
+      <NInput value={value} onChangeText={handleUpdate} mb={1} fontSize="lg" {...props} />
       <InputError error={fieldError} />
     </Box>
   )

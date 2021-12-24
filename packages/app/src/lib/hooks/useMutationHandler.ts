@@ -1,6 +1,6 @@
 import { FieldError } from "react-hook-form"
 import { ExecutionResult } from "graphql"
-import { IToastProps,useToast } from "native-base"
+import { IToastProps, useToast } from "native-base"
 
 export interface ValidationError {
   property: string
@@ -43,13 +43,15 @@ async function mutationHandler<T>(
       res.errors?.[0].message.includes("Not authorized")
     ) {
       toast({
+        placement: "top",
         status: "error",
-        description: "You are not authorized to perform this action.",
+        title: "You are not authorized to perform this action.",
       })
     } else if (res.errors?.[0].message.includes("Not authenticated")) {
       toast({
+        placement: "top",
         status: "error",
-        description: "Please login to continue.",
+        title: "Please login to continue.",
       })
     } else if (res.errors?.[0].extensions?.exception?.validationErrors) {
       const validationErrors = res.errors?.[0].extensions?.exception?.validationErrors
@@ -62,23 +64,30 @@ async function mutationHandler<T>(
       if (handler.onAppError) {
         await handler.onAppError(res.errors[0].message, toast)
       } else {
-        toast({ status: "error", description: res.errors[0].message })
+        toast({
+          placement: "top",
+          w: "300px",
+          status: "error",
+          title: res.errors[0].message,
+        })
       }
     } else if (res.errors?.[0].message) {
       if (handler.onServerError) {
         await handler.onServerError(res.errors[0].message, toast)
       } else {
         toast({
+          placement: "top",
           status: "error",
-          description: "Server error. We have been notified.",
+          title: "Server error. We have been notified.",
         })
       }
     }
   } catch (e) {
     console.log(e)
     toast({
+      placement: "top",
       status: "error",
-      description: "Server error. We have been notified.",
+      title: "Server error. We have been notified.",
     })
   } finally {
     if (handler?.onFinish) {
@@ -102,10 +111,10 @@ export function useMutationHandler() {
       const res = await mutation()
       return mutationHandler(res, actions || {}, toast.show, formActions)
     } catch (e) {
-      // TODO: is block this needed?
-      console.log(e)
+      console.log("Oops", e)
       toast.show({
-        description: "Something went wrong. We have been notified!",
+        placement: "top",
+        title: "Something went wrong. We have been notified!",
         status: "error",
       })
       return
