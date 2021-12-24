@@ -5,8 +5,9 @@ const workspaceRoot = path.resolve(__dirname, "../..")
 const projectRoot = __dirname
 
 const config = getDefaultConfig(projectRoot)
+
 // allow cjs
-// config.resolver.assetExts.push("cjs")
+config.resolver.assetExts.push("cjs")
 
 // 1. Watch all files within the monorepo
 config.watchFolders = [workspaceRoot]
