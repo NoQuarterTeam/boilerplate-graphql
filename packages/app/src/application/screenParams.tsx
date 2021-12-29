@@ -9,3 +9,10 @@ export type ScreenParamsList = {
 export type NavigationParams<T extends keyof ScreenParamsList> = StackNavigationProp<ScreenParamsList, T>
 
 export type RouteParams<T extends keyof ScreenParamsList> = RouteProp<ScreenParamsList, T>
+
+declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
+  namespace ReactNavigation {
+    interface RootParamList extends ScreenParamsList {}
+  }
+}

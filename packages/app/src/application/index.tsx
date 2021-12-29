@@ -23,6 +23,7 @@ const client = new ApolloClient({
   link: from([authLink, httpLink]),
   cache: new InMemoryCache(),
   defaultOptions: {
+    watchQuery: { errorPolicy: "all" },
     mutate: { errorPolicy: "all" },
     query: { errorPolicy: "all" },
   },
