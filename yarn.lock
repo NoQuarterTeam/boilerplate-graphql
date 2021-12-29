@@ -8804,10 +8804,10 @@ expo-keep-awake@~10.0.1:
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-10.0.1.tgz#9f1176216c41eee20843c8232acfdca2bc32d334"
   integrity sha512-kcBtoDGkm3RRe6BpKDvR7gof/ErajEia38u92pRvNRctdh+p8AFO7GQuiipyg3iMfhcCFVTCIV7h3tuA0g/yDw==
 
-expo-modules-autolinking@0.5.3:
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/expo-modules-autolinking/-/expo-modules-autolinking-0.5.3.tgz#e66d36db9c67dad6247ed72ce050dee4cb50eb64"
-  integrity sha512-l6jbfApkU7AX8FLr8o+O7/yXamxdaP6a8yZ/mNBudZIV6AVeMI602O0AFErsDj8xTcJSe0puIX2WjK29XlVayg==
+expo-modules-autolinking@0.5.4:
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/expo-modules-autolinking/-/expo-modules-autolinking-0.5.4.tgz#d105d46cb6faab71c72c3181b9c2ab8cc8b09dba"
+  integrity sha512-Q2wQp7tE7nlkmIQslQxa02uswOAJZXuJHWmb5oCG8BkzL6QBmDURJ/1j5hlIKuyN+j1M0rZbzyVI+ufyziGsSQ==
   dependencies:
     chalk "^4.1.0"
     commander "^7.2.0"
@@ -8828,10 +8828,10 @@ expo-status-bar@1.2.0:
   resolved "https://registry.yarnpkg.com/expo-status-bar/-/expo-status-bar-1.2.0.tgz#16e73205da563f9536f562e439081e30e318a82e"
   integrity sha512-pVZZ/kDCXFK79E4dCtRecs3XLC8aiwlciutSd/fFmUPJSQZ1Txia6hlKajPt0GAYft8/YnT0V3URXzWZOBniYQ==
 
-expo@44.0.2:
-  version "44.0.2"
-  resolved "https://registry.yarnpkg.com/expo/-/expo-44.0.2.tgz#1d116a0aa7f657d725fa968342b08b46fdb95bff"
-  integrity sha512-MqvYb//z+s8j8DljcEhHLF8OGuOOcofoC03MK/f6WVTCur+JnCcghTZuvreb0vac910HkRUzCNb96rHt7MQcBA==
+expo@44.0.3:
+  version "44.0.3"
+  resolved "https://registry.yarnpkg.com/expo/-/expo-44.0.3.tgz#6f30ff51fbb2608a408c7ac10aeb703fc04d304e"
+  integrity sha512-uk6t89gV5Gs5MdHXZkjKlBdXSo4j+oKj/BrK/FTFlKvEqEL34SbEXy9IcS0o7IDPFuqVIzclXcnAI+sOU4J5Lg==
   dependencies:
     "@babel/runtime" "^7.14.0"
     "@expo/metro-config" "~0.2.6"
@@ -8844,7 +8844,7 @@ expo@44.0.2:
     expo-file-system "~13.1.0"
     expo-font "~10.0.4"
     expo-keep-awake "~10.0.1"
-    expo-modules-autolinking "0.5.3"
+    expo-modules-autolinking "0.5.4"
     expo-modules-core "0.6.3"
     fbemitter "^2.1.1"
     invariant "^2.2.4"
