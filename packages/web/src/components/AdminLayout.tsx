@@ -1,6 +1,6 @@
 import * as React from "react"
 import { BiMoon, BiSun } from "react-icons/bi"
-import { CgExternal, CgUser } from "react-icons/cg"
+import { CgExternal, CgHome, CgUser } from "react-icons/cg"
 import {
   Box,
   Button,
@@ -41,6 +41,7 @@ export function AdminLayout(props: Props) {
     }
   }, [loading, me, router])
 
+  const homeLinkColor = useColorModeValue("black", "white")
   const bg = useColorModeValue("white", "gray.900")
   const borderColor = useColorModeValue("gray.100", "gray.900")
   if (loading || !me || me.role !== Role.Admin) {
@@ -64,6 +65,9 @@ export function AdminLayout(props: Props) {
         borderColor={borderColor}
       >
         <Stack spacing={4}>
+          <SidebarLink href="/" icon={<Box boxSize="18px" as={CgHome} />} color={homeLinkColor}>
+            Home
+          </SidebarLink>
           <SidebarLink href="/admin/users" icon={<Box boxSize="18px" as={CgUser} />}>
             Users
           </SidebarLink>

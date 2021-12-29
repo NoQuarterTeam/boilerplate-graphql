@@ -1,9 +1,22 @@
 import * as React from "react"
 import { gql } from "@apollo/client"
+import dayjs from "dayjs"
 
 import { useGetBulkSignedUrlForPutMutation, useGetSignedUrlForPutMutation } from "../graphql"
-import { formatFileName } from "../helpers/utils"
 import { useMutationHandler } from "./useMutationHandler"
+
+export const formatFileName = (filename: string): string => {
+  const type = filename.split(".").pop()
+  let name = filename
+    .split(".")[0]
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "-")
+  name = dayjs().format("YYYYMMDDHHmmss") + "-" + name
+  if (type) {
+    name = name + "." + type.toLowerCase()
+  }
+  return name
+}
 
 const _ = gql`
   mutation GetSignedUrlForPut($data: S3SignedUrlInput!) {

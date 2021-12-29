@@ -1,12 +1,11 @@
 import * as React from "react"
 import { gql, useApolloClient } from "@apollo/client"
-import { Box, Button, Center, Flex, Heading, Stack } from "@chakra-ui/react"
-import cookie from "cookie"
+import * as c from "@chakra-ui/react"
 import Head from "next/head"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
-import { REDIRECT_PATH, SESSION_TOKEN } from "lib/config"
+import { LOGIN_TOKEN_KEY,REDIRECT_PATH } from "lib/config"
 import { LoginInput, MeDocument, MeFragmentDoc, MeQuery, useLoginMutation } from "lib/graphql"
 import { useForm } from "lib/hooks/useForm"
 import Yup from "lib/yup"
@@ -43,10 +42,10 @@ function Login() {
 
   const onSubmit = (data: LoginInput) => {
     return form.handler(() => login({ variables: { data } }), {
-      onSuccess: (data) => {
-        document.cookie = cookie.serialize(SESSION_TOKEN, data.login.token, {
-          path: "/",
-          maxAge: 30 * 24 * 60 * 60, // 30 days
+      onSuccess: async (data) => {
+        await fetch("/api/login", {
+          method: "post",
+          body: JSON.stringify({ [LOGIN_TOKEN_KEY]: data.login.token }),
         })
         client.writeQuery<MeQuery>({ query: MeDocument, data: { me: data.login.user } })
         router.replace(redirect || "/")
@@ -54,28 +53,28 @@ function Login() {
     })
   }
   return (
-    <Center flexDir="column" pt={10}>
+    <c.Center flexDir="column" pt={10}>
       <Head>
         <title>Boilerplate - Login</title>
       </Head>
-      <Box w={["100%", 400]}>
+      <c.Box w={["100%", 400]}>
         <Form onSubmit={onSubmit} {...form}>
-          <Stack spacing={2}>
-            <Heading as="h1">Login</Heading>
+          <c.Stack spacing={2}>
+            <c.Heading as="h1">Login</c.Heading>
             <Input name="email" label="Email" placeholder="jim@gmail.com" />
             <Input name="password" label="Password" type="password" placeholder="********" />
-            <Button colorScheme="purple" type="submit" isFullWidth isLoading={loading} isDisabled={loading}>
+            <c.Button colorScheme="purple" type="submit" isFullWidth isLoading={loading} isDisabled={loading}>
               Login
-            </Button>
+            </c.Button>
             <FormError />
-            <Flex justify="space-between">
+            <c.Flex justify="space-between">
               <Link href="/register">Register</Link>
               <Link href="/forgot-password">Forgot password?</Link>
-            </Flex>
-          </Stack>
+            </c.Flex>
+          </c.Stack>
         </Form>
-      </Box>
-    </Center>
+      </c.Box>
+    </c.Center>
   )
 }
 

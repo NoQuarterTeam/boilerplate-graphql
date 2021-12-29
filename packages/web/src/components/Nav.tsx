@@ -85,7 +85,8 @@ export function Nav() {
           <MenuButton
             as={IconButton}
             display={{ base: "flex", md: me ? "flex" : "none" }}
-            variant="unstyled"
+            variant="ghost"
+            borderRadius="full"
             icon={me ? <Avatar size="xs" src={me.avatar || undefined} /> : <Box as={GiHamburgerMenu} />}
           />
 

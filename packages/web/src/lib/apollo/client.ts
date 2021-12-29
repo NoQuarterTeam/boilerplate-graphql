@@ -1,37 +1,21 @@
 import * as React from "react"
 import { ApolloClient, createHttpLink, InMemoryCache, NormalizedCacheObject } from "@apollo/client"
-import { setContext } from "@apollo/client/link/context"
 import { mergeDeep } from "@apollo/client/utilities"
 
-import { API_URL, SESSION_TOKEN } from "lib/config"
-import { isBrowser, parseCookies } from "lib/helpers/utils"
-
-type Callback = () => string
-type Options = {
-  getToken: Callback
-}
+export const isBrowser = () => typeof window !== "undefined"
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null
 
-const httpLink = createHttpLink({ uri: API_URL })
+const httpLink = createHttpLink({ uri: "/api/graphql" })
 
-function createApolloClient(initialState: null | Record<string, any>, options: Options) {
-  const { getToken } = options
-  const authLink = setContext((_, { headers }) => {
-    const token = getToken()
-    return {
-      headers: {
-        ...headers,
-        authorization: token ? `Bearer ${token}` : "",
-      },
-    }
-  })
-
+function createApolloClient(initialState: null | Record<string, any>) {
   return new ApolloClient({
-    ssrMode: false,
-    link: authLink.concat(httpLink),
+    ssrMode: !isBrowser(),
+    link: httpLink,
     name: "web",
+    credentials: "include",
     defaultOptions: {
+      watchQuery: { errorPolicy: "all" },
       mutate: { errorPolicy: "all" },
       query: { errorPolicy: "all" },
     },
@@ -39,9 +23,8 @@ function createApolloClient(initialState: null | Record<string, any>, options: O
   })
 }
 
-export function initializeApollo(initialState: null | Record<string, any>, options: Options) {
-  const _apolloClient = apolloClient ?? createApolloClient(initialState, options)
-
+export function initializeApollo(initialState: null | Record<string, any>) {
+  const _apolloClient = apolloClient ?? createApolloClient(initialState)
   // If your page has Next.js data fetching methods that use Apollo Client, the initial state
   // gets hydrated here
   if (initialState) {
@@ -50,7 +33,7 @@ export function initializeApollo(initialState: null | Record<string, any>, optio
     _apolloClient.cache.restore(data)
   }
   // For SSG and SSR always create a new Apollo Client
-  if (!isBrowser) return _apolloClient
+  if (!isBrowser()) return _apolloClient
   // Create the Apollo Client once in the client
   if (!apolloClient) apolloClient = _apolloClient
 
@@ -58,9 +41,6 @@ export function initializeApollo(initialState: null | Record<string, any>, optio
 }
 
 export function useApollo(initialState: any = null) {
-  const store = React.useMemo(
-    () => initializeApollo(initialState, { getToken: () => parseCookies()[SESSION_TOKEN] }),
-    [initialState],
-  )
+  const store = React.useMemo(() => initializeApollo(initialState), [initialState])
   return store
 }

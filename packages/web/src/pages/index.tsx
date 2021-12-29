@@ -15,7 +15,7 @@ export default function Home() {
         <title>Boilerplate</title>
       </Head>
 
-      <Limiter pt={20} minH="100vh">
+      <Limiter pt={20} minH="calc(100vh - 65px)">
         <Center flexDir="column">
           <Heading as="h1" mb={4} textAlign="center">
             Welcome to the Boilerplate

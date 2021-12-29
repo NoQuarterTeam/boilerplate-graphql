@@ -31,3 +31,4 @@ export const API_URL = IS_PRODUCTION ? "https://boilerplate.graphcdn.app" : "htt
 export const WEB_URL = IS_PRODUCTION ? "boilerplate.noquarter.co" : "localhost:3000"
 
 export const SESSION_TOKEN = "boilerplate.session.token"
+export const LOGIN_TOKEN_KEY = "token"

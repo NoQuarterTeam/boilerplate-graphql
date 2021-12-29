@@ -8,6 +8,7 @@ export const _ = gql`
     firstName
     lastName
     email
+    role
   }
 `
 

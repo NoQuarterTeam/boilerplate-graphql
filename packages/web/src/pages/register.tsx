@@ -1,12 +1,11 @@
 import * as React from "react"
 import { gql, useApolloClient } from "@apollo/client"
 import { Box, Button, Center, Heading, Stack } from "@chakra-ui/react"
-import cookie from "cookie"
 import Head from "next/head"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
-import { REDIRECT_PATH, SESSION_TOKEN } from "lib/config"
+import { LOGIN_TOKEN_KEY,REDIRECT_PATH } from "lib/config"
 import { MeDocument, MeFragmentDoc, MeQuery, RegisterInput, useRegisterMutation } from "lib/graphql"
 import { useForm } from "lib/hooks/useForm"
 import Yup from "lib/yup"
@@ -45,10 +44,10 @@ function Register() {
 
   const onSubmit = (data: RegisterInput) => {
     return form.handler(() => register({ variables: { data } }), {
-      onSuccess: (data) => {
-        document.cookie = cookie.serialize(SESSION_TOKEN, data.register.token, {
-          path: "/",
-          maxAge: 30 * 24 * 60 * 60, // 30 days
+      onSuccess: async (data) => {
+        await fetch("/api/login", {
+          method: "post",
+          body: JSON.stringify({ [LOGIN_TOKEN_KEY]: data.register.token }),
         })
         client.writeQuery<MeQuery>({ query: MeDocument, data: { me: data.register.user } })
         router.replace(redirect || "/")
