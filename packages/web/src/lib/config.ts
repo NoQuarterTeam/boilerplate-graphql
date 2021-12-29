@@ -1,19 +1,14 @@
 // don't import files or modules into this file
 const { APP_ENV } = process.env
-let env: "production" | "development"
+let env = APP_ENV as "production" | "development"
 
-if (APP_ENV) {
-  env = APP_ENV as "production" | "development"
-} else {
+if (!env) {
   const hostname = typeof window !== "undefined" && window?.location?.hostname
+  env = "development"
   if (hostname) {
     if (hostname.includes("boilerplate")) {
       env = "production"
-    } else {
-      env = "development"
     }
-  } else {
-    env = "development"
   }
 }
 
