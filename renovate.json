@@ -1,6 +1,6 @@
 {
   "extends": ["config:base"],
-  "baseBranches": ["main"],
+  "baseBranches": ["develop"],
   "automerge": true,
   "major": { "automerge": false },
   "requiredStatusChecks": null,
