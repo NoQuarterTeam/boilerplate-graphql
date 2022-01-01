@@ -38,7 +38,7 @@
     "@sentry/tracing": "6.16.1",
     "apollo-graphql": "0.9.5",
     "apollo-server-express": "3.6.1",
-    "aws-sdk": "2.1046.0",
+    "aws-sdk": "2.1048.0",
     "bcryptjs": "2.4.3",
     "chalk": "4.1.2",
     "class-transformer": "0.5.1",
