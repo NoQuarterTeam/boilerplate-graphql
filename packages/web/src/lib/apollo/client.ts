@@ -1,12 +1,13 @@
 import * as React from "react"
 import { ApolloClient, createHttpLink, InMemoryCache, NormalizedCacheObject } from "@apollo/client"
 import { mergeDeep } from "@apollo/client/utilities"
+import { API_URL } from "lib/config"
 
 export const isBrowser = () => typeof window !== "undefined"
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null
 
-const httpLink = createHttpLink({ uri: "/api/graphql" })
+const httpLink = createHttpLink({ uri: isBrowser() ? API_URL : "/api/graphql" })
 
 function createApolloClient(initialState: null | Record<string, any>) {
   return new ApolloClient({
