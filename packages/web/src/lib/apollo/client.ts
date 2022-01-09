@@ -7,7 +7,7 @@ export const isBrowser = () => typeof window !== "undefined"
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null
 
-const httpLink = createHttpLink({ uri: isBrowser() ? API_URL : "/api/graphql" })
+const httpLink = createHttpLink({ uri: !isBrowser() ? API_URL : "/api/graphql" })
 
 function createApolloClient(initialState: null | Record<string, any>) {
   return new ApolloClient({
