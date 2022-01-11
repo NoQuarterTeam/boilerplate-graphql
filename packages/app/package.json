@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@apollo/client": "3.5.7",
-    "@react-native-async-storage/async-storage": "1.15.14",
+    "@react-native-async-storage/async-storage": "1.15.15",
     "@react-navigation/core": "6.1.0",
     "@react-navigation/native": "6.0.6",
     "@react-navigation/stack": "6.0.11",
