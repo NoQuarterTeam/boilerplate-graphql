@@ -35,7 +35,7 @@
     "@hookform/resolvers": "2.8.5",
     "@sentry/nextjs": "6.16.1",
     "dayjs": "1.10.7",
-    "framer-motion": "5.5.7",
+    "framer-motion": "5.5.8",
     "graphql": "15.8.0",
     "next": "12.0.8",
     "next-http-proxy-middleware": "1.1.2",
