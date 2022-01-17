@@ -4,10 +4,11 @@ import { Service } from "typedi"
 
 import { UserWhereInput } from "@generated"
 
-import { createAuthToken } from "../../lib/jwt"
+import { createAuthToken, createRefreshToken } from "../../lib/jwt"
 import { prisma } from "../../lib/prisma"
 import { LoginInput } from "./inputs/login.input"
 import { RegisterInput } from "./inputs/register.input"
+import { RefreshTokenResponse } from "./responses/refreshToken.response"
 import { User } from "./user.model"
 
 @Service()
@@ -34,7 +35,9 @@ export class UserService {
     }
   }
 
-  createAuthToken(user: User): string {
-    return createAuthToken({ id: user.id })
+  createAuthTokens(user: User): RefreshTokenResponse {
+    const token = createAuthToken({ id: user.id })
+    const refreshToken = createRefreshToken({ id: user.id })
+    return { token, refreshToken }
   }
 }

@@ -1,12 +1,10 @@
 import { Field, ObjectType } from "type-graphql"
 
 import { User } from "../user.model"
+import { RefreshTokenResponse } from "./refreshToken.response"
 
 @ObjectType()
-export class AuthResponse {
+export class AuthResponse extends RefreshTokenResponse {
   @Field()
   user: User
-
-  @Field()
-  token: string
 }

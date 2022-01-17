@@ -5,8 +5,9 @@ import Head from "next/head"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
-import { LOGIN_TOKEN_KEY,REDIRECT_PATH } from "lib/config"
-import { MeDocument, MeFragmentDoc, MeQuery, RegisterInput, useRegisterMutation } from "lib/graphql"
+import { LOGIN_REFRESH_TOKEN_KEY, LOGIN_TOKEN_KEY, REDIRECT_PATH } from "lib/config"
+import type { MeQuery, RegisterInput} from "lib/graphql";
+import { MeDocument, MeFragmentDoc, useRegisterMutation } from "lib/graphql"
 import { useForm } from "lib/hooks/useForm"
 import Yup from "lib/yup"
 import { Form } from "components/Form"
@@ -22,6 +23,7 @@ const _ = gql`
         ...Me
       }
       token
+      refreshToken
     }
   }
   ${MeFragmentDoc}
@@ -47,7 +49,10 @@ function Register() {
       onSuccess: async (data) => {
         await fetch("/api/login", {
           method: "post",
-          body: JSON.stringify({ [LOGIN_TOKEN_KEY]: data.register.token }),
+          body: JSON.stringify({
+            [LOGIN_TOKEN_KEY]: data.register.token,
+            [LOGIN_REFRESH_TOKEN_KEY]: data.register.refreshToken,
+          }),
         })
         client.writeQuery<MeQuery>({ query: MeDocument, data: { me: data.register.user } })
         router.replace(redirect || "/")

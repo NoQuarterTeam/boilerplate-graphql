@@ -1,9 +1,10 @@
+import { UserInputError } from "apollo-server-express"
 import { Arg, Args, Ctx, Mutation, Query, Resolver } from "type-graphql"
 import { Inject, Service } from "typedi"
 
 import { FindFirstUserArgs, FindManyUserArgs, Role } from "@generated"
 
-import { createToken, decryptToken } from "../../lib/jwt"
+import { createToken, decodeRefreshToken, decryptToken } from "../../lib/jwt"
 import { prisma } from "../../lib/prisma"
 import { ContextUser } from "../shared/contextUser"
 import { CurrentUser } from "../shared/currentUser"
@@ -14,6 +15,7 @@ import { RegisterInput } from "./inputs/register.input"
 import { ResetPasswordInput } from "./inputs/resetPassword.input"
 import { UpdateUserInput } from "./inputs/updateUser.input"
 import { AuthResponse } from "./responses/auth.response"
+import { RefreshTokenResponse } from "./responses/refreshToken.response"
 import { UsersResponse } from "./responses/users.response"
 import { UserMailer } from "./user.mailer"
 import { User } from "./user.model"
@@ -58,20 +60,31 @@ export default class UserResolver {
   @Mutation(() => AuthResponse)
   async login(@Arg("data") data: LoginInput, @Ctx() context: ResolverContext): Promise<AuthResponse> {
     const user = await this.userService.login(data)
-    const token = this.userService.createAuthToken(user)
+    const tokens = this.userService.createAuthTokens(user)
     context.req.user = user
     context.req.currentUser = user
-    return { user, token }
+    return { user, ...tokens }
+  }
+
+  // REFRESH TOKEN
+  @Query(() => RefreshTokenResponse)
+  async refreshToken(@Arg("refreshToken") refreshToken: string): Promise<RefreshTokenResponse> {
+    const { id } = decodeRefreshToken<{ id: string }>(refreshToken)
+    if (!id) throw new UserInputError("Unauthenticated")
+    const user = await prisma.user.findUnique({ where: { id } })
+    if (!user) throw new UserInputError("Unauthenticated")
+    const tokens = this.userService.createAuthTokens(user)
+    return tokens
   }
 
   // REGISTER
   @Mutation(() => AuthResponse)
   async register(@Arg("data") data: RegisterInput, @Ctx() context: ResolverContext): Promise<AuthResponse> {
     const user = await this.userService.register(data)
-    const token = this.userService.createAuthToken(user)
+    const tokens = this.userService.createAuthTokens(user)
     context.req.user = user
     context.req.currentUser = user
-    return { user, token }
+    return { user, ...tokens }
   }
 
   // FORGOT PASSWORD

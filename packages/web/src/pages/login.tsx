@@ -5,8 +5,9 @@ import Head from "next/head"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
-import { LOGIN_TOKEN_KEY,REDIRECT_PATH } from "lib/config"
-import { LoginInput, MeDocument, MeFragmentDoc, MeQuery, useLoginMutation } from "lib/graphql"
+import { LOGIN_REFRESH_TOKEN_KEY, LOGIN_TOKEN_KEY, REDIRECT_PATH } from "lib/config"
+import type { LoginInput, MeQuery} from "lib/graphql";
+import { MeDocument, MeFragmentDoc, useLoginMutation } from "lib/graphql"
 import { useForm } from "lib/hooks/useForm"
 import Yup from "lib/yup"
 import { Form } from "components/Form"
@@ -22,6 +23,7 @@ const _ = gql`
         ...Me
       }
       token
+      refreshToken
     }
   }
   ${MeFragmentDoc}
@@ -45,7 +47,10 @@ function Login() {
       onSuccess: async (data) => {
         await fetch("/api/login", {
           method: "post",
-          body: JSON.stringify({ [LOGIN_TOKEN_KEY]: data.login.token }),
+          body: JSON.stringify({
+            [LOGIN_TOKEN_KEY]: data.login.token,
+            [LOGIN_REFRESH_TOKEN_KEY]: data.login.refreshToken,
+          }),
         })
         client.writeQuery<MeQuery>({ query: MeDocument, data: { me: data.login.user } })
         router.replace(redirect || "/")

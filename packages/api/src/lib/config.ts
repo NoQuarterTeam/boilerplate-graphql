@@ -1,3 +1,5 @@
+import type jwt from "express-jwt"
+
 // ENV VARIABLES
 export const {
   NODE_ENV = "development",
@@ -5,6 +7,7 @@ export const {
   APP_SECRET = "APP_SECRET",
   APOLLO_KEY = "APOLLO_KEY",
   APP_AUTH_SECRET = "APP_AUTH_SECRET",
+  APP_REFRESH_SECRET = "APP_REFRESH_SECRET",
   SENTRY_DSN = "SENTRY_DSN",
   SENDGRID_API_KEY = "SENDGRID_API_KEY",
   AWS_S3_BUCKET = "S3_BUCKET",
@@ -17,8 +20,8 @@ export const {
 // IS PRODUCTION
 export const IS_PRODUCTION = APP_ENV === "production"
 
-//  JWT AUTH
-export const JWT_AUTH = {
+//  JWT APP AUTH
+export const JWT_AUTH: jwt.Options = {
   secret: APP_AUTH_SECRET,
   credentialsRequired: false,
   algorithms: ["HS256"],

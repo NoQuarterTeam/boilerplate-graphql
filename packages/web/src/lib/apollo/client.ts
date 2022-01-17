@@ -1,18 +1,50 @@
 import * as React from "react"
-import { ApolloClient, createHttpLink, InMemoryCache, NormalizedCacheObject } from "@apollo/client"
+import type {
+  NormalizedCacheObject} from "@apollo/client";
+import {
+  ApolloClient,
+  createHttpLink,
+  from,
+  fromPromise,
+  InMemoryCache
+} from "@apollo/client"
+import { onError } from "@apollo/client/link/error"
 import { mergeDeep } from "@apollo/client/utilities"
+import type { RefreshResponse } from "pages/api/refresh-token"
+
 import { API_URL } from "lib/config"
 
 export const isBrowser = () => typeof window !== "undefined"
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null
 
+const refreshToken = () => fetch("/api/refresh-token", { method: "post" })
+
+const errorLink = onError(({ graphQLErrors, operation, forward }) => {
+  if (graphQLErrors) {
+    for (const err of graphQLErrors) {
+      switch (err.extensions.code) {
+        case "UNAUTHENTICATED":
+          return fromPromise(
+            refreshToken().then(async (res) => {
+              const data: RefreshResponse = await res.json()
+              if (data.success) return true
+              window.location.href = "/login"
+              return false
+            }),
+          )
+            .filter(Boolean)
+            .flatMap(() => forward(operation))
+      }
+    }
+  }
+})
 const httpLink = createHttpLink({ uri: !isBrowser() ? API_URL : "/api/graphql" })
 
 function createApolloClient(initialState: null | Record<string, any>) {
   return new ApolloClient({
     ssrMode: !isBrowser(),
-    link: httpLink,
+    link: from([errorLink, httpLink]),
     name: "web",
     credentials: "include",
     defaultOptions: {
