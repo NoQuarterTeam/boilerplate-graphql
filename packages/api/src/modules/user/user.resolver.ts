@@ -1,10 +1,10 @@
-import { UserInputError } from "apollo-server-express"
+import { AuthenticationError } from "apollo-server-express"
 import { Arg, Args, Ctx, Mutation, Query, Resolver } from "type-graphql"
 import { Inject, Service } from "typedi"
 
 import { FindFirstUserArgs, FindManyUserArgs, Role } from "@generated"
 
-import { createToken, decodeRefreshToken, decryptToken } from "../../lib/jwt"
+import { createToken, decodeRefreshToken, decodeToken } from "../../lib/jwt"
 import { prisma } from "../../lib/prisma"
 import { ContextUser } from "../shared/contextUser"
 import { CurrentUser } from "../shared/currentUser"
@@ -70,9 +70,9 @@ export default class UserResolver {
   @Query(() => RefreshTokenResponse)
   async refreshToken(@Arg("refreshToken") refreshToken: string): Promise<RefreshTokenResponse> {
     const { id } = decodeRefreshToken<{ id: string }>(refreshToken)
-    if (!id) throw new UserInputError("Unauthenticated")
+    if (!id) throw new AuthenticationError("Invalid refresh token")
     const user = await prisma.user.findUnique({ where: { id } })
-    if (!user) throw new UserInputError("Unauthenticated")
+    if (!user) throw new AuthenticationError("Invalid refresh token")
     const tokens = this.userService.createAuthTokens(user)
     return tokens
   }
@@ -109,7 +109,7 @@ export default class UserResolver {
   @Mutation(() => Boolean)
   async resetPassword(@Arg("data") data: ResetPasswordInput): Promise<boolean> {
     try {
-      const payload = decryptToken<{ id: string }>(data.token)
+      const payload = decodeToken<{ id: string }>(data.token)
       const user = await prisma.user.update({ where: { id: payload.id }, data: { password: data.password } })
       this.userMailer.sendPasswordChanged(user)
       return true

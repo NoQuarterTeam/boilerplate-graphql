@@ -19,7 +19,7 @@ export const createToken = (payload: Payload, options?: jwt.SignOptions): string
   }
 }
 
-export function decryptToken<T>(token: string): T {
+export function decodeToken<T>(token: string): T {
   try {
     jwt.verify(token, APP_SECRET)
     const payload = jwt.decode(token)

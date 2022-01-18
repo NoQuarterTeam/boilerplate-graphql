@@ -10,7 +10,7 @@ import { Container } from "typedi"
 import { JWT_AUTH } from "./lib/config"
 import { ExpressContext } from "./lib/express"
 import { formatResponse } from "./lib/formatResponse"
-import { ErrorInterceptor } from "./lib/globalMiddleware"
+import { ErrorInterceptor, TokenValidator } from "./lib/globalMiddleware"
 import { loadPrismaHooks } from "./lib/hooks"
 import { loadCurrentUser } from "./lib/loadCurrentUser"
 import { loadResolvers } from "./lib/loadResolvers"
@@ -51,7 +51,7 @@ class App extends Server {
     const schema = await buildSchema({
       container: Container,
       resolvers: loadResolvers(),
-      globalMiddlewares: [ErrorInterceptor],
+      globalMiddlewares: [TokenValidator, ErrorInterceptor],
     })
     const apolloServer = new ApolloServer({
       context: ({ req, res }: ExpressContext) => ({ req, res, prisma }),

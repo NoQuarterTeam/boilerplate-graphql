@@ -1,12 +1,13 @@
 import * as React from "react"
 import { gql, useApolloClient } from "@apollo/client"
 import * as c from "@chakra-ui/react"
+import { Alert, AlertDescription, AlertIcon } from "@chakra-ui/react"
 import Head from "next/head"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
-import { LOGIN_REFRESH_TOKEN_KEY, LOGIN_TOKEN_KEY, REDIRECT_PATH } from "lib/config"
-import type { LoginInput, MeQuery} from "lib/graphql";
+import { LOGIN_REFRESH_TOKEN_KEY, LOGIN_TOKEN_KEY, REDIRECT_PATH, REDIRECT_REFRESH_KEY } from "lib/config"
+import type { LoginInput, MeQuery } from "lib/graphql"
 import { MeDocument, MeFragmentDoc, useLoginMutation } from "lib/graphql"
 import { useForm } from "lib/hooks/useForm"
 import Yup from "lib/yup"
@@ -40,6 +41,7 @@ function Login() {
   const [login, { loading }] = useLoginMutation()
   const router = useRouter()
   const redirect = router.query[REDIRECT_PATH] as string | undefined
+  const isSessionExpired = router.query[REDIRECT_REFRESH_KEY] as string | undefined
   const form = useForm({ schema: LoginSchema })
 
   const onSubmit = (data: LoginInput) => {
@@ -57,6 +59,7 @@ function Login() {
       },
     })
   }
+
   return (
     <c.Center flexDir="column" pt={10}>
       <Head>
@@ -65,6 +68,12 @@ function Login() {
       <c.Box w={["100%", 400]}>
         <Form onSubmit={onSubmit} {...form}>
           <c.Stack spacing={2}>
+            {isSessionExpired && (
+              <Alert mb={4} status="warning" borderRadius="sm" colorScheme="purple">
+                <AlertIcon />
+                <AlertDescription>Session expired</AlertDescription>
+              </Alert>
+            )}
             <c.Heading as="h1">Login</c.Heading>
             <Input name="email" label="Email" placeholder="jim@gmail.com" />
             <Input name="password" label="Password" type="password" placeholder="********" />

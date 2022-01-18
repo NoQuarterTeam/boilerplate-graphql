@@ -3,14 +3,14 @@ import { useRouter } from "next/router"
 
 import { useToast } from "./useToast"
 
-export const useLogout = (redirectPath?: string) => {
+export const useLogout = () => {
   const client = useApolloClient()
   const router = useRouter()
   const toast = useToast()
-  const handleLogout = async (lazyPath?: string) => {
+  const handleLogout = async () => {
+    await router.replace("/logout")
     await fetch("/api/logout", { method: "post" })
-    await router.replace(lazyPath || redirectPath || "/")
-    client.resetStore()
+    await client.resetStore()
     toast({ description: "Successfully logged out!" })
   }
   return handleLogout

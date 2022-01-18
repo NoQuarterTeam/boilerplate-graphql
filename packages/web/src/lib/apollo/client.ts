@@ -1,24 +1,20 @@
 import * as React from "react"
-import type {
-  NormalizedCacheObject} from "@apollo/client";
-import {
-  ApolloClient,
-  createHttpLink,
-  from,
-  fromPromise,
-  InMemoryCache
-} from "@apollo/client"
+import type { NormalizedCacheObject } from "@apollo/client"
+import { ApolloClient, createHttpLink, from, fromPromise, InMemoryCache } from "@apollo/client"
 import { onError } from "@apollo/client/link/error"
+import { RetryLink } from "@apollo/client/link/retry"
 import { mergeDeep } from "@apollo/client/utilities"
 import type { RefreshResponse } from "pages/api/refresh-token"
 
-import { API_URL } from "lib/config"
+import { API_URL, REDIRECT_PATH, REDIRECT_REFRESH_KEY } from "lib/config"
 
 export const isBrowser = () => typeof window !== "undefined"
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null
 
 const refreshToken = () => fetch("/api/refresh-token", { method: "post" })
+
+const retryLink = new RetryLink()
 
 const errorLink = onError(({ graphQLErrors, operation, forward }) => {
   if (graphQLErrors) {
@@ -29,7 +25,7 @@ const errorLink = onError(({ graphQLErrors, operation, forward }) => {
             refreshToken().then(async (res) => {
               const data: RefreshResponse = await res.json()
               if (data.success) return true
-              window.location.href = "/login"
+              window.location.href = `/login?${REDIRECT_REFRESH_KEY}=true&${REDIRECT_PATH}=${window.location.pathname}`
               return false
             }),
           )
@@ -44,7 +40,7 @@ const httpLink = createHttpLink({ uri: !isBrowser() ? API_URL : "/api/graphql" }
 function createApolloClient(initialState: null | Record<string, any>) {
   return new ApolloClient({
     ssrMode: !isBrowser(),
-    link: from([errorLink, httpLink]),
+    link: from([retryLink, errorLink, httpLink]),
     name: "web",
     credentials: "include",
     defaultOptions: {
