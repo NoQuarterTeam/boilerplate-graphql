@@ -1,10 +1,10 @@
 import cookie from "cookie"
 
-import { IS_PRODUCTION, REFRESH_TOKEN,SESSION_TOKEN } from "./config"
+import { ACCESS_TOKEN,IS_PRODUCTION, REFRESH_TOKEN } from "./config"
 import type { RefreshTokenResponse } from "./graphql"
 
 export const createAuthCookies = ({ token, refreshToken }: RefreshTokenResponse) => [
-  cookie.serialize(SESSION_TOKEN, token, {
+  cookie.serialize(ACCESS_TOKEN, token, {
     path: "/",
     sameSite: "lax",
     secure: IS_PRODUCTION,
@@ -20,6 +20,6 @@ export const createAuthCookies = ({ token, refreshToken }: RefreshTokenResponse)
   }),
 ]
 export const removeAuthCookies = () => [
-  cookie.serialize(SESSION_TOKEN, "DONE", { maxAge: 0, path: "/" }),
+  cookie.serialize(ACCESS_TOKEN, "DONE", { maxAge: 0, path: "/" }),
   cookie.serialize(REFRESH_TOKEN, "DONE", { maxAge: 0, path: "/" }),
 ]
