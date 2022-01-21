@@ -4214,10 +4214,10 @@
     "@react-aria/ssr" "^3.0.1"
     "@react-aria/utils" "^3.3.0"
 
-"@react-native-async-storage/async-storage@1.15.15":
-  version "1.15.15"
-  resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.15.15.tgz#33f930aaebc602199a3294a9b1eafff7b56df409"
-  integrity sha512-Ss2FqWP9HC5AhCyP6ydRERSwWb8QMTLknETB8cp2+tbEUhu7Q/S5+e0QIrF0D2Z/YZTUvQ2MP7uXzt9FLG9OYQ==
+"@react-native-async-storage/async-storage@1.15.16":
+  version "1.15.16"
+  resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.15.16.tgz#830d62ff9353d4eab4f55e148c0f704da4a507b0"
+  integrity sha512-AR2JbbTY5T2zEiHrX6m1JPCw+ThAqWT9zb85BJi38arY2HYnF1wAk4BsfII/QtbQ58UJljvz4rl3/YLqL7LKdg==
   dependencies:
     merge-options "^3.0.4"
 
