@@ -2309,10 +2309,10 @@
     "@graphql-tools/utils" "^8.1.1"
     tslib "~2.3.0"
 
-"@graphql-codegen/typescript-operations@2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-operations/-/typescript-operations-2.2.2.tgz#028f2850ae85021d8932b5670e5feca7b0d5c767"
-  integrity sha512-J50AuTA37RYv67hP2oHbfr3iGxexTCoadQsbr5pEUGucrIupCA0hLEJH2W+9/h6YNh0UlZT3kRTJp81ARoAjOA==
+"@graphql-codegen/typescript-operations@2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-operations/-/typescript-operations-2.2.3.tgz#c454235963a6e448da1314e7a8abc95281ad0c7d"
+  integrity sha512-72fzmnxAkjtbfCvLI7MC2WFVygXGAtkmg1SJO39Bby69VIeIA2E/N+EpA6xHDL0TpG+Q3If9aiCFYxa6827SDg==
   dependencies:
     "@graphql-codegen/plugin-helpers" "^2.3.2"
     "@graphql-codegen/typescript" "^2.4.2"
