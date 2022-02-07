@@ -5208,10 +5208,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/ioredis@4.28.7":
-  version "4.28.7"
-  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.28.7.tgz#ee79987ef80597ba8c17cfbf9345859ff9233c2d"
-  integrity sha512-jnSGCD2/TPk02j6v6CGqaCEl0LbmLgK6jUuk/AFaSNUBV+SCHiG7E7fnwJreN6hw9GqtLAFkJs4zFbkJrz11mQ==
+"@types/ioredis@4.28.8":
+  version "4.28.8"
+  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.28.8.tgz#a181d6eb70e402a6db670fe54b9c5bb66c0fac17"
+  integrity sha512-mULOyO2smtvkE1zmzRRA4P0+1UjEqusi014kXOL1q3CY0RgqkR5/wKvv+vAJbPw2Q66wPyylKeevUy+m/FaRMg==
   dependencies:
     "@types/node" "*"
 
@@ -13378,10 +13378,10 @@ react-dom@17.0.2:
     object-assign "^4.1.1"
     scheduler "^0.20.2"
 
-react-dropzone@11.7.0:
-  version "11.7.0"
-  resolved "https://registry.yarnpkg.com/react-dropzone/-/react-dropzone-11.7.0.tgz#7686b0293de788f4baae0d6b5b686c953e6e5084"
-  integrity sha512-XTHzXAeOLcTy4wxPv/1HD1XJBzXky67oW5zwKgFs0ulEPqgWC53aGYxxfpID7w5Jas/jwS1tFufBBydT3ItceA==
+react-dropzone@11.7.1:
+  version "11.7.1"
+  resolved "https://registry.yarnpkg.com/react-dropzone/-/react-dropzone-11.7.1.tgz#3851bb75b26af0bf1b17ce1449fd980e643b9356"
+  integrity sha512-zxCMwhfPy1olUEbw3FLNPLhAm/HnaYH5aELIEglRbqabizKAdHs0h+WuyOpmA+v1JXn0++fpQDdNfUagWt5hJQ==
   dependencies:
     attr-accept "^2.2.2"
     file-selector "^0.4.0"
