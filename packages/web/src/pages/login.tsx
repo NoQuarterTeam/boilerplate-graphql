@@ -68,13 +68,13 @@ function Login() {
       <c.Box w={["100%", 400]}>
         <Form onSubmit={onSubmit} {...form}>
           <c.Stack spacing={2}>
+            <c.Heading as="h1">Login</c.Heading>
             {isSessionExpired && (
-              <Alert mb={4} status="warning" borderRadius="sm" colorScheme="purple">
+              <Alert status="warning" borderRadius="sm" colorScheme="purple">
                 <AlertIcon />
                 <AlertDescription>Session expired</AlertDescription>
               </Alert>
             )}
-            <c.Heading as="h1">Login</c.Heading>
             <Input name="email" label="Email" placeholder="jim@gmail.com" />
             <Input name="password" label="Password" type="password" placeholder="********" />
             <c.Button colorScheme="purple" type="submit" isFullWidth isLoading={loading} isDisabled={loading}>
