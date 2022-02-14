@@ -5,8 +5,8 @@ import { ButtonStyles } from "./components/ButtonStyles"
 import { InputStyles } from "./components/InputStyles"
 
 export const theme = extendTheme({
-  colors: { ...colors, primary: colors.purple },
   config: { initialColorMode: "light" },
+  colors: { ...colors, primary: colors.purple },
   components: {
     Input: InputStyles,
     Button: ButtonStyles,

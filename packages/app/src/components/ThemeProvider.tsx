@@ -8,5 +8,7 @@ interface Props {
 }
 
 export function ThemeProvider(props: Props) {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   return <NativeBaseProvider theme={theme}>{props.children}</NativeBaseProvider>
 }

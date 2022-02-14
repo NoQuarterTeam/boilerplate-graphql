@@ -7,9 +7,11 @@ import { ArgumentValidationError, MiddlewareFn } from "type-graphql"
 import { APP_AUTH_SECRET, IS_PRODUCTION } from "./config"
 import { ExpressContext } from "./express"
 
+const allowedFields = ["login", "refreshToken", "register", "token"]
+
 export const TokenValidator: MiddlewareFn<ExpressContext> = async ({ info, context: { req } }, next) => {
   try {
-    if (!req.headers.authorization || info.operation.name?.value === "RefreshToken") return await next()
+    if (!req.headers.authorization || allowedFields.includes(info.fieldName)) return await next()
     const token = req.headers.authorization.split(" ")[1]
     try {
       jwt.verify(token, APP_AUTH_SECRET)

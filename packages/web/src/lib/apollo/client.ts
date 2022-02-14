@@ -22,12 +22,14 @@ const errorLink = onError(({ graphQLErrors, operation, forward }) => {
       switch (err.extensions.code) {
         case "UNAUTHENTICATED":
           return fromPromise(
-            refreshToken().then(async (res) => {
-              const data: RefreshResponse = await res.json()
-              if (data.success) return true
-              window.location.href = `/login?${REDIRECT_REFRESH_KEY}=true&${REDIRECT_PATH}=${window.location.pathname}`
-              return false
-            }),
+            refreshToken()
+              .then(async (res) => {
+                const data: RefreshResponse = await res.json()
+                if (data.success) return true
+                window.location.href = `/login?${REDIRECT_REFRESH_KEY}=true&${REDIRECT_PATH}=${window.location.pathname}`
+                return false
+              })
+              .catch(() => forward(operation)),
           )
             .filter(Boolean)
             .flatMap(() => forward(operation))

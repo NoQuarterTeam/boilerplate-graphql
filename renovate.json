@@ -18,5 +18,12 @@
       "extends": ["schedule:monthly"]
     }
   ],
-  "ignoreDeps": ["prisma", "@prisma/client", "react-native-safe-area-context", "react-native"]
+  "ignoreDeps": [
+    "prisma",
+    "@prisma/client",
+    "react-native-safe-area-context",
+    "react-native",
+    "react-native-screens",
+    "@react-native-async-storage/async-storage"
+  ]
 }

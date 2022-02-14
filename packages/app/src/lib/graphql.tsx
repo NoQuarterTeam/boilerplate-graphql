@@ -6,7 +6,7 @@ export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
-const defaultOptions =  {}
+const defaultOptions = {} as const;
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -20,6 +20,7 @@ export type Scalars = {
 
 export type AuthResponse = {
   __typename?: 'AuthResponse';
+  refreshToken: Scalars['String'];
   token: Scalars['String'];
   user: User;
 };
@@ -144,6 +145,7 @@ export type Query = {
   __typename?: 'Query';
   getSignedS3UrlForGet?: Maybe<Scalars['String']>;
   me?: Maybe<User>;
+  refreshToken: RefreshTokenResponse;
   user?: Maybe<User>;
   users: UsersResponse;
 };
@@ -151,6 +153,11 @@ export type Query = {
 
 export type QueryGetSignedS3UrlForGetArgs = {
   key: Scalars['String'];
+};
+
+
+export type QueryRefreshTokenArgs = {
+  refreshToken: Scalars['String'];
 };
 
 
@@ -177,6 +184,12 @@ export enum QueryMode {
   Default = 'default',
   Insensitive = 'insensitive'
 }
+
+export type RefreshTokenResponse = {
+  __typename?: 'RefreshTokenResponse';
+  refreshToken: Scalars['String'];
+  token: Scalars['String'];
+};
 
 export type RegisterInput = {
   email: Scalars['String'];
@@ -322,19 +335,26 @@ export type UsersResponse = {
   items: Array<User>;
 };
 
-export type MeFragment = { __typename?: 'User', id: string, firstName: string, lastName: string, email: string };
+export type RefreshTokenQueryVariables = Exact<{
+  refreshToken: Scalars['String'];
+}>;
+
+
+export type RefreshTokenQuery = { __typename?: 'Query', refreshToken: { __typename?: 'RefreshTokenResponse', token: string, refreshToken: string } };
+
+export type MeFragment = { __typename?: 'User', id: string, firstName: string, lastName: string, email: string, role: Role };
 
 export type MeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type MeQuery = { __typename?: 'Query', me?: { __typename?: 'User', id: string, firstName: string, lastName: string, email: string } | null | undefined };
+export type MeQuery = { __typename?: 'Query', me?: { __typename?: 'User', id: string, firstName: string, lastName: string, email: string, role: Role } | null };
 
 export type LoginMutationVariables = Exact<{
   data: LoginInput;
 }>;
 
 
-export type LoginMutation = { __typename?: 'Mutation', login: { __typename?: 'AuthResponse', token: string, user: { __typename?: 'User', id: string, firstName: string, lastName: string, email: string } } };
+export type LoginMutation = { __typename?: 'Mutation', login: { __typename?: 'AuthResponse', token: string, refreshToken: string, user: { __typename?: 'User', id: string, firstName: string, lastName: string, email: string, role: Role } } };
 
 export const MeFragmentDoc = gql`
     fragment Me on User {
@@ -342,8 +362,28 @@ export const MeFragmentDoc = gql`
   firstName
   lastName
   email
+  role
 }
     `;
+export const RefreshTokenDocument = gql`
+    query RefreshToken($refreshToken: String!) {
+  refreshToken(refreshToken: $refreshToken) {
+    token
+    refreshToken
+  }
+}
+    `;
+export function useRefreshTokenQuery(baseOptions: Apollo.QueryHookOptions<RefreshTokenQuery, RefreshTokenQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<RefreshTokenQuery, RefreshTokenQueryVariables>(RefreshTokenDocument, options);
+      }
+export function useRefreshTokenLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<RefreshTokenQuery, RefreshTokenQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<RefreshTokenQuery, RefreshTokenQueryVariables>(RefreshTokenDocument, options);
+        }
+export type RefreshTokenQueryHookResult = ReturnType<typeof useRefreshTokenQuery>;
+export type RefreshTokenLazyQueryHookResult = ReturnType<typeof useRefreshTokenLazyQuery>;
+export type RefreshTokenQueryResult = Apollo.QueryResult<RefreshTokenQuery, RefreshTokenQueryVariables>;
 export const MeDocument = gql`
     query Me {
   me {
@@ -369,6 +409,7 @@ export const LoginDocument = gql`
       ...Me
     }
     token
+    refreshToken
   }
 }
     ${MeFragmentDoc}`;

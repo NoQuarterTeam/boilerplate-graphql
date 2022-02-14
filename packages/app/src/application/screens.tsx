@@ -1,7 +1,7 @@
 import * as React from "react"
 import { enableScreens } from "react-native-screens"
-import { createNativeStackNavigator } from "react-native-screens/native-stack"
 import { NavigationContainer } from "@react-navigation/native"
+import { createNativeStackNavigator } from "@react-navigation/native-stack"
 
 import { Home } from "../screens/Home"
 import { Login } from "../screens/Login"
@@ -16,7 +16,7 @@ export function Screens() {
     <NavigationContainer>
       <Container.Navigator
         initialRouteName="MainStack"
-        screenOptions={{ stackPresentation: "modal", headerShown: false }}
+        screenOptions={{ presentation: "modal", headerShown: false }}
       >
         <Container.Screen name="MainStack" component={MainStack} />
         <Container.Screen name="Login" component={Login} />

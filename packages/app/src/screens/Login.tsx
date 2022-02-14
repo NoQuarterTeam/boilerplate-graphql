@@ -8,7 +8,7 @@ import { Pressable, SmallCloseIcon, Stack, Text } from "native-base"
 import { Form, FormButton } from "../components/Form"
 import { withTheme } from "../components/hoc/withTheme"
 import { Input } from "../components/Input"
-import { SESSION_TOKEN } from "../lib/config"
+import { REFRESH_TOKEN, SESSION_TOKEN } from "../lib/config"
 import { MeDocument, useLoginMutation } from "../lib/graphql"
 import { useForm } from "../lib/hooks/useForm"
 import { Yup } from "../lib/yup"
@@ -20,6 +20,7 @@ export const LOGIN = gql`
         ...Me
       }
       token
+      refreshToken
     }
   }
 `
@@ -32,7 +33,7 @@ const LoginSchema = Yup.object().shape({
 function _Login() {
   const { navigate, goBack } = useNavigation()
   const client = useApolloClient()
-  const defaultValues = { email: "", password: "" }
+  const defaultValues = { email: "jack@noquarter.co", password: "password" }
   const form = useForm({ defaultValues, schema: LoginSchema })
   const [login] = useLoginMutation()
 
@@ -41,6 +42,7 @@ function _Login() {
       onSuccess: async (data) => {
         try {
           await AsyncStorage.setItem(SESSION_TOKEN, data.login.token)
+          await AsyncStorage.setItem(REFRESH_TOKEN, data.login.refreshToken)
           client.writeQuery({ query: MeDocument, data: { me: data.login.user } })
           navigate("Home")
         } catch (error) {

@@ -43,12 +43,14 @@ async function mutationHandler<T>(
       res.errors?.[0].message.includes("Not authorized")
     ) {
       toast({
+        w: "300px",
         placement: "top",
         status: "error",
         title: "You are not authorized to perform this action.",
       })
     } else if (res.errors?.[0].message.includes("Not authenticated")) {
       toast({
+        w: "300px",
         placement: "top",
         status: "error",
         title: "Please login to continue.",
@@ -76,6 +78,7 @@ async function mutationHandler<T>(
         await handler.onServerError(res.errors[0].message, toast)
       } else {
         toast({
+          w: "300px",
           placement: "top",
           status: "error",
           title: "Server error. We have been notified.",
@@ -85,6 +88,7 @@ async function mutationHandler<T>(
   } catch (e) {
     console.log(e)
     toast({
+      w: "300px",
       placement: "top",
       status: "error",
       title: "Server error. We have been notified.",
@@ -113,6 +117,7 @@ export function useMutationHandler() {
     } catch (e) {
       console.log("Oops", e)
       toast.show({
+        w: "300px",
         placement: "top",
         title: "Something went wrong. We have been notified!",
         status: "error",

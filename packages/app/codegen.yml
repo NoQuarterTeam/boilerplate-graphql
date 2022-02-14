@@ -1,5 +1,6 @@
 schema: http://localhost:5555/graphql
 documents:
+  - "src/application/**/*.{ts,tsx}"
   - "src/components/**/*.{ts,tsx}"
   - "src/lib/**/*.{ts,tsx}"
   - "src/screens/**/*.{ts,tsx}"

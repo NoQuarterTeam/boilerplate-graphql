@@ -69,8 +69,12 @@ export default class UserResolver {
   // REFRESH TOKEN
   @Query(() => RefreshTokenResponse)
   async refreshToken(@Arg("refreshToken") refreshToken: string): Promise<RefreshTokenResponse> {
-    const { id } = decodeRefreshToken<{ id: string }>(refreshToken)
-    if (!id) throw new AuthenticationError("Invalid refresh token")
+    let id: string | undefined
+    try {
+      id = decodeRefreshToken<{ id: string }>(refreshToken).id
+    } catch (error) {
+      throw new AuthenticationError("Expired refresh token")
+    }
     const user = await prisma.user.findUnique({ where: { id } })
     if (!user) throw new AuthenticationError("Invalid refresh token")
     const tokens = this.userService.createAuthTokens(user)
