@@ -33,7 +33,7 @@ const LoginSchema = Yup.object().shape({
 function _Login() {
   const { navigate, goBack } = useNavigation()
   const client = useApolloClient()
-  const defaultValues = { email: "jack@noquarter.co", password: "password" }
+  const defaultValues = { email: "", password: "" }
   const form = useForm({ defaultValues, schema: LoginSchema })
   const [login] = useLoginMutation()
 

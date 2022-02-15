@@ -6,12 +6,11 @@ export const IS_DEV = NODE_ENV === "development"
 
 export const SENTRY_DSN = "https://5d0371a223bb4509902f8940cb957daf@o204549.ingest.sentry.io/5741383"
 
-export const API_URL = IS_PRODUCTION
-  ? "https://boilerplate.graphcdn.app"
-  : "http://192.168.0.155:5555/graphql"
 // export const API_URL = IS_PRODUCTION
-//   ? "https://nq-boilerplate.herokuapp.com/graphql"
-//   : "http://localhost:5000/graphql"
+//   ? "https://boilerplate.graphcdn.app"
+//   : "http://192.168.0.155:5555/graphql"
+export const API_URL = IS_PRODUCTION ? "https://boilerplate.graphcdn.app" : "http://localhost:5555/graphql"
+//NOTE: when trying to connect on real device, change the the above localhost to your computers ip address
 
 export const WEB_URL = IS_PRODUCTION ? "boilerplate.noquarter.co" : "localhost:3000"
 
