@@ -46,7 +46,7 @@
     "dayjs": "1.10.7",
     "dotenv": "16.0.0",
     "express": "4.17.3",
-    "express-jwt": "6.1.0",
+    "express-jwt": "6.1.1",
     "glob": "7.2.0",
     "graphql": "15.8.0",
     "graphql-fields": "2.0.3",
