@@ -46,7 +46,7 @@ export class Mailer {
       if (IS_PRODUCTION) {
         await sendgrid.send(data)
       } else {
-        this.sendDev(args)
+        await this.sendDev(args)
       }
     } catch (err) {
       Sentry.captureException(err)
@@ -72,6 +72,6 @@ export class Mailer {
 
     const subject = args.variables?.subject || version.subject
 
-    this.devMail.sendMail({ to: args.to, from: this.from, subject, html, text })
+    return this.devMail.sendMail({ to: args.to, from: this.from, subject, html, text })
   }
 }
