@@ -74,7 +74,7 @@
     "@types/morgan": "1.9.3",
     "@types/node": "16.11.26",
     "@types/nodemailer": "6.4.4",
-    "ts-node": "10.5.0",
+    "ts-node": "10.6.0",
     "ts-node-dev": "1.1.8"
   }
 }
