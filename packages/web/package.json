@@ -30,7 +30,7 @@
   "dependencies": {
     "@apollo/client": "3.5.10",
     "@chakra-ui/react": "1.8.6",
-    "@emotion/react": "11.8.1",
+    "@emotion/react": "11.8.2",
     "@emotion/styled": "11.8.1",
     "@hookform/resolvers": "2.8.8",
     "@sentry/nextjs": "6.18.2",
