@@ -32,8 +32,8 @@
   },
   "dependencies": {
     "@prisma/client": "^3.9.2",
-    "@sendgrid/client": "7.6.1",
-    "@sendgrid/mail": "7.6.1",
+    "@sendgrid/client": "7.6.2",
+    "@sendgrid/mail": "7.6.2",
     "@sentry/node": "6.18.2",
     "@sentry/tracing": "6.18.2",
     "apollo-graphql": "0.9.5",
