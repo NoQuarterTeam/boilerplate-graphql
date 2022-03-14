@@ -8248,10 +8248,10 @@ eslint-plugin-react-hooks@4.3.0, eslint-plugin-react-hooks@^4.3.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.3.0.tgz#318dbf312e06fab1c835a4abef00121751ac1172"
   integrity sha512-XslZy0LnMn+84NEG9jSGR6eGqaZB3133L8xewQo3fQagbQuGt7a63gf+P1NGKZavEYEC3UXaWEAA/AqDkuN6xA==
 
-eslint-plugin-react@7.29.3:
-  version "7.29.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.29.3.tgz#f4eab757f2756d25d6d4c2a58a9e20b004791f05"
-  integrity sha512-MzW6TuCnDOcta67CkpDyRfRsEVx9FNMDV8wZsDqe1luHPdGTrQIUaUXD27Ja3gHsdOIs/cXzNchWGlqm+qRVRg==
+eslint-plugin-react@7.29.4:
+  version "7.29.4"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.29.4.tgz#4717de5227f55f3801a5fd51a16a4fa22b5914d2"
+  integrity sha512-CVCXajliVh509PcZYRFyu/BoUEz452+jtQJq2b3Bae4v3xBUWPLCmtmBM+ZinG4MzwmxJgJ2M5rMqhqLVn7MtQ==
   dependencies:
     array-includes "^3.1.4"
     array.prototype.flatmap "^1.2.5"
@@ -12025,10 +12025,10 @@ new-github-issue-url@0.2.1:
   resolved "https://registry.yarnpkg.com/new-github-issue-url/-/new-github-issue-url-0.2.1.tgz#e17be1f665a92de465926603e44b9f8685630c1d"
   integrity sha512-md4cGoxuT4T4d/HDOXbrUHkTKrp/vp+m3aOA7XXVYwNsUNMK49g3SQicTSeV5GIz/5QVGAeYRAOlyp9OvlgsYA==
 
-next-http-proxy-middleware@1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/next-http-proxy-middleware/-/next-http-proxy-middleware-1.2.2.tgz#84915e51a7c5b660df358afb3ac77deef5da9196"
-  integrity sha512-LnI61nHPN++uD2hOiybWHS58YnF3OXggkiLL9jHeEDBATK0oH2NTQmdj5/crmiuibKbf5kB4SLFgHy/PDQXvLw==
+next-http-proxy-middleware@1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/next-http-proxy-middleware/-/next-http-proxy-middleware-1.2.4.tgz#4b6fb209f776434d517826a05376b6ce810ad3fa"
+  integrity sha512-4ScStkj08nFL2IX0doJq8Hwrk1zOdKaOkxFGxRmV+lN4Oh/d6qDSqUKxfSew676qA07bhncj6vbKBVVpLKfZBA==
   dependencies:
     "@types/http-proxy" "1.17.3"
     http-proxy "^1.18.1"
@@ -13384,10 +13384,10 @@ react-freeze@^1.0.0:
   resolved "https://registry.yarnpkg.com/react-freeze/-/react-freeze-1.0.0.tgz#b21c65fe1783743007c8c9a2952b1c8879a77354"
   integrity sha512-yQaiOqDmoKqks56LN9MTgY06O0qQHgV4FUrikH357DydArSZHQhl0BJFqGKIZoTqi8JizF9Dxhuk1FIZD6qCaw==
 
-react-hook-form@7.27.1:
-  version "7.27.1"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.27.1.tgz#fe5fbcb6bf58751f66d9569e998d671480cc57f6"
-  integrity sha512-N3a7A6zIQ8DJeThisVZGtOUabTbJw+7DHJidmB9w8m3chckv2ZWKb5MHps9d2pPJqmCDoWe53Bos56bYmJms5w==
+react-hook-form@7.28.0:
+  version "7.28.0"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.28.0.tgz#40f385da1f31a3c26bb7491d7d77c111b6ad6909"
+  integrity sha512-mmLpT86BkMGPr0r6ca8zxV0WH4Y1FW5MKs7Rq1+uHLVeeg5pSWbF5Z/qLCnM5vPVblHNM6lRBRRotnfEAf0ALA==
 
 react-icons@4.3.1:
   version "4.3.1"
