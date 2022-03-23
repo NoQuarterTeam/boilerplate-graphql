@@ -4474,10 +4474,10 @@
   resolved "https://registry.yarnpkg.com/@react-navigation/elements/-/elements-1.3.1.tgz#aacb08fe0ca4db50f0ed16b72906869ce770edf4"
   integrity sha512-jIDRJaG8YPIinl4hZXJu/W3TnhDe8hLYmGSEdL1mxZ1aoNMiApCBYkgTy11oq0EfK/koZd3DPSkJNbzBAQmPJw==
 
-"@react-navigation/native-stack@6.5.1":
-  version "6.5.1"
-  resolved "https://registry.yarnpkg.com/@react-navigation/native-stack/-/native-stack-6.5.1.tgz#11eded3bf5235e9e92bdcc2b710719205206090f"
-  integrity sha512-4o9AJ1Gsxlk6njb9582gL0CP8oJduXKbT8OBvNrUEMXBBkXPAJntQZAs/9lEF4x+n+0YVJWklx6SNSlGAcH4pw==
+"@react-navigation/native-stack@6.5.2":
+  version "6.5.2"
+  resolved "https://registry.yarnpkg.com/@react-navigation/native-stack/-/native-stack-6.5.2.tgz#1e2dd25c1d5e3664898488008b64b190583b5623"
+  integrity sha512-aKnjDEljGPDbL8VflCRGVJ2SPD/6x5yuAWsxd1ouCuD+43clkMnz1e0piNf+t3EpNYIWdBNR66Xa+7U/UB4y3w==
   dependencies:
     "@react-navigation/elements" "^1.3.1"
     warn-once "^0.1.0"
