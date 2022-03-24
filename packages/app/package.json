@@ -44,7 +44,7 @@
     "react-native-screens": "~3.10.1",
     "react-native-svg": "12.3.0",
     "react-native-web": "0.17.7",
-    "styled-components": "5.3.4",
+    "styled-components": "5.3.5",
     "styled-system": "5.1.5"
   },
   "devDependencies": {
