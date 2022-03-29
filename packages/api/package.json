@@ -50,7 +50,7 @@
     "glob": "7.2.0",
     "graphql": "15.8.0",
     "graphql-fields": "2.0.3",
-    "graphql-scalars": "1.16.0",
+    "graphql-scalars": "1.16.1",
     "handlebars": "4.7.7",
     "ioredis": "4.28.5",
     "jsonwebtoken": "8.5.1",
