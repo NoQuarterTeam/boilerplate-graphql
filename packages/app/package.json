@@ -57,7 +57,7 @@
     "@types/react": "17.0.43",
     "@types/react-native": "0.67.3",
     "eslint-plugin-react": "7.29.4",
-    "eslint-plugin-react-hooks": "4.3.0"
+    "eslint-plugin-react-hooks": "4.4.0"
   },
   "private": true
 }
