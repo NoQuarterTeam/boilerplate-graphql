@@ -36,7 +36,7 @@
     "@sendgrid/mail": "7.6.2",
     "@sentry/node": "6.19.2",
     "@sentry/tracing": "6.19.2",
-    "apollo-graphql": "0.9.5",
+    "apollo-graphql": "0.9.6",
     "apollo-server-express": "3.6.6",
     "aws-sdk": "2.1066.0",
     "bcryptjs": "2.4.3",
