@@ -33,7 +33,7 @@
     "@emotion/react": "11.8.2",
     "@emotion/styled": "11.8.1",
     "@hookform/resolvers": "2.8.8",
-    "@sentry/nextjs": "6.19.2",
+    "@sentry/nextjs": "6.19.3",
     "dayjs": "1.11.0",
     "framer-motion": "6.2.8",
     "graphql": "15.8.0",
