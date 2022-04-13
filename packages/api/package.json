@@ -62,7 +62,7 @@
     "tslib": "2.3.1",
     "type-graphql": "1.1.1",
     "typedi": "0.10.0",
-    "typegraphql-prisma": "0.20.0"
+    "typegraphql-prisma": "0.20.1"
   },
   "devDependencies": {
     "@types/bcryptjs": "2.4.2",
