@@ -5,7 +5,6 @@ import { Box, Button, Checkbox, Heading, HStack } from "@chakra-ui/react"
 import dayjs from "dayjs"
 import Head from "next/head"
 
-import { paginate } from "lib/apollo/helpers"
 import { QueryMode, Role, SortOrder, useGetUsersQuery, UserItemFragment } from "lib/graphql"
 import { AdminLayout } from "components/AdminLayout"
 import { PartialCheckIcon } from "components/PartialCheckIcon"
@@ -56,7 +55,7 @@ export default function Users() {
 
   const handleFetchMore = () => {
     if (!users) return
-    return fetchMore({ variables: { skip: users.length, take: TAKE }, updateQuery: paginate("users") })
+    return fetchMore({ variables: { skip: users.length, take: TAKE } })
   }
 
   const toggleSelected = (userId: string) => {
