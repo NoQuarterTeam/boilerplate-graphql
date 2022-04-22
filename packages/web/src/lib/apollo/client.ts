@@ -50,7 +50,27 @@ function createApolloClient(initialState: null | Record<string, any>) {
       mutate: { errorPolicy: "all" },
       query: { errorPolicy: "all" },
     },
-    cache: new InMemoryCache().restore(initialState || {}),
+    cache: new InMemoryCache({
+      typePolicies: {
+        Query: {
+          fields: {
+            users: {
+              keyArgs: ["orderBy", "where"],
+              merge(existing, incoming, { args }) {
+                if (args && !args.skip) {
+                  return incoming
+                }
+
+                return {
+                  count: incoming.count,
+                  items: [...existing.items, ...incoming.items],
+                }
+              },
+            },
+          },
+        },
+      },
+    }).restore(initialState || {}),
   })
 }
 
