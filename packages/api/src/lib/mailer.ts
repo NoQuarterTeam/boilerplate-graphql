@@ -5,10 +5,19 @@ import dayjs from "dayjs"
 import handlebars from "handlebars"
 import nodemailer, { Transporter } from "nodemailer"
 
-import { DEV_EMAIL_OPTIONS, IS_PRODUCTION, SENDGRID_API_KEY } from "./config"
+import { IS_PRODUCTION, SENDGRID_API_KEY } from "./config"
 
 sendgrid.setApiKey(SENDGRID_API_KEY)
 sendgridClient.setApiKey(SENDGRID_API_KEY)
+
+// DEV EMAIL
+const DEV_EMAIL_OPTIONS: any = {
+  host: "localhost",
+  port: 1025,
+  secure: false,
+  debug: true,
+  ignoreTLS: true,
+}
 
 interface TemplateVersion {
   updated_at: string

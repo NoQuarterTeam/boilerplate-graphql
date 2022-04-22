@@ -1,5 +1,3 @@
-import type jwt from "express-jwt"
-
 // ENV VARIABLES
 export const {
   NODE_ENV = "development",
@@ -20,38 +18,7 @@ export const {
 // IS PRODUCTION
 export const IS_PRODUCTION = APP_ENV === "production"
 
-//  JWT APP AUTH
-export const JWT_AUTH: jwt.Options = {
-  secret: APP_AUTH_SECRET,
-  credentialsRequired: false,
-  algorithms: ["HS256"],
-}
-
-// GRAPHQL PATH
-export const GRAPHQL_PATH = "/graphql"
-
-// RESOLVER PATHS
-export const RESOLVER_PATHS = "/modules/**/*resolver.{js,ts}"
-
-// HOOK PATHS
-export const HOOK_PATHS = "/modules/**/*hooks.{js,ts}"
-
 // WEB URL
 export const FULL_WEB_URL = `${IS_PRODUCTION ? "https://" : "http://"}${WEB_URL}`
 
-// S3
-export const S3_CONFIG = {
-  signatureVersion: "v4",
-  region: "eu-central-1",
-}
-
 export const S3_URL = `https://${AWS_S3_BUCKET}.s3.amazonaws.com/`
-
-// DEV EMAIL
-export const DEV_EMAIL_OPTIONS: any = {
-  host: "localhost",
-  port: 1025,
-  secure: false,
-  debug: true,
-  ignoreTLS: true,
-}

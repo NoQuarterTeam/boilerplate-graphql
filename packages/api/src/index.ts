@@ -7,7 +7,7 @@ import jwt from "express-jwt"
 import { buildSchema } from "type-graphql"
 import { Container } from "typedi"
 
-import { JWT_AUTH } from "./lib/config"
+import { APP_AUTH_SECRET } from "./lib/config"
 import { ExpressContext } from "./lib/express"
 import { formatResponse } from "./lib/formatResponse"
 import { ErrorInterceptor, TokenValidator } from "./lib/globalMiddleware"
@@ -39,7 +39,7 @@ class App extends Server {
   }
   async setUpAuth() {
     this.app
-      .use(jwt(JWT_AUTH))
+      .use(jwt({ secret: APP_AUTH_SECRET, credentialsRequired: false, algorithms: ["HS256"] }))
       .use((err: any, _: any, __: any, next: any) => {
         if (err.name === "UnauthorizedError") next()
       })
