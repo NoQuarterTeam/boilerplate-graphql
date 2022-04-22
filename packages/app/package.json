@@ -29,7 +29,7 @@
     "@react-native-async-storage/async-storage": "1.15.17",
     "@react-navigation/core": "6.2.1",
     "@react-navigation/native": "6.0.10",
-    "@react-navigation/native-stack": "6.6.1",
+    "@react-navigation/native-stack": "6.6.2",
     "@react-navigation/stack": "6.2.1",
     "expo": "44.0.6",
     "expo-status-bar": "1.2.0",
