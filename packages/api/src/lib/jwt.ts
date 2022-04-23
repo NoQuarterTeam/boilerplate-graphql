@@ -32,7 +32,7 @@ export const createRefreshToken = (payload: Payload): string => {
   const token = jwt.sign(payload, APP_REFRESH_SECRET, {
     issuer: "@boilerplate/api",
     audience: ["@boilerplate/app", "@boilerplate/web"],
-    expiresIn: "2 mins",
+    expiresIn: "4 weeks",
   })
   return token
 }
