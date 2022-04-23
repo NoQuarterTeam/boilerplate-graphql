@@ -5,7 +5,7 @@ import { Box, Button, Checkbox, Heading, useDisclosure, Wrap } from "@chakra-ui/
 import dayjs from "dayjs"
 import Head from "next/head"
 
-import type { UserItemFragment } from "lib/graphql";
+import type { UserItemFragment } from "lib/graphql"
 import { QueryMode, Role, SortOrder, useGetUsersQuery } from "lib/graphql"
 import { AdminCreateUserForm } from "components/AdminCreateUserForm"
 import { AdminLayout } from "components/AdminLayout"
@@ -25,8 +25,8 @@ const _ = gql`
 `
 
 const __ = gql`
-  query GetUsers($take: Int, $orderBy: [UserOrderByWithRelationInput!], $where: UserWhereInput, $skip: Int) {
-    users(take: $take, orderBy: $orderBy, where: $where, skip: $skip) {
+  query GetUsers($orderBy: [UserOrderByWithRelationInput!], $where: UserWhereInput, $skip: Int) {
+    users(take: 10, orderBy: $orderBy, where: $where, skip: $skip) {
       items {
         ...UserItem
       }
@@ -35,16 +35,15 @@ const __ = gql`
   }
 `
 
-const TAKE = 10
 export default function Users() {
   const [search, setSearch] = React.useState("")
   const [selectedUsers, setSelectedUsers] = React.useState<string[]>([])
   const modalProps = useDisclosure()
   const [sort, setSort] = React.useState<Sort>({ createdAt: SortOrder.Desc })
   const { data, loading, fetchMore } = useGetUsersQuery({
+    fetchPolicy: "cache-and-network",
     variables: {
       orderBy: getOrderBy(sort),
-      take: TAKE,
       where: {
         role: { equals: Role.User },
         OR: [
@@ -60,7 +59,7 @@ export default function Users() {
 
   const handleFetchMore = () => {
     if (!users) return
-    return fetchMore({ variables: { skip: users.length, take: TAKE } })
+    return fetchMore({ variables: { skip: users.length } })
   }
 
   const toggleSelected = (userId: string) => {
@@ -104,12 +103,11 @@ export default function Users() {
       <Table
         noDataText="No users found"
         data={users}
-        take={TAKE}
+        count={data?.users.count}
         sort={sort}
         onSort={setSort}
         getRowHref={(user) => `/admin/users/${user.id}`}
         onFetchMore={handleFetchMore}
-        count={data?.users.count}
         isLoading={loading && !!!data}
       >
         <Column<UserItemFragment>

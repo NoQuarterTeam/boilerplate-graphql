@@ -1,11 +1,12 @@
 import * as React from "react"
 import { CgArrowLongDown, CgArrowLongUp } from "react-icons/cg"
+import type {
+  FlexProps} from "@chakra-ui/react";
 import {
   Box,
   Button,
   Center,
   Flex,
-  FlexProps,
   Link,
   Spinner,
   Text,
@@ -32,7 +33,6 @@ interface Props<T extends DataType> {
     | undefined
   count?: number
   data?: T[]
-  take?: number
   getRowHref?: (item: T) => string
   onFetchMore?: () => Promise<any> | void | undefined
   noDataText?: string
@@ -149,14 +149,11 @@ export function Table<T extends DataType>(props: Props<T>) {
               {props.data?.length} / {props.count}
             </Text>
 
-            {!!props.onFetchMore &&
-              !!props.count &&
-              props.count > (props.take || 20) &&
-              props.data?.length !== props.count && (
-                <Button size="sm" onClick={handleFetchMore} isLoading={fetchLoading}>
-                  Show more
-                </Button>
-              )}
+            {!!props.onFetchMore && !!props.count && !!props.data?.length && props.data.length < props.count && (
+              <Button size="sm" onClick={handleFetchMore} isLoading={fetchLoading}>
+                Show more
+              </Button>
+            )}
           </Flex>
         </Flex>
       ) : (

@@ -394,7 +394,6 @@ export type GetUserQuery = { __typename?: 'Query', user?: { __typename?: 'User',
 export type UserItemFragment = { __typename?: 'User', id: string, fullName: string, email: string, createdAt: string };
 
 export type GetUsersQueryVariables = Exact<{
-  take?: InputMaybe<Scalars['Int']>;
   orderBy?: InputMaybe<Array<UserOrderByWithRelationInput> | UserOrderByWithRelationInput>;
   where?: InputMaybe<UserWhereInput>;
   skip?: InputMaybe<Scalars['Int']>;
@@ -561,8 +560,8 @@ export type GetUserQueryHookResult = ReturnType<typeof useGetUserQuery>;
 export type GetUserLazyQueryHookResult = ReturnType<typeof useGetUserLazyQuery>;
 export type GetUserQueryResult = Apollo.QueryResult<GetUserQuery, GetUserQueryVariables>;
 export const GetUsersDocument = gql`
-    query GetUsers($take: Int, $orderBy: [UserOrderByWithRelationInput!], $where: UserWhereInput, $skip: Int) {
-  users(take: $take, orderBy: $orderBy, where: $where, skip: $skip) {
+    query GetUsers($orderBy: [UserOrderByWithRelationInput!], $where: UserWhereInput, $skip: Int) {
+  users(take: 10, orderBy: $orderBy, where: $where, skip: $skip) {
     items {
       ...UserItem
     }
