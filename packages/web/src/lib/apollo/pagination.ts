@@ -1,4 +1,4 @@
-import type { FieldPolicy } from "@apollo/client"
+import type { FieldFunctionOptions, FieldPolicy } from "@apollo/client"
 
 type Response = {
   items: any[]
@@ -11,7 +11,7 @@ type Args = {
   where?: any
   orderBy?: any
 }
-export const pagination: FieldPolicy<Response, Response, Args> = {
+export const pagination: FieldPolicy<Response, Response, Response, FieldFunctionOptions<Args>> = {
   keyArgs: ["orderBy", "where"],
   merge(existing, incoming, { args }) {
     if (args && !args.skip) return incoming
