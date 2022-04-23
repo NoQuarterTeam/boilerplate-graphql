@@ -1,4 +1,5 @@
-import { useToast as useChakraToast, UseToastOptions } from "@chakra-ui/react"
+import type { UseToastOptions } from "@chakra-ui/react";
+import { useToast as useChakraToast } from "@chakra-ui/react"
 
 export function useToast() {
   const toast = useChakraToast()
@@ -6,6 +7,7 @@ export function useToast() {
     toast({
       position: "bottom-right",
       isClosable: true,
+      status: "success",
       ...props,
     })
   }

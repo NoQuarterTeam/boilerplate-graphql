@@ -6,7 +6,7 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 
 import { LOGIN_REFRESH_TOKEN_KEY, LOGIN_TOKEN_KEY, REDIRECT_PATH } from "lib/config"
-import type { MeQuery, RegisterInput} from "lib/graphql";
+import type { MeQuery, RegisterInput } from "lib/graphql"
 import { MeDocument, MeFragmentDoc, useRegisterMutation } from "lib/graphql"
 import { useForm } from "lib/hooks/useForm"
 import Yup from "lib/yup"
@@ -72,7 +72,7 @@ function Register() {
             <Input name="password" label="Password" type="password" placeholder="********" />
             <Input name="firstName" label="First name" placeholder="Jim" />
             <Input name="lastName" label="Last name" placeholder="Bob" />
-            <Button colorScheme="purple" type="submit" isFullWidth isLoading={loading} isDisabled={loading}>
+            <Button colorScheme="purple" type="submit" w="100%" isLoading={loading} isDisabled={loading}>
               Register
             </Button>
             <FormError />

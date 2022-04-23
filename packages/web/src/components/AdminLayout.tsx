@@ -1,6 +1,8 @@
 import * as React from "react"
 import { BiMoon, BiSun } from "react-icons/bi"
 import { CgExternal, CgHome, CgUser } from "react-icons/cg"
+import type {
+  LinkProps} from "@chakra-ui/react";
 import {
   Box,
   Button,
@@ -9,7 +11,6 @@ import {
   Icon,
   IconButton,
   Link,
-  LinkProps,
   Spinner,
   Stack,
   Text,
@@ -83,7 +84,7 @@ export function AdminLayout(props: Props) {
           </Center>
           <Button variant="outline" onClick={() => logout()} size="sm">
             <Icon boxSize="20px" as={CgExternal} mr={{ base: 0, md: 2 }} />
-            <Text d={{ base: "none", md: "block" }}>Logout</Text>
+            <Text display={{ base: "none", md: "block" }}>Logout</Text>
           </Button>
         </Stack>
       </Flex>
@@ -119,7 +120,7 @@ function SidebarLink({ href, icon, ...props }: SidebarLinkProps) {
         {...props}
       >
         <Center w="26px">{icon}</Center>
-        <Text ml={2} d={{ base: "none", md: "block" }}>
+        <Text ml={2} display={{ base: "none", md: "block" }}>
           {props.children}
         </Text>
       </Link>

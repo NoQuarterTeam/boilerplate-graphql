@@ -2,7 +2,7 @@ import { AuthenticationError } from "apollo-server-express"
 import { Arg, Args, Ctx, Mutation, Query, Resolver } from "type-graphql"
 import { Inject, Service } from "typedi"
 
-import { FindFirstUserArgs, FindManyUserArgs, Role } from "@generated"
+import { CreateUserArgs, FindFirstUserArgs, FindManyUserArgs, Role } from "@generated"
 
 import { createToken, decodeRefreshToken, decodeToken } from "../../lib/jwt"
 import { prisma } from "../../lib/prisma"
@@ -41,6 +41,13 @@ export default class UserResolver {
     const items = await prisma.user.findMany(args)
     const count = await prisma.user.count({ ...args, take: undefined, skip: undefined })
     return { items, count }
+  }
+
+  //CREATE USER
+  @UseAuth([Role.ADMIN])
+  @Mutation(() => User)
+  async createUser(@Args() args: CreateUserArgs): Promise<User> {
+    return await prisma.user.create(args)
   }
 
   // ME
