@@ -5,7 +5,6 @@ import { Box, Button, Checkbox, Heading, useDisclosure, Wrap } from "@chakra-ui/
 import dayjs from "dayjs"
 import Head from "next/head"
 
-import { paginate } from "lib/apollo/helpers"
 import type { UserItemFragment } from "lib/graphql";
 import { QueryMode, Role, SortOrder, useGetUsersQuery } from "lib/graphql"
 import { AdminCreateUserForm } from "components/AdminCreateUserForm"
@@ -13,7 +12,7 @@ import { AdminLayout } from "components/AdminLayout"
 import { Modal } from "components/Modal"
 import { PartialCheckIcon } from "components/PartialCheckIcon"
 import { Search } from "components/Search"
-import type { Sort} from "components/Table";
+import type { Sort } from "components/Table"
 import { Column, getOrderBy, Table } from "components/Table"
 
 const _ = gql`
@@ -61,7 +60,7 @@ export default function Users() {
 
   const handleFetchMore = () => {
     if (!users) return
-    return fetchMore({ variables: { skip: users.length, take: TAKE }, updateQuery: paginate("users") })
+    return fetchMore({ variables: { skip: users.length, take: TAKE } })
   }
 
   const toggleSelected = (userId: string) => {
