@@ -58,7 +58,7 @@
     "@types/react-dom": "18.0.2",
     "@types/react-native": "0.67.6",
     "eslint-plugin-react": "7.29.4",
-    "eslint-plugin-react-hooks": "4.4.0"
+    "eslint-plugin-react-hooks": "4.5.0"
   },
   "private": true
 }
