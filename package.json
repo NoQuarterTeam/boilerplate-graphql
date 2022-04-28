@@ -30,7 +30,7 @@
   "scripts": {
     "dev": "turbo run dev --parallel",
     "start:api": "node packages/api/dist",
-    "build:api": "cd packages/api && yarn build",
+    "build:api": "cd packages/api && npm build",
     "heroku-prebuild": "rm -rf packages/{web,app}",
     "heroku-cleanup": "cd packages/api && yarn generate",
     "build": "yarn build:api",
