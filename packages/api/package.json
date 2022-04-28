@@ -20,7 +20,7 @@
     "lint": "eslint --cache --ext .ts,.tsx src",
     "prettify": "prettier --write './src/**/*.ts' --ignore-path ../../.prettierignore",
     "pre-commit": "lint-staged",
-    "postinstall": "prisma generate"
+    "postinstall1": "prisma generate"
   },
   "lint-staged": {
     "*.(js|jsx|json|ts|tsx|html)": [
