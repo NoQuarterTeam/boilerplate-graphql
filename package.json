@@ -29,11 +29,11 @@
   },
   "scripts": {
     "dev": "turbo run dev --parallel",
-    "start:api": "node packages/api/dist",
-    "build:api": "cd packages/api && npm build",
+    "start:api": "cd packages/api && yarn start",
+    "build:api": "cd packages/api && yarn build",
     "heroku-prebuild": "rm -rf packages/{web,app}",
-    "heroku-cleanup": "cd packages/api && npm generate",
-    "build": "npm build:api",
+    "heroku-cleanup": "cd packages/api && yarn generate",
+    "build": "yarn build:api",
     "prettify": "turbo run prettify",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck"
@@ -60,9 +60,5 @@
   },
   "resolutions": {
     "prettier": "2.6.2"
-  },
-  "engines": {
-    "node": ">=16.0.0",
-    "yarn": ">=1.22.18"
   }
 }
