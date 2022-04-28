@@ -32,8 +32,8 @@
     "start:api": "node packages/api/dist",
     "build:api": "cd packages/api && npm build",
     "heroku-prebuild": "rm -rf packages/{web,app}",
-    "heroku-cleanup": "cd packages/api && yarn generate",
-    "build": "yarn build:api",
+    "heroku-cleanup": "cd packages/api && npm generate",
+    "build": "npm build:api",
     "prettify": "turbo run prettify",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck"
