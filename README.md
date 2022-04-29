@@ -56,8 +56,8 @@ Comes with user authentication included
    cp packages/api/.env.example  packages/api/.env
    ```
    ```bash
-   # Replace <user>,<password> and <db-name> with your corresponding username,password, and database name of your postgresql database.
-   DATABASE_URL=postgresql://john:doe@localhost:5432/postgres
+   # Replace <user>,<password> and <db-name> with your corresponding username, password, and database name of your postgresql database.
+   DATABASE_URL=postgresql://<user>:<password>@localhost:5432/<db-name>
    ```
 6. Migrate the database.
    ```bash
