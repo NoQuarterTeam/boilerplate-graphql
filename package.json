@@ -29,7 +29,7 @@
   },
   "scripts": {
     "dev": "turbo run dev --parallel",
-    "start:api": "cd packages/api && yarn start",
+    "start:api": "node packages/api/dist",
     "build:api": "cd packages/api && yarn build",
     "heroku-prebuild": "rm -rf packages/{web,app}",
     "heroku-cleanup": "cd packages/api && yarn generate",
@@ -60,5 +60,8 @@
   },
   "resolutions": {
     "prettier": "2.6.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
