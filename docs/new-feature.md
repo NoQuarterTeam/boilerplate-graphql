@@ -15,7 +15,7 @@ model Todo {
   title     String
   user      User     @relation(fields: [userId], references: [id])
   userId    String   @db.Uuid
-  completed Boolean? @default(false)
+  isComplete Boolean? @default(false)
   createdAt DateTime @default(now()) @db.Timestamptz(6)
   updatedAt DateTime @default(now()) @updatedAt @db.Timestamptz(6)
 }
@@ -52,7 +52,7 @@ model Todo {
 		userId: string
 
 		@Field()
-		completed: boolean
+		isComplete: boolean
 	}
 	```
 
