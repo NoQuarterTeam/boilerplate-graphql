@@ -5,7 +5,8 @@ import Head from "next/head"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
-import { ResetPasswordInput, useResetPasswordMutation } from "lib/graphql"
+import type { ResetPasswordInput} from "lib/graphql";
+import { useResetPasswordMutation } from "lib/graphql"
 import { useForm } from "lib/hooks/useForm"
 import { useToast } from "lib/hooks/useToast"
 import Yup from "lib/yup"
@@ -55,7 +56,7 @@ export default function ResetPassword() {
               <Text>Enter a new password below.</Text>
             </Box>
             <Input name="password" placeholder="*********" type="password" />
-            <Button isFullWidth colorScheme="purple" type="submit" isDisabled={loading} isLoading={loading}>
+            <Button w="100%" colorScheme="purple" type="submit" isDisabled={loading} isLoading={loading}>
               Reset
             </Button>
             <Link href="/login">Login</Link>

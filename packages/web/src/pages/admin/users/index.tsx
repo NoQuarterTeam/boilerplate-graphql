@@ -1,15 +1,19 @@
 import * as React from "react"
 import { CgSoftwareDownload, CgUserAdd } from "react-icons/cg"
 import { gql } from "@apollo/client"
-import { Box, Button, Checkbox, Heading, HStack } from "@chakra-ui/react"
+import { Box, Button, Checkbox, Heading, useDisclosure, Wrap } from "@chakra-ui/react"
 import dayjs from "dayjs"
 import Head from "next/head"
 
-import { QueryMode, Role, SortOrder, useGetUsersQuery, UserItemFragment } from "lib/graphql"
+import type { UserItemFragment } from "lib/graphql"
+import { QueryMode, Role, SortOrder, useGetUsersQuery } from "lib/graphql"
+import { AdminCreateUserForm } from "components/AdminCreateUserForm"
 import { AdminLayout } from "components/AdminLayout"
+import { Modal } from "components/Modal"
 import { PartialCheckIcon } from "components/PartialCheckIcon"
 import { Search } from "components/Search"
-import { Column, getOrderBy, Sort, Table } from "components/Table"
+import type { Sort } from "components/Table"
+import { Column, getOrderBy, Table } from "components/Table"
 
 const _ = gql`
   fragment UserItem on User {
@@ -21,8 +25,8 @@ const _ = gql`
 `
 
 const __ = gql`
-  query GetUsers($take: Int, $orderBy: [UserOrderByWithRelationInput!], $where: UserWhereInput, $skip: Int) {
-    users(take: $take, orderBy: $orderBy, where: $where, skip: $skip) {
+  query GetUsers($orderBy: [UserOrderByWithRelationInput!], $where: UserWhereInput, $skip: Int) {
+    users(take: 10, orderBy: $orderBy, where: $where, skip: $skip) {
       items {
         ...UserItem
       }
@@ -31,15 +35,15 @@ const __ = gql`
   }
 `
 
-const TAKE = 10
 export default function Users() {
   const [search, setSearch] = React.useState("")
   const [selectedUsers, setSelectedUsers] = React.useState<string[]>([])
+  const modalProps = useDisclosure()
   const [sort, setSort] = React.useState<Sort>({ createdAt: SortOrder.Desc })
   const { data, loading, fetchMore } = useGetUsersQuery({
+    fetchPolicy: "cache-and-network",
     variables: {
       orderBy: getOrderBy(sort),
-      take: TAKE,
       where: {
         role: { equals: Role.User },
         OR: [
@@ -55,7 +59,7 @@ export default function Users() {
 
   const handleFetchMore = () => {
     if (!users) return
-    return fetchMore({ variables: { skip: users.length, take: TAKE } })
+    return fetchMore({ variables: { skip: users.length } })
   }
 
   const toggleSelected = (userId: string) => {
@@ -83,33 +87,27 @@ export default function Users() {
       <Heading mb={2} fontWeight={800}>
         Users
       </Heading>
-      <HStack mb={4}>
+      <Wrap mb={4} spacing={2}>
         <Search search={search} onSearch={setSearch} placeholder="Search users" />
+        <Button leftIcon={<Box boxSize="20px" as={CgSoftwareDownload} />}>Download</Button>
         <Button
-          display={{ base: "none", md: "flex" }}
-          leftIcon={<Box boxSize="20px" as={CgSoftwareDownload} />}
-        >
-          Download
-        </Button>
-        <Button
-          display={{ base: "none", md: "flex" }}
           colorScheme="purple"
+          onClick={modalProps.onOpen}
           leftIcon={<Box boxSize="18px" as={CgUserAdd} />}
         >
           Create user
         </Button>
         {selectedUsers.length > 0 && <Button variant="ghost">{selectedUsers.length} selected</Button>}
-      </HStack>
+      </Wrap>
 
       <Table
         noDataText="No users found"
         data={users}
-        take={TAKE}
+        count={data?.users.count}
         sort={sort}
         onSort={setSort}
         getRowHref={(user) => `/admin/users/${user.id}`}
         onFetchMore={handleFetchMore}
-        count={data?.users.count}
         isLoading={loading && !!!data}
       >
         <Column<UserItemFragment>
@@ -148,6 +146,9 @@ export default function Users() {
           row={(user) => dayjs(user.createdAt).format("DD/MM/YYYY")}
         />
       </Table>
+      <Modal {...modalProps} title="Create user">
+        <AdminCreateUserForm onClose={modalProps.onClose} />
+      </Modal>
     </Box>
   )
 }

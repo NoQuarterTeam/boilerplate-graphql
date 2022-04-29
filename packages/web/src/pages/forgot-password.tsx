@@ -5,7 +5,8 @@ import Head from "next/head"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
-import { MutationForgotPasswordArgs, useForgotPasswordMutation } from "lib/graphql"
+import type { MutationForgotPasswordArgs} from "lib/graphql";
+import { useForgotPasswordMutation } from "lib/graphql"
 import { useForm } from "lib/hooks/useForm"
 import { useToast } from "lib/hooks/useToast"
 import Yup from "lib/yup"
@@ -54,7 +55,7 @@ export default function ForgotPassword() {
             <Text>Enter your email below to receive your password reset instructions.</Text>
 
             <Input autoFocus name="email" placeholder="Email" />
-            <Button isFullWidth colorScheme="purple" type="submit" isDisabled={loading} isLoading={loading}>
+            <Button w="100%" colorScheme="purple" type="submit" isDisabled={loading} isLoading={loading}>
               Send instructions
             </Button>
             <Link href="/login">Login</Link>

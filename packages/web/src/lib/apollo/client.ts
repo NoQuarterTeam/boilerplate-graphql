@@ -8,6 +8,8 @@ import type { RefreshResponse } from "pages/api/refresh-token"
 
 import { API_URL, REDIRECT_PATH, REDIRECT_REFRESH_KEY } from "lib/config"
 
+import { pagination } from "./pagination"
+
 export const isBrowser = () => typeof window !== "undefined"
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null
@@ -54,19 +56,7 @@ function createApolloClient(initialState: null | Record<string, any>) {
       typePolicies: {
         Query: {
           fields: {
-            users: {
-              keyArgs: ["orderBy", "where"],
-              merge(existing, incoming, { args }) {
-                if (args && !args.skip) {
-                  return incoming
-                }
-
-                return {
-                  count: incoming.count,
-                  items: [...existing.items, ...incoming.items],
-                }
-              },
-            },
+            users: pagination,
           },
         },
       },

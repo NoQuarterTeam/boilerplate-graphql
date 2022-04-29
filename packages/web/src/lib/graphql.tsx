@@ -50,6 +50,7 @@ export type LoginInput = {
 
 export type Mutation = {
   __typename?: 'Mutation';
+  createUser: User;
   destroyAccount: Scalars['Boolean'];
   forgotPassword: Scalars['Boolean'];
   getBulkSignedS3UrlForPut?: Maybe<Array<SignedResponse>>;
@@ -58,6 +59,11 @@ export type Mutation = {
   register: AuthResponse;
   resetPassword: Scalars['Boolean'];
   updateMe: User;
+};
+
+
+export type MutationCreateUserArgs = {
+  data: UserCreateInput;
 };
 
 
@@ -282,6 +288,19 @@ export type User = {
   updatedAt: Scalars['DateTime'];
 };
 
+export type UserCreateInput = {
+  avatar?: InputMaybe<Scalars['String']>;
+  bio?: InputMaybe<Scalars['String']>;
+  createdAt?: InputMaybe<Scalars['DateTime']>;
+  email: Scalars['String'];
+  firstName: Scalars['String'];
+  id?: InputMaybe<Scalars['String']>;
+  lastName: Scalars['String'];
+  password: Scalars['String'];
+  role?: InputMaybe<Role>;
+  updatedAt?: InputMaybe<Scalars['DateTime']>;
+};
+
 export type UserOrderByWithRelationInput = {
   avatar?: InputMaybe<SortOrder>;
   bio?: InputMaybe<SortOrder>;
@@ -335,40 +354,46 @@ export type UsersResponse = {
   items: Array<User>;
 };
 
-export type MeFragment = { __typename?: 'User', id: string, firstName: string, lastName: string, fullName: string, avatar?: string | null | undefined, email: string, role: Role };
+export type AdminCreateUserMutationVariables = Exact<{
+  data: UserCreateInput;
+}>;
+
+
+export type AdminCreateUserMutation = { __typename?: 'Mutation', createUser: { __typename?: 'User', id: string } };
+
+export type MeFragment = { __typename?: 'User', id: string, firstName: string, lastName: string, fullName: string, avatar?: string | null, email: string, role: Role };
 
 export type MeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type MeQuery = { __typename?: 'Query', me?: { __typename?: 'User', id: string, firstName: string, lastName: string, fullName: string, avatar?: string | null | undefined, email: string, role: Role } | null | undefined };
+export type MeQuery = { __typename?: 'Query', me?: { __typename?: 'User', id: string, firstName: string, lastName: string, fullName: string, avatar?: string | null, email: string, role: Role } | null };
 
 export type GetSignedUrlForPutMutationVariables = Exact<{
   data: S3SignedUrlInput;
 }>;
 
 
-export type GetSignedUrlForPutMutation = { __typename?: 'Mutation', getSignedS3UrlForPut?: { __typename?: 'SignedResponse', url: string, uploadUrl: string } | null | undefined };
+export type GetSignedUrlForPutMutation = { __typename?: 'Mutation', getSignedS3UrlForPut?: { __typename?: 'SignedResponse', url: string, uploadUrl: string } | null };
 
 export type GetBulkSignedUrlForPutMutationVariables = Exact<{
   data: S3BulkSignedUrlInput;
 }>;
 
 
-export type GetBulkSignedUrlForPutMutation = { __typename?: 'Mutation', getBulkSignedS3UrlForPut?: Array<{ __typename?: 'SignedResponse', url: string, uploadUrl: string, key: string }> | null | undefined };
+export type GetBulkSignedUrlForPutMutation = { __typename?: 'Mutation', getBulkSignedS3UrlForPut?: Array<{ __typename?: 'SignedResponse', url: string, uploadUrl: string, key: string }> | null };
 
-export type UserDetailFragment = { __typename?: 'User', id: string, fullName: string, bio?: string | null | undefined, avatar?: string | null | undefined, email: string, createdAt: string };
+export type UserDetailFragment = { __typename?: 'User', id: string, fullName: string, bio?: string | null, avatar?: string | null, email: string, createdAt: string };
 
 export type GetUserQueryVariables = Exact<{
   where?: InputMaybe<UserWhereInput>;
 }>;
 
 
-export type GetUserQuery = { __typename?: 'Query', user?: { __typename?: 'User', id: string, fullName: string, bio?: string | null | undefined, avatar?: string | null | undefined, email: string, createdAt: string } | null | undefined };
+export type GetUserQuery = { __typename?: 'Query', user?: { __typename?: 'User', id: string, fullName: string, bio?: string | null, avatar?: string | null, email: string, createdAt: string } | null };
 
 export type UserItemFragment = { __typename?: 'User', id: string, fullName: string, email: string, createdAt: string };
 
 export type GetUsersQueryVariables = Exact<{
-  take?: InputMaybe<Scalars['Int']>;
   orderBy?: InputMaybe<Array<UserOrderByWithRelationInput> | UserOrderByWithRelationInput>;
   where?: InputMaybe<UserWhereInput>;
   skip?: InputMaybe<Scalars['Int']>;
@@ -396,14 +421,14 @@ export type LoginMutationVariables = Exact<{
 }>;
 
 
-export type LoginMutation = { __typename?: 'Mutation', login: { __typename?: 'AuthResponse', token: string, refreshToken: string, user: { __typename?: 'User', id: string, firstName: string, lastName: string, fullName: string, avatar?: string | null | undefined, email: string, role: Role } } };
+export type LoginMutation = { __typename?: 'Mutation', login: { __typename?: 'AuthResponse', token: string, refreshToken: string, user: { __typename?: 'User', id: string, firstName: string, lastName: string, fullName: string, avatar?: string | null, email: string, role: Role } } };
 
 export type UpdateMeMutationVariables = Exact<{
   data: UpdateUserInput;
 }>;
 
 
-export type UpdateMeMutation = { __typename?: 'Mutation', updateMe: { __typename?: 'User', id: string, firstName: string, lastName: string, fullName: string, avatar?: string | null | undefined, email: string, role: Role } };
+export type UpdateMeMutation = { __typename?: 'Mutation', updateMe: { __typename?: 'User', id: string, firstName: string, lastName: string, fullName: string, avatar?: string | null, email: string, role: Role } };
 
 export type DestroyAccountMutationVariables = Exact<{ [key: string]: never; }>;
 
@@ -415,7 +440,7 @@ export type RegisterMutationVariables = Exact<{
 }>;
 
 
-export type RegisterMutation = { __typename?: 'Mutation', register: { __typename?: 'AuthResponse', token: string, refreshToken: string, user: { __typename?: 'User', id: string, firstName: string, lastName: string, fullName: string, avatar?: string | null | undefined, email: string, role: Role } } };
+export type RegisterMutation = { __typename?: 'Mutation', register: { __typename?: 'AuthResponse', token: string, refreshToken: string, user: { __typename?: 'User', id: string, firstName: string, lastName: string, fullName: string, avatar?: string | null, email: string, role: Role } } };
 
 export type ResetPasswordMutationVariables = Exact<{
   data: ResetPasswordInput;
@@ -453,6 +478,20 @@ export const UserItemFragmentDoc = gql`
   createdAt
 }
     `;
+export const AdminCreateUserDocument = gql`
+    mutation AdminCreateUser($data: UserCreateInput!) {
+  createUser(data: $data) {
+    id
+  }
+}
+    `;
+export function useAdminCreateUserMutation(baseOptions?: Apollo.MutationHookOptions<AdminCreateUserMutation, AdminCreateUserMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<AdminCreateUserMutation, AdminCreateUserMutationVariables>(AdminCreateUserDocument, options);
+      }
+export type AdminCreateUserMutationHookResult = ReturnType<typeof useAdminCreateUserMutation>;
+export type AdminCreateUserMutationResult = Apollo.MutationResult<AdminCreateUserMutation>;
+export type AdminCreateUserMutationOptions = Apollo.BaseMutationOptions<AdminCreateUserMutation, AdminCreateUserMutationVariables>;
 export const MeDocument = gql`
     query Me {
   me {
@@ -521,8 +560,8 @@ export type GetUserQueryHookResult = ReturnType<typeof useGetUserQuery>;
 export type GetUserLazyQueryHookResult = ReturnType<typeof useGetUserLazyQuery>;
 export type GetUserQueryResult = Apollo.QueryResult<GetUserQuery, GetUserQueryVariables>;
 export const GetUsersDocument = gql`
-    query GetUsers($take: Int, $orderBy: [UserOrderByWithRelationInput!], $where: UserWhereInput, $skip: Int) {
-  users(take: $take, orderBy: $orderBy, where: $where, skip: $skip) {
+    query GetUsers($orderBy: [UserOrderByWithRelationInput!], $where: UserWhereInput, $skip: Int) {
+  users(take: 10, orderBy: $orderBy, where: $where, skip: $skip) {
     items {
       ...UserItem
     }

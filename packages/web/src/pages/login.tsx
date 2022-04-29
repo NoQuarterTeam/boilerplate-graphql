@@ -77,7 +77,7 @@ function Login() {
             )}
             <Input name="email" label="Email" placeholder="jim@gmail.com" />
             <Input name="password" label="Password" type="password" placeholder="********" />
-            <c.Button colorScheme="purple" type="submit" isFullWidth isLoading={loading} isDisabled={loading}>
+            <c.Button colorScheme="purple" type="submit" w="100%" isLoading={loading} isDisabled={loading}>
               Login
             </c.Button>
             <FormError />
