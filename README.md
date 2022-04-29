@@ -29,38 +29,84 @@ Comes with user authentication included
 
 & many more tasty treats
 
+<br />
+<br />
+
 ## Get Started
 
-**Must have node, yarn, postgres and redis installed and setup locally**
+**You must have node, yarn, postgres and redis installed and setup locally**
 
-Delete whatever packages you don't need for the project, e.g. maybe you dont need the React Native app
+1. Clone the repo
+2. Delete the app folder if you're working on a purely web project.
 
-1. `yarn install`
-2. `createdb boilerplate`
-3. `cd packages/api && yarn db:migrate`
+   ```bash
+   rm -rf packages/app
+   ```
 
-Make sure you have created a .env file in the api package with the right values, you can use .env.example as the template
+3. Install dependencies.
+   ```bash
+   yarn install
+   ```
+4. Create local postgres database
+   ```bash
+   createdb boilerplate
+   ```
+5. Create a `.env` file and update the `DATABASE_URL` with your local postgres database url.
+   ```bash
+   cp packages/api/.env.example  packages/api/.env
+   ```
+   ```bash
+   # Replace <user>,<password> and <db-name> with your corresponding username,password, and database name of your postgresql database.
+   DATABASE_URL=postgresql://john:doe@localhost:5432/postgres
+   ```
+6. Migrate the database.
+   ```bash
+   cd packages/api && yarn db:migrate
+   ```
+
+<br />
+<br />
 
 We use Husky to run a couple of checks each commit (prettier, eslint & commitlint), make sure to add a
-.huskyrc file to your home directory ~/.huskyrc, and add this in:
+`.huskyrc` file to your home directory:
+
+```bash
+touch ~/.huskyrc
+```
+
+and copy this into the file this in:
 
 ```bash
 export PATH="/usr/local/bin:$PATH"
 ```
 
-then run
+then run this in the root of the project:
 
 ```bash
 npx husky install
 ```
 
+<br />
+
+---
+
+<br />
+<br />
 
 ## Development
 
-1. `cd packages/api && yarn watch`
+1. `cd packages/api && yarn dev`
 2. `cd packages/web && yarn dev`
 3. `cd packages/app && yarn start`
 
+<br />
+
+### An example of creating a simple todo feature can be found [here](./docs/new-feature.md).
+
+<br />
+<br />
+
+---
 
 ## Production
 
@@ -78,4 +124,3 @@ npx husky install
 An example is deployed [here](https://boilerplate.noquarter.co)
 
 We are using Heroku for the API package and Vercel for the WEB package
-
