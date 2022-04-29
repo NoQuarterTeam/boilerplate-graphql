@@ -87,10 +87,6 @@ npx husky install
 ```
 
 <br />
-
----
-
-<br />
 <br />
 
 ## Development
@@ -105,8 +101,6 @@ npx husky install
 
 <br />
 <br />
-
----
 
 ## Production
 
