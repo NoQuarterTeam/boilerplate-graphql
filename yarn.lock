@@ -5839,10 +5839,10 @@ apollo-datasource@^3.3.1:
     apollo-server-caching "^3.3.0"
     apollo-server-env "^4.2.1"
 
-apollo-graphql@0.9.6:
-  version "0.9.6"
-  resolved "https://registry.yarnpkg.com/apollo-graphql/-/apollo-graphql-0.9.6.tgz#756312a92685b0547f82cceb04f5b2d6e9f0df5c"
-  integrity sha512-CrqJxZwfu/U5x0bYYPPluwu1G+oC3jjKFK/EVn9CDcpi4+yD9rAYko/h1iUB5A6VRQhA4Boluc7QexMYQ2tCng==
+apollo-graphql@0.9.7:
+  version "0.9.7"
+  resolved "https://registry.yarnpkg.com/apollo-graphql/-/apollo-graphql-0.9.7.tgz#33185093b497a578f2df61ab8ecc6447d700ae64"
+  integrity sha512-bezL9ItUWUGHTm1bI/XzIgiiZbhXpsC7uxk4UxFPmcVJwJsDc3ayZ99oXxAaK+3Rbg/IoqrHckA6CwmkCsbaSA==
   dependencies:
     core-js-pure "^3.10.2"
     lodash.sortby "^4.7.0"
