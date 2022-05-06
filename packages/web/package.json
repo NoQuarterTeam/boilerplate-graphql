@@ -53,7 +53,7 @@
     "@graphql-codegen/typescript-operations": "2.3.7",
     "@graphql-codegen/typescript-react-apollo": "3.2.13",
     "@types/cookie": "0.5.1",
-    "@types/react": "18.0.8",
+    "@types/react": "18.0.9",
     "@types/react-dom": "18.0.3",
     "eslint-config-next": "12.1.6"
   }
