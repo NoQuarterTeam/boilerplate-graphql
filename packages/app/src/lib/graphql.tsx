@@ -50,6 +50,7 @@ export type LoginInput = {
 
 export type Mutation = {
   __typename?: 'Mutation';
+  createUser: User;
   destroyAccount: Scalars['Boolean'];
   forgotPassword: Scalars['Boolean'];
   getBulkSignedS3UrlForPut?: Maybe<Array<SignedResponse>>;
@@ -58,6 +59,11 @@ export type Mutation = {
   register: AuthResponse;
   resetPassword: Scalars['Boolean'];
   updateMe: User;
+};
+
+
+export type MutationCreateUserArgs = {
+  data: UserCreateInput;
 };
 
 
@@ -280,6 +286,19 @@ export type User = {
   lastName: Scalars['String'];
   role: Role;
   updatedAt: Scalars['DateTime'];
+};
+
+export type UserCreateInput = {
+  avatar?: InputMaybe<Scalars['String']>;
+  bio?: InputMaybe<Scalars['String']>;
+  createdAt?: InputMaybe<Scalars['DateTime']>;
+  email: Scalars['String'];
+  firstName: Scalars['String'];
+  id?: InputMaybe<Scalars['String']>;
+  lastName: Scalars['String'];
+  password: Scalars['String'];
+  role?: InputMaybe<Role>;
+  updatedAt?: InputMaybe<Scalars['DateTime']>;
 };
 
 export type UserOrderByWithRelationInput = {

@@ -57,7 +57,9 @@ const authLink = setContext(async (_, { headers }) => {
 
 const retryLink = new RetryLink()
 
-const errorLink = onError(({ graphQLErrors, operation, forward }) => {
+const errorLink = onError(({ graphQLErrors, networkError, operation, forward }) => {
+  console.log(graphQLErrors, networkError)
+
   if (graphQLErrors) {
     for (const err of graphQLErrors) {
       if (err.message === "Expired token") {
