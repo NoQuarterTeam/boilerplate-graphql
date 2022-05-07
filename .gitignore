@@ -10,6 +10,8 @@ coverage
  .turbo
 .turbo
 
+tsconfig.tsbuildinfo
+
 # debug
 npm-debug.log*
 yarn-debug.log*
