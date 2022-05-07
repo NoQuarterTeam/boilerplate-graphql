@@ -2,17 +2,16 @@
   "baseBranch": "origin/main",
   "pipeline": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "outputs": [
-        ".next/**"
-      ]
+      "dependsOn": ["^build"],
+      "outputs": [".next/**"]
     },
     "prettify": {},
     "typecheck": {},
     "lint": {},
     "dev": {
+      "cache": false
+    },
+    "pre-commit": {
       "cache": false
     }
   }
