@@ -1,4 +1,3 @@
-import { UserInputError } from "apollo-server-express"
 import bcrypt from "bcryptjs"
 import { Service } from "typedi"
 
@@ -10,14 +9,15 @@ import { LoginInput } from "./inputs/login.input"
 import { RegisterInput } from "./inputs/register.input"
 import { RefreshTokenResponse } from "./responses/refreshToken.response"
 import { User } from "./user.model"
+import { AppError } from "../../lib/appError"
 
 @Service()
 export class UserService {
   async login(data: LoginInput): Promise<User> {
     const user = await prisma.user.findUnique({ where: { email: data.email } })
-    if (!user) throw new UserInputError("Incorrect email or password")
+    if (!user) throw new AppError("Incorrect email or password")
     const isValidPassword = await bcrypt.compare(data.password, user.password)
-    if (!isValidPassword) throw new UserInputError("Incorrect email or password")
+    if (!isValidPassword) throw new AppError("Incorrect email or password")
     return user
   }
 
@@ -31,7 +31,7 @@ export class UserService {
   async checkUserExists(where: UserWhereInput) {
     const user = await prisma.user.findFirst({ where })
     if (user) {
-      throw new UserInputError("User with these details already exists")
+      throw new AppError("User with these details already exists")
     }
   }
 
