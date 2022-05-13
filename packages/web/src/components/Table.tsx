@@ -1,17 +1,7 @@
 import * as React from "react"
 import { CgArrowLongDown, CgArrowLongUp } from "react-icons/cg"
-import type {
-  FlexProps} from "@chakra-ui/react";
-import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  Link,
-  Spinner,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react"
+import type { FlexProps } from "@chakra-ui/react"
+import { Box, Button, Center, Flex, Link, Spinner, Text, useColorModeValue } from "@chakra-ui/react"
 import NextLink from "next/link"
 
 import { SortOrder } from "lib/graphql"

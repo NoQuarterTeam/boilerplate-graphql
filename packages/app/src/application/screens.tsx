@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+
 import * as React from "react"
 import { enableScreens } from "react-native-screens"
 import { NavigationContainer } from "@react-navigation/native"
@@ -14,6 +16,7 @@ const Container = createNativeStackNavigator()
 export function Screens() {
   return (
     <NavigationContainer>
+      {/* @ts-ignore */}
       <Container.Navigator
         initialRouteName="MainStack"
         screenOptions={{ presentation: "modal", headerShown: false }}
@@ -29,6 +32,7 @@ export function Screens() {
 const Main = createNativeStackNavigator()
 function MainStack() {
   return (
+    // @ts-ignore
     <Main.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
       <Main.Screen name="Home" component={Home} />
     </Main.Navigator>

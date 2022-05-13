@@ -1,8 +1,7 @@
 import * as React from "react"
 import { BiMoon, BiSun } from "react-icons/bi"
 import { CgExternal, CgHome, CgUser } from "react-icons/cg"
-import type {
-  LinkProps} from "@chakra-ui/react";
+import type { LinkProps } from "@chakra-ui/react"
 import {
   Box,
   Button,

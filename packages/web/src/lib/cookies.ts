@@ -1,6 +1,6 @@
 import cookie from "cookie"
 
-import { ACCESS_TOKEN,IS_PRODUCTION, REFRESH_TOKEN } from "./config"
+import { ACCESS_TOKEN, IS_PRODUCTION, REFRESH_TOKEN } from "./config"
 import type { RefreshTokenResponse } from "./graphql"
 
 export const createAuthCookies = ({ token, refreshToken }: RefreshTokenResponse) => [

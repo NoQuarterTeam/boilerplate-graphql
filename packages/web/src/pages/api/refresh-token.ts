@@ -4,7 +4,7 @@ import type { NextApiRequest, NextApiResponse } from "next"
 import { initializeApollo } from "lib/apollo/client"
 import { REFRESH_TOKEN } from "lib/config"
 import { createAuthCookies, removeAuthCookies } from "lib/cookies"
-import type { RefreshTokenQuery, RefreshTokenQueryVariables } from "lib/graphql";
+import type { RefreshTokenQuery, RefreshTokenQueryVariables } from "lib/graphql"
 import { RefreshTokenDocument } from "lib/graphql"
 
 const _ = gql`

@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next"
 import httpProxyMiddleware from "next-http-proxy-middleware"
 
-import { ACCESS_TOKEN,API_URL } from "lib/config"
+import { ACCESS_TOKEN, API_URL } from "lib/config"
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const token = req.cookies[ACCESS_TOKEN]
