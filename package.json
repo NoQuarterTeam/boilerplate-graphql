@@ -17,7 +17,7 @@
     "build": "yarn build:api",
     "prettify": "turbo run prettify",
     "lint": "turbo run lint",
-    "pre-commit": "turbo run pre-commit --parallel --no-cache",
+    "pre-commit": "turbo run pre-commit --no-cache",
     "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
