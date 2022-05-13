@@ -18,6 +18,7 @@ import { ThemeProvider } from "../components/ThemeProvider"
 import { API_URL, REFRESH_TOKEN, SESSION_TOKEN } from "../lib/config"
 import { RefreshTokenDocument, RefreshTokenQuery, RefreshTokenQueryVariables } from "../lib/graphql"
 import { Screens } from "./screens"
+import { typePolicies } from "../lib/apollo/pagination"
 
 const _ = gql`
   query RefreshToken($refreshToken: String!) {
@@ -86,7 +87,7 @@ const errorLink = onError(({ graphQLErrors, operation, forward }) => {
 
 const client = new ApolloClient({
   link: from([retryLink, errorLink, authLink, httpLink]),
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({ typePolicies }),
   defaultOptions: {
     watchQuery: { errorPolicy: "all" },
     mutate: { errorPolicy: "all" },
