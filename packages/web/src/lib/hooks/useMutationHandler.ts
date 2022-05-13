@@ -1,7 +1,7 @@
-import { FieldError } from "react-hook-form"
-import { UseToastOptions } from "@chakra-ui/react"
+import type { FieldError } from "react-hook-form"
+import type { UseToastOptions } from "@chakra-ui/react"
 import * as Sentry from "@sentry/nextjs"
-import { ExecutionResult } from "graphql"
+import type { ExecutionResult } from "graphql"
 
 import { useToast } from "./useToast"
 
@@ -30,7 +30,7 @@ async function mutationHandler<T>(
   res: ExecutionResult<NonNullable<T>> | void,
   handler: MutationHandler<T>,
   toast: (props: UseToastOptions) => void,
-  actions?: {
+  formActions?: {
     setFieldErrors: (errors: FieldError[]) => void
     setAppError: (message: any) => void
   },
@@ -50,43 +50,48 @@ async function mutationHandler<T>(
         description: "You are not authorized to perform this action.",
       })
     } else if (res.errors?.[0].message.includes("Not authenticated")) {
-      toast({
-        status: "error",
-        description: "Please login to continue.",
-      })
+      toast({ status: "error", description: "Please login to continue." })
     } else if (res.errors?.[0].extensions?.exception?.validationErrors) {
       const validationErrors = res.errors?.[0].extensions?.exception?.validationErrors
       if (handler.onValidationError) {
         await handler.onValidationError(formatValidations(validationErrors), toast)
-      } else if (actions) {
-        actions.setFieldErrors(formatValidations(validationErrors))
+      } else if (formActions) {
+        formActions.setFieldErrors(formatValidations(validationErrors))
       }
-    } else if (res.errors?.[0].extensions?.code === "BAD_USER_INPUT") {
+    } else if (res.errors?.[0].extensions?.code === "APP_ERROR") {
       if (handler.onAppError) {
         await handler.onAppError(res.errors[0].message, toast)
       } else {
         toast({ status: "error", description: res.errors[0].message })
       }
-    } else if (res.errors?.[0].message) {
+    } else if (res.errors?.[0].extensions?.code === "BAD_USER_INPUT" || res.errors?.[0].message) {
+      Sentry.captureException(res.errors)
       if (handler.onServerError) {
         await handler.onServerError(res.errors[0].message, toast)
       } else {
-        toast({
-          status: "error",
-          description: "Server error. We have been notified.",
-        })
+        toast({ status: "error", description: "Server error. We have been notified." })
       }
     }
   } catch (e) {
+    // If any of the handler callbacks error
     Sentry.captureException(e)
     console.log(e)
     toast({
       status: "error",
-      description: "Server error. We have been notified.",
+      description: "Application error. We have been notified.",
     })
   } finally {
     if (handler?.onFinish) {
-      await handler.onFinish(toast)
+      try {
+        await handler.onFinish(toast)
+      } catch (e) {
+        Sentry.captureException(e)
+        console.log(e)
+        toast({
+          status: "error",
+          description: "Application error. We have been notified.",
+        })
+      }
     }
     return res
   }
@@ -106,11 +111,12 @@ export function useMutationHandler() {
       const res = await mutation()
       return mutationHandler(res, actions || {}, toast, formActions)
     } catch (e) {
-      // TODO: is block this needed?
+      // Likely an internet connection issue, or an unknown server error
       Sentry.captureException(e)
       console.log(e)
       toast({
-        description: "Something went wrong. We have been notified!",
+        title: "Something went wrong, we have been notified!",
+        description: "Do you have an internet connection?",
         status: "error",
       })
       return

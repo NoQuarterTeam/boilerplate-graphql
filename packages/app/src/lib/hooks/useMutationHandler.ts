@@ -1,6 +1,7 @@
 import { FieldError } from "react-hook-form"
 import { ExecutionResult } from "graphql"
-import { IToastProps, useToast } from "native-base"
+import { IToastProps } from "native-base"
+import { useToast } from "./useToast"
 
 export interface ValidationError {
   property: string
@@ -42,19 +43,9 @@ async function mutationHandler<T>(
       res.errors?.[0].message.includes("Access denied!") ||
       res.errors?.[0].message.includes("Not authorized")
     ) {
-      toast({
-        w: "300px",
-        placement: "top",
-        status: "error",
-        title: "You are not authorized to perform this action.",
-      })
+      toast({ title: "You are not authorized to perform this action." })
     } else if (res.errors?.[0].message.includes("Not authenticated")) {
-      toast({
-        w: "300px",
-        placement: "top",
-        status: "error",
-        title: "Please login to continue.",
-      })
+      toast({ title: "Please login to continue." })
     } else if (res.errors?.[0].extensions?.exception?.validationErrors) {
       const validationErrors = res.errors?.[0].extensions?.exception?.validationErrors
       if (handler.onValidationError) {
@@ -62,37 +53,22 @@ async function mutationHandler<T>(
       } else if (actions) {
         actions.setFieldErrors(formatValidations(validationErrors))
       }
-    } else if (res.errors?.[0].extensions?.code === "BAD_USER_INPUT") {
+    } else if (res.errors?.[0].extensions?.code === "APP_ERROR") {
       if (handler.onAppError) {
         await handler.onAppError(res.errors[0].message, toast)
       } else {
-        toast({
-          placement: "top",
-          w: "300px",
-          status: "error",
-          title: res.errors[0].message,
-        })
+        toast({ title: res.errors[0].message })
       }
-    } else if (res.errors?.[0].message) {
+    } else if (res.errors?.[0].extensions?.code === "BAD_USER_INPUT" || res.errors?.[0].message) {
       if (handler.onServerError) {
         await handler.onServerError(res.errors[0].message, toast)
       } else {
-        toast({
-          w: "300px",
-          placement: "top",
-          status: "error",
-          title: "Server error. We have been notified.",
-        })
+        toast({ title: "Server error. We have been notified." })
       }
     }
   } catch (e) {
     console.log(e)
-    toast({
-      w: "300px",
-      placement: "top",
-      status: "error",
-      title: "Server error. We have been notified.",
-    })
+    toast({ title: "Server error. We have been notified." })
   } finally {
     if (handler?.onFinish) {
       await handler.onFinish(toast)
@@ -117,10 +93,7 @@ export function useMutationHandler() {
     } catch (e) {
       console.log("Oops", e)
       toast.show({
-        w: "300px",
-        placement: "top",
         title: "Something went wrong. We have been notified!",
-        status: "error",
       })
       return
     }
