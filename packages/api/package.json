@@ -44,10 +44,10 @@
     "class-transformer": "0.5.1",
     "class-validator": "0.13.2",
     "dayjs": "1.11.2",
-    "dotenv": "16.0.0",
+    "dotenv": "16.0.1",
     "express": "4.18.1",
     "express-jwt": "6.1.2",
-    "glob": "8.0.1",
+    "glob": "8.0.2",
     "graphql": "15.8.0",
     "graphql-fields": "2.0.3",
     "graphql-scalars": "1.17.0",
@@ -61,7 +61,7 @@
     "reflect-metadata": "0.1.13",
     "type-graphql": "1.1.1",
     "typedi": "0.10.0",
-    "typegraphql-prisma": "0.20.2"
+    "typegraphql-prisma": "0.20.3"
   },
   "devDependencies": {
     "@types/bcryptjs": "2.4.2",
@@ -71,7 +71,7 @@
     "@types/ioredis": "4.28.10",
     "@types/jsonwebtoken": "8.5.8",
     "@types/morgan": "1.9.3",
-    "@types/node": "16.11.33",
+    "@types/node": "16.11.35",
     "@types/nodemailer": "6.4.4",
     "ts-node": "10.7.0",
     "ts-node-dev": "1.1.8"

@@ -42,19 +42,19 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-dropzone": "14.2.1",
-    "react-hook-form": "7.30.0",
+    "react-hook-form": "7.31.1",
     "react-icons": "4.3.1",
     "yup": "0.32.11"
   },
   "devDependencies": {
     "@graphql-codegen/add": "3.1.1",
     "@graphql-codegen/cli": "2.6.2",
-    "@graphql-codegen/typescript": "2.4.10",
-    "@graphql-codegen/typescript-operations": "2.3.7",
-    "@graphql-codegen/typescript-react-apollo": "3.2.13",
+    "@graphql-codegen/typescript": "2.4.11",
+    "@graphql-codegen/typescript-operations": "2.4.0",
+    "@graphql-codegen/typescript-react-apollo": "3.2.14",
     "@types/cookie": "0.5.1",
     "@types/react": "17.0.45",
-    "@types/react-dom": "17.0.16",
+    "@types/react-dom": "17.0.17",
     "eslint-config-next": "12.1.6"
   }
 }
