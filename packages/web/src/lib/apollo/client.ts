@@ -4,12 +4,11 @@ import { ApolloClient, createHttpLink, from, fromPromise, InMemoryCache } from "
 import { onError } from "@apollo/client/link/error"
 import { RetryLink } from "@apollo/client/link/retry"
 import { mergeDeep } from "@apollo/client/utilities"
+import * as Sentry from "@sentry/nextjs"
 import type { RefreshResponse } from "pages/api/refresh-token"
 
-import { API_URL, REDIRECT_PATH, REDIRECT_REFRESH_KEY } from "lib/config"
-
-import { pagination } from "./pagination"
-
+import { typePolicies } from "lib/apollo/pagination"
+import { GRAPHQL_API_URL, REDIRECT_PATH, REDIRECT_REFRESH_KEY } from "lib/config"
 export const isBrowser = () => typeof window !== "undefined"
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null
@@ -22,6 +21,8 @@ const errorLink = onError(({ graphQLErrors, operation, forward }) => {
   if (graphQLErrors) {
     for (const err of graphQLErrors) {
       switch (err.extensions.code) {
+        case "BAD_USER_INPUT":
+          Sentry.captureException(err)
         case "UNAUTHENTICATED":
           return fromPromise(
             refreshToken()
@@ -39,9 +40,10 @@ const errorLink = onError(({ graphQLErrors, operation, forward }) => {
     }
   }
 })
-const httpLink = createHttpLink({ uri: !isBrowser() ? API_URL : "/api/graphql" })
 
-function createApolloClient(initialState: null | Record<string, any>) {
+const httpLink = createHttpLink({ uri: isBrowser() ? "/api/graphql" : GRAPHQL_API_URL })
+
+function createApolloClient(initialState?: null | Record<string, any>) {
   return new ApolloClient({
     ssrMode: !isBrowser(),
     link: from([retryLink, errorLink, httpLink]),
@@ -52,19 +54,11 @@ function createApolloClient(initialState: null | Record<string, any>) {
       mutate: { errorPolicy: "all" },
       query: { errorPolicy: "all" },
     },
-    cache: new InMemoryCache({
-      typePolicies: {
-        Query: {
-          fields: {
-            users: pagination,
-          },
-        },
-      },
-    }).restore(initialState || {}),
+    cache: new InMemoryCache({ typePolicies }).restore(initialState || {}),
   })
 }
 
-export function initializeApollo(initialState: null | Record<string, any>) {
+export function initializeApollo(initialState?: null | Record<string, any>) {
   const _apolloClient = apolloClient ?? createApolloClient(initialState)
   // If your page has Next.js data fetching methods that use Apollo Client, the initial state
   // gets hydrated here

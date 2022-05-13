@@ -26,6 +26,8 @@ export const withNoAuth = (Page: NextPageWithLayout, redirectUrl?: string) => {
           <Spinner />
         </Center>
       )
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     return <Page {...props} />
   }
 

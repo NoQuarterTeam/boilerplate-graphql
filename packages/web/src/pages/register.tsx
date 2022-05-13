@@ -62,7 +62,7 @@ function Register() {
   return (
     <Center flexDir="column" mt={10}>
       <Head>
-        <title>Boilerplate - Register</title>
+        <title>Register</title>
       </Head>
       <Box w={["100%", 400]}>
         <Form onSubmit={onSubmit} {...form}>

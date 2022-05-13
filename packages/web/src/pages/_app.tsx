@@ -1,24 +1,15 @@
 import * as React from "react"
 import { ApolloProvider } from "@apollo/client"
 import { ChakraProvider, theme } from "@chakra-ui/react"
-import type { NextPage } from "next"
-import type { AppProps } from "next/app"
+
 import Head from "next/head"
 
 import { useApollo } from "lib/apollo/client"
 
-type NextPageWithLayout = NextPage & {
-  getLayout?: (page: React.ReactElement) => React.ReactNode
-}
-
-type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout
-}
-
-export default function BoilerplateApp(props: AppPropsWithLayout) {
+export default function App(props: any) {
   const { Component, pageProps } = props
   const apolloClient = useApollo(pageProps.initialApolloState)
-  const getLayout = Component.getLayout ?? ((page) => page)
+  const getLayout = Component.getLayout ?? ((page: any) => page)
   return (
     <>
       <Head>

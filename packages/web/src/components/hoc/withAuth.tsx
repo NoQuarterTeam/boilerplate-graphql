@@ -39,6 +39,8 @@ export function withAuth(Page: NextPageWithLayout, isAuthorized?: (user: MeFragm
         </Center>
       )
     }
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     return <Page {...props} />
   }
   const getPageLayout = Page.getLayout ?? ((page: React.ReactElement) => page)

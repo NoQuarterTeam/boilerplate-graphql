@@ -63,7 +63,7 @@ function Login() {
   return (
     <c.Center flexDir="column" pt={10}>
       <Head>
-        <title>Boilerplate - Login</title>
+        <title>Login</title>
       </Head>
       <c.Box w={["100%", 400]}>
         <Form onSubmit={onSubmit} {...form}>

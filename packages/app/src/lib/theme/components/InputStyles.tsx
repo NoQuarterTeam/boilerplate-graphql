@@ -10,11 +10,10 @@ function outlineStyle() {
 }
 function filledStyle(props: Record<string, any>) {
   return {
-    bg: props.bg || "muted.200",
+    backgroundColor: props.bg || "muted.200",
     borderWidth: 2,
     fontSize: "xl",
     borderColor: "transparent",
-    _hover: { bg: "muted.300" },
   }
 }
 function unstyledStyle() {

@@ -61,7 +61,7 @@ export function Nav() {
             textTransform="uppercase"
             fontWeight="bold"
           >
-            Boilerplate
+            Home
           </HomeLink>
         </HStack>
 

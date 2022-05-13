@@ -5,7 +5,7 @@ import Head from "next/head"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
-import type { MutationForgotPasswordArgs} from "lib/graphql";
+import type { MutationForgotPasswordArgs } from "lib/graphql"
 import { useForgotPasswordMutation } from "lib/graphql"
 import { useForm } from "lib/hooks/useForm"
 import { useToast } from "lib/hooks/useToast"
@@ -46,7 +46,7 @@ export default function ForgotPassword() {
   return (
     <Center flexDir="column" pt={10}>
       <Head>
-        <title>Boilerplate - Forgot password</title>
+        <title>Forgot password</title>
       </Head>
       <Box w={["100%", 400]}>
         <Form {...form} onSubmit={handleSubmit}>

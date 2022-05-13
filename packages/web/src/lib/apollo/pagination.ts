@@ -23,3 +23,27 @@ export const pagination: FieldPolicy<Response, Response, Response, FieldFunction
     }
   },
 }
+
+export const typePolicies = {
+  Query: {
+    fields: {
+      exports: pagination,
+      innovations: pagination,
+      subtrends: pagination,
+      megatrends: pagination,
+      macrotrends: pagination,
+      industries: pagination,
+      stats: pagination,
+      teams: pagination,
+      orders: pagination,
+      invoices: pagination,
+      prices: pagination,
+      basicNeeds: pagination,
+      plans: pagination,
+      regions: pagination,
+      reports: pagination,
+      users: pagination,
+      activity: pagination,
+    },
+  },
+}

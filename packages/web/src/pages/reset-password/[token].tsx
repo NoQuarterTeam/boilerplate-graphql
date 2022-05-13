@@ -5,7 +5,7 @@ import Head from "next/head"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
-import type { ResetPasswordInput} from "lib/graphql";
+import type { ResetPasswordInput } from "lib/graphql"
 import { useResetPasswordMutation } from "lib/graphql"
 import { useForm } from "lib/hooks/useForm"
 import { useToast } from "lib/hooks/useToast"
@@ -46,7 +46,7 @@ export default function ResetPassword() {
   return (
     <Center flexDir="column" pt={10}>
       <Head>
-        <title>Boilerplate - Reset password</title>
+        <title>Reset password</title>
       </Head>
       <Box w={["100%", 400]}>
         <Form {...form} onSubmit={handleSubmit}>

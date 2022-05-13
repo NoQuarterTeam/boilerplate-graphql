@@ -57,27 +57,28 @@ const authLink = setContext(async (_, { headers }) => {
 
 const retryLink = new RetryLink()
 
-const errorLink = onError(({ graphQLErrors, networkError, operation, forward }) => {
-  console.log(graphQLErrors, networkError)
-
+const errorLink = onError(({ graphQLErrors, operation, forward }) => {
   if (graphQLErrors) {
     for (const err of graphQLErrors) {
-      if (err.message === "Expired token") {
-        return fromPromise(
-          getRefreshToken().catch(async () => {
-            await AsyncStorage.removeItem(SESSION_TOKEN)
-            await AsyncStorage.removeItem(REFRESH_TOKEN)
-            return { token: null, refreshToken: null }
-          }),
-        )
-          .filter(Boolean)
-          .flatMap((res) => {
-            const oldHeaders = operation.getContext().headers
-            operation.setContext({
-              headers: { ...oldHeaders, authorization: res.token ? `Bearer ${res.token}` : "" },
+      switch (err.extensions.code) {
+        case "BAD_USER_INPUT":
+          console.log(err)
+        case "UNAUTHENTICATED":
+          return fromPromise(
+            getRefreshToken().catch(async () => {
+              await AsyncStorage.removeItem(SESSION_TOKEN)
+              await AsyncStorage.removeItem(REFRESH_TOKEN)
+              return { token: null, refreshToken: null }
+            }),
+          )
+            .filter(Boolean)
+            .flatMap((res) => {
+              const oldHeaders = operation.getContext().headers
+              operation.setContext({
+                headers: { ...oldHeaders, authorization: res.token ? `Bearer ${res.token}` : "" },
+              })
+              return forward(operation)
             })
-            return forward(operation)
-          })
       }
     }
   }
