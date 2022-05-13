@@ -9,13 +9,12 @@
   dependencies:
     "@jridgewell/trace-mapping" "^0.3.0"
 
-"@apollo/client@3.7.0-alpha.3":
-  version "3.7.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.7.0-alpha.3.tgz#7907f7597abe93236d9613f81b4968012fc4de9e"
-  integrity sha512-jOUCnuDZYXFMkSaNo5q7+5ZgTkWvKNaxoohZPY+pBEFC8vDNUOCXN5koPpZmvUjl7kPsYI+V6TqR3ZWcefisUA==
+"@apollo/client@3.7.0-alpha.4":
+  version "3.7.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.7.0-alpha.4.tgz#5fe8fba988e5d69d6bf51b264065128bde93c3d9"
+  integrity sha512-41zA7AuQu21V5p4BoBfgzR1WK+jiJEs3Z8uNW3exqb0tgkwzFCfeSAAhqQgXn7TbiNp+Nj1ti5T8XOqY0VzcTQ==
   dependencies:
     "@graphql-typed-document-node/core" "^3.1.1"
-    "@types/use-sync-external-store" "^0.0.3"
     "@wry/context" "^0.6.0"
     "@wry/equality" "^0.5.0"
     "@wry/trie" "^0.3.0"
@@ -24,9 +23,9 @@
     optimism "^0.16.1"
     prop-types "^15.7.2"
     symbol-observable "^4.0.0"
-    ts-invariant "^0.10.2"
+    ts-invariant "^0.10.3"
     tslib "^2.3.0"
-    zen-observable-ts "^1.2.0"
+    zen-observable-ts "^1.2.5"
 
 "@apollo/protobufjs@1.2.2":
   version "1.2.2"
@@ -4916,11 +4915,6 @@
   version "0.0.30"
   resolved "https://registry.yarnpkg.com/@types/strip-json-comments/-/strip-json-comments-0.0.30.tgz#9aa30c04db212a9a0649d6ae6fd50accc40748a1"
   integrity sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==
-
-"@types/use-sync-external-store@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@types/use-sync-external-store/-/use-sync-external-store-0.0.3.tgz#b6725d5f4af24ace33b36fafd295136e75509f43"
-  integrity sha512-EwmlvuaxPNej9+T4v5AuBPJa2x2UOJVdjCtDHgcDqitUeOtjnJKJ+apYjVcAoBEMjKW1VVFGZLUb5+qqa09XFA==
 
 "@types/warning@^3.0.0":
   version "3.0.0"
@@ -13893,7 +13887,7 @@ ts-interface-checker@^0.1.9:
   resolved "https://registry.yarnpkg.com/ts-interface-checker/-/ts-interface-checker-0.1.13.tgz#784fd3d679722bc103b1b4b8030bcddb5db2a699"
   integrity sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==
 
-ts-invariant@^0.10.2:
+ts-invariant@^0.10.3:
   version "0.10.3"
   resolved "https://registry.yarnpkg.com/ts-invariant/-/ts-invariant-0.10.3.tgz#3e048ff96e91459ffca01304dbc7f61c1f642f6c"
   integrity sha512-uivwYcQaxAucv1CzRp2n/QdYPo4ILf9VXgH19zEIjFx2EJufV16P0JtJVpYHy89DItG6Kwj2oIUjrcK5au+4tQ==
@@ -14810,10 +14804,10 @@ yup@0.32.11:
     property-expr "^2.0.4"
     toposort "^2.0.2"
 
-zen-observable-ts@^1.2.0:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/zen-observable-ts/-/zen-observable-ts-1.2.3.tgz#c2f5ccebe812faf0cfcde547e6004f65b1a6d769"
-  integrity sha512-hc/TGiPkAWpByykMwDcem3SdUgA4We+0Qb36bItSuJC9xD0XVBZoFHYoadAomDSNf64CG8Ydj0Qb8Od8BUWz5g==
+zen-observable-ts@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/zen-observable-ts/-/zen-observable-ts-1.2.5.tgz#6c6d9ea3d3a842812c6e9519209365a122ba8b58"
+  integrity sha512-QZWQekv6iB72Naeake9hS1KxHlotfRpe+WGNbNx5/ta+R3DNjVO2bswf63gXlWDcs+EMd7XY8HfVQyP1X6T4Zg==
   dependencies:
     zen-observable "0.8.15"
 
