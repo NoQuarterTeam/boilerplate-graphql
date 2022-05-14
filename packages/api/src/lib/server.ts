@@ -29,6 +29,7 @@ export class Server {
         }),
       )
 
+    // nice modern issue tracking.
     if (IS_PRODUCTION) {
       Sentry.init({
         dsn: SENTRY_DSN,

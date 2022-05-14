@@ -32,11 +32,13 @@ class App extends Server {
     await this.setupApollo()
     this.start()
   }
+
   async setUpDb() {
     await prisma.$connect()
     loadPrismaHooks()
     this.logger.info("DB ready")
   }
+
   async setUpAuth() {
     this.app
       .use(jwt({ secret: APP_AUTH_SECRET, credentialsRequired: false, algorithms: ["HS256"] }))
