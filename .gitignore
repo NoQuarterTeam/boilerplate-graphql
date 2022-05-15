@@ -7,9 +7,9 @@ dist
 tmp
 temp
 coverage
- .turbo
 .turbo
 
+yarn-error.log
 tsconfig.tsbuildinfo
 
 # debug
