@@ -1,6 +1,8 @@
 import * as React from "react"
 import { BiCog, BiExit, BiMoon, BiSun, BiUser } from "react-icons/bi"
 import { GiHamburgerMenu } from "react-icons/gi"
+import type {
+  LinkProps} from "@chakra-ui/react";
 import {
   Avatar,
   Box,
@@ -8,7 +10,6 @@ import {
   HStack,
   IconButton,
   Link,
-  LinkProps,
   Menu,
   MenuButton,
   MenuDivider,
@@ -61,7 +62,7 @@ export function Nav() {
             textTransform="uppercase"
             fontWeight="bold"
           >
-            Boilerplate
+            A New App
           </HomeLink>
         </HStack>
 

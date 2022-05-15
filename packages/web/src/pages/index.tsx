@@ -17,14 +17,14 @@ export default function Home() {
 
       <Limiter pt={20} minH="calc(100vh - 65px)">
         <Center flexDir="column">
-          <Heading as="h1" mb={4} textAlign="center">
-            Welcome to the Boilerplate
-          </Heading>
           {me && (
-            <Heading as="h2" fontSize="2xl">
+            <Heading as="h2" mb={4} fontSize="2xl">
               Hello, {me.firstName}!
             </Heading>
           )}
+          <Heading as="h1" mb={4} textAlign="center">
+            Welcome to MY APP 🦌
+          </Heading>
         </Center>
       </Limiter>
     </Box>
