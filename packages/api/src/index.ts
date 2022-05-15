@@ -20,7 +20,6 @@ import { Server } from "./lib/server"
 class App extends Server {
   constructor() {
     super()
-
     this.init().catch((error) => {
       this.logger.error(error)
       process.exit(1)

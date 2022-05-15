@@ -1,6 +1,6 @@
 import * as React from "react"
 import { ApolloProvider } from "@apollo/client"
-import { Box, ChakraProvider, theme } from "@chakra-ui/react"
+import { ChakraProvider, theme } from "@chakra-ui/react"
 import Head from "next/head"
 
 import { useApollo } from "lib/apollo/client"
@@ -15,8 +15,6 @@ export default function App(props: any) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <ChakraProvider theme={theme}>
-        <Box />
-
         <ApolloProvider client={apolloClient}>{getLayout(<Component {...pageProps} />)}</ApolloProvider>
       </ChakraProvider>
     </>
