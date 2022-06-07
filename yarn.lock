@@ -9,10 +9,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "^0.3.0"
 
-"@apollo/client@3.7.0-beta.1":
-  version "3.7.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.7.0-beta.1.tgz#dda88a4db6a5d7656cb523b013d5580fb99b734a"
-  integrity sha512-mY+sWrB65rS1VxCeSnUJ6PDfbZLz2OxZRl4HKJktJ0zxH7QMcHlLmLleaxIoQlE8Ux6va4xVzlWxfh3ZeiCN4w==
+"@apollo/client@3.7.0-beta.3":
+  version "3.7.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.7.0-beta.3.tgz#61d8bef3f31e1bd3d52fcaad32a32533efa16540"
+  integrity sha512-8tqjbWWXnJT1ifkES//o1V44kocUDfIfVEoVOti5z/V0mjf2HLcjfcl5xHKCt9wmDKAADCouVER8110TpGd27A==
   dependencies:
     "@graphql-typed-document-node/core" "^3.1.1"
     "@wry/context" "^0.6.0"
