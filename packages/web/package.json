@@ -32,7 +32,7 @@
     "@chakra-ui/react": "1.8.8",
     "@emotion/react": "11.9.0",
     "@emotion/styled": "11.8.1",
-    "@hookform/resolvers": "2.9.0",
+    "@hookform/resolvers": "2.9.1",
     "@sentry/nextjs": "7.1.1",
     "dayjs": "1.11.3",
     "framer-motion": "6.3.11",
