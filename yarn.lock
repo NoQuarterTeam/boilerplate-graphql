@@ -102,6 +102,29 @@
   dependencies:
     xss "^1.0.8"
 
+"@ardatan/relay-compiler@12.0.0":
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/@ardatan/relay-compiler/-/relay-compiler-12.0.0.tgz#2e4cca43088e807adc63450e8cab037020e91106"
+  integrity sha512-9anThAaj1dQr6IGmzBMcfzOQKTa5artjuPmw8NYK/fiGEMjADbSguBY2FMDykt+QhilR3wc9VA/3yVju7JHg7Q==
+  dependencies:
+    "@babel/core" "^7.14.0"
+    "@babel/generator" "^7.14.0"
+    "@babel/parser" "^7.14.0"
+    "@babel/runtime" "^7.0.0"
+    "@babel/traverse" "^7.14.0"
+    "@babel/types" "^7.0.0"
+    babel-preset-fbjs "^3.4.0"
+    chalk "^4.0.0"
+    fb-watchman "^2.0.0"
+    fbjs "^3.0.0"
+    glob "^7.1.1"
+    immutable "~3.7.6"
+    invariant "^2.2.4"
+    nullthrows "^1.1.1"
+    relay-runtime "12.0.0"
+    signedsource "^1.0.0"
+    yargs "^15.3.1"
+
 "@babel/code-frame@7.10.4", "@babel/code-frame@~7.10.4":
   version "7.10.4"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.10.4.tgz#168da1a36e90da68ae8d49c0f1b48c7c6249213a"
@@ -2681,47 +2704,47 @@
     "@graphql-tools/utils" "^8.1.1"
     tslib "~2.3.0"
 
-"@graphql-codegen/typescript-operations@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-operations/-/typescript-operations-2.4.1.tgz#bef0c4d3acf70879e2be24d73515df523a2bcdc2"
-  integrity sha512-NIHn4T5wxQ45PtKJ19q+AOqR4f2jW8UlMfQD34RG7vTuD42g+Y00GupYFTyzE6bsUAIhsVgJ4QJmP+taipBKAQ==
+"@graphql-codegen/typescript-operations@2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-operations/-/typescript-operations-2.4.2.tgz#374da9f2ec0b60dee0ebbc22c6b885f0d7f3aacb"
+  integrity sha512-0/Jk+FxJVOdznSJ+G3KKPbMr2gK67yQetUAUS0FzV9FptVDFkklK/BazKqJJE5dNrj9ubuI2BafXPzSTN4M2Ug==
   dependencies:
     "@graphql-codegen/plugin-helpers" "^2.4.0"
-    "@graphql-codegen/typescript" "^2.5.0"
-    "@graphql-codegen/visitor-plugin-common" "2.9.0"
+    "@graphql-codegen/typescript" "^2.5.1"
+    "@graphql-codegen/visitor-plugin-common" "2.9.1"
     auto-bind "~4.0.0"
     tslib "~2.4.0"
 
-"@graphql-codegen/typescript-react-apollo@3.2.15":
-  version "3.2.15"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-react-apollo/-/typescript-react-apollo-3.2.15.tgz#82638a92567923a5dd31cb02ffa5c6fbdda177b7"
-  integrity sha512-FLOt8A246AKN8n6GRNyx0Kyc0nUOOi8xLtv4lrM6tUYjQI5IVqM7O8o2P7pexqOtbo3HiQnDxohWN26wnQ3tDw==
+"@graphql-codegen/typescript-react-apollo@3.2.16":
+  version "3.2.16"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-react-apollo/-/typescript-react-apollo-3.2.16.tgz#dbad90d123df80ffb16c6baa26fbdcd14e599c5d"
+  integrity sha512-/tsu7yzVNFfJszfZne9J1Qg4xpriNnoD0pXR+3BJUQjy4cAtApP5H1WTTwdCJCIlPMYJi8r9GFZ3qaYE6mMd3g==
   dependencies:
     "@graphql-codegen/plugin-helpers" "^2.4.0"
-    "@graphql-codegen/visitor-plugin-common" "2.9.0"
+    "@graphql-codegen/visitor-plugin-common" "2.9.1"
     auto-bind "~4.0.0"
     change-case-all "1.0.14"
     tslib "~2.4.0"
 
-"@graphql-codegen/typescript@2.5.0", "@graphql-codegen/typescript@^2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript/-/typescript-2.5.0.tgz#5ae121db92120fecb6badb34aa361ac464bc23d3"
-  integrity sha512-eCCebNyhV5NcNyfrNOdur1b4zPSyj2o89yaSliEMSShf4WolfFOv4aYpL4tFXjhkw3n2pR7MYFDUnrzmDpfmNw==
+"@graphql-codegen/typescript@2.5.1", "@graphql-codegen/typescript@^2.5.1":
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript/-/typescript-2.5.1.tgz#5131485ff3ac83d5bc0aae11a2af0c9bdc08854c"
+  integrity sha512-D/9V2VfVIE4Mu5UiMGQtxyFU5xe1ZkAZi8g/IsqymW8rqlhTwsGhtk4JR55qPfOYxR8G94RJSJpzgNakRneytw==
   dependencies:
     "@graphql-codegen/plugin-helpers" "^2.4.0"
     "@graphql-codegen/schema-ast" "^2.4.1"
-    "@graphql-codegen/visitor-plugin-common" "2.9.0"
+    "@graphql-codegen/visitor-plugin-common" "2.9.1"
     auto-bind "~4.0.0"
     tslib "~2.4.0"
 
-"@graphql-codegen/visitor-plugin-common@2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-2.9.0.tgz#a13556c805e72b63ee9d80fb437b9ba2eb0a9fa2"
-  integrity sha512-w353lPpXlgsQT6dxfcHw3hQdodGnfSwsxofHVfROqrIBZIjH0kNiFHOt8rnewYkLGEa75bWDVaM1ofyXEaN+3w==
+"@graphql-codegen/visitor-plugin-common@2.9.1":
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-2.9.1.tgz#17dfe33e19e846e7475ab9d4ff43de5130e18397"
+  integrity sha512-j9eGOSGt+sJcwv0ijhZiQ2cF/0ponscekNVoF+vHdOT4RB0qgOQxykPBk6EbKxIHECnkdV8ARdPVTA21A93/QQ==
   dependencies:
     "@graphql-codegen/plugin-helpers" "^2.4.0"
     "@graphql-tools/optimize" "^1.0.1"
-    "@graphql-tools/relay-operation-optimizer" "^6.3.7"
+    "@graphql-tools/relay-operation-optimizer" "^6.4.14"
     "@graphql-tools/utils" "^8.3.0"
     auto-bind "~4.0.0"
     change-case-all "1.0.14"
@@ -2899,14 +2922,14 @@
     tslib "~2.3.0"
     yaml-ast-parser "^0.0.43"
 
-"@graphql-tools/relay-operation-optimizer@^6.3.7":
-  version "6.4.9"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/relay-operation-optimizer/-/relay-operation-optimizer-6.4.9.tgz#f3e1960ac8e6429a09156836701a03ebf523f0e1"
-  integrity sha512-fHMR1bNyx+ryBnmtXWnYmxvQLEx0O3yIG0MTVB1Mp6GlsyKTGI3O9njvjv0EI2JmCszs1uakT/6BW0LO37E6tQ==
+"@graphql-tools/relay-operation-optimizer@^6.4.14":
+  version "6.4.14"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/relay-operation-optimizer/-/relay-operation-optimizer-6.4.14.tgz#812f32123a1351615a72b4e832852daac7bd64b3"
+  integrity sha512-vqch2M/sIUfMmlRJ4eCupiHlVPXWOPVpHX9yCZwRrpNg0Eaokyc57NSjJuKVV3KcvcJKf03qfMK2PxFbfDvN9A==
   dependencies:
-    "@graphql-tools/utils" "8.6.9"
-    relay-compiler "12.0.0"
-    tslib "~2.3.0"
+    "@ardatan/relay-compiler" "12.0.0"
+    "@graphql-tools/utils" "8.6.13"
+    tslib "^2.4.0"
 
 "@graphql-tools/schema@8.3.10", "@graphql-tools/schema@^8.0.0", "@graphql-tools/schema@^8.1.2", "@graphql-tools/schema@^8.3.1":
   version "8.3.10"
@@ -2939,6 +2962,13 @@
     tslib "^2.3.0"
     value-or-promise "^1.0.11"
     ws "^8.3.0"
+
+"@graphql-tools/utils@8.6.13":
+  version "8.6.13"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-8.6.13.tgz#2b4fb7f9f8a29b25eecd44551fb95974de32f969"
+  integrity sha512-FiVqrQzj4cgz0HcZ3CxUs8NtBGPZFpmsVyIgwmL6YCwIhjJQnT72h8G3/vk5zVfjfesht85YGp0inWWuoCKWzg==
+  dependencies:
+    tslib "^2.4.0"
 
 "@graphql-tools/utils@8.6.9", "@graphql-tools/utils@^8.1.1", "@graphql-tools/utils@^8.3.0", "@graphql-tools/utils@^8.5.2", "@graphql-tools/utils@^8.6.0", "@graphql-tools/utils@^8.6.5":
   version "8.6.9"
@@ -3012,10 +3042,10 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@hookform/resolvers@2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-2.9.0.tgz#0e8c5188fb030f1c21764892db0d04058d5413f0"
-  integrity sha512-fW/buf863gDiU60RxCTKooJRf1YRvcMy0MTXGsyv7y0sutx0iYeZwoFNQRLBtS+hi+lo60ZV3Kf8AdqGY+sZVw==
+"@hookform/resolvers@2.9.1":
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-2.9.1.tgz#59121e38d8fc95d2fd1f41c9631393cd21e10b65"
+  integrity sha512-80lyFFcExEB7A09PFnl8k7A3obQyDF6MyO/FThtwetk+MTedYMs08Aqf7mgWnOawFGyz5QF+TZXJSYiIZW2tEg==
 
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.5"
@@ -12516,10 +12546,10 @@ react-freeze@^1.0.0:
   resolved "https://registry.yarnpkg.com/react-freeze/-/react-freeze-1.0.0.tgz#b21c65fe1783743007c8c9a2952b1c8879a77354"
   integrity sha512-yQaiOqDmoKqks56LN9MTgY06O0qQHgV4FUrikH357DydArSZHQhl0BJFqGKIZoTqi8JizF9Dxhuk1FIZD6qCaw==
 
-react-hook-form@7.31.3:
-  version "7.31.3"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.31.3.tgz#b61bafb9a7435f91695351a7a9f714d8c4df0121"
-  integrity sha512-NVZdCWViIWXXXlQ3jxVQH0NuNfwPf8A/0KvuCxrM9qxtP1qYosfR2ZudarziFrVOC7eTUbWbm1T4OyYCwv9oSQ==
+react-hook-form@7.32.0:
+  version "7.32.0"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.32.0.tgz#bfe36000e3a9fa605a4e3e9a029282feb094ef6a"
+  integrity sha512-AFUwl9MwVVnZZsFZW7Egc8PVyWem6c6/9FBq29Acsikm+8ecJCkqOn2Tl48GApFnXBgoBBEHC3zosjYvPfsGNg==
 
 react-icons@4.4.0:
   version "4.4.0"
@@ -12863,29 +12893,6 @@ regjsparser@^0.8.2:
   integrity sha512-J3LABycON/VNEu3abOviqGHuB/LOtOQj8SKmfP9anY5GfAVw/SPjwzSjxGjbZXIxbGfqTHtJw58C2Li/WkStmA==
   dependencies:
     jsesc "~0.5.0"
-
-relay-compiler@12.0.0:
-  version "12.0.0"
-  resolved "https://registry.yarnpkg.com/relay-compiler/-/relay-compiler-12.0.0.tgz#9f292d483fb871976018704138423a96c8a45439"
-  integrity sha512-SWqeSQZ+AMU/Cr7iZsHi1e78Z7oh00I5SvR092iCJq79aupqJ6Ds+I1Pz/Vzo5uY5PY0jvC4rBJXzlIN5g9boQ==
-  dependencies:
-    "@babel/core" "^7.14.0"
-    "@babel/generator" "^7.14.0"
-    "@babel/parser" "^7.14.0"
-    "@babel/runtime" "^7.0.0"
-    "@babel/traverse" "^7.14.0"
-    "@babel/types" "^7.0.0"
-    babel-preset-fbjs "^3.4.0"
-    chalk "^4.0.0"
-    fb-watchman "^2.0.0"
-    fbjs "^3.0.0"
-    glob "^7.1.1"
-    immutable "~3.7.6"
-    invariant "^2.2.4"
-    nullthrows "^1.1.1"
-    relay-runtime "12.0.0"
-    signedsource "^1.0.0"
-    yargs "^15.3.1"
 
 relay-runtime@12.0.0:
   version "12.0.0"
