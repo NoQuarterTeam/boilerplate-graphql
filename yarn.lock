@@ -12588,10 +12588,10 @@ react-freeze@^1.0.0:
   resolved "https://registry.yarnpkg.com/react-freeze/-/react-freeze-1.0.0.tgz#b21c65fe1783743007c8c9a2952b1c8879a77354"
   integrity sha512-yQaiOqDmoKqks56LN9MTgY06O0qQHgV4FUrikH357DydArSZHQhl0BJFqGKIZoTqi8JizF9Dxhuk1FIZD6qCaw==
 
-react-hook-form@7.32.0:
-  version "7.32.0"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.32.0.tgz#bfe36000e3a9fa605a4e3e9a029282feb094ef6a"
-  integrity sha512-AFUwl9MwVVnZZsFZW7Egc8PVyWem6c6/9FBq29Acsikm+8ecJCkqOn2Tl48GApFnXBgoBBEHC3zosjYvPfsGNg==
+react-hook-form@7.32.1:
+  version "7.32.1"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.32.1.tgz#103de7b7ef3a7d295264433e4464bd17c8e4bdc9"
+  integrity sha512-A0bsgZZUnGdG68sXLBNMN7zRYKbYc/ESjDkjrJZ8PZ8/96EQ0IwMfYY3wpopt+yn2+Mm3APEUkw+JdjYQSRVJA==
 
 react-icons@4.4.0:
   version "4.4.0"
@@ -12657,10 +12657,10 @@ react-native-svg@12.3.0:
     css-select "^4.2.1"
     css-tree "^1.0.0-alpha.39"
 
-react-native-web@0.18.0:
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.18.0.tgz#ad5eadcb8b84ac85ea729169e1a7200048ee2741"
-  integrity sha512-gPEd7kReLsthimkRBDASMwQrlxvLDkLPzVcDBZwyuE96Cxc8S5QM0RQSzZ4yJI2H5GY2SF4Cc9pdg6jJCAkv6g==
+react-native-web@0.18.1:
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.18.1.tgz#825e1c464d16cff7fc715ec9b93ad1bdf55c2c8f"
+  integrity sha512-kWZKJU/OIvVriC7R7WN2Wpai6QllD9f7RDUuaBj2G9FdXaybSQFgmuhey4n6naqbLnj720im2PtcnH54Cn/UXw==
   dependencies:
     create-react-class "^15.7.0"
     fbjs "^3.0.0"
@@ -12668,7 +12668,7 @@ react-native-web@0.18.0:
     normalize-css-color "^1.0.2"
     postcss-value-parser "^4.2.0"
     prop-types "^15.6.0"
-    styleq "0.1.0"
+    styleq "^0.1.2"
 
 react-native@0.68.2:
   version "0.68.2"
@@ -13923,10 +13923,10 @@ styled-system@5.1.5:
     "@styled-system/variant" "^5.1.5"
     object-assign "^4.1.1"
 
-styleq@0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/styleq/-/styleq-0.1.0.tgz#fa7ddd0e8dcd1a5393fc8786a272ce5dfa799443"
-  integrity sha512-3pZrGqJnCkAJK0yIzIxWv/iTFv+cCjBJyw6uB5TOw2JhdNeCgmsuqWwDTSD8hneproiI9MGl9SfSG8OSEv4svw==
+styleq@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/styleq/-/styleq-0.1.2.tgz#052b46af5ca4f920b1bdae2735ffb1e3970f53cd"
+  integrity sha512-EBNuMVSxpssuFcJq/c4zmZ4tpCyX9E27hz5xPJhw4URjRHcYXPHh8rDHY/tJsw5gtP0+tIL3IBYeQVIYjdZFhg==
 
 stylis@4.0.13:
   version "4.0.13"
