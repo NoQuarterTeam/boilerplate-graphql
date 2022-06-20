@@ -22,6 +22,11 @@ model Todo {
   createdAt  DateTime @default(now()) @db.Timestamptz(6)
   updatedAt  DateTime @default(now()) @updatedAt @db.Timestamptz(6)
 }
+model User {
+  ...
+  todos: Todo[]
+  ...
+}
 ```
 
 2. Generate a migration by running this command
