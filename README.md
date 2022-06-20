@@ -86,6 +86,8 @@ then run this in the root of the project:
 npx husky install
 ```
 
+We use AWS S3 for image/file hosting, so you'll need to set up a few things for this to work, process can be found [here](./docs/setup-s3.md).
+
 <br />
 <br />
 
