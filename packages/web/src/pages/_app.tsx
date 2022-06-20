@@ -1,9 +1,10 @@
 import * as React from "react"
 import { ApolloProvider } from "@apollo/client"
-import { ChakraProvider, theme } from "@chakra-ui/react"
+import { ChakraProvider } from "@chakra-ui/react"
 import Head from "next/head"
 
 import { useApollo } from "lib/apollo/client"
+import { theme } from "lib/theme"
 
 export default function App(props: any) {
   const { Component, pageProps } = props
