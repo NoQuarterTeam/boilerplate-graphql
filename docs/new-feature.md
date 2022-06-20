@@ -24,7 +24,7 @@ model Todo {
 }
 model User {
   ...
-  todos: Todo[]
+  todos Todo[]
   ...
 }
 ```
