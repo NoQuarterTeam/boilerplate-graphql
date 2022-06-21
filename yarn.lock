@@ -5350,10 +5350,10 @@
   dependencies:
     "@types/react" "^17"
 
-"@types/react-native@0.67.9":
-  version "0.67.9"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.67.9.tgz#8b0406b3b9557f9f2b560bee7c8a33ace35a9993"
-  integrity sha512-8s0v539mHd2qPIDp1rL0ChVvQh+QYUANSQhhccFbaI/D9E/b43L9lWBXItjGpSo1Jqkkcaahlrj9Ls6JiXGm7Q==
+"@types/react-native@0.68.0":
+  version "0.68.0"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.68.0.tgz#d51c34057251302d2f2ba97de8ff8a840e0fddd8"
+  integrity sha512-E+m91xtoX+GRh2MpbIYOanbtXlX76woVgRs6zU7PsJ4ZPFzdsRkpKNTqMZyKgyt7eraZDnJvwFXGXDIW+8NRjA==
   dependencies:
     "@types/react" "*"
 
@@ -8895,10 +8895,10 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-framer-motion@6.3.11:
-  version "6.3.11"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-6.3.11.tgz#c304ce9728601ad9377d47d5d9264e43d741d470"
-  integrity sha512-xQLk+ZSklNs5QNCUmdWPpKMOuWiB8ZETsvcIOWw8xvri9K3TamuifgCI/B6XpaEDR0/V2ZQF2Wm+gUAZrXo+rw==
+framer-motion@6.3.12:
+  version "6.3.12"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-6.3.12.tgz#53c6a37da882a00e166731ca241b5234af8aabf7"
+  integrity sha512-JfBNDeZX/0J2XtjuGpCf5klissAVw1N4tKrVu23SzQ2ksuL2xu1Jm/CE11sYq9RvFEiN0qkMp+CylFpYLarFoQ==
   dependencies:
     framesync "6.0.1"
     hey-listen "^1.0.8"
