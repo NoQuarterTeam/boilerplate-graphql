@@ -3106,10 +3106,10 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@hookform/resolvers@2.9.1":
-  version "2.9.1"
-  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-2.9.1.tgz#59121e38d8fc95d2fd1f41c9631393cd21e10b65"
-  integrity sha512-80lyFFcExEB7A09PFnl8k7A3obQyDF6MyO/FThtwetk+MTedYMs08Aqf7mgWnOawFGyz5QF+TZXJSYiIZW2tEg==
+"@hookform/resolvers@2.9.2":
+  version "2.9.2"
+  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-2.9.2.tgz#d21f145ea7331779e10269b4c1ccf599ead5c5ae"
+  integrity sha512-GzAgrqeCQ3o8qfB3ojX/S5mgySrMLCwoXhxIPQBGp0OCGlD/uqbzJYMolPAMHG4Hu91fdjIAbqZeFOJXbBDMBw==
 
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.5"
@@ -5350,10 +5350,10 @@
   dependencies:
     "@types/react" "^17"
 
-"@types/react-native@0.68.0":
-  version "0.68.0"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.68.0.tgz#d51c34057251302d2f2ba97de8ff8a840e0fddd8"
-  integrity sha512-E+m91xtoX+GRh2MpbIYOanbtXlX76woVgRs6zU7PsJ4ZPFzdsRkpKNTqMZyKgyt7eraZDnJvwFXGXDIW+8NRjA==
+"@types/react-native@0.69.0":
+  version "0.69.0"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.69.0.tgz#cd82abfd1ba8e884eb654f6459148d7f99d303a4"
+  integrity sha512-yOCg1dzjN4faDo8uspo8Fm/Rnqns5KYPpCJSlvlrWd6rfiEEOHUdL/cmh6I6D4+V6GFmTZviWlpJ8ihwxi7euA==
   dependencies:
     "@types/react" "*"
 
