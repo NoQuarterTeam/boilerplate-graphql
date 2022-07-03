@@ -5330,10 +5330,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.25.tgz#527051f3c2f77aa52e5dc74e45a3da5fb2301448"
   integrity sha512-wANk6fBrUwdpY4isjWrKTufkrXdu1D2YHCot2fD/DfWxF5sMrVSA+KN7ydckvaTCh0HiqX9IVl0L5/ZoXg5M7w==
 
-"@types/node@16.11.42":
-  version "16.11.42"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.42.tgz#d2a75c58e9b0902b82dc54bd4c13f8ef12bd1020"
-  integrity sha512-iwLrPOopPy6V3E+1yHTpJea3bdsNso0b0utLOJJwaa/PLzqBt3GZl3stMcakc/gr89SfcNk2ki3z7Gvue9hYGQ==
+"@types/node@16.11.43":
+  version "16.11.43"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.43.tgz#555e5a743f76b6b897d47f945305b618525ddbe6"
+  integrity sha512-GqWykok+3uocgfAJM8imbozrqLnPyTrpFlrryURQlw1EesPUCx5XxTiucWDSFF9/NUEXDuD4bnvHm8xfVGWTpQ==
 
 "@types/node@^10.1.0":
   version "10.17.60"
@@ -12887,10 +12887,10 @@ react-dom@17.0.2:
     object-assign "^4.1.1"
     scheduler "^0.20.2"
 
-react-dropzone@14.2.1:
-  version "14.2.1"
-  resolved "https://registry.yarnpkg.com/react-dropzone/-/react-dropzone-14.2.1.tgz#aad17e06290723358398a7be76fb38ecf6d77c1a"
-  integrity sha512-jzX6wDtAjlfwZ+Fbg+G17EszWUkQVxhMTWMfAC9qSUq7II2pKglHA8aarbFKl0mLpRPDaNUcy+HD/Sf4gkf76Q==
+react-dropzone@14.2.2:
+  version "14.2.2"
+  resolved "https://registry.yarnpkg.com/react-dropzone/-/react-dropzone-14.2.2.tgz#a75a0676055fe9e2cb78578df4dedb4c42b54f98"
+  integrity sha512-5oyGN/B5rNhop2ggUnxztXBQ6q6zii+OMEftPzsxAR2hhpVWz0nAV+3Ktxo2h5bZzdcCKrpd8bfWAVsveIBM+w==
   dependencies:
     attr-accept "^2.2.2"
     file-selector "^0.6.0"
