@@ -37,7 +37,7 @@
     "dayjs": "1.11.3",
     "framer-motion": "6.4.2",
     "graphql": "15.8.0",
-    "next": "12.2.0",
+    "next": "12.2.1",
     "next-http-proxy-middleware": "1.2.4",
     "react": "17.0.2",
     "react-dom": "17.0.2",
