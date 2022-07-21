@@ -1,5 +1,5 @@
 import * as React from "react"
-import { FieldError, useFormContext } from "react-hook-form"
+import { useFormContext } from "react-hook-form"
 import { Box, Checkbox as CCheckbox, CheckboxProps, FormControl } from "@chakra-ui/react"
 
 import { InputError } from "./InputError"
@@ -19,7 +19,7 @@ export const Checkbox = ({ label, subLabel, ...props }: Props) => {
     watch,
     formState: { errors },
   } = useFormContext()
-  const fieldError = errors?.[props.name] as FieldError | string
+  const fieldError = errors?.[props.name]
   React.useEffect(() => {
     return () => unregister(props.name)
   }, [props.name, unregister])
