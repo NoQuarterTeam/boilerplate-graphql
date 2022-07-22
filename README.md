@@ -1,5 +1,6 @@
 # Boilerplate
-
+### Built by [No Quarter](https://www.noquarter.co)
+<br />
 ## Typescript + React + React Native + GraphQL + Prisma
 
 Comes with user authentication included
