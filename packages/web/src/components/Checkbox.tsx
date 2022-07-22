@@ -1,6 +1,6 @@
 import * as React from "react"
 import { useFormContext, useWatch } from "react-hook-form"
-import type { CheckboxProps} from "@chakra-ui/react";
+import type { CheckboxProps } from "@chakra-ui/react"
 import { Box, Checkbox as CCheckbox, FormControl } from "@chakra-ui/react"
 
 import { InputError } from "./InputError"
