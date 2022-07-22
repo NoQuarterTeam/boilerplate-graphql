@@ -1,5 +1,5 @@
 import * as React from "react"
-import { FieldError, useFormContext } from "react-hook-form"
+import { useFormContext } from "react-hook-form"
 import { TextInputProps } from "react-native"
 import { Box, IBoxProps, Input as NInput, ITextProps, Text } from "native-base"
 
@@ -22,7 +22,7 @@ export const Input = ({ label, name, labelStyle, containerStyle, parser, ...prop
     unregister,
   } = useFormContext()
 
-  const fieldError = errors?.[name] as FieldError | string
+  const fieldError = errors?.[name]
 
   const handleUpdate = (text: string) => {
     setValue(name, parser ? parser(text) : text)

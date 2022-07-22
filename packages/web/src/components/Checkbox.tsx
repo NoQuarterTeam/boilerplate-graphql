@@ -1,6 +1,7 @@
 import * as React from "react"
-import { FieldError, useFormContext } from "react-hook-form"
-import { Box, Checkbox as CCheckbox, CheckboxProps, FormControl } from "@chakra-ui/react"
+import { useFormContext, useWatch } from "react-hook-form"
+import type { CheckboxProps} from "@chakra-ui/react";
+import { Box, Checkbox as CCheckbox, FormControl } from "@chakra-ui/react"
 
 import { InputError } from "./InputError"
 import { InputLabel } from "./InputLabel"
@@ -16,14 +17,13 @@ export const Checkbox = ({ label, subLabel, ...props }: Props) => {
     register,
     unregister,
     setValue,
-    watch,
     formState: { errors },
   } = useFormContext()
-  const fieldError = errors?.[props.name] as FieldError | string
+  const fieldError = errors?.[props.name]
   React.useEffect(() => {
     return () => unregister(props.name)
   }, [props.name, unregister])
-  const value = watch(props.name) as boolean
+  const value = useWatch({ name: props.name }) as boolean
   return (
     <FormControl isInvalid={!!fieldError} mb={0}>
       <InputLabel label={label} subLabel={subLabel} name={props.name} />
