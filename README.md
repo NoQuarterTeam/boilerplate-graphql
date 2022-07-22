@@ -30,6 +30,11 @@ Comes with user authentication included
 & many more tasty treats
 
 <br />
+
+## Feel comfortable with this stack?
+
+We are hiring! [Contact us here](https://www.noquarter.co/#contact)
+
 <br />
 
 ## Get Started
@@ -120,3 +125,5 @@ We use AWS S3 for image/file hosting, so you'll need to set up a few things for 
 An example is deployed [here](https://boilerplate.noquarter.co)
 
 We are using Heroku for the API package and Vercel for the WEB package
+
+<br />
