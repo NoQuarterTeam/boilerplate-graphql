@@ -8,7 +8,7 @@ import * as Sentry from "@sentry/nextjs"
 import type { RefreshResponse } from "pages/api/refresh-token"
 
 import { typePolicies } from "lib/apollo/pagination"
-import { GRAPHQL_API_URL, REDIRECT_PATH, REDIRECT_REFRESH_KEY } from "lib/config"
+import { GRAPHQL_API_URL } from "lib/config"
 export const isBrowser = () => typeof window !== "undefined"
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null
@@ -21,6 +21,8 @@ const errorLink = onError(({ graphQLErrors, operation, forward }) => {
   if (graphQLErrors) {
     for (const err of graphQLErrors) {
       switch (err.extensions.code) {
+        case "APP_ERROR":
+          break
         case "BAD_USER_INPUT":
           Sentry.captureException(err)
         case "UNAUTHENTICATED":
@@ -29,13 +31,19 @@ const errorLink = onError(({ graphQLErrors, operation, forward }) => {
               .then(async (res) => {
                 const data: RefreshResponse = await res.json()
                 if (data.success) return true
-                window.location.href = `/login?${REDIRECT_REFRESH_KEY}=true&${REDIRECT_PATH}=${window.location.pathname}`
+                window.location.href = `/login`
                 return false
               })
-              .catch(() => forward(operation)),
+              .catch(() => {
+                window.location.href = `/login`
+                return false
+              }),
           )
             .filter(Boolean)
             .flatMap(() => forward(operation))
+        default:
+          console.error(graphQLErrors)
+          break
       }
     }
   }

@@ -14,7 +14,6 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  /** The javascript `Date` as string. Type represents date and time as the ISO Date string. */
   DateTime: string;
 };
 
@@ -151,7 +150,7 @@ export type Query = {
   __typename?: 'Query';
   getSignedS3UrlForGet?: Maybe<Scalars['String']>;
   me?: Maybe<User>;
-  refreshToken: RefreshTokenResponse;
+  refreshToken?: Maybe<RefreshTokenResponse>;
   user?: Maybe<User>;
   users: UsersResponse;
 };
@@ -407,7 +406,7 @@ export type RefreshTokenQueryVariables = Exact<{
 }>;
 
 
-export type RefreshTokenQuery = { __typename?: 'Query', refreshToken: { __typename?: 'RefreshTokenResponse', token: string, refreshToken: string } };
+export type RefreshTokenQuery = { __typename?: 'Query', refreshToken?: { __typename?: 'RefreshTokenResponse', token: string, refreshToken: string } | null };
 
 export type ForgotPasswordMutationVariables = Exact<{
   email: Scalars['String'];

@@ -5,7 +5,7 @@ import Head from "next/head"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
-import { LOGIN_REFRESH_TOKEN_KEY, LOGIN_TOKEN_KEY, REDIRECT_PATH } from "lib/config"
+import { LOGIN_REFRESH_TOKEN_KEY, LOGIN_TOKEN_KEY } from "lib/config"
 import type { MeQuery, RegisterInput } from "lib/graphql"
 import { MeDocument, MeFragmentDoc, useRegisterMutation } from "lib/graphql"
 import { useForm } from "lib/hooks/useForm"
@@ -41,7 +41,7 @@ function Register() {
 
   const [register, { loading }] = useRegisterMutation()
   const router = useRouter()
-  const redirect = router.query[REDIRECT_PATH] as string | undefined
+
   const form = useForm({ schema: RegisterSchema })
 
   const onSubmit = (data: RegisterInput) => {
@@ -55,7 +55,7 @@ function Register() {
           }),
         })
         client.writeQuery<MeQuery>({ query: MeDocument, data: { me: data.register.user } })
-        router.replace(redirect || "/")
+        router.replace("/")
       },
     })
   }
