@@ -71,7 +71,7 @@
     "@types/ioredis": "4.28.10",
     "@types/jsonwebtoken": "8.5.8",
     "@types/morgan": "1.9.3",
-    "@types/node": "16.11.47",
+    "@types/node": "16.11.48",
     "@types/nodemailer": "6.4.5",
     "ts-node": "10.9.1",
     "ts-node-dev": "2.0.0"
