@@ -11999,10 +11999,10 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-native-base@3.4.11:
-  version "3.4.11"
-  resolved "https://registry.yarnpkg.com/native-base/-/native-base-3.4.11.tgz#fa03a49635ae3fad1b63605ef3dd6facf892803e"
-  integrity sha512-2eRH1m16TeRr+flaqhlO/NXtjjtH3nLqfeYvZcJUiwEvwWyXjFnsk8UkLJY1214CYOWTnU929wEWBMJKbm/8HQ==
+native-base@3.4.12:
+  version "3.4.12"
+  resolved "https://registry.yarnpkg.com/native-base/-/native-base-3.4.12.tgz#1de1a783e568cd429c218563886d93ed27be2abc"
+  integrity sha512-w/LRL95dwHZZO+heu4y4FURtcTeYjkAoV4q4AD9mzrLzq4ejeBSxDzpT3O2l+N/xeBVP2u2TYVOP4ocYRZOKPQ==
   dependencies:
     "@react-aria/focus" "3.2.3"
     "@react-aria/utils" "^3.6.0"
