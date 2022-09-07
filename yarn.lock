@@ -5803,10 +5803,10 @@
   dependencies:
     "@types/react" "^17"
 
-"@types/react-native@0.69.7":
-  version "0.69.7"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.69.7.tgz#fc2f2cfa0ef824ff6094eb7385f6bfab2ef1345e"
-  integrity sha512-IVWswgynlIfYLJHegI4ABCO+7p5sY+vq4/+lHV/NKVZ9WjZj9HrBsLJjWAqO1fMywyAaR8gGMSUtAilu5e2E3A==
+"@types/react-native@0.69.8":
+  version "0.69.8"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.69.8.tgz#524e770e2bc6ac478ab5179b4446c43602142b7e"
+  integrity sha512-KW5KQdg4vjG7Mo2muCTRSe3CwVNEROa4Hlh7wIkfv+be92jdFwq6tf+i1q7dD3wDnUinc/cVi/6/PJbGpbshEA==
   dependencies:
     "@types/react" "*"
 
