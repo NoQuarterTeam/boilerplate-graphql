@@ -35,7 +35,7 @@
     "expo-status-bar": "1.4.0",
     "graphql": "15.8.0",
     "graphql-tag": "2.12.6",
-    "native-base": "3.4.13",
+    "native-base": "3.4.14",
     "polished": "4.2.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
