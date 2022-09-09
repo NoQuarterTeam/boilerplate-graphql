@@ -5871,6 +5871,11 @@
   resolved "https://registry.yarnpkg.com/@types/strip-json-comments/-/strip-json-comments-0.0.30.tgz#9aa30c04db212a9a0649d6ae6fd50accc40748a1"
   integrity sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==
 
+"@types/use-subscription@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@types/use-subscription/-/use-subscription-1.0.0.tgz#d146f8d834f70f50d48bd8246a481d096f11db19"
+  integrity sha512-0WWZ5GUDKMXUY/1zy4Ur5/zsC0s/B+JjXfHdkvx6JgDNZzZV5eW+KKhDqsTGyqX56uh99gwGwbsKbVwkcVIKQA==
+
 "@types/warning@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/warning/-/warning-3.0.0.tgz#0d2501268ad8f9962b740d387c4654f5f8e23e52"
@@ -12031,10 +12036,10 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-native-base@3.4.13:
-  version "3.4.13"
-  resolved "https://registry.yarnpkg.com/native-base/-/native-base-3.4.13.tgz#e1cc00d922140ed50158f21f8e8c8f246b3f4cee"
-  integrity sha512-2Z3HMIWRqg2BK8b4fBvCCJr85hUsBcNiVOLENClsvS24n+7+J1wEzeLQqQPjc4bC4bCkCgiaeYqQvdjRL+x0Sg==
+native-base@3.4.14:
+  version "3.4.14"
+  resolved "https://registry.yarnpkg.com/native-base/-/native-base-3.4.14.tgz#13526fab85f57717ea1d80331ce895adf5d92a33"
+  integrity sha512-kpX46DdMoWP/lp54XLW9tNaBpRBmmAYpOGGH4SX36ag3DzXZJU1iMU6oZXwJgXcw7Mwi83fbmrYqxWPbomUH8w==
   dependencies:
     "@react-aria/focus" "3.2.3"
     "@react-aria/utils" "^3.6.0"
@@ -12058,6 +12063,7 @@ native-base@3.4.13:
     "@react-stately/tabs" "3.0.0-alpha.1"
     "@react-stately/toggle" "3.2.1"
     "@types/lodash.has" "^4.5.6"
+    "@types/use-subscription" "^1.0.0"
     lodash.clonedeep "^4.5.0"
     lodash.get "^4.4.2"
     lodash.has "^4.5.2"
