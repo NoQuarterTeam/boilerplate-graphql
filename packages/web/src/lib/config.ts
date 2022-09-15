@@ -18,7 +18,7 @@ export const IS_DEV = !IS_PRODUCTION
 export const SENTRY_DSN = "https://5d0371a223bb4509902f8940cb957daf@o204549.ingest.sentry.io/5741383"
 
 export const GRAPHQL_API_URL = IS_PRODUCTION
-  ? "https://boilerplate.graphcdn.app/graphql"
+  ? "https://api-production-bf46.up.railway.app/graphql"
   : "http://localhost:5555/graphql"
 
 // export const API_URL = IS_PRODUCTION ? "https://boilerplate.graphcdn.app" : "http://localhost:5555/graphql"
