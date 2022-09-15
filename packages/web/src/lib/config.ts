@@ -21,7 +21,10 @@ export const GRAPHQL_API_URL = IS_PRODUCTION
   ? "https://boilerplate.graphcdn.app/graphql"
   : "http://localhost:5555/graphql"
 
-export const API_URL = IS_PRODUCTION ? "https://boilerplate.graphcdn.app" : "http://localhost:5555/graphql"
+// export const API_URL = IS_PRODUCTION ? "https://boilerplate.graphcdn.app" : "http://localhost:5555/graphql"
+export const API_URL = IS_PRODUCTION
+  ? "https://api-production-bf46.up.railway.app"
+  : "http://localhost:5555/graphql"
 
 export const WEB_URL = IS_PRODUCTION ? "boilerplate.noquarter.co" : "localhost:3000"
 
