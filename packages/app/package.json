@@ -30,7 +30,7 @@
     "@react-navigation/core": "6.4.0",
     "@react-navigation/native": "6.0.13",
     "@react-navigation/native-stack": "6.9.0",
-    "@react-navigation/stack": "6.3.0",
+    "@react-navigation/stack": "6.3.1",
     "expo": "45.0.8",
     "expo-status-bar": "1.4.0",
     "graphql": "15.8.0",
