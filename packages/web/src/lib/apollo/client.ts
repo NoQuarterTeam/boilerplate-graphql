@@ -28,11 +28,15 @@ const errorLink = onError(({ graphQLErrors, operation, forward }) => {
               .then(async (res) => {
                 const data: RefreshResponse = await res.json()
                 if (data.success) return true
-                window.location.href = `/login`
+                if (!window.location.pathname.includes("login")) {
+                  window.location.href = `/login`
+                }
                 return false
               })
               .catch(() => {
-                window.location.href = `/login`
+                if (!window.location.pathname.includes("login")) {
+                  window.location.href = `/login`
+                }
                 return false
               }),
           )
