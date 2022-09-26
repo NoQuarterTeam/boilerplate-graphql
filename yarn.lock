@@ -12063,10 +12063,10 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-native-base@3.4.16:
-  version "3.4.16"
-  resolved "https://registry.yarnpkg.com/native-base/-/native-base-3.4.16.tgz#2ddecd5f8856053e7ba1c19176d1503c6c5dd602"
-  integrity sha512-F52nrlDBKq8ra5DE2CU3Alv0sfolpd34AnvPKOXu7/e+a4QYWoul2wOpKxGzVQvAXFT2vD9jFaZKPUktwCCI8w==
+native-base@3.4.17:
+  version "3.4.17"
+  resolved "https://registry.yarnpkg.com/native-base/-/native-base-3.4.17.tgz#d2ce41cc43175b9d6df6c63c9eb7e0e88b83bf8e"
+  integrity sha512-tAySi0e42xRTEJcNWH61+B8FS+OyC1891joSBivE3DjZQLxbMHnhYbY7BXIqJnisIuNs1RFjl5MLWzTRxB4RZA==
   dependencies:
     "@react-aria/focus" "3.2.3"
     "@react-aria/utils" "^3.6.0"
