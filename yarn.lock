@@ -9,10 +9,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "^0.3.0"
 
-"@apollo/client@3.7.0-rc.0":
-  version "3.7.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.7.0-rc.0.tgz#7e47dea1cfd6b8e9a4602d9e0922596d5d98efe7"
-  integrity sha512-JWCv74VLpZ9KJIPilg+/G7RMZhERUBJxNyVwsCprInXElz7lCNSxC8snZq6GKAcx/T/AMlMW6pZleoyqqxz6rA==
+"@apollo/client@3.7.0":
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.7.0.tgz#1c26a04488f45b3a4779fa2562e4b706402cb876"
+  integrity sha512-hp4OvrH1ZIQACRYcIrh/C0WFnY7IM7G6nlTpC8DSTEWxfZQ2kvpvDY0I/hYmCs0oAVrg26g3ANEdOzGWTcYbPg==
   dependencies:
     "@graphql-typed-document-node/core" "^3.1.1"
     "@wry/context" "^0.7.0"
@@ -9482,7 +9482,7 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-framer-motion@^6.5.1:
+framer-motion@6.5.1:
   version "6.5.1"
   resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-6.5.1.tgz#802448a16a6eb764124bf36d8cbdfa6dd6b931a7"
   integrity sha512-o1BGqqposwi7cgDrtg0dNONhkmPsUFDaLcKXigzuTFC5x58mE8iyTazxSudFzmT6MEyJKfjjU8ItoMe3W+3fiw==
@@ -15593,7 +15593,7 @@ vary@^1, vary@~1.1.2:
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
-vercel-is-pull-request@^0.0.8:
+vercel-is-pull-request@0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/vercel-is-pull-request/-/vercel-is-pull-request-0.0.8.tgz#e301399cb63dbd1300d036f2a8940fb19bb99116"
   integrity sha512-uzPrdkh6/R2/Td1/cXbSVEkbldC2Th+FRNaZnjriF8XiPobXrUxwBO5I87oKPahtNyjJ9/Lp9oMnL/6ARbDtrg==
