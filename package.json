@@ -13,13 +13,6 @@
   },
   "scripts": {
     "dev": "turbo run dev --parallel",
-    "start:api": "node packages/api/dist",
-    "build:api": "cd packages/api && yarn build",
-    "prebuild": "rm -rf packages/app && rm -rf packages/web",
-    "build": "yarn build:api",
-    "migrate": "cd packages/api && prisma migrate deploy",
-    "heroku-prebuild": "yarn prebuild",
-    "heroku-cleanup": "cd packages/api && yarn generate",
     "prettify": "turbo run prettify",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck"
@@ -39,7 +32,6 @@
     "husky": "8.0.1",
     "lint-staged": "13.0.3",
     "prettier": "2.7.1",
-    "rimraf": "3.0.2",
     "turbo": "1.5.5",
     "typescript": "4.8.4"
   },
