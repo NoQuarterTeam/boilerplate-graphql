@@ -1,4 +1,3 @@
-import { AuthenticationError } from "apollo-server-express"
 import { Arg, Args, Ctx, Mutation, Query, Resolver } from "type-graphql"
 import { Inject, Service } from "typedi"
 
@@ -74,16 +73,16 @@ export default class UserResolver {
   }
 
   // REFRESH TOKEN
-  @Query(() => RefreshTokenResponse)
-  async refreshToken(@Arg("refreshToken") refreshToken: string): Promise<RefreshTokenResponse> {
+  @Query(() => RefreshTokenResponse, { nullable: true })
+  async refreshToken(@Arg("refreshToken") refreshToken: string): Promise<RefreshTokenResponse | null> {
     let id: string | undefined
     try {
       id = decodeRefreshToken<{ id: string }>(refreshToken).id
-    } catch (error) {
-      throw new AuthenticationError("Expired refresh token")
+    } catch {
+      return null
     }
     const user = await prisma.user.findUnique({ where: { id } })
-    if (!user) throw new AuthenticationError("Invalid refresh token")
+    if (!user) return null
     const tokens = this.userService.createAuthTokens(user)
     return tokens
   }

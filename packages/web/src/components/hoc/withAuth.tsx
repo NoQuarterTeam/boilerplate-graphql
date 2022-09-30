@@ -1,10 +1,9 @@
 import * as React from "react"
 import { Center, Spinner } from "@chakra-ui/react"
-import { NextPage } from "next"
+import type { NextPage } from "next"
 import { useRouter } from "next/router"
 
-import { REDIRECT_PATH } from "lib/config"
-import { MeFragment } from "lib/graphql"
+import type { MeFragment } from "lib/graphql"
 import { useMe } from "lib/hooks/useMe"
 
 type NextPageWithLayout = NextPage & {
@@ -20,9 +19,7 @@ export function withAuth(Page: NextPageWithLayout, isAuthorized?: (user: MeFragm
       if (loading) return
       if (!me) {
         // If not logged in
-        let url = "/login"
-        if (router.asPath !== "/") url += `?${REDIRECT_PATH}=${router.asPath}`
-        router.replace(url)
+        router.replace("/login")
         return
       }
       if (isAuthorized && !isAuthorized(me)) {

@@ -1,5 +1,9 @@
 # Boilerplate
 
+### Built by [No Quarter](https://www.noquarter.co)
+
+<br />
+
 ## Typescript + React + React Native + GraphQL + Prisma
 
 Comes with user authentication included
@@ -30,6 +34,11 @@ Comes with user authentication included
 & many more tasty treats
 
 <br />
+
+## Feel comfortable with this stack?
+
+We are hiring! [Contact us here](https://www.noquarter.co/#contact)
+
 <br />
 
 ## Get Started
@@ -122,3 +131,5 @@ An example is deployed [here](https://boilerplate.noquarter.co)
 We are using Railway for the API package and Vercel for the WEB package
 
 For railway we have setup preview deploys and that gives a dynamic url that the web can use. The url includes the PR number so on the web we need to grab the PR number from git and dynamically change the API_URL when building the Next.js app. Vercel doesn't include PR numbers in the env variables so we use a package to do that for us.
+
+<br/>
