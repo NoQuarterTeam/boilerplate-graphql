@@ -2,16 +2,17 @@
 
 [phases.install]
 	dependsOn = ["setup"]
+	onlyIncludeFiles = ["package.json", "packages/api/**"]
 	cmds = ["yarn prebuild", "yarn install"] 
 
 [phases.build]
 	dependsOn = ["install"]
-	cmds = ['yarn build:api']
+	cmds = ["yarn build:api"]
 
 [phases.release]
 	dependsOn = ["build"]
-	cmds = ['yarn migrate']
+	cmds = ["yarn migrate"]
 
 [start]
 	dependsOn = ["release"]
-	cmd = 'yarn start:api'
+	cmd = "yarn start:api"
