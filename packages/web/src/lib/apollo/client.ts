@@ -2,7 +2,6 @@ import * as React from "react"
 import type { NormalizedCacheObject } from "@apollo/client"
 import { ApolloClient, createHttpLink, from, fromPromise, InMemoryCache } from "@apollo/client"
 import { onError } from "@apollo/client/link/error"
-import { RetryLink } from "@apollo/client/link/retry"
 import { mergeDeep } from "@apollo/client/utilities"
 import * as Sentry from "@sentry/nextjs"
 import type { RefreshResponse } from "pages/api/refresh-token"
@@ -14,8 +13,6 @@ export const isBrowser = () => typeof window !== "undefined"
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null
 
 const refreshToken = () => fetch("/api/refresh-token", { method: "post" })
-
-const retryLink = new RetryLink()
 
 const errorLink = onError(({ graphQLErrors, operation, forward }) => {
   if (graphQLErrors) {
@@ -46,7 +43,7 @@ const httpLink = createHttpLink({ uri: isBrowser() ? "/api/graphql" : GRAPHQL_AP
 function createApolloClient(initialState?: null | Record<string, any>) {
   return new ApolloClient({
     ssrMode: !isBrowser(),
-    link: from([retryLink, errorLink, httpLink]),
+    link: from([errorLink, httpLink]),
     name: "web",
     credentials: "include",
     defaultOptions: {
