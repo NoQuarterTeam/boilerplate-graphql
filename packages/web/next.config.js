@@ -3,6 +3,9 @@ const { withSentryConfig } = require("@sentry/nextjs")
 const sentryWebpackPluginOptions = {
   silent: true,
 }
+/**
+ * @type {import('next').NextConfig}
+ */
 module.exports = withSentryConfig(
   {
     reactStrictMode: false,
