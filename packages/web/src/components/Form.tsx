@@ -1,6 +1,8 @@
 import * as React from "react"
-import { FormProvider, useFormContext, UseFormReturn } from "react-hook-form"
+import type { FieldValues, UseFormReturn } from "react-hook-form"
+import { FormProvider, useFormContext } from "react-hook-form"
 import { Box } from "@chakra-ui/react"
+import * as Sentry from "@sentry/nextjs"
 
 import { useToast } from "lib/hooks/useToast"
 
@@ -20,9 +22,11 @@ const FormContainer: React.FC<FormContainerProps> = (props) => {
       if (props.onSubmit) {
         return await props.onSubmit(values)
       }
-    } catch {
+    } catch (e) {
+      console.log(e)
+      Sentry.captureException(e)
       toast({
-        title: "Network error",
+        title: "Application error",
         description: "Something went wrong. We have been notified!",
         status: "error",
       })
@@ -42,14 +46,17 @@ const FormContainer: React.FC<FormContainerProps> = (props) => {
   )
 }
 
-interface Props<T> extends UseFormReturn<T>, FormContainerProps {
+interface Props<T extends FieldValues> extends UseFormReturn<T>, FormContainerProps {
   children: React.ReactNode
+  isDisabled?: boolean
 }
 
-export function Form<T>({ onSubmit, onBlur, ...props }: Props<T>) {
+export function Form<T extends FieldValues>({ onSubmit, onBlur, isDisabled, ...props }: Props<T>) {
   return (
     <FormProvider {...props}>
-      <FormContainer {...{ onSubmit, onBlur }}>{props.children}</FormContainer>
+      <fieldset disabled={isDisabled}>
+        <FormContainer {...{ onSubmit, onBlur }}>{props.children}</FormContainer>
+      </fieldset>
     </FormProvider>
   )
 }
