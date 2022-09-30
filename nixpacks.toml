@@ -1,11 +1,17 @@
+[phases.setup]
+
 [phases.install]
+	dependsOn = ["setup"]
 	cmds = ["yarn prebuild", "yarn install"] 
 
 [phases.build]
+	dependsOn = ["install"]
 	cmds = ['yarn build:api']
 
 [phases.release]
+	dependsOn = ["build"]
 	cmds = ['yarn migrate']
 
 [start]
+	dependsOn = ["release"]
 	cmd = 'yarn start:api'
