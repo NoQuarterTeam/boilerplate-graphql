@@ -15,9 +15,10 @@
     "dev": "turbo run dev --parallel",
     "start:api": "node packages/api/dist",
     "build:api": "cd packages/api && yarn build",
-    "heroku-prebuild": "rm -rf packages/{web,app}",
-    "heroku-cleanup": "cd packages/api && yarn generate",
+    "prebuild": "rm -rf packages/{web,app}",
     "build": "yarn build:api",
+    "heroku-prebuild": "yarn prebuild",
+    "heroku-cleanup": "cd packages/api && yarn generate",
     "prettify": "turbo run prettify",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck"
