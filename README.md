@@ -119,4 +119,6 @@ We use AWS S3 for image/file hosting, so you'll need to set up a few things for 
 
 An example is deployed [here](https://boilerplate.noquarter.co)
 
-We are using Heroku for the API package and Vercel for the WEB package
+We are using Railway for the API package and Vercel for the WEB package
+
+For railway we have setup preview deploys and that gives a dynamic url that the web can use. The url includes the PR number so on the web we need to grab the PR number from git and dynamically change the API_URL when building the Next.js app. Vercel doesn't include PR numbers in the env variables so we use a package to do that for us.
