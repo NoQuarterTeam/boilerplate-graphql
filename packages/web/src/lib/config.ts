@@ -4,9 +4,9 @@ if (!process.env.APP_ENV) {
   const hostname = typeof window !== "undefined" && window?.location?.hostname
   process.env.APP_ENV = "development"
   if (hostname) {
-    if (hostname.includes("boilerplate.noquarter.co")) {
+    if (hostname === "boilerplate.noquarter.co") {
       process.env.APP_ENV = "production"
-    } else if (hostname.includes("noquarter.vercel.app")) {
+    } else if (hostname.includes("noquarter")) {
       process.env.APP_ENV = "staging"
     }
   }
@@ -19,9 +19,6 @@ export const REDIRECT_PATH = "redirect"
 export const REDIRECT_REFRESH_KEY = "session_expired"
 
 export const SENTRY_DSN = "https://5d0371a223bb4509902f8940cb957daf@o204549.ingest.sentry.io/5741383"
-
-console.log("PR NUMBER")
-console.log(process.env.VERCEL_GIT_PULL_REQUEST_NUMBER)
 
 const STAGING_URL = process.env.VERCEL_GIT_PULL_REQUEST_NUMBER
   ? `https://api-boilerplate-pr-${process.env.VERCEL_GIT_PULL_REQUEST_NUMBER}.up.railway.app`
