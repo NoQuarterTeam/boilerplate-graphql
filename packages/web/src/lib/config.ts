@@ -31,7 +31,7 @@ export const API_URL = IS_PRODUCTION
   ? "https://api.boilerplate.noquarter.co"
   : IS_STAGING
   ? STAGING_URL
-  : "http://localhost:5555/graphql"
+  : "http://localhost:5555"
 
 export const GRAPHQL_API_URL = API_URL + "/graphql"
 
