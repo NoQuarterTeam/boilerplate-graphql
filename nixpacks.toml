@@ -1,0 +1,11 @@
+[phases.install]
+	cmds = ["yarn prebuild", "yarn install"] 
+
+[phases.build]
+	cmds = ['yarn build:api']
+
+[phases.release]
+	cmds = ['yarn migrate']
+
+[start]
+	cmd = 'yarn start:api'

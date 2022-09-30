@@ -17,6 +17,7 @@
     "build:api": "cd packages/api && yarn build",
     "prebuild": "rm -rf packages/{web,app}",
     "build": "yarn build:api",
+    "migrate": "cd packages/api && prisma migrate deploy",
     "heroku-prebuild": "yarn prebuild",
     "heroku-cleanup": "cd packages/api && yarn generate",
     "prettify": "turbo run prettify",
