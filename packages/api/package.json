@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "tsnd --respawn --transpile-only --no-notify --ignore-watch node_modules src/index.ts",
-    "watch": "tsnd --respawn --transpile-only --no-notify --ignore-watch node_modules src/index.ts",
+    "watch": "yarn dev",
     "start": "node dist",
     "generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
