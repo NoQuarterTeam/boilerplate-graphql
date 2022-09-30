@@ -162,6 +162,7 @@ export type NestedStringNullableFilter = {
 
 export type Post = {
   __typename?: 'Post';
+  author: User;
   authorId: Scalars['String'];
   content: Scalars['String'];
   createdAt: Scalars['DateTime'];
@@ -575,7 +576,7 @@ export type LoginMutation = { __typename?: 'Mutation', login: { __typename?: 'Au
 export type PostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type PostsQuery = { __typename?: 'Query', posts: { __typename?: 'PostsResponse', count: number, items: Array<{ __typename?: 'Post', id: string, title: string }> } };
+export type PostsQuery = { __typename?: 'Query', posts: { __typename?: 'PostsResponse', count: number, items: Array<{ __typename?: 'Post', id: string, title: string, content: string, createdAt: string, author: { __typename?: 'User', id: string, firstName: string } }> } };
 
 export type UpdateMeMutationVariables = Exact<{
   data: UpdateUserInput;
@@ -789,6 +790,12 @@ export const PostsDocument = gql`
     items {
       id
       title
+      content
+      createdAt
+      author {
+        id
+        firstName
+      }
     }
     count
   }
