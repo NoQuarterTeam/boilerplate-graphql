@@ -1,32 +1,27 @@
 // don't import files or modules into this file
-const ENV = process.env
 
-let APP_ENV = ENV?.APP_ENV as "production" | "staging" | "development" | undefined
-
-if (!APP_ENV) {
+if (!process.env.APP_ENV) {
   const hostname = typeof window !== "undefined" && window?.location?.hostname
-  APP_ENV = "development"
+  process.env.APP_ENV = "development"
   if (hostname) {
     if (hostname.includes("boilerplate.noquarter.co")) {
-      APP_ENV = "production"
+      process.env.APP_ENV = "production"
     } else if (hostname.includes("noquarter.vercel.app")) {
-      APP_ENV = "staging"
+      process.env.APP_ENV = "staging"
     }
   }
 }
 
-export const IS_PRODUCTION = APP_ENV === "production"
-export const IS_STAGING = APP_ENV === "staging"
-export const IS_DEV = APP_ENV === "development"
+export const IS_PRODUCTION = process.env.APP_ENV === "production"
+export const IS_STAGING = process.env.APP_ENV === "staging"
+export const IS_DEV = process.env.APP_ENV === "development"
 export const REDIRECT_PATH = "redirect"
 export const REDIRECT_REFRESH_KEY = "session_expired"
 
 export const SENTRY_DSN = "https://5d0371a223bb4509902f8940cb957daf@o204549.ingest.sentry.io/5741383"
 
-const PR = ENV?.VERCEL_GIT_PULL_REQUEST_NUMBER
-
-const STAGING_URL = PR
-  ? `https://api-boilerplate-pr-${PR}.up.railway.app`
+const STAGING_URL = process.env.VERCEL_GIT_PULL_REQUEST_NUMBER
+  ? `https://api-boilerplate-pr-${process.env.VERCEL_GIT_PULL_REQUEST_NUMBER}.up.railway.app`
   : "https://staging.api.boilerplate.noquarter.co"
 
 export const API_URL = IS_PRODUCTION
