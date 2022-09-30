@@ -9,10 +9,14 @@ Yup.addMethod(Yup.number, "nullIfEmpty", function () {
 })
 
 Yup.addMethod(Yup.array, "nullIfEmpty", function () {
-  return this.transform((val, origVal) => (origVal === [] ? null : val)).nullable()
+  return this.transform((val, origVal) =>
+    origVal && origVal.length && origVal.length === 0 ? null : val,
+  ).nullable()
 })
 Yup.addMethod(Yup.array, "nullIfEmpty", function () {
-  return this.transform((val, origVal) => (origVal === [] ? null : val)).nullable()
+  return this.transform((val, origVal) =>
+    origVal && origVal.length && origVal.length === 0 ? null : val,
+  ).nullable()
 })
 Yup.addMethod(Yup.mixed, "nullIfEmpty", function () {
   return this.transform((val, origVal) => origVal || val).nullable()

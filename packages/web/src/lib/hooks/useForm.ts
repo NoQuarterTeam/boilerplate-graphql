@@ -1,18 +1,21 @@
 import * as React from "react"
-import {
+import type {
   FieldError,
-  useForm as useHookForm,
-  useFormContext as useHookFormContext,
+  FieldValues,
   UseFormProps,
-  UseFormReturn,
+  UseFormReturn} from "react-hook-form";
+import {
+  useForm as useHookForm,
+  useFormContext as useHookFormContext
 } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import type { ExecutionResult } from "graphql"
 
-import Yup from "../yup"
-import { MutationHandler, useMutationHandler } from "./useMutationHandler"
+import type Yup from "../yup"
+import type { MutationHandler} from "./useMutationHandler";
+import { useMutationHandler } from "./useMutationHandler"
 
-interface Props<T> extends UseFormProps<T> {
+interface Props<T extends FieldValues> extends UseFormProps<T> {
   schema?: Yup.ObjectSchema<any>
 }
 export function useForm<T extends Record<string, any>>(props?: Props<T>) {
