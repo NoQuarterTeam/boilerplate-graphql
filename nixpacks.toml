@@ -1,5 +1,5 @@
 [phases.setup]
-	onlyIncludeFiles = ["package.json", "packages/api/**"]
+
 
 [phases.install]
 	dependsOn = ["setup"]

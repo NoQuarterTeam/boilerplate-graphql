@@ -15,7 +15,7 @@
     "dev": "turbo run dev --parallel",
     "start:api": "node packages/api/dist",
     "build:api": "cd packages/api && yarn build",
-    "prebuild": "rm -rf packages/app",
+    "prebuild": "rm -rf packages/app && rm -rf packages/web",
     "build": "yarn build:api",
     "migrate": "cd packages/api && prisma migrate deploy",
     "heroku-prebuild": "yarn prebuild",
