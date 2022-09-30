@@ -30,6 +30,8 @@ export const API_URL = IS_PRODUCTION
   ? STAGING_URL
   : "http://localhost:5555"
 
+console.log({ API_URL })
+
 export const GRAPHQL_API_URL = API_URL + "/graphql"
 
 export const WEB_URL = IS_PRODUCTION ? "boilerplate.noquarter.co" : "localhost:3000"
