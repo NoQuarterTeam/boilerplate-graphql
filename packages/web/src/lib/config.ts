@@ -23,6 +23,8 @@ export const GRAPHQL_API_URL = IS_PRODUCTION
   ? "https://boilerplate.graphcdn.app/graphql"
   : "http://localhost:5555/graphql"
 
+console.log("---------------")
+
 console.log({ VERCEL_GIT_PULL_REQUEST_NUMBER })
 
 export const API_URL = IS_PRODUCTION ? "https://boilerplate.graphcdn.app" : "http://localhost:5555/graphql"
