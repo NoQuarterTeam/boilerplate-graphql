@@ -5,7 +5,7 @@ import { ACCESS_TOKEN, GRAPHQL_API_URL } from "lib/config"
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const token = req.cookies[ACCESS_TOKEN]
-
+  console.log({ GRAPHQL_API_URL })
   return httpProxyMiddleware(req, res, {
     target: GRAPHQL_API_URL,
     headers: { authorization: token ? `Bearer ${token}` : "" },
