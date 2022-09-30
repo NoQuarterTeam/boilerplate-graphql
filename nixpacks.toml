@@ -7,7 +7,6 @@
 
 [phases.build]
 	dependsOn = ["install"]
-
 	cmds = ["yarn build:api"]
 
 [phases.release]
