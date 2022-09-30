@@ -1,5 +1,5 @@
 // don't import files or modules into this file
-const { APP_ENV } = process.env
+const { APP_ENV, VERCEL_GIT_PULL_REQUEST_NUMBER } = process.env
 let env = APP_ENV as "production" | "development"
 
 if (!env) {
@@ -22,6 +22,8 @@ export const SENTRY_DSN = "https://5d0371a223bb4509902f8940cb957daf@o204549.inge
 export const GRAPHQL_API_URL = IS_PRODUCTION
   ? "https://boilerplate.graphcdn.app/graphql"
   : "http://localhost:5555/graphql"
+
+console.log({ VERCEL_GIT_PULL_REQUEST_NUMBER })
 
 export const API_URL = IS_PRODUCTION ? "https://boilerplate.graphcdn.app" : "http://localhost:5555/graphql"
 
