@@ -1,9 +1,9 @@
 import * as React from "react"
-import type { DeepRequired, FieldError, FieldErrorsImpl, Merge } from "react-hook-form"
+import type { FieldError, FieldErrors, Merge } from "react-hook-form"
 import { FormErrorMessage } from "@chakra-ui/react"
 
 interface Props {
-  error: Merge<FieldError, FieldErrorsImpl<DeepRequired<any>>> | undefined
+  error?: FieldError | Merge<FieldError, FieldErrors<any>> | string
 }
 
 export const InputError: React.FC<Props> = (props) => {
