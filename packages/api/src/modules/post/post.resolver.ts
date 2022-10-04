@@ -1,7 +1,7 @@
-import { Args, Query, Resolver } from "type-graphql"
+import { Arg, Args, Query, Resolver } from "type-graphql"
 import { Service } from "typedi"
 
-import { FindFirstPostArgs, FindManyPostArgs } from "@generated"
+import { FindFirstPostArgs, FindManyPostArgs, PostCreateInput } from "@generated"
 
 import { prisma } from "../../lib/prisma"
 import { Post } from "./post.model"
@@ -20,5 +20,10 @@ export default class PostResolver {
     const items = await prisma.post.findMany(args)
     const count = await prisma.post.count({ ...args, take: undefined, skip: undefined })
     return { items, count }
+  }
+
+  @Query(() => Post)
+  async createPost(@Arg("data") data: PostCreateInput): Promise<Post> {
+    return await prisma.post.create({ data })
   }
 }

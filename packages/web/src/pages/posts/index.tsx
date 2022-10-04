@@ -28,25 +28,35 @@ const _ = gql`
 `
 
 export default function Posts() {
-  const { data } = usePostsQuery()
+  const { data, loading } = usePostsQuery()
   const borderColor = c.useColorModeValue("gray.100", "gray.700")
   return (
     <c.Stack py={10} spacing={8}>
       <c.Heading>Posts</c.Heading>
-      <c.SimpleGrid columns={{ base: 1, md: 2, lg: 3 }}>
-        {data?.posts.items.map((post) => (
-          <c.Stack p={4} key={post.id} border="1px solid" borderColor={borderColor} borderRadius="md">
-            <c.Text fontSize="2xl" fontWeight="semibold">
-              {post.title}
-            </c.Text>
-            <c.Text>{post.content}</c.Text>
-            <c.Flex fontSize="sm" justify="space-between" align="center">
-              <c.Text>{dayjs(post.createdAt).fromNow()}</c.Text>
-              <c.Text>{post.author.firstName}</c.Text>
-            </c.Flex>
-          </c.Stack>
-        ))}
-      </c.SimpleGrid>
+      {loading ? (
+        <c.Center h="100px">
+          <c.Spinner />
+        </c.Center>
+      ) : !data?.posts ? (
+        <c.Center>
+          <c.Text>No posts yet</c.Text>
+        </c.Center>
+      ) : (
+        <c.SimpleGrid columns={{ base: 1, md: 2, lg: 3 }}>
+          {data?.posts.items.map((post) => (
+            <c.Stack p={4} key={post.id} border="1px solid" borderColor={borderColor} borderRadius="md">
+              <c.Text fontSize="2xl" fontWeight="semibold">
+                {post.title}
+              </c.Text>
+              <c.Text>{post.content}</c.Text>
+              <c.Flex fontSize="sm" justify="space-between" align="center">
+                <c.Text>{dayjs(post.createdAt).fromNow()}</c.Text>
+                <c.Text>{post.author.firstName}</c.Text>
+              </c.Flex>
+            </c.Stack>
+          ))}
+        </c.SimpleGrid>
+      )}
     </c.Stack>
   )
 }
