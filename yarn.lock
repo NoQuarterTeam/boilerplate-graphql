@@ -3408,10 +3408,10 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@hookform/resolvers@2.9.8":
-  version "2.9.8"
-  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-2.9.8.tgz#9af51d15602f3c6e3249714712d8275564e65b72"
-  integrity sha512-iVVjH0USq+1TqDdGkWe2M1x7Wn5OFPgVRo7CbWFsXTqqXqCaZtZcnzJu+UhljCWbthFWxWGXKLGYUDPZ04oVvQ==
+"@hookform/resolvers@2.9.9":
+  version "2.9.9"
+  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-2.9.9.tgz#db87ae0dec1ac006b2f01caf8d53422d7bc341ff"
+  integrity sha512-WMKO5HbNoGMdQNmf6kcjHmBKPd3voKvDdzr+IQGn1Rtb7dIQbTE33zf5dptZnv8dF4K0NvnzpTgz3bLdeAPc9w==
 
 "@humanwhocodes/config-array@^0.10.5":
   version "0.10.5"
@@ -5823,10 +5823,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.25.tgz#527051f3c2f77aa52e5dc74e45a3da5fb2301448"
   integrity sha512-wANk6fBrUwdpY4isjWrKTufkrXdu1D2YHCot2fD/DfWxF5sMrVSA+KN7ydckvaTCh0HiqX9IVl0L5/ZoXg5M7w==
 
-"@types/node@16.11.65":
-  version "16.11.65"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.65.tgz#59500b86af757d6fcabd3dec32fecb6e357d7a45"
-  integrity sha512-Vfz7wGMOr4jbQGiQHVJm8VjeQwM9Ya7mHe9LtQ264/Epf5n1KiZShOFqk++nBzw6a/ubgYdB9Od7P+MH/LjoWw==
+"@types/node@16.11.66":
+  version "16.11.66"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.66.tgz#97f6891c3b8770e21163b93918d57fd1b799e235"
+  integrity sha512-+xvMrGl3eAygKcf5jm+4zA4tbfEgmKM9o6/glTmN0RFVdu2VuFXMYYtRmuv3zTGCgAYMnEZLde3B7BTp+Yxcig==
 
 "@types/node@^10.1.0":
   version "10.17.60"
@@ -13359,10 +13359,10 @@ react-hook-form@7.37.0:
   resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.37.0.tgz#4d1738f092d3d8a3ade34ee892d97350b1032b19"
   integrity sha512-6NFTxsnw+EXSpNNvLr5nFMjPdYKRryQcelTHg7zwBB6vAzfPIcZq4AExP4heVlwdzntepQgwiOQW4z7Mr99Lsg==
 
-react-icons@4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.4.0.tgz#a13a8a20c254854e1ec9aecef28a95cdf24ef703"
-  integrity sha512-fSbvHeVYo/B5/L4VhB7sBA1i2tS8MkT0Hb9t2H1AVPkwGfVHLJCqyr2Py9dKMxsyM63Eng1GkdZfbWj+Fmv8Rg==
+react-icons@4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.6.0.tgz#f83eda179af5d02c047449a20b702c858653d397"
+  integrity sha512-rR/L9m9340yO8yv1QT1QurxWQvWpbNHqVX0fzMln2HEb9TEIrQRGsqiNFQfiv9/JEUbyHmHPlNTB2LWm2Ttz0g==
 
 "react-is@^16.12.0 || ^17.0.0", react-is@^17.0.1:
   version "17.0.2"
