@@ -50,7 +50,7 @@
   "devDependencies": {
     "@graphql-codegen/add": "3.2.1",
     "@graphql-codegen/cli": "2.13.7",
-    "@graphql-codegen/typescript": "2.7.5",
+    "@graphql-codegen/typescript": "2.8.0",
     "@graphql-codegen/typescript-operations": "2.5.5",
     "@graphql-codegen/typescript-react-apollo": "3.3.5",
     "@types/cookie": "0.5.1",
