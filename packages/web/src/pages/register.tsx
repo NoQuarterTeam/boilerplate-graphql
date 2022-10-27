@@ -5,9 +5,9 @@ import Head from "next/head"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
-import { LOGIN_REFRESH_TOKEN_KEY, LOGIN_TOKEN_KEY } from "lib/config"
+import { ACCESS_TOKEN,REFRESH_TOKEN_KEY } from "lib/config"
 import type { MeQuery, RegisterInput } from "lib/graphql"
-import { MeDocument, MeFragmentDoc, useRegisterMutation } from "lib/graphql"
+import { MeDocument, useRegisterMutation } from "lib/graphql"
 import { useForm } from "lib/hooks/useForm"
 import Yup from "lib/yup"
 import { Form } from "components/Form"
@@ -26,7 +26,6 @@ const _ = gql`
       refreshToken
     }
   }
-  ${MeFragmentDoc}
 `
 
 const RegisterSchema = Yup.object().shape({
@@ -47,11 +46,11 @@ function Register() {
   const onSubmit = (data: RegisterInput) => {
     return form.handler(() => register({ variables: { data } }), {
       onSuccess: async (data) => {
+        localStorage.setItem(ACCESS_TOKEN, data.register.token)
         await fetch("/api/login", {
           method: "post",
           body: JSON.stringify({
-            [LOGIN_TOKEN_KEY]: data.register.token,
-            [LOGIN_REFRESH_TOKEN_KEY]: data.register.refreshToken,
+            [REFRESH_TOKEN_KEY]: data.register.refreshToken,
           }),
         })
         client.writeQuery<MeQuery>({ query: MeDocument, data: { me: data.register.user } })

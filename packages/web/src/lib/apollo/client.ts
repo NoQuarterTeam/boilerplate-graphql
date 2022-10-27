@@ -1,13 +1,15 @@
 import * as React from "react"
 import type { NormalizedCacheObject } from "@apollo/client"
 import { ApolloClient, createHttpLink, from, fromPromise, InMemoryCache } from "@apollo/client"
+import { setContext } from "@apollo/client/link/context"
 import { onError } from "@apollo/client/link/error"
 import { mergeDeep } from "@apollo/client/utilities"
 import * as Sentry from "@sentry/nextjs"
 import type { RefreshResponse } from "pages/api/refresh-token"
 
 import { typePolicies } from "lib/apollo/pagination"
-import { GRAPHQL_API_URL } from "lib/config"
+import { ACCESS_TOKEN, GRAPHQL_API_URL } from "lib/config"
+
 export const isBrowser = () => typeof window !== "undefined"
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null
@@ -22,46 +24,59 @@ const errorLink = onError(({ graphQLErrors, operation, forward }) => {
           break
         case "BAD_USER_INPUT":
           Sentry.captureException(err)
+          break
         case "UNAUTHENTICATED":
           return fromPromise(
             refreshToken()
               .then(async (res) => {
                 const data: RefreshResponse = await res.json()
-                if (data.success) return true
-                if (!window.location.pathname.includes("login")) {
-                  window.location.href = `/login`
+                if (data.token) {
+                  window.localStorage.setItem(ACCESS_TOKEN, data.token)
+                  return true
                 }
-                return false
+                throw new Error("Refresh token failed")
               })
               .catch(() => {
+                window.localStorage.removeItem(ACCESS_TOKEN)
                 if (!window.location.pathname.includes("login")) {
                   window.location.href = `/login`
                 }
-                return false
+                return true
               }),
           )
             .filter(Boolean)
             .flatMap(() => forward(operation))
         default:
-          console.error(graphQLErrors)
+          Sentry.captureException(err)
+          console.error(err)
           break
       }
     }
   }
 })
 
-const httpLink = createHttpLink({ uri: isBrowser() ? "/api/graphql" : GRAPHQL_API_URL })
+const httpLink = createHttpLink({ uri: GRAPHQL_API_URL })
 
 function createApolloClient(initialState?: null | Record<string, any>) {
+  const authLink = setContext((_, { headers }) => {
+    const token = window.localStorage.getItem(ACCESS_TOKEN)
+    return {
+      headers: {
+        ...headers,
+        authorization: token ? `Bearer ${token}` : "",
+      },
+    }
+  })
+
   return new ApolloClient({
     ssrMode: !isBrowser(),
-    link: from([errorLink, httpLink]),
+    link: from([errorLink, authLink, httpLink]),
     name: "web",
     credentials: "include",
     defaultOptions: {
-      watchQuery: { errorPolicy: "all" },
+      watchQuery: { errorPolicy: "all", notifyOnNetworkStatusChange: true },
       mutate: { errorPolicy: "all" },
-      query: { errorPolicy: "all" },
+      query: { errorPolicy: "all", notifyOnNetworkStatusChange: true },
     },
     cache: new InMemoryCache({ typePolicies }).restore(initialState || {}),
   })
