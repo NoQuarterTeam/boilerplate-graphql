@@ -1,11 +1,12 @@
 import * as React from "react"
-import { useFormContext, UseFormReturn } from "react-hook-form"
+import type { UseFormReturn } from "react-hook-form";
+import { useFormContext } from "react-hook-form"
 import { FormControl, FormErrorMessage } from "@chakra-ui/react"
 
 interface Props {
   error?: string
 }
-export const FormError: React.FC<Props> = (props) => {
+export function FormError(props: Props) {
   const { appError } = useFormContext() as UseFormReturn<Record<string, any>> & {
     appError?: string
   }

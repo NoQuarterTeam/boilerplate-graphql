@@ -3,9 +3,10 @@ generator client {
 }
 
 generator typegraphql {
-  provider = "typegraphql-prisma"
-  output   = "../../../../node_modules/@generated"
-  emitOnly = "inputs,enums,crudResolvers"
+  provider        = "typegraphql-prisma"
+  output          = "../../../../node_modules/@generated"
+  emitOnly        = "inputs,enums,crudResolvers"
+  useSimpleInputs = true
 }
 
 datasource db {

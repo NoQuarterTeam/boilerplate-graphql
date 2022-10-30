@@ -104,7 +104,7 @@ export type MutationResetPasswordArgs = {
 
 
 export type MutationUpdateMeArgs = {
-  data: UpdateUserInput;
+  data: UserUpdateInput;
 };
 
 export type NestedDateTimeFilter = {
@@ -158,6 +158,17 @@ export type NestedStringNullableFilter = {
   not?: InputMaybe<NestedStringNullableFilter>;
   notIn?: InputMaybe<Array<Scalars['String']>>;
   startsWith?: InputMaybe<Scalars['String']>;
+};
+
+export type NestedUuidFilter = {
+  equals?: InputMaybe<Scalars['String']>;
+  gt?: InputMaybe<Scalars['String']>;
+  gte?: InputMaybe<Scalars['String']>;
+  in?: InputMaybe<Array<Scalars['String']>>;
+  lt?: InputMaybe<Scalars['String']>;
+  lte?: InputMaybe<Scalars['String']>;
+  not?: InputMaybe<NestedUuidFilter>;
+  notIn?: InputMaybe<Array<Scalars['String']>>;
 };
 
 export type Post = {
@@ -238,20 +249,81 @@ export enum PostScalarFieldEnum {
   UpdatedAt = 'updatedAt'
 }
 
+export type PostScalarWhereInput = {
+  AND?: InputMaybe<Array<PostScalarWhereInput>>;
+  NOT?: InputMaybe<Array<PostScalarWhereInput>>;
+  OR?: InputMaybe<Array<PostScalarWhereInput>>;
+  authorId?: InputMaybe<UuidFilter>;
+  content?: InputMaybe<StringFilter>;
+  createdAt?: InputMaybe<DateTimeFilter>;
+  id?: InputMaybe<UuidFilter>;
+  status?: InputMaybe<EnumPostStatusFilter>;
+  title?: InputMaybe<StringFilter>;
+  updatedAt?: InputMaybe<DateTimeFilter>;
+};
+
 export enum PostStatus {
   Draft = 'DRAFT',
   Published = 'PUBLISHED'
 }
+
+export type PostUpdateManyMutationInput = {
+  content?: InputMaybe<Scalars['String']>;
+  createdAt?: InputMaybe<Scalars['DateTime']>;
+  id?: InputMaybe<Scalars['String']>;
+  status?: InputMaybe<PostStatus>;
+  title?: InputMaybe<Scalars['String']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']>;
+};
+
+export type PostUpdateManyWithWhereWithoutAuthorInput = {
+  data: PostUpdateManyMutationInput;
+  where: PostScalarWhereInput;
+};
+
+export type PostUpdateManyWithoutAuthorNestedInput = {
+  connect?: InputMaybe<Array<PostWhereUniqueInput>>;
+  connectOrCreate?: InputMaybe<Array<PostCreateOrConnectWithoutAuthorInput>>;
+  create?: InputMaybe<Array<PostCreateWithoutAuthorInput>>;
+  createMany?: InputMaybe<PostCreateManyAuthorInputEnvelope>;
+  delete?: InputMaybe<Array<PostWhereUniqueInput>>;
+  deleteMany?: InputMaybe<Array<PostScalarWhereInput>>;
+  disconnect?: InputMaybe<Array<PostWhereUniqueInput>>;
+  set?: InputMaybe<Array<PostWhereUniqueInput>>;
+  update?: InputMaybe<Array<PostUpdateWithWhereUniqueWithoutAuthorInput>>;
+  updateMany?: InputMaybe<Array<PostUpdateManyWithWhereWithoutAuthorInput>>;
+  upsert?: InputMaybe<Array<PostUpsertWithWhereUniqueWithoutAuthorInput>>;
+};
+
+export type PostUpdateWithWhereUniqueWithoutAuthorInput = {
+  data: PostUpdateWithoutAuthorInput;
+  where: PostWhereUniqueInput;
+};
+
+export type PostUpdateWithoutAuthorInput = {
+  content?: InputMaybe<Scalars['String']>;
+  createdAt?: InputMaybe<Scalars['DateTime']>;
+  id?: InputMaybe<Scalars['String']>;
+  status?: InputMaybe<PostStatus>;
+  title?: InputMaybe<Scalars['String']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']>;
+};
+
+export type PostUpsertWithWhereUniqueWithoutAuthorInput = {
+  create: PostCreateWithoutAuthorInput;
+  update: PostUpdateWithoutAuthorInput;
+  where: PostWhereUniqueInput;
+};
 
 export type PostWhereInput = {
   AND?: InputMaybe<Array<PostWhereInput>>;
   NOT?: InputMaybe<Array<PostWhereInput>>;
   OR?: InputMaybe<Array<PostWhereInput>>;
   author?: InputMaybe<UserRelationFilter>;
-  authorId?: InputMaybe<StringFilter>;
+  authorId?: InputMaybe<UuidFilter>;
   content?: InputMaybe<StringFilter>;
   createdAt?: InputMaybe<DateTimeFilter>;
-  id?: InputMaybe<StringFilter>;
+  id?: InputMaybe<UuidFilter>;
   status?: InputMaybe<EnumPostStatusFilter>;
   title?: InputMaybe<StringFilter>;
   updatedAt?: InputMaybe<DateTimeFilter>;
@@ -407,15 +479,6 @@ export type StringNullableFilter = {
   startsWith?: InputMaybe<Scalars['String']>;
 };
 
-export type UpdateUserInput = {
-  avatar?: InputMaybe<Scalars['String']>;
-  bio?: InputMaybe<Scalars['String']>;
-  email?: InputMaybe<Scalars['String']>;
-  firstName?: InputMaybe<Scalars['String']>;
-  lastName?: InputMaybe<Scalars['String']>;
-  password?: InputMaybe<Scalars['String']>;
-};
-
 export type User = {
   __typename?: 'User';
   avatar?: Maybe<Scalars['String']>;
@@ -476,6 +539,20 @@ export enum UserScalarFieldEnum {
   UpdatedAt = 'updatedAt'
 }
 
+export type UserUpdateInput = {
+  avatar?: InputMaybe<Scalars['String']>;
+  bio?: InputMaybe<Scalars['String']>;
+  createdAt?: InputMaybe<Scalars['DateTime']>;
+  email?: InputMaybe<Scalars['String']>;
+  firstName?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['String']>;
+  lastName?: InputMaybe<Scalars['String']>;
+  password?: InputMaybe<Scalars['String']>;
+  posts?: InputMaybe<PostUpdateManyWithoutAuthorNestedInput>;
+  role?: InputMaybe<Role>;
+  updatedAt?: InputMaybe<Scalars['DateTime']>;
+};
+
 export type UserWhereInput = {
   AND?: InputMaybe<Array<UserWhereInput>>;
   NOT?: InputMaybe<Array<UserWhereInput>>;
@@ -485,7 +562,7 @@ export type UserWhereInput = {
   createdAt?: InputMaybe<DateTimeFilter>;
   email?: InputMaybe<StringFilter>;
   firstName?: InputMaybe<StringFilter>;
-  id?: InputMaybe<StringFilter>;
+  id?: InputMaybe<UuidFilter>;
   lastName?: InputMaybe<StringFilter>;
   password?: InputMaybe<StringFilter>;
   posts?: InputMaybe<PostListRelationFilter>;
@@ -502,6 +579,18 @@ export type UsersResponse = {
   __typename?: 'UsersResponse';
   count: Scalars['Int'];
   items: Array<User>;
+};
+
+export type UuidFilter = {
+  equals?: InputMaybe<Scalars['String']>;
+  gt?: InputMaybe<Scalars['String']>;
+  gte?: InputMaybe<Scalars['String']>;
+  in?: InputMaybe<Array<Scalars['String']>>;
+  lt?: InputMaybe<Scalars['String']>;
+  lte?: InputMaybe<Scalars['String']>;
+  mode?: InputMaybe<QueryMode>;
+  not?: InputMaybe<NestedUuidFilter>;
+  notIn?: InputMaybe<Array<Scalars['String']>>;
 };
 
 export type AdminCreateUserMutationVariables = Exact<{
@@ -579,7 +668,7 @@ export type PostsQueryVariables = Exact<{ [key: string]: never; }>;
 export type PostsQuery = { __typename?: 'Query', posts: { __typename?: 'PostsResponse', count: number, items: Array<{ __typename?: 'Post', id: string, title: string, content: string, createdAt: string, author: { __typename?: 'User', id: string, firstName: string } }> } };
 
 export type UpdateMeMutationVariables = Exact<{
-  data: UpdateUserInput;
+  data: UserUpdateInput;
 }>;
 
 
@@ -813,7 +902,7 @@ export type PostsQueryHookResult = ReturnType<typeof usePostsQuery>;
 export type PostsLazyQueryHookResult = ReturnType<typeof usePostsLazyQuery>;
 export type PostsQueryResult = Apollo.QueryResult<PostsQuery, PostsQueryVariables>;
 export const UpdateMeDocument = gql`
-    mutation UpdateMe($data: UpdateUserInput!) {
+    mutation UpdateMe($data: UserUpdateInput!) {
   updateMe(data: $data) {
     ...Me
   }

@@ -109,20 +109,20 @@ function SidebarLink({ href, icon, ...props }: SidebarLinkProps) {
   const router = useRouter()
   const isActive = router.asPath.includes(href)
   return (
-    <NextLink passHref href={href}>
-      <Link
-        display="flex"
-        alignItems="center"
-        justifyContent={{ base: "center", md: "flex-start" }}
-        fontWeight="semibold"
-        color={isActive ? "purple.500" : undefined}
-        {...props}
-      >
-        <Center w="26px">{icon}</Center>
-        <Text ml={2} display={{ base: "none", md: "block" }}>
-          {props.children}
-        </Text>
-      </Link>
-    </NextLink>
+    <Link
+      as={NextLink}
+      href={href}
+      display="flex"
+      alignItems="center"
+      justifyContent={{ base: "center", md: "flex-start" }}
+      fontWeight="semibold"
+      color={isActive ? "purple.500" : undefined}
+      {...props}
+    >
+      <Center w="26px">{icon}</Center>
+      <Text ml={2} display={{ base: "none", md: "block" }}>
+        {props.children}
+      </Text>
+    </Link>
   )
 }

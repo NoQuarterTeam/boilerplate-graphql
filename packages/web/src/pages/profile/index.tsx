@@ -18,7 +18,7 @@ import { ProfileLayout } from "components/ProfileLayout"
 import { Tile, TileBody, TileFooter, TileHeader, TileHeading } from "components/Tile"
 
 const _ = gql`
-  mutation UpdateMe($data: UpdateUserInput!) {
+  mutation UpdateMe($data: UserUpdateInput!) {
     updateMe(data: $data) {
       ...Me
     }

@@ -1,16 +1,15 @@
 import * as React from "react"
-import { Button, ButtonProps, Link } from "@chakra-ui/react"
+import type { ButtonProps } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react"
 import NextLink from "next/link"
 
 interface Props extends ButtonProps {
   href: string
 }
-export const LinkButton: React.FC<Props> = ({ href, ...props }) => {
+export function LinkButton({ href, ...props }: Props) {
   return (
-    <NextLink href={href} passHref>
-      <Button as={Link} textDecor="none !important" {...props}>
-        {props.children}
-      </Button>
-    </NextLink>
+    <Button as={NextLink} href={href} textDecor="none !important" {...props}>
+      {props.children}
+    </Button>
   )
 }

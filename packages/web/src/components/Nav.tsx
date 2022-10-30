@@ -1,6 +1,8 @@
 import * as React from "react"
 import { BiCog, BiExit, BiMoon, BiSun, BiUser } from "react-icons/bi"
 import { GiHamburgerMenu } from "react-icons/gi"
+import type {
+  LinkProps} from "@chakra-ui/react";
 import {
   Avatar,
   Box,
@@ -8,7 +10,6 @@ import {
   HStack,
   IconButton,
   Link,
-  LinkProps,
   Menu,
   MenuButton,
   MenuDivider,
@@ -93,11 +94,11 @@ export function Nav() {
           <MenuList fontSize="md">
             {me ? (
               <>
-                <NextLink passHref href="/profile">
+                <NextLink href="/profile">
                   <MenuItem icon={<Box as={BiUser} boxSize="16px" />}>Profile</MenuItem>
                 </NextLink>
                 {me.role === Role.Admin && (
-                  <NextLink passHref href="/admin">
+                  <NextLink href="/admin">
                     <MenuItem icon={<Box as={BiCog} boxSize="16px" />}>Admin</MenuItem>
                   </NextLink>
                 )}
@@ -124,10 +125,10 @@ export function Nav() {
                   Toggle theme
                 </MenuItem>
                 <MenuDivider />
-                <NextLink passHref href="/login">
+                <NextLink href="/login">
                   <MenuItem>Login</MenuItem>
                 </NextLink>
-                <NextLink passHref href="/register">
+                <NextLink href="/register">
                   <MenuItem fontWeight="semibold">Register</MenuItem>
                 </NextLink>
               </>
@@ -148,17 +149,17 @@ function HomeLink({ href, ...props }: HomeLinkProps) {
   const isActive = asPath === href
 
   return (
-    <NextLink passHref href={href}>
-      <Link
-        px={4}
-        py={2}
-        textDecor="none !important"
-        _hover={{ color: isActive ? "purple.600" : "purple.500" }}
-        color={isActive ? "purple.600" : "gray.500"}
-        {...props}
-      >
-        {props.children}
-      </Link>
-    </NextLink>
+    <Link
+      as={NextLink}
+      href={href}
+      px={4}
+      py={2}
+      textDecor="none !important"
+      _hover={{ color: isActive ? "purple.600" : "purple.500" }}
+      color={isActive ? "purple.600" : "gray.500"}
+      {...props}
+    >
+      {props.children}
+    </Link>
   )
 }

@@ -29,11 +29,15 @@ export default function Home() {
             )}
             <Text>
               Built by{" "}
-              <NextLink href="https://www.noquarter.co" passHref>
-                <Link _hover={{ textDecor: "underline" }} target="_blank" color="purple.500">
-                  No Quarter
-                </Link>
-              </NextLink>
+              <Link
+                as={NextLink}
+                href="https://www.noquarter.co"
+                _hover={{ textDecor: "underline" }}
+                target="_blank"
+                color="purple.500"
+              >
+                No Quarter
+              </Link>
             </Text>
           </VStack>
         </Center>

@@ -6,14 +6,14 @@ interface Props {
   error?: FieldError | Merge<FieldError, FieldErrors<any>> | string
 }
 
-export const InputError: React.FC<Props> = (props) => {
+export function InputError(props: Props) {
   if (!props.error) return null
   return (
     <>
       {typeof props.error === "string" ? (
         <FormErrorMessage>{props.error}</FormErrorMessage>
       ) : props.error.message ? (
-        <FormErrorMessage>{props.error.message}</FormErrorMessage>
+        <FormErrorMessage>{props.error.message as string}</FormErrorMessage>
       ) : (
         props.error.types &&
         Object.values(props.error.types).map((error, i) => (

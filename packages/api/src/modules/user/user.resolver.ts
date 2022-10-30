@@ -1,7 +1,7 @@
 import { Arg, Args, Ctx, Mutation, Query, Resolver } from "type-graphql"
 import { Inject, Service } from "typedi"
 
-import { CreateOneUserArgs, FindFirstUserArgs, FindManyUserArgs, Role } from "@generated"
+import { CreateOneUserArgs, FindFirstUserArgs, FindManyUserArgs, Role, UserUpdateInput } from "@generated"
 
 import { createToken, decodeRefreshToken, decodeToken } from "../../lib/jwt"
 import { prisma } from "../../lib/prisma"
@@ -12,7 +12,6 @@ import { ResolverContext } from "../shared/resolverContext"
 import { LoginInput } from "./inputs/login.input"
 import { RegisterInput } from "./inputs/register.input"
 import { ResetPasswordInput } from "./inputs/resetPassword.input"
-import { UpdateUserInput } from "./inputs/updateUser.input"
 import { AuthResponse } from "./responses/auth.response"
 import { RefreshTokenResponse } from "./responses/refreshToken.response"
 import { UsersResponse } from "./responses/users.response"
@@ -58,7 +57,7 @@ export default class UserResolver {
   // UPDATE ME
   @UseAuth()
   @Mutation(() => User)
-  async updateMe(@CurrentUser() currentUser: User, @Arg("data") data: UpdateUserInput): Promise<User> {
+  async updateMe(@CurrentUser() currentUser: User, @Arg("data") data: UserUpdateInput): Promise<User> {
     return await prisma.user.update({ where: { id: currentUser.id }, data })
   }
 

@@ -1,7 +1,7 @@
 import * as React from "react"
 import { CgArrowLongDown, CgArrowLongUp } from "react-icons/cg"
 import type { FlexProps } from "@chakra-ui/react"
-import { Box, Button, Center, Flex, Link, Spinner, Text, useColorModeValue } from "@chakra-ui/react"
+import { Box, Button, Center, Flex, Spinner, Text, useColorModeValue } from "@chakra-ui/react"
 import NextLink from "next/link"
 
 import { SortOrder } from "lib/graphql"
@@ -176,20 +176,33 @@ function _ColumnField<T>({
     flex: 1,
     align: "center",
     h: "50px",
-    isTruncated: true,
     fontSize: "sm",
     justify: isLast ? "flex-end" : "flex-start",
     overflowX: "auto",
     ...props,
   }
   return !!!hasNoLink && !!href ? (
-    <NextLink passHref href={href}>
-      <Flex as={Link} _hover={{ textDecor: "none" }} {...sharedProps}>
-        {props.children}
-      </Flex>
-    </NextLink>
+    <Flex
+      as={NextLink}
+      href={href}
+      _hover={{ textDecor: "none" }}
+      sx={{ "&::-webkit-scrollbar": { display: "none" } }}
+      {...sharedProps}
+    >
+      {typeof props.children === "string" || typeof props.children === "number" ? (
+        <Text noOfLines={1}>{props.children}</Text>
+      ) : (
+        props.children
+      )}
+    </Flex>
   ) : (
-    <Flex {...sharedProps}>{props.children}</Flex>
+    <Flex {...sharedProps} sx={{ "&::-webkit-scrollbar": { display: "none" } }}>
+      {typeof props.children === "string" || typeof props.children === "number" ? (
+        <Text noOfLines={1}>{props.children}</Text>
+      ) : (
+        props.children
+      )}
+    </Flex>
   )
 }
 
