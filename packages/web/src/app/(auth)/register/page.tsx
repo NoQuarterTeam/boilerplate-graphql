@@ -1,19 +1,18 @@
+"use client"
 import * as React from "react"
 import { gql, useApolloClient } from "@apollo/client"
 import { Box, Button, Center, Heading, Stack } from "@chakra-ui/react"
 import Head from "next/head"
 import Link from "next/link"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 
-import { ACCESS_TOKEN,REFRESH_TOKEN_KEY } from "lib/config"
+import { ACCESS_TOKEN, REFRESH_TOKEN_KEY } from "lib/config"
 import type { MeQuery, RegisterInput } from "lib/graphql"
 import { MeDocument, useRegisterMutation } from "lib/graphql"
 import { useForm } from "lib/hooks/useForm"
 import Yup from "lib/yup"
 import { Form } from "components/Form"
 import { FormError } from "components/FormError"
-import { withNoAuth } from "components/hoc/withNoAuth"
-import { HomeLayout } from "components/HomeLayout"
 import { Input } from "components/Input"
 
 const _ = gql`
@@ -35,7 +34,7 @@ const RegisterSchema = Yup.object().shape({
   lastName: Yup.string().required("Required"),
 })
 
-function Register() {
+export default function Register() {
   const client = useApolloClient()
 
   const [register, { loading }] = useRegisterMutation()
@@ -82,6 +81,3 @@ function Register() {
     </Center>
   )
 }
-
-Register.getLayout = (page: React.ReactNode) => <HomeLayout>{page}</HomeLayout>
-export default withNoAuth(Register)

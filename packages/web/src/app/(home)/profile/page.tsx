@@ -1,3 +1,4 @@
+"use client"
 import * as React from "react"
 import { gql } from "@apollo/client"
 import { Avatar, Button, Center, Spinner, Stack } from "@chakra-ui/react"
@@ -10,11 +11,8 @@ import { UPLOAD_PATHS } from "lib/uploadPaths"
 import Yup from "lib/yup"
 import { ButtonGroup } from "components/ButtonGroup"
 import { Form } from "components/Form"
-import { withAuth } from "components/hoc/withAuth"
-import { HomeLayout } from "components/HomeLayout"
 import { ImageUploader } from "components/ImageUploader"
 import { Input } from "components/Input"
-import { ProfileLayout } from "components/ProfileLayout"
 import { Tile, TileBody, TileFooter, TileHeader, TileHeading } from "components/Tile"
 
 const _ = gql`
@@ -30,7 +28,7 @@ const ProfileSchema = Yup.object().shape({
   firstName: Yup.string().required("Required").nullIfEmpty(),
   lastName: Yup.string().required("Required").nullIfEmpty(),
 })
-function Profile() {
+export default function Profile() {
   const { me, loading } = useMe()
 
   const handler = useMutationHandler()
@@ -118,11 +116,3 @@ function Profile() {
     </Stack>
   )
 }
-
-Profile.getLayout = (page: React.ReactNode) => (
-  <HomeLayout>
-    <ProfileLayout>{page}</ProfileLayout>
-  </HomeLayout>
-)
-
-export default withAuth(Profile)

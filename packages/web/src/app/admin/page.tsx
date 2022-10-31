@@ -1,7 +1,6 @@
+"use client"
 import * as React from "react"
 import { Center, Heading } from "@chakra-ui/react"
-
-import { AdminLayout } from "components/AdminLayout"
 
 export default function AdminHome() {
   return (
@@ -10,5 +9,3 @@ export default function AdminHome() {
     </Center>
   )
 }
-
-AdminHome.getLayout = (page: React.ReactNode) => <AdminLayout>{page}</AdminLayout>

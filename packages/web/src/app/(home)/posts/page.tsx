@@ -1,3 +1,4 @@
+"use client"
 import * as React from "react"
 import { gql } from "@apollo/client"
 import * as c from "@chakra-ui/react"
@@ -5,7 +6,6 @@ import dayjs from "dayjs"
 import relativeTime from "dayjs/plugin/relativeTime"
 
 import { usePostsQuery } from "lib/graphql"
-import { HomeLayout } from "components/HomeLayout"
 
 dayjs.extend(relativeTime)
 
@@ -50,5 +50,3 @@ export default function Posts() {
     </c.Stack>
   )
 }
-
-Posts.getLayout = (page: React.ReactNode) => <HomeLayout>{page}</HomeLayout>

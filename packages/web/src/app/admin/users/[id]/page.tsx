@@ -1,11 +1,9 @@
+"use client"
 import * as React from "react"
 import { gql } from "@apollo/client"
 import { Avatar, Box, Center, Flex, Heading, Spinner, Stack, Text } from "@chakra-ui/react"
-import Head from "next/head"
-import { useRouter } from "next/router"
 
 import { useGetUserQuery } from "lib/graphql"
-import { AdminLayout } from "components/AdminLayout"
 import { NoData } from "components/NoData"
 
 const _ = gql`
@@ -17,9 +15,7 @@ const _ = gql`
     email
     createdAt
   }
-`
 
-const __ = gql`
   query GetUser($where: UserWhereInput) {
     user(where: $where) {
       ...UserDetail
@@ -27,10 +23,9 @@ const __ = gql`
   }
 `
 
-export default function Users() {
-  const router = useRouter()
-  const id = router.query.id as string
-  const { data, loading } = useGetUserQuery({ variables: { where: { id: { equals: id } } }, skip: !!!id })
+export default function Users({ params }: { params: { id: string } }) {
+  const id = params.id
+  const { data, loading } = useGetUserQuery({ variables: { where: { id: { equals: id } } } })
   const user = data?.user
 
   if (loading)
@@ -42,9 +37,6 @@ export default function Users() {
   if (!user) return <NoData>User not found</NoData>
   return (
     <Box>
-      <Head>
-        <title>{user.fullName}</title>
-      </Head>
       <Flex justify="space-between">
         <Stack>
           <Heading fontWeight={800}>{user.fullName}</Heading>
@@ -56,5 +48,3 @@ export default function Users() {
     </Box>
   )
 }
-
-Users.getLayout = (page: React.ReactNode) => <AdminLayout>{page}</AdminLayout>

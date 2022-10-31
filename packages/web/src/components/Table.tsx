@@ -1,11 +1,14 @@
 import * as React from "react"
 import { CgArrowLongDown, CgArrowLongUp } from "react-icons/cg"
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons"
 import type { FlexProps } from "@chakra-ui/react"
+import { HStack, IconButton } from "@chakra-ui/react"
 import { Box, Button, Center, Flex, Spinner, Text, useColorModeValue } from "@chakra-ui/react"
 import NextLink from "next/link"
+import { usePathname, useRouter, useSearchParams } from "next/navigation"
 
-import { SortOrder } from "lib/graphql"
-import { useToast } from "lib/hooks/useToast"
+import type { SortOrderInput } from "lib/graphql"
+import { NullsOrder, SortOrder } from "lib/graphql"
 
 import { NoData } from "./NoData"
 
@@ -13,26 +16,30 @@ interface DataType {
   id: string
 }
 
-export type Sort = { [key: string]: SortOrder.Desc | SortOrder.Asc }
+export type Sort = { [key: string]: SortOrder } | { [key: string]: { sort: SortOrder; nulls: NullsOrder } }
 
-interface Props<T extends DataType> {
+export interface TableProps<T extends DataType> {
   isLoading: boolean
   children:
     | ArrayLike<React.ReactElement<ColumnProps<T>> | undefined>
     | React.ReactElement<ColumnProps<T>>
     | undefined
   count?: number
+  take: number
   data?: T[]
   getRowHref?: (item: T) => string
-  onFetchMore?: () => Promise<any> | void | undefined
   noDataText?: string
   onSort?: (sort: Sort) => void
   sort?: Sort
 }
 
-export function Table<T extends DataType>(props: Props<T>) {
+export function Table<T extends DataType>(props: TableProps<T>) {
+  const params = useSearchParams()
+  const pathname = usePathname()
+  const pageNumber = params.get("page") || "1"
   const borderColor = useColorModeValue("gray.200", "gray.700")
-
+  const router = useRouter()
+  const currentPage = parseInt(pageNumber as string)
   const maybeColumns: (ColumnProps<T> | undefined)[] = React.Children.map<
     ColumnProps<T>,
     React.ReactElement<ColumnProps<T>>
@@ -42,20 +49,7 @@ export function Table<T extends DataType>(props: Props<T>) {
     props.children,
     (child) => child?.props,
   )
-  const toast = useToast()
 
-  const [fetchLoading, setFetchLoading] = React.useState(false)
-  const handleFetchMore = async () => {
-    if (!props.onFetchMore) return
-    try {
-      setFetchLoading(true)
-      await props.onFetchMore()
-    } catch {
-      toast({ status: "error", description: "Error fetching more" })
-    } finally {
-      setFetchLoading(false)
-    }
-  }
   const columns = maybeColumns.filter(Boolean)
   const data = props.data || []
 
@@ -66,6 +60,7 @@ export function Table<T extends DataType>(props: Props<T>) {
           <Flex
             key={i.toString()}
             flex={1}
+            pl={i === 0 ? 0 : 2}
             overflow="hidden"
             justifyContent={i === columns.length - 1 ? "flex-end" : "flex-start"}
             align="center"
@@ -75,6 +70,7 @@ export function Table<T extends DataType>(props: Props<T>) {
               <Button
                 as={props.sort && props.onSort && sortKey ? "button" : "div"}
                 display="flex"
+                _hover={{ opacity: props.sort && props.onSort && sortKey ? 0.6 : undefined }}
                 variant="unstyled"
                 alignItems="center"
                 minW="auto"
@@ -107,7 +103,7 @@ export function Table<T extends DataType>(props: Props<T>) {
         ))}
       </Flex>
 
-      {props.isLoading ? (
+      {props.isLoading && !!!props.data ? (
         <Center p={10} h={100}>
           <Spinner />
         </Center>
@@ -120,6 +116,7 @@ export function Table<T extends DataType>(props: Props<T>) {
                   key={i.toString()}
                   href={props.getRowHref?.(item)}
                   isLast={i === columns.length - 1}
+                  pl={i === 0 ? 0 : 2}
                   {...column}
                 >
                   {row?.(item)}
@@ -136,14 +133,17 @@ export function Table<T extends DataType>(props: Props<T>) {
             borderColor={borderColor}
           >
             <Text w="100%" fontSize="sm">
-              {props.data?.length} / {props.count}
+              Total - {props.count}
             </Text>
-
-            {!!props.onFetchMore && !!props.count && !!props.data?.length && props.data.length < props.count && (
-              <Button size="sm" onClick={handleFetchMore} isLoading={fetchLoading}>
-                Show more
-              </Button>
-            )}
+            <Box>
+              <Pagination
+                currentPage={currentPage}
+                siblingCount={1}
+                onPageChange={(page) => router.push(`${pathname}?page=${page}`)}
+                totalCount={props.count || 0}
+                pageSize={props.take}
+              />
+            </Box>
           </Flex>
         </Flex>
       ) : (
@@ -155,7 +155,7 @@ export function Table<T extends DataType>(props: Props<T>) {
   )
 }
 
-interface ColumnProps<T> extends FlexProps {
+export interface ColumnProps<T> extends FlexProps {
   row?: (item: T) => React.ReactNode
   sortKey?: string
   hasNoLink?: boolean
@@ -166,7 +166,7 @@ export function Column<T extends DataType>(_: ColumnProps<T>) {
   return null
 }
 
-function _ColumnField<T>({
+export function _ColumnField<T>({
   isLast,
   hasNoLink,
   href,
@@ -206,14 +206,14 @@ function _ColumnField<T>({
   )
 }
 
-const ColumnField = React.memo(_ColumnField)
+export const ColumnField = React.memo(_ColumnField)
 
-interface RowProps {
+export interface RowProps {
   children: React.ReactNode
   hasHref?: boolean
 }
 
-function Row(props: RowProps) {
+export function Row(props: RowProps) {
   const borderColor = useColorModeValue("gray.200", "gray.700")
   const bg = useColorModeValue("gray.50", "gray.900")
   return (
@@ -235,15 +235,126 @@ function Row(props: RowProps) {
 // so this function allows us to pass "user.createdAt" as the sortKey
 // and it converts it to the nested structure, pretty sweet right?
 
-export function getOrderBy(sort: Sort) {
+// Due to prisma now allowing us to sort things where if the value is null we put it at the end, there is a
+// new syntax, where if the field on the model is nullable, we append a ? to the sortKey prop and it will sort
+// the records where the null records are at the end
+
+// Example:
+// sortKey="planEndDate?"
+
+export function getOrderBy(sort: Sort): { [key: string]: SortOrder | SortOrderInput } {
   const key = Object.keys(sort)[0]
   const value = sort[key]
+  const parsedKey = key.replace("?", "")
   let object = {} as any
   const result = object
-  const arr = key.split(".")
+  const arr = parsedKey.split(".")
   for (let i = 0; i < arr.length - 1; i++) {
-    object = object[arr[i]] = {}
+    object = object[arr[i]] = {} as any
   }
-  object[arr[arr.length - 1]] = value
+  object[arr[arr.length - 1]] = key.includes("?") ? { sort: value, nulls: NullsOrder.Last } : value
   return result
+}
+
+const range = (start: number, end: number) => {
+  const length = end - start + 1
+  return Array.from({ length }, (_, idx) => idx + start)
+}
+
+export const DOTS = -1
+
+export const usePagination = ({
+  totalCount,
+  pageSize,
+  siblingCount = 1,
+  currentPage,
+}: {
+  totalCount: number
+  pageSize: number
+  siblingCount: number
+  currentPage: number
+}) => {
+  const paginationRange = React.useMemo(() => {
+    const totalPageCount = Math.ceil(totalCount / pageSize)
+    const totalPageNumbers = siblingCount + 5
+    if (totalPageNumbers >= totalPageCount) return range(1, totalPageCount)
+
+    const leftSiblingIndex = Math.max(currentPage - siblingCount, 1)
+    const rightSiblingIndex = Math.min(currentPage + siblingCount, totalPageCount)
+    const shouldShowLeftDots = leftSiblingIndex > 2
+    const shouldShowRightDots = rightSiblingIndex < totalPageCount - 2
+
+    const firstPageIndex = 1
+    const lastPageIndex = totalPageCount
+    if (!shouldShowLeftDots && shouldShowRightDots) {
+      const leftItemCount = 3 + 2 * siblingCount
+      const leftRange = range(1, leftItemCount)
+      return [...leftRange, DOTS, totalPageCount]
+    }
+    if (shouldShowLeftDots && !shouldShowRightDots) {
+      const rightItemCount = 3 + 2 * siblingCount
+      const rightRange = range(totalPageCount - rightItemCount + 1, totalPageCount)
+      return [firstPageIndex, DOTS, ...rightRange]
+    }
+    if (shouldShowLeftDots && shouldShowRightDots) {
+      const middleRange = range(leftSiblingIndex, rightSiblingIndex)
+      return [firstPageIndex, DOTS, ...middleRange, DOTS, lastPageIndex]
+    }
+    return []
+  }, [totalCount, pageSize, siblingCount, currentPage])
+
+  return paginationRange
+}
+
+interface PaginationProps {
+  onPageChange: (page: number) => void
+  totalCount: number
+  pageSize: number
+  currentPage: number
+  siblingCount: number
+}
+
+function Pagination(props: PaginationProps) {
+  const { onPageChange, totalCount, siblingCount = 1, currentPage, pageSize } = props
+
+  const paginationRange = usePagination({ currentPage, totalCount, siblingCount, pageSize })
+
+  if (!currentPage || currentPage === 0 || paginationRange.length < 2) return null
+
+  const onNext = () => onPageChange(currentPage + 1)
+  const onPrevious = () => onPageChange(currentPage - 1)
+
+  const lastPage = paginationRange[paginationRange.length - 1]
+  return (
+    <HStack spacing={1}>
+      <IconButton
+        size="xs"
+        isDisabled={currentPage === 1}
+        onClick={onPrevious}
+        icon={<Box as={ChevronLeftIcon} />}
+        aria-label="previous page"
+      />
+
+      {paginationRange.map((pageNumber) => {
+        if (pageNumber === DOTS) return <Box>&#8230;</Box>
+        return (
+          <Button
+            fontWeight={pageNumber === currentPage ? "bold" : "normal"}
+            size="xs"
+            key={pageNumber}
+            onClick={() => onPageChange(pageNumber)}
+          >
+            {pageNumber}
+          </Button>
+        )
+      })}
+      <IconButton
+        isDisabled={currentPage === lastPage}
+        size="xs"
+        onClick={onNext}
+        icon={<Box as={ChevronRightIcon} />}
+        aria-label="next page"
+      />
+    </HStack>
+  )
 }

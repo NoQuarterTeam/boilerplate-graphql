@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client"
 
-import { MeFragmentDoc, useMeQuery } from "lib/graphql"
+import { useMeQuery } from "lib/graphql"
 
-export const ME_FRAGMENT = gql`
+const _ = gql`
   fragment Me on User {
     id
     firstName
@@ -12,15 +12,11 @@ export const ME_FRAGMENT = gql`
     email
     role
   }
-`
-
-export const ME = gql`
   query Me {
     me {
       ...Me
     }
   }
-  ${MeFragmentDoc}
 `
 
 export function useMe() {

@@ -1,8 +1,7 @@
 import * as React from "react"
 import { BiCog, BiExit, BiMoon, BiSun, BiUser } from "react-icons/bi"
 import { GiHamburgerMenu } from "react-icons/gi"
-import type {
-  LinkProps} from "@chakra-ui/react";
+import type { LinkProps } from "@chakra-ui/react"
 import {
   Avatar,
   Box,
@@ -19,7 +18,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react"
 import NextLink from "next/link"
-import { useRouter } from "next/router"
+import { usePathname } from "next/navigation"
 
 import { Role } from "lib/graphql"
 import { useLogout } from "lib/hooks/useLogout"
@@ -35,15 +34,7 @@ export function Nav() {
   const isDark = colorMode === "dark"
 
   return (
-    <Box
-      w="100%"
-      pos="fixed"
-      top={0}
-      left={0}
-      borderBottom="1px solid"
-      borderColor={useColorModeValue("gray.100", "gray.700")}
-      zIndex={500}
-    >
+    <Box h="65px" w="100%" borderBottom="1px solid" borderColor={useColorModeValue("gray.100", "gray.700")}>
       <Limiter
         display="flex"
         transition="200ms all"
@@ -145,8 +136,8 @@ interface HomeLinkProps extends LinkProps {
 }
 
 function HomeLink({ href, ...props }: HomeLinkProps) {
-  const { asPath } = useRouter()
-  const isActive = asPath === href
+  const pathname = usePathname()
+  const isActive = pathname === href
 
   return (
     <Link

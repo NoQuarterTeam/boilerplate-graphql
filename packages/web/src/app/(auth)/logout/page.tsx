@@ -1,6 +1,7 @@
+"use client"
 import * as React from "react"
 import { Center, Spinner } from "@chakra-ui/react"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 
 import { useMe } from "lib/hooks/useMe"
 

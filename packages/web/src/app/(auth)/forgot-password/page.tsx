@@ -1,9 +1,9 @@
+"use client"
 import * as React from "react"
 import { gql } from "@apollo/client"
 import { Box, Button, Center, Heading, Stack, Text } from "@chakra-ui/react"
-import Head from "next/head"
 import Link from "next/link"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 
 import type { MutationForgotPasswordArgs } from "lib/graphql"
 import { useForgotPasswordMutation } from "lib/graphql"
@@ -11,7 +11,6 @@ import { useForm } from "lib/hooks/useForm"
 import { useToast } from "lib/hooks/useToast"
 import Yup from "lib/yup"
 import { Form } from "components/Form"
-import { HomeLayout } from "components/HomeLayout"
 import { Input } from "components/Input"
 
 const _ = gql`
@@ -45,9 +44,6 @@ export default function ForgotPassword() {
   }
   return (
     <Center flexDir="column" pt={10}>
-      <Head>
-        <title>Forgot password</title>
-      </Head>
       <Box w={["100%", 400]}>
         <Form {...form} onSubmit={handleSubmit}>
           <Stack spacing={4}>
@@ -65,4 +61,3 @@ export default function ForgotPassword() {
     </Center>
   )
 }
-ForgotPassword.getLayout = (page: React.ReactNode) => <HomeLayout>{page}</HomeLayout>

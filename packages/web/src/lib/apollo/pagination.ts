@@ -26,8 +26,6 @@ export const pagination: FieldPolicy<Response, Response, Response, FieldFunction
 
 export const typePolicies = {
   Query: {
-    fields: {
-      users: pagination,
-    },
+    fields: {},
   },
 }

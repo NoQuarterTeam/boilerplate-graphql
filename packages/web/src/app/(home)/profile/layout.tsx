@@ -1,10 +1,21 @@
+"use client"
 import * as React from "react"
-import type { LinkProps} from "@chakra-ui/react";
+import type { LinkProps } from "@chakra-ui/react"
 import { Box, Flex, Heading, Link, Stack, useColorModeValue } from "@chakra-ui/react"
 import NextLink from "next/link"
-import { useRouter } from "next/router"
+import { usePathname, useRouter } from "next/navigation"
 
-export function ProfileLayout({ children }: { children: React.ReactNode }) {
+import { useMe } from "lib/hooks/useMe"
+
+export default function ProfileLayout({ children }: { children: React.ReactNode }) {
+  const { me, loading } = useMe()
+  const router = useRouter()
+  React.useEffect(() => {
+    if (loading) return
+    if (!me) router.replace("/")
+  }, [me, loading, router])
+
+  if (loading || !me) return null
   return (
     <Box pt={10} pb={20} w="100%">
       <Heading pb={10} fontSize={{ base: "2xl", md: "3xl" }}>
@@ -35,8 +46,8 @@ interface ProfileLinkProps extends LinkProps {
   href: string
 }
 function ProfileLink({ href, ...props }: ProfileLinkProps) {
-  const { asPath } = useRouter()
-  const isActive = asPath === href
+  const pathname = usePathname()
+  const isActive = pathname === href
   const activeColor = useColorModeValue("black", "white")
   const inactiveColor = useColorModeValue("gray.600", "gray.500")
   return (

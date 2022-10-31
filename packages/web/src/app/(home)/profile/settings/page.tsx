@@ -1,3 +1,4 @@
+"use client"
 import * as React from "react"
 import { gql } from "@apollo/client"
 import {
@@ -8,9 +9,7 @@ import {
   AlertDialogHeader,
   AlertDialogOverlay,
   Button,
-  Center,
   Flex,
-  Spinner,
   Stack,
   Text,
   useDisclosure,
@@ -18,11 +17,7 @@ import {
 
 import { useDestroyAccountMutation } from "lib/graphql"
 import { useLogout } from "lib/hooks/useLogout"
-import { useMe } from "lib/hooks/useMe"
 import { useMutationHandler } from "lib/hooks/useMutationHandler"
-import { withAuth } from "components/hoc/withAuth"
-import { HomeLayout } from "components/HomeLayout"
-import { ProfileLayout } from "components/ProfileLayout"
 import { Tile, TileBody, TileFooter, TileHeader, TileHeading } from "components/Tile"
 
 const _ = gql`
@@ -31,9 +26,9 @@ const _ = gql`
   }
 `
 
-function Settings() {
+export default function Settings() {
   const alertProps = useDisclosure()
-  const { me, loading } = useMe()
+
   const logout = useLogout()
   const cancelRef = React.useRef<HTMLButtonElement>(null)
   const handler = useMutationHandler()
@@ -43,13 +38,7 @@ function Settings() {
   const handleDestroy = () => {
     return handler(destroy, { onSuccess: () => logout() })
   }
-  if (loading)
-    return (
-      <Center>
-        <Spinner />
-      </Center>
-    )
-  if (!me) return null
+
   return (
     <Stack spacing={6}>
       <Tile>
@@ -108,11 +97,3 @@ function Settings() {
     </Stack>
   )
 }
-
-Settings.getLayout = (page: React.ReactNode) => (
-  <HomeLayout>
-    <ProfileLayout>{page}</ProfileLayout>
-  </HomeLayout>
-)
-
-export default withAuth(Settings)

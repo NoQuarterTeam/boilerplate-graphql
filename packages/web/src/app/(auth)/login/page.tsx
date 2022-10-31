@@ -1,9 +1,9 @@
+"use client"
 import * as React from "react"
 import { gql, useApolloClient } from "@apollo/client"
 import * as c from "@chakra-ui/react"
-import Head from "next/head"
 import Link from "next/link"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 
 import { ACCESS_TOKEN, REFRESH_TOKEN_KEY } from "lib/config"
 import type { LoginInput, MeQuery } from "lib/graphql"
@@ -12,8 +12,6 @@ import { useForm } from "lib/hooks/useForm"
 import Yup from "lib/yup"
 import { Form } from "components/Form"
 import { FormError } from "components/FormError"
-import { withNoAuth } from "components/hoc/withNoAuth"
-import { HomeLayout } from "components/HomeLayout"
 import { Input } from "components/Input"
 
 const _ = gql`
@@ -33,7 +31,7 @@ const LoginSchema = Yup.object().shape({
   password: Yup.string().min(8, "Must be at least 8 characters"),
 })
 
-function Login() {
+export default function Login() {
   const client = useApolloClient()
 
   const [login, { loading }] = useLoginMutation()
@@ -59,9 +57,6 @@ function Login() {
 
   return (
     <c.Center flexDir="column" pt={10}>
-      <Head>
-        <title>Login</title>
-      </Head>
       <c.Box w={["100%", 400]}>
         <Form onSubmit={onSubmit} {...form}>
           <c.Stack spacing={2}>
@@ -84,6 +79,4 @@ function Login() {
   )
 }
 
-Login.getLayout = (page: React.ReactNode) => <HomeLayout>{page}</HomeLayout>
-
-export default withNoAuth(Login)
+// export default withNoAuth(Login)

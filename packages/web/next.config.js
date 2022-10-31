@@ -8,6 +8,7 @@ const sentryWebpackPluginOptions = {
  */
 module.exports = withSentryConfig(
   {
+    experimental: { appDir: true, esmExternals: false },
     sentry: {
       hideSourceMaps: false,
     },

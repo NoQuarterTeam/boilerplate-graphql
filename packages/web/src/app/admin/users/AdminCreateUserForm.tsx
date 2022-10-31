@@ -1,16 +1,16 @@
 import * as React from "react"
 import { gql } from "@apollo/client"
 import { Button, Stack } from "@chakra-ui/react"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 
 import { useAdminCreateUserMutation } from "lib/graphql"
 import { useForm } from "lib/hooks/useForm"
 import Yup from "lib/yup"
 
-import { ButtonGroup } from "./ButtonGroup"
-import { Form } from "./Form"
-import { FormError } from "./FormError"
-import { Input } from "./Input"
+import { ButtonGroup } from "../../../components/ButtonGroup"
+import { Form } from "../../../components/Form"
+import { FormError } from "../../../components/FormError"
+import { Input } from "../../../components/Input"
 
 const _ = gql`
   mutation AdminCreateUser($data: UserCreateInput!) {
@@ -50,8 +50,8 @@ export function AdminCreateUserForm(props: Props) {
   return (
     <Form {...form} onSubmit={handleSubmit}>
       <Stack>
-        <Input name="firstName" label="First Name" />
-        <Input name="lastName" label="Last Name" />
+        <Input name="firstName" label="First name" />
+        <Input name="lastName" label="Last name" />
         <Input name="email" label="Email" />
         <FormError />
         <ButtonGroup>

@@ -1,3 +1,4 @@
+"use client"
 import * as React from "react"
 import { BiMoon, BiSun } from "react-icons/bi"
 import { CgExternal, CgHome, CgUser } from "react-icons/cg"
@@ -17,7 +18,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react"
 import NextLink from "next/link"
-import { useRouter } from "next/router"
+import { usePathname,useRouter } from "next/navigation"
 
 import { Role } from "lib/graphql"
 import { useLogout } from "lib/hooks/useLogout"
@@ -26,7 +27,7 @@ import { useMe } from "lib/hooks/useMe"
 interface Props {
   children: React.ReactNode
 }
-export function AdminLayout(props: Props) {
+export default function AdminLayout(props: Props) {
   const { colorMode, toggleColorMode } = useColorMode()
   const isDark = colorMode === "dark"
 
@@ -106,8 +107,8 @@ interface SidebarLinkProps extends LinkProps {
 }
 
 function SidebarLink({ href, icon, ...props }: SidebarLinkProps) {
-  const router = useRouter()
-  const isActive = router.asPath.includes(href)
+  const pathname = usePathname()
+  const isActive = pathname.includes(href)
   return (
     <Link
       as={NextLink}

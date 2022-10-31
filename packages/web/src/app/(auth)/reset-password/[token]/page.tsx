@@ -1,9 +1,9 @@
+"use client"
 import * as React from "react"
 import { gql } from "@apollo/client"
 import { Box, Button, Center, Heading, Stack, Text } from "@chakra-ui/react"
-import Head from "next/head"
 import Link from "next/link"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 
 import type { ResetPasswordInput } from "lib/graphql"
 import { useResetPasswordMutation } from "lib/graphql"
@@ -11,7 +11,6 @@ import { useForm } from "lib/hooks/useForm"
 import { useToast } from "lib/hooks/useToast"
 import Yup from "lib/yup"
 import { Form } from "components/Form"
-import { HomeLayout } from "components/HomeLayout"
 import { Input } from "components/Input"
 
 const _ = gql`
@@ -24,14 +23,14 @@ const ResetPasswordSchema = Yup.object().shape({
   password: Yup.string().min(8, "Must be at least 8 characters"),
 })
 
-export default function ResetPassword() {
-  const { query, push } = useRouter()
-  const token = query.token as string
+export default function ResetPassword({ params }: { params: { token: string } }) {
+  const { push } = useRouter()
+  const token = params.token
   const [reset, { loading }] = useResetPasswordMutation()
   const form = useForm({ schema: ResetPasswordSchema })
   const toast = useToast()
   const handleSubmit = async (data: ResetPasswordInput) => {
-    if (!data || !token) return
+    if (!data) return
     return form.handler(() => reset({ variables: { data: { ...data, token } } }), {
       onSuccess: () => {
         form.reset()
@@ -45,9 +44,6 @@ export default function ResetPassword() {
   }
   return (
     <Center flexDir="column" pt={10}>
-      <Head>
-        <title>Reset password</title>
-      </Head>
       <Box w={["100%", 400]}>
         <Form {...form} onSubmit={handleSubmit}>
           <Stack spacing={4}>
@@ -66,4 +62,3 @@ export default function ResetPassword() {
     </Center>
   )
 }
-ResetPassword.getLayout = (page: React.ReactNode) => <HomeLayout>{page}</HomeLayout>
