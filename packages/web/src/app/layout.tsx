@@ -20,7 +20,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <meta property="og:description" content="Welcome to the Boilerplate!" key="og:description" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body>
+      <body style={{ fontFamily: "Inter, sans-serif" }}>
         <ChakraProvider theme={theme}>
           <ApolloProvider client={client}>{children}</ApolloProvider>
         </ChakraProvider>

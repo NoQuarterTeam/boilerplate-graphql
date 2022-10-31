@@ -10,10 +10,6 @@ export const theme = extendTheme({
     useSystemColorMode: false,
     initialColorMode: "light",
   },
-  // fonts: {
-  //   body: "Oswald, sans-serif",
-  //   heading: "Oswald, sans-serif",
-  // },
   components: {
     Button,
     Input,
