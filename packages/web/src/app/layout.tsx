@@ -7,7 +7,7 @@ import { Inter } from "@next/font/google"
 import { useApollo } from "lib/apollo/client"
 import { theme } from "lib/theme"
 
-const font = Inter()
+const font = Inter({ subsets: ["latin"] })
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const client = useApollo()
