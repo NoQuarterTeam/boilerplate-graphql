@@ -1,18 +1,19 @@
 import * as React from "react"
+import type {
+  ModalProps} from "@chakra-ui/react";
 import {
   Modal as CModal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
   ModalHeader,
-  ModalOverlay,
-  ModalProps,
+  ModalOverlay
 } from "@chakra-ui/react"
 
 interface Props extends ModalProps {
   title?: string
 }
-export const Modal: React.FC<Props> = (props) => {
+export function Modal(props: Props) {
   return (
     <CModal {...props}>
       <ModalOverlay />

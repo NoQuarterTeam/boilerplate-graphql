@@ -29,17 +29,19 @@
   "license": "MIT",
   "dependencies": {
     "@apollo/client": "3.7.0",
-    "@chakra-ui/react": "1.8.9",
-    "@emotion/react": "11.10.4",
-    "@emotion/styled": "11.10.4",
+    "@chakra-ui/icons": "^2.0.11",
+    "@chakra-ui/react": "^2.3.6",
+    "@emotion/react": "11.10.5",
+    "@emotion/styled": "11.10.5",
     "@hookform/resolvers": "2.9.10",
+    "@next/font": "^13.0.0",
     "@sentry/nextjs": "7.16.0",
     "dayjs": "1.11.6",
     "framer-motion": "6.5.1",
     "graphql": "15.8.0",
-    "next": "12.3.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "next": "^13.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-dropzone": "14.2.3",
     "react-hook-form": "7.38.0",
     "react-icons": "4.6.0",
@@ -53,8 +55,8 @@
     "@graphql-codegen/typescript-operations": "2.5.5",
     "@graphql-codegen/typescript-react-apollo": "3.3.5",
     "@types/cookie": "0.5.1",
-    "@types/react": "17.0.51",
-    "@types/react-dom": "17.0.17",
-    "eslint-config-next": "12.3.1"
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "eslint-config-next": "^13.0.0"
   }
 }

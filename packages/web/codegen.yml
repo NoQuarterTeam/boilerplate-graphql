@@ -3,6 +3,7 @@ documents:
   - "src/components/**/*.{ts,tsx}"
   - "src/lib/**/*.{ts,tsx}"
   - "src/pages/**/*.{ts,tsx}"
+  - "src/app/**/*.{ts,tsx}"
 overwrite: true
 generates:
   src/lib/graphql.tsx:

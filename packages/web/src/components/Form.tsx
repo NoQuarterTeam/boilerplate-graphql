@@ -9,9 +9,10 @@ import { useToast } from "lib/hooks/useToast"
 interface FormContainerProps {
   onSubmit?: (values: any) => Promise<any> | any
   onBlur?: (values: any) => Promise<any> | any
+  children?: React.ReactNode
 }
 
-const FormContainer: React.FC<FormContainerProps> = (props) => {
+function FormContainer(props: FormContainerProps) {
   const toast = useToast()
   const { handleSubmit } = useFormContext()
   const onSubmit = async (values: any) => {

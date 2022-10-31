@@ -59,12 +59,16 @@ const httpLink = createHttpLink({ uri: GRAPHQL_API_URL })
 
 function createApolloClient(initialState?: null | Record<string, any>) {
   const authLink = setContext((_, { headers }) => {
-    const token = window.localStorage.getItem(ACCESS_TOKEN)
-    return {
-      headers: {
-        ...headers,
-        authorization: token ? `Bearer ${token}` : "",
-      },
+    if (isBrowser()) {
+      const token = window.localStorage.getItem(ACCESS_TOKEN)
+      return {
+        headers: {
+          ...headers,
+          authorization: token ? `Bearer ${token}` : "",
+        },
+      }
+    } else {
+      return { headers }
     }
   })
 

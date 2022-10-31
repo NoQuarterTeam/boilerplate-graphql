@@ -1,5 +1,6 @@
 import * as React from "react"
-import { DropzoneOptions, FileRejection, useDropzone } from "react-dropzone"
+import type { DropzoneOptions, FileRejection} from "react-dropzone";
+import { useDropzone } from "react-dropzone"
 import { Box, Button, Image, useDisclosure } from "@chakra-ui/react"
 
 import { useS3Upload } from "lib/hooks/useS3"
@@ -13,9 +14,10 @@ interface Props {
   onSubmit: (key: string) => Promise<any> | any
   onRemove?: () => Promise<any> | any
   dropzoneOptions?: Omit<DropzoneOptions, "multiple" | "onDrop">
+  children?: React.ReactNode
 }
 
-export const ImageUploader: React.FC<Props> = ({ children, path, onSubmit, dropzoneOptions }) => {
+export function ImageUploader({ children, path, onSubmit, dropzoneOptions }: Props) {
   const modalProps = useDisclosure()
   const toast = useToast()
   const [image, setImage] = React.useState<{ file: File; preview: string } | null>(null)

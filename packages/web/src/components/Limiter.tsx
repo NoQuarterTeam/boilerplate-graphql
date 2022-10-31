@@ -1,7 +1,8 @@
 import * as React from "react"
-import { Box, BoxProps } from "@chakra-ui/react"
+import type { BoxProps } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react"
 
-export const Limiter: React.FC<BoxProps> = (props) => {
+export function Limiter(props: BoxProps) {
   const px = {
     base: 4,
     md: 10,

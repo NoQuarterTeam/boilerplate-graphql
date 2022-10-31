@@ -6,7 +6,7 @@ interface Props {
   error?: Merge<FieldError, FieldErrorsImpl<DeepRequired<any>>> | undefined
 }
 
-export const InputError: React.FC<Props> = (props) => {
+export function InputError(props: Props) {
   if (!props.error) return null
   return (
     <Stack direction="row" space={2} alignItems="center">

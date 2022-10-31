@@ -1,6 +1,7 @@
 import * as React from "react"
 import { CgClose, CgSearch } from "react-icons/cg"
-import { Box, BoxProps, IconButton, InputGroup, InputLeftElement, InputRightElement } from "@chakra-ui/react"
+import type { BoxProps} from "@chakra-ui/react";
+import { Box, IconButton, InputGroup, InputLeftElement, InputRightElement } from "@chakra-ui/react"
 
 import { useForm } from "lib/hooks/useForm"
 
@@ -8,13 +9,13 @@ import { Form } from "./Form"
 import { Input } from "./Input"
 
 interface Props extends BoxProps {
-  search: string
-  onSearch: (search: string) => void
+  search?: string | null
+  onSearch: (search?: string | null) => void
   placeholder?: string
 }
 
 export function Search({ onSearch, search, ...props }: Props) {
-  const defaultValues = { search: "" }
+  const defaultValues = { search }
   const form = useForm({ defaultValues })
 
   const handleSubmit = (data: typeof defaultValues) => {

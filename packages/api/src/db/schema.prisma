@@ -1,11 +1,13 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["orderByNulls"]
 }
 
 generator typegraphql {
-  provider = "typegraphql-prisma"
-  output   = "../../../../node_modules/@generated"
-  emitOnly = "inputs,enums,crudResolvers"
+  provider        = "typegraphql-prisma"
+  output          = "../../../../node_modules/@generated"
+  emitOnly        = "inputs,enums,crudResolvers"
+  useSimpleInputs = true
 }
 
 datasource db {

@@ -1,6 +1,7 @@
 import * as React from "react"
 import { BiCog, BiExit, BiMoon, BiSun, BiUser } from "react-icons/bi"
 import { GiHamburgerMenu } from "react-icons/gi"
+import type { LinkProps } from "@chakra-ui/react"
 import {
   Avatar,
   Box,
@@ -8,7 +9,6 @@ import {
   HStack,
   IconButton,
   Link,
-  LinkProps,
   Menu,
   MenuButton,
   MenuDivider,
@@ -18,7 +18,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react"
 import NextLink from "next/link"
-import { useRouter } from "next/router"
+import { usePathname } from "next/navigation"
 
 import { Role } from "lib/graphql"
 import { useLogout } from "lib/hooks/useLogout"
@@ -34,15 +34,7 @@ export function Nav() {
   const isDark = colorMode === "dark"
 
   return (
-    <Box
-      w="100%"
-      pos="fixed"
-      top={0}
-      left={0}
-      borderBottom="1px solid"
-      borderColor={useColorModeValue("gray.100", "gray.700")}
-      zIndex={500}
-    >
+    <Box h="65px" w="100%" borderBottom="1px solid" borderColor={useColorModeValue("gray.100", "gray.700")}>
       <Limiter
         display="flex"
         transition="200ms all"
@@ -93,11 +85,11 @@ export function Nav() {
           <MenuList fontSize="md">
             {me ? (
               <>
-                <NextLink passHref href="/profile">
+                <NextLink href="/profile">
                   <MenuItem icon={<Box as={BiUser} boxSize="16px" />}>Profile</MenuItem>
                 </NextLink>
                 {me.role === Role.Admin && (
-                  <NextLink passHref href="/admin">
+                  <NextLink href="/admin">
                     <MenuItem icon={<Box as={BiCog} boxSize="16px" />}>Admin</MenuItem>
                   </NextLink>
                 )}
@@ -124,10 +116,10 @@ export function Nav() {
                   Toggle theme
                 </MenuItem>
                 <MenuDivider />
-                <NextLink passHref href="/login">
+                <NextLink href="/login">
                   <MenuItem>Login</MenuItem>
                 </NextLink>
-                <NextLink passHref href="/register">
+                <NextLink href="/register">
                   <MenuItem fontWeight="semibold">Register</MenuItem>
                 </NextLink>
               </>
@@ -144,21 +136,21 @@ interface HomeLinkProps extends LinkProps {
 }
 
 function HomeLink({ href, ...props }: HomeLinkProps) {
-  const { asPath } = useRouter()
-  const isActive = asPath === href
+  const pathname = usePathname()
+  const isActive = pathname === href
 
   return (
-    <NextLink passHref href={href}>
-      <Link
-        px={4}
-        py={2}
-        textDecor="none !important"
-        _hover={{ color: isActive ? "purple.600" : "purple.500" }}
-        color={isActive ? "purple.600" : "gray.500"}
-        {...props}
-      >
-        {props.children}
-      </Link>
-    </NextLink>
+    <Link
+      as={NextLink}
+      href={href}
+      px={4}
+      py={2}
+      textDecor="none !important"
+      _hover={{ color: isActive ? "purple.600" : "purple.500" }}
+      color={isActive ? "purple.600" : "gray.500"}
+      {...props}
+    >
+      {props.children}
+    </Link>
   )
 }
