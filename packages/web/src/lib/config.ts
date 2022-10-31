@@ -1,6 +1,11 @@
 export const IS_PRODUCTION = process.env.NEXT_PUBLIC_APP_ENV === "production"
 export const IS_STAGING = process.env.NEXT_PUBLIC_APP_ENV === "staging"
 
+export const env = process.env.NEXT_PUBLIC_APP_ENV || "development"
+console.log("env", process.env.NEXT_PUBLIC_APP_ENV)
+console.log("pr", process.env.NEXT_PUBLIC_PULL_REQUEST_NUMBER)
+console.log("branch", process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF)
+
 export const IS_DEV = !IS_STAGING && !IS_PRODUCTION
 
 export const SENTRY_DSN = "https://5d0371a223bb4509902f8940cb957daf@o204549.ingest.sentry.io/5741383"
