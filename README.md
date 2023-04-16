@@ -1,6 +1,8 @@
 # Boilerplate
-
 ### Built by [No Quarter](https://www.noquarter.co)
+
+NOTE: We now recommend using our updated [stack](https://github.com/NoQuarterTeam/boilerplate).
+
 
 <br />
 
