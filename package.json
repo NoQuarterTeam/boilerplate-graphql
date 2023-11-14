@@ -33,7 +33,7 @@
     "lint-staged": "13.1.0",
     "prettier": "2.8.8",
     "turbo": "1.6.3",
-    "typescript": "4.9.4"
+    "typescript": "4.9.5"
   },
   "resolutions": {
     "prettier": "2.8.8"
