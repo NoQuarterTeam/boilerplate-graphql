@@ -47,7 +47,7 @@
     "dotenv": "16.3.1",
     "express": "4.18.2",
     "express-jwt": "6.1.2",
-    "glob": "8.0.3",
+    "glob": "8.1.0",
     "graphql": "15.8.0",
     "graphql-fields": "2.0.3",
     "graphql-scalars": "1.20.1",
