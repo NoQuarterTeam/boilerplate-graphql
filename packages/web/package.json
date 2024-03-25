@@ -55,6 +55,6 @@
     "@types/cookie": "0.5.4",
     "@types/react": "17.0.70",
     "@types/react-dom": "17.0.23",
-    "eslint-config-next": "12.3.4"
+    "eslint-config-next": "14.1.4"
   }
 }
