@@ -32,7 +32,7 @@
     "@react-navigation/native-stack": "6.9.26",
     "@react-navigation/stack": "6.3.29",
     "expo": "45.0.8",
-    "expo-status-bar": "1.7.1",
+    "expo-status-bar": "1.12.1",
     "graphql": "15.8.0",
     "graphql-tag": "2.12.6",
     "native-base": "3.4.28",
