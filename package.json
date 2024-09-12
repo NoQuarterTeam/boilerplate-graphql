@@ -29,7 +29,7 @@
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-jsx-a11y": "6.9.0",
     "eslint-plugin-simple-import-sort": "8.0.0",
-    "husky": "8.0.3",
+    "husky": "9.1.6",
     "lint-staged": "13.3.0",
     "prettier": "2.8.8",
     "turbo": "1.13.4",
